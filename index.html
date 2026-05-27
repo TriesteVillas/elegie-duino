@@ -244,6 +244,8 @@
           <tr><td>6</td><td>Primo</td><td>Trilocale</td><td>2</td><td>85 m²</td><td>12 m²</td><td>—</td><td>93</td><td>€ 390.000</td></tr>
           <tr><td>7</td><td>Primo</td><td>Bilocale</td><td>1</td><td>58 m²</td><td>12 m²</td><td>—</td><td>66</td><td>€ 290.000</td></tr>
           <tr><td>8</td><td>Primo</td><td>Trilocale</td><td>2</td><td>89 m²</td><td>12 m²</td><td>—</td><td>97</td><td>€ 440.000</td></tr>
+          <tr class="duplex-row"><td>3 + 7</td><td>Duplex</td><td>Bilocale duplex</td><td>2</td><td>116 m²</td><td>24 m²</td><td>45 m²</td><td>133</td><td>€ 610.000</td></tr>
+          <tr class="duplex-row"><td>4 + 8</td><td>Duplex</td><td>Trilocale duplex</td><td>4</td><td>178 m²</td><td>24 m²</td><td>188 m²</td><td>202</td><td>€ 950.000</td></tr>
         </tbody>
       </table>
     </div>
@@ -374,9 +376,9 @@
           <div>
             <span class="slide__tag">Duplex accorpato</span>
             <div class="slide__title">Piano terra del duplex 3 + 7</div>
-            <div class="slide__meta">Soluzione su due livelli — disponibile su richiesta</div>
+            <div class="slide__meta">Bilocale duplex · 2 camere · 116 m² interni · 45 m² giardino</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 610.000</div>
         </div>
       </article>
 
@@ -387,9 +389,9 @@
           <div>
             <span class="slide__tag">Duplex accorpato</span>
             <div class="slide__title">Piano primo del duplex 3 + 7</div>
-            <div class="slide__meta">Soluzione su due livelli — disponibile su richiesta</div>
+            <div class="slide__meta">Bilocale duplex · 2 camere · 116 m² interni · 24 m² terrazza</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 610.000</div>
         </div>
       </article>
 
@@ -400,9 +402,9 @@
           <div>
             <span class="slide__tag">Duplex accorpato</span>
             <div class="slide__title">Piano terra del duplex 4 + 8</div>
-            <div class="slide__meta">Soluzione su due livelli — disponibile su richiesta</div>
+            <div class="slide__meta">Trilocale duplex · 4 camere · 178 m² interni · 188 m² giardino</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 950.000</div>
         </div>
       </article>
 
@@ -413,9 +415,9 @@
           <div>
             <span class="slide__tag">Duplex accorpato</span>
             <div class="slide__title">Piano primo del duplex 4 + 8</div>
-            <div class="slide__meta">Soluzione su due livelli — disponibile su richiesta</div>
+            <div class="slide__meta">Trilocale duplex · 4 camere · 178 m² interni · 24 m² terrazza</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 950.000</div>
         </div>
       </article>
 
@@ -496,7 +498,7 @@
     </div>
 
     <div class="spec__cta reveal">
-      <a href="./assets/pdf/elegie-duino-brochure.pdf" class="btn btn--solid" download>Scarica brochure (PDF)</a>
+      <button type="button" class="btn btn--solid" data-open-brochure>Scarica brochure (PDF)</button>
       <a href="mailto:duino@triestevillas.com?subject=Richiesta%20capitolato%20tecnico%20Elegie%20Duino" class="btn">Richiedi capitolato integrale</a>
     </div>
   </div>
@@ -581,10 +583,67 @@
       <span class="footer__brand">Elegie</span> Duino · Nuova Costruzione · 2026
     </div>
     <div>
-      <a href="./en/">English version</a> · <a href="mailto:duino@triestevillas.com">duino@triestevillas.com</a>
+      <a href="./en/">English version</a> · <a href="./privacy.html">Privacy</a> · <a href="mailto:duino@triestevillas.com">duino@triestevillas.com</a>
     </div>
   </div>
 </footer>
+
+<!-- Brochure download modal -->
+<div class="modal" id="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-modal-title">
+  <div class="modal__panel">
+    <button type="button" class="modal__close" data-close-modal aria-label="Chiudi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div class="modal__body" id="brochure-modal-body">
+      <span class="modal__eyebrow">Brochure · PDF</span>
+      <h2 class="modal__title" id="brochure-modal-title">Riceva la brochure completa.</h2>
+      <p class="modal__lede">Inserisca i suoi dati. Il link al PDF apparirà subito qui e una copia della richiesta verrà inviata a TriesteVillas per il follow-up.</p>
+
+      <form class="form" id="brochure-form" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="Elegie Duino — Richiesta brochure">
+        <input type="hidden" name="from_name" value="Elegie Duino — Form sito">
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <div class="form__row">
+          <label class="form__label" for="bf-name">Nome e cognome <span class="req">*</span></label>
+          <input class="form__input" type="text" id="bf-name" name="name" required autocomplete="name" placeholder="Mario Rossi">
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="bf-email">Email <span class="req">*</span></label>
+          <input class="form__input" type="email" id="bf-email" name="email" required autocomplete="email" placeholder="mario@email.com">
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="bf-phone">Telefono</label>
+          <input class="form__input" type="tel" id="bf-phone" name="phone" autocomplete="tel" placeholder="+39 ...">
+        </div>
+
+        <label class="form__consent">
+          <input type="checkbox" name="consent" required>
+          <span>Ho letto e accetto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la brochure ed eventuali aggiornamenti sull'iniziativa Elegie Duino.</span>
+        </label>
+
+        <p class="form__error" id="bf-error">Si è verificato un errore. Riprova o scriva a duino@triestevillas.com.</p>
+
+        <button type="submit" class="btn btn--ink form__submit">
+          <span class="btn__label">Ricevi la brochure</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="form__success" id="brochure-success">
+      <div class="form__success-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 class="modal__title">Grazie. La brochure è pronta.</h2>
+      <p class="modal__lede">Il PDF è già aperto in una nuova scheda. Le invieremo a breve un riscontro all'indirizzo email indicato.</p>
+      <a href="./assets/pdf/elegie-duino-brochure.pdf" class="btn btn--ink" id="brochure-download-link" download target="_blank">Scarica di nuovo (PDF)</a>
+    </div>
+  </div>
+</div>
 
 <script>
   // Nav scroll state
@@ -593,6 +652,68 @@
     const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 80);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  // Brochure modal + Web3Forms submit
+  (function () {
+    const modal = document.getElementById('brochure-modal');
+    if (!modal) return;
+    const body = document.getElementById('brochure-modal-body');
+    const success = document.getElementById('brochure-success');
+    const form = document.getElementById('brochure-form');
+    const errorEl = document.getElementById('bf-error');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const downloadHref = './assets/pdf/elegie-duino-brochure.pdf';
+
+    const openModal = () => {
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      body.style.display = '';
+      success.classList.remove('is-visible');
+    };
+    const closeModal = () => {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('[data-open-brochure]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    });
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.querySelectorAll('[data-close-modal]').forEach(el => {
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.remove('is-visible');
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.btn__label').textContent = 'Invio in corso…';
+
+      const data = new FormData(form);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data,
+        });
+        const json = await res.json();
+        if (json.success) {
+          body.style.display = 'none';
+          success.classList.add('is-visible');
+          window.open(downloadHref, '_blank');
+        } else {
+          throw new Error(json.message || 'submit failed');
+        }
+      } catch (err) {
+        errorEl.classList.add('is-visible');
+        errorEl.textContent = 'Si è verificato un errore (' + (err.message || 'rete') + '). Riprova o scriva a duino@triestevillas.com.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn__label').textContent = 'Ricevi la brochure';
+      }
+    });
   })();
 
   // Slideshow prev/next

@@ -244,6 +244,8 @@
           <tr><td>6</td><td>First</td><td>2-bed</td><td>2</td><td>85 m²</td><td>12 m²</td><td>—</td><td>93</td><td>€ 390,000</td></tr>
           <tr><td>7</td><td>First</td><td>1-bed</td><td>1</td><td>58 m²</td><td>12 m²</td><td>—</td><td>66</td><td>€ 290,000</td></tr>
           <tr><td>8</td><td>First</td><td>2-bed</td><td>2</td><td>89 m²</td><td>12 m²</td><td>—</td><td>97</td><td>€ 440,000</td></tr>
+          <tr class="duplex-row"><td>3 + 7</td><td>Duplex</td><td>1-bed duplex</td><td>2</td><td>116 m²</td><td>24 m²</td><td>45 m²</td><td>133</td><td>€ 610,000</td></tr>
+          <tr class="duplex-row"><td>4 + 8</td><td>Duplex</td><td>2-bed duplex</td><td>4</td><td>178 m²</td><td>24 m²</td><td>188 m²</td><td>202</td><td>€ 950,000</td></tr>
         </tbody>
       </table>
     </div>
@@ -374,9 +376,9 @@
           <div>
             <span class="slide__tag">Combined duplex</span>
             <div class="slide__title">Ground floor of duplex 3 + 7</div>
-            <div class="slide__meta">Two-level layout — available on request</div>
+            <div class="slide__meta">1-bed duplex · 2 bedrooms · 116 m² indoor · 45 m² garden</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 610,000</div>
         </div>
       </article>
 
@@ -387,9 +389,9 @@
           <div>
             <span class="slide__tag">Combined duplex</span>
             <div class="slide__title">Upper floor of duplex 3 + 7</div>
-            <div class="slide__meta">Two-level layout — available on request</div>
+            <div class="slide__meta">1-bed duplex · 2 bedrooms · 116 m² indoor · 24 m² terrace</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 610,000</div>
         </div>
       </article>
 
@@ -400,9 +402,9 @@
           <div>
             <span class="slide__tag">Combined duplex</span>
             <div class="slide__title">Ground floor of duplex 4 + 8</div>
-            <div class="slide__meta">Two-level layout — available on request</div>
+            <div class="slide__meta">2-bed duplex · 4 bedrooms · 178 m² indoor · 188 m² garden</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 950,000</div>
         </div>
       </article>
 
@@ -413,9 +415,9 @@
           <div>
             <span class="slide__tag">Combined duplex</span>
             <div class="slide__title">Upper floor of duplex 4 + 8</div>
-            <div class="slide__meta">Two-level layout — available on request</div>
+            <div class="slide__meta">2-bed duplex · 4 bedrooms · 178 m² indoor · 24 m² terrace</div>
           </div>
-          <div></div>
+          <div class="slide__price">€ 950,000</div>
         </div>
       </article>
 
@@ -496,7 +498,7 @@
     </div>
 
     <div class="spec__cta reveal">
-      <a href="../assets/pdf/elegie-duino-brochure.pdf" class="btn btn--solid" download>Download brochure (PDF)</a>
+      <button type="button" class="btn btn--solid" data-open-brochure>Download brochure (PDF)</button>
       <a href="mailto:duino@triestevillas.com?subject=Elegie%20Duino%20%E2%80%94%20full%20technical%20specification%20request" class="btn">Request full specification</a>
     </div>
   </div>
@@ -581,10 +583,67 @@
       <span class="footer__brand">Elegie</span> Duino · New Construction · 2026
     </div>
     <div>
-      <a href="../">Versione italiana</a> · <a href="mailto:duino@triestevillas.com">duino@triestevillas.com</a>
+      <a href="../">Versione italiana</a> · <a href="./privacy.html">Privacy</a> · <a href="mailto:duino@triestevillas.com">duino@triestevillas.com</a>
     </div>
   </div>
 </footer>
+
+<!-- Brochure download modal -->
+<div class="modal" id="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-modal-title">
+  <div class="modal__panel">
+    <button type="button" class="modal__close" data-close-modal aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div class="modal__body" id="brochure-modal-body">
+      <span class="modal__eyebrow">Brochure · PDF</span>
+      <h2 class="modal__title" id="brochure-modal-title">Receive the full brochure.</h2>
+      <p class="modal__lede">Please share your details. The PDF link will appear here immediately and a copy of the request will be sent to TriesteVillas for follow-up.</p>
+
+      <form class="form" id="brochure-form" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+        <input type="hidden" name="subject" value="Elegie Duino — Brochure request (EN)">
+        <input type="hidden" name="from_name" value="Elegie Duino — Website form">
+        <input type="checkbox" name="botcheck" style="display:none;">
+
+        <div class="form__row">
+          <label class="form__label" for="bf-name">Full name <span class="req">*</span></label>
+          <input class="form__input" type="text" id="bf-name" name="name" required autocomplete="name" placeholder="Jane Doe">
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="bf-email">Email <span class="req">*</span></label>
+          <input class="form__input" type="email" id="bf-email" name="email" required autocomplete="email" placeholder="jane@email.com">
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="bf-phone">Phone</label>
+          <input class="form__input" type="tel" id="bf-phone" name="phone" autocomplete="tel" placeholder="+39 / +43 / +386 ...">
+        </div>
+
+        <label class="form__consent">
+          <input type="checkbox" name="consent" required>
+          <span>I have read and accept the <a href="./privacy.html" target="_blank">privacy policy</a> and consent to the processing of my data to receive the brochure and any updates about the Elegie Duino development.</span>
+        </label>
+
+        <p class="form__error" id="bf-error">Something went wrong. Please try again or write to duino@triestevillas.com.</p>
+
+        <button type="submit" class="btn btn--ink form__submit">
+          <span class="btn__label">Receive the brochure</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="form__success" id="brochure-success">
+      <div class="form__success-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 class="modal__title">Thank you. The brochure is ready.</h2>
+      <p class="modal__lede">The PDF has opened in a new tab. We will be in touch shortly at the email address you provided.</p>
+      <a href="../assets/pdf/elegie-duino-brochure.pdf" class="btn btn--ink" id="brochure-download-link" download target="_blank">Download again (PDF)</a>
+    </div>
+  </div>
+</div>
 
 <script>
   (function () {
@@ -593,6 +652,68 @@
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
+  // Brochure modal + Web3Forms submit
+  (function () {
+    const modal = document.getElementById('brochure-modal');
+    if (!modal) return;
+    const body = document.getElementById('brochure-modal-body');
+    const success = document.getElementById('brochure-success');
+    const form = document.getElementById('brochure-form');
+    const errorEl = document.getElementById('bf-error');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const downloadHref = '../assets/pdf/elegie-duino-brochure.pdf';
+
+    const openModal = () => {
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      body.style.display = '';
+      success.classList.remove('is-visible');
+    };
+    const closeModal = () => {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    };
+
+    document.querySelectorAll('[data-open-brochure]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    });
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.querySelectorAll('[data-close-modal]').forEach(el => {
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.remove('is-visible');
+      submitBtn.disabled = true;
+      submitBtn.querySelector('.btn__label').textContent = 'Sending…';
+
+      const data = new FormData(form);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: data,
+        });
+        const json = await res.json();
+        if (json.success) {
+          body.style.display = 'none';
+          success.classList.add('is-visible');
+          window.open(downloadHref, '_blank');
+        } else {
+          throw new Error(json.message || 'submit failed');
+        }
+      } catch (err) {
+        errorEl.classList.add('is-visible');
+        errorEl.textContent = 'Something went wrong (' + (err.message || 'network') + '). Please try again or write to duino@triestevillas.com.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.querySelector('.btn__label').textContent = 'Receive the brochure';
+      }
+    });
+  })();
+
   (function () {
     document.querySelectorAll('.slideshow').forEach(slideshow => {
       const viewport = slideshow.querySelector('.slideshow__viewport');
