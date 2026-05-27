@@ -135,24 +135,23 @@ p:last-child { margin-bottom: 0; }
   border-bottom-color: var(--rule);
 }
 .nav__brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-sans);
-  font-size: var(--fs-xs);
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--cream);
-  transition: color 0.4s var(--ease);
 }
-.nav.is-scrolled .nav__brand { color: var(--ink); }
-.nav__brand-mark {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: var(--fs-md);
-  letter-spacing: 0;
-  text-transform: none;
-  font-weight: 500;
+.nav__logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  filter: invert(1);
+  transition: filter 0.4s var(--ease), opacity 0.25s var(--ease);
+  opacity: 0.95;
+}
+.nav.is-scrolled .nav__logo {
+  filter: none;
+}
+.nav__brand:hover .nav__logo { opacity: 1; }
+@media (max-width: 720px) {
+  .nav__logo { height: 36px; }
 }
 .nav__links {
   display: flex;
