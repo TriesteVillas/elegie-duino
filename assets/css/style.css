@@ -784,6 +784,58 @@ html[lang="en"] .slide__num {
   margin-bottom: 0.6rem;
 }
 
+/* Sold / Venduto status ----------------------------------------------------- */
+.sold-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #9a3a2e;
+  border: 1px solid rgba(154, 58, 46, 0.5);
+  background: rgba(154, 58, 46, 0.06);
+  padding: 0.3em 0.7em;
+  border-radius: 999px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.sold-price {
+  text-decoration: line-through;
+  color: var(--mute-2);
+  margin-right: 0.6em;
+}
+.listing tbody tr.sold-row td {
+  color: var(--mute-2);
+}
+.listing tbody tr.sold-row td:first-child {
+  color: var(--mute);
+}
+.listing tbody tr.sold-row td:last-child {
+  text-align: right;
+}
+.slide--sold {
+  border-color: rgba(154, 58, 46, 0.45);
+}
+.slide__media--sold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.slide__sold-badge {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #9a3a2e;
+  border: 1px solid rgba(154, 58, 46, 0.5);
+  background: rgba(154, 58, 46, 0.06);
+  padding: 0.7em 1.5em;
+  border-radius: 999px;
+}
+
 .slideshow__controls {
   display: flex;
   justify-content: space-between;
