@@ -235,7 +235,7 @@ p:last-child { margin-bottom: 0; }
 .hero__content {
   position: relative;
   align-self: end;
-  padding: 0 var(--gutter) clamp(3rem, 8vh, 6rem);
+  padding: 7rem var(--gutter) clamp(3rem, 8vh, 6rem);
   max-width: var(--container);
   margin: 0 auto;
   width: 100%;
@@ -263,11 +263,11 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: clamp(3rem, 9vw, var(--fs-4xl));
-  line-height: 0.95;
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0 0 1.2rem;
-  max-width: 14ch;
+  max-width: 22ch;
 }
 .hero__lede {
   font-family: var(--font-body);
@@ -787,9 +787,9 @@ html[lang="en"] .slide__num {
 /* Hero logo ------------------------------------------------------------------ */
 .hero__logo {
   display: block;
-  width: clamp(250px, 34vw, 460px);
+  width: clamp(320px, 44vw, 620px);
   height: auto;
-  margin-bottom: clamp(1.2rem, 3vh, 2rem);
+  margin: 0 auto clamp(1.2rem, 3vh, 2rem);
   filter: drop-shadow(0 1px 12px rgba(0, 0, 0, 0.25));
 }
 .hero__cta {
@@ -798,6 +798,47 @@ html[lang="en"] .slide__num {
 
 /* Utility */
 .is-hidden { display: none !important; }
+
+/* Prospetti full-width sotto la hero ------------------------------------------ */
+.elevations {
+  margin: 0;
+  background: var(--cream);
+}
+.elevations img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Validità prezzi sotto i prezzi ----------------------------------------------- */
+.slide__validity {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--mute);
+  margin-top: 0.4em;
+  white-space: nowrap;
+}
+.planbox__validity {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--mute);
+  margin-top: 0.4em;
+  white-space: nowrap;
+}
+.keyplan__note {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--mute);
+  line-height: 1.6;
+  margin: 1.2rem 0 0;
+  max-width: 78ch;
+}
 
 /* Keyplan interattiva --------------------------------------------------------- */
 .keyplan {
