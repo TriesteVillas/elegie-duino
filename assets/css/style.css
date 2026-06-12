@@ -1051,6 +1051,21 @@ html[lang="en"] .planbox__num {
   color: var(--cream);
 }
 
+/* Modal richiesta informazioni (Airtable embed) ------------------------------ */
+.modal__panel--wide {
+  max-width: 780px;
+  width: 100%;
+}
+.modal__iframe {
+  display: block;
+  width: 100%;
+  height: min(70vh, 720px);
+  border: 0;
+  border-radius: 6px;
+  background: var(--cream-2);
+  margin-top: 1.2rem;
+}
+
 /* Sold / Venduto status ----------------------------------------------------- */
 .sold-tag {
   display: inline-block;

@@ -55,7 +55,7 @@
     <h1 class="hero__title">Otto residenze tra il Carso e il mare.</h1>
     <p class="hero__lede">Un'iniziativa di Ennio Riccesi Holding in Località Duino 69/A. Struttura X-LAM, classe A NZEB, giardini privati e terrazze affacciate sul Golfo di Trieste.</p>
     <div class="hero__cta">
-      <a class="btn btn--solid" href="https://airtable.com/app1ZDay9vQNU5V2u/tbl1RolmcvI7WxDdr/viwaPBaEf6cQBk9Jo?blocks=hide" target="_blank" rel="noopener">Richiedi informazioni</a>
+      <a class="btn btn--solid" href="https://airtable.com/app1ZDay9vQNU5V2u/pagzLV4zx6J0X85xt/form" target="_blank" rel="noopener" data-open-info>Richiedi informazioni</a>
     </div>
     <dl class="hero__meta">
       <div><dt>Unità</dt><dd>8 residenze</dd></div>
@@ -639,6 +639,19 @@
   </div>
 </div>
 
+<!-- Modal richiesta informazioni -->
+<div class="modal" id="info-modal" role="dialog" aria-modal="true" aria-label="Richiesta informazioni">
+  <div class="modal__panel modal__panel--wide">
+    <button type="button" class="modal__close" data-close-info aria-label="Chiudi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="modal__eyebrow">Elegie Duino</div>
+    <h2 class="modal__title">Richiesta informazioni</h2>
+    <p class="modal__lede">Lasciate i vostri recapiti: vi ricontatteremo al più presto.</p>
+    <iframe id="info-frame" class="modal__iframe" title="Modulo richiesta informazioni" src="about:blank"></iframe>
+  </div>
+</div>
+
 <div class="planbox" id="planbox" hidden role="dialog" aria-modal="true" aria-label="Planimetria unità">
   <div class="planbox__backdrop" data-planbox-close></div>
   <figure class="planbox__panel">
@@ -659,6 +672,33 @@
 </div>
 
 <script>
+  // Modal richiesta informazioni (form Airtable in embed)
+  (function () {
+    const modal = document.getElementById('info-modal');
+    if (!modal) return;
+    const frame = document.getElementById('info-frame');
+    const FORM = 'https://airtable.com/embed/app1ZDay9vQNU5V2u/pagzLV4zx6J0X85xt/form';
+    const open = () => {
+      const now = new Date().toISOString();
+      frame.src = FORM
+        + '?prefill_canale=ElegieDuino_Web&hide_canale=true'
+        + '&prefill_data_contatto=' + encodeURIComponent(now) + '&hide_data_contatto=true';
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    };
+    const close = () => {
+      modal.classList.remove('is-open');
+      document.body.style.overflow = '';
+      frame.src = 'about:blank';
+    };
+    document.querySelectorAll('[data-open-info]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); open(); });
+    });
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    modal.querySelectorAll('[data-close-info]').forEach(el => el.addEventListener('click', close));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+  })();
+
   // Keyplan interattiva → lightbox planimetria
   (function () {
     const box = document.getElementById('planbox');
