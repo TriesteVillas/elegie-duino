@@ -784,6 +784,217 @@ html[lang="en"] .slide__num {
   margin-bottom: 0.6rem;
 }
 
+/* Hero logo ------------------------------------------------------------------ */
+.hero__logo {
+  display: block;
+  width: clamp(170px, 24vw, 280px);
+  height: auto;
+  margin-bottom: clamp(1.2rem, 3vh, 2rem);
+  filter: drop-shadow(0 1px 12px rgba(0, 0, 0, 0.25));
+}
+
+/* Keyplan interattiva --------------------------------------------------------- */
+.keyplan {
+  margin-top: clamp(2.5rem, 6vh, 4.5rem);
+}
+.keyplan__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.5rem;
+  border-top: 1px solid var(--ink);
+  padding-top: 1.4rem;
+}
+.keyplan__title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--fs-lg);
+  color: var(--ink);
+  margin: 0;
+}
+html[lang="en"] .keyplan__title {
+  font-family: var(--font-sans);
+  font-style: normal;
+}
+.keyplan__hint {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin: 0;
+}
+.keyplan__floors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 2vw, 1.6rem);
+  margin-top: 1.6rem;
+}
+@media (max-width: 880px) {
+  .keyplan__floors { grid-template-columns: 1fr; }
+}
+.keyplan__floor {
+  margin: 0;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+}
+.keyplan__media {
+  position: relative;
+  background: #fff;
+}
+.keyplan__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.keyplan__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.keyplan__area {
+  fill: transparent;
+  stroke: transparent;
+  cursor: pointer;
+  transition: fill 0.2s var(--ease), stroke 0.2s var(--ease);
+}
+.keyplan__area:hover,
+.keyplan__area:focus-visible {
+  fill: rgba(26, 26, 26, 0.16);
+  stroke: rgba(26, 26, 26, 0.55);
+  stroke-width: 2.5;
+  outline: none;
+}
+.keyplan__area--sold:hover,
+.keyplan__area--sold:focus-visible {
+  fill: rgba(154, 58, 46, 0.20);
+  stroke: rgba(154, 58, 46, 0.6);
+}
+.keyplan__caption {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mute);
+  padding: 1rem 1.2rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* Planbox (lightbox planimetria) ---------------------------------------------- */
+.planbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.8rem, 3vw, 2rem);
+}
+.planbox[hidden] { display: none; }
+.planbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(26, 26, 26, 0.6);
+  cursor: pointer;
+}
+.planbox__panel {
+  position: relative;
+  margin: 0;
+  width: min(880px, 100%);
+  max-height: 92vh;
+  background: var(--cream);
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+.planbox__media {
+  background: #fff;
+  overflow: auto;
+  min-height: 0;
+}
+.planbox__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+  padding: 1.2rem;
+  box-sizing: border-box;
+}
+.planbox__sold {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  max-height: 68vh;
+}
+.planbox__caption {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.2rem;
+  align-items: baseline;
+  padding: 1.2rem 1.5rem 1.3rem;
+  border-top: 1px solid var(--rule);
+}
+.planbox__num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: var(--fs-2xl);
+  line-height: 1;
+  color: var(--ink);
+}
+html[lang="en"] .planbox__num {
+  font-family: var(--font-sans);
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+.planbox__title {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 0.4em;
+}
+.planbox__meta {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--mute);
+  letter-spacing: 0.04em;
+}
+.planbox__price {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+  color: var(--ink);
+  white-space: nowrap;
+}
+.planbox__close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 2;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--rule);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+.planbox__close:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
 /* Sold / Venduto status ----------------------------------------------------- */
 .sold-tag {
   display: inline-block;
