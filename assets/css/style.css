@@ -787,11 +787,17 @@ html[lang="en"] .slide__num {
 /* Hero logo ------------------------------------------------------------------ */
 .hero__logo {
   display: block;
-  width: clamp(170px, 24vw, 280px);
+  width: clamp(250px, 34vw, 460px);
   height: auto;
   margin-bottom: clamp(1.2rem, 3vh, 2rem);
   filter: drop-shadow(0 1px 12px rgba(0, 0, 0, 0.25));
 }
+.hero__cta {
+  margin-top: clamp(1.6rem, 3vh, 2.4rem);
+}
+
+/* Utility */
+.is-hidden { display: none !important; }
 
 /* Keyplan interattiva --------------------------------------------------------- */
 .keyplan {
@@ -828,12 +834,12 @@ html[lang="en"] .keyplan__title {
 }
 .keyplan__floors {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(1rem, 2vw, 1.6rem);
+  grid-template-columns: 1fr;
+  gap: clamp(1.4rem, 3vw, 2.4rem);
   margin-top: 1.6rem;
 }
-@media (max-width: 880px) {
-  .keyplan__floors { grid-template-columns: 1fr; }
+.plans .keyplan {
+  margin: clamp(2rem, 5vh, 3.5rem) var(--gutter) 0;
 }
 .keyplan__floor {
   margin: 0;
@@ -931,6 +937,15 @@ html[lang="en"] .keyplan__title {
   justify-content: center;
   aspect-ratio: 4 / 3;
   max-height: 68vh;
+}
+.planbox__sold[hidden] { display: none; }
+.planbox__note {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--mute);
+  margin: 0;
+  padding: 0 1.5rem 1.3rem;
 }
 .planbox__caption {
   display: grid;
