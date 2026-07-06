@@ -198,12 +198,11 @@
           <tr><td>1</td><td>Ground</td><td>2-bed</td><td>2</td><td>2</td><td>97 m²</td><td>280 m²</td><td>€ 441,000</td></tr>
           <tr><td>2</td><td>Ground</td><td>2-bed</td><td>2</td><td>2</td><td>97 m²</td><td>52 m²</td><td>€ 396,000</td></tr>
           <tr><td>3</td><td>Ground</td><td>1-bed</td><td>1</td><td>1</td><td>70 m²</td><td>47 m²</td><td>€ 288,000</td></tr>
-          <tr><td>4</td><td>Ground</td><td>2-bed</td><td>2</td><td>2</td><td>102 m²</td><td>226 m²</td><td>€ 459,000</td></tr>
+          <tr class="sold-row"><td>4</td><td>Ground</td><td>2-bed</td><td>2</td><td>2</td><td>102 m²</td><td>226 m²</td><td><span class="sold-tag">Sold</span></td></tr>
           <tr class="sold-row"><td>5</td><td>First</td><td>2-bed</td><td>2</td><td>2</td><td>97 m²</td><td>—</td><td><span class="sold-tag">Sold</span></td></tr>
           <tr><td>6</td><td>First</td><td>2-bed</td><td>2</td><td>2</td><td>97 m²</td><td>—</td><td>€ 351,000</td></tr>
           <tr><td>7</td><td>First</td><td>1-bed</td><td>1</td><td>1</td><td>70 m²</td><td>—</td><td>€ 261,000</td></tr>
           <tr><td>8</td><td>First</td><td>2-bed</td><td>2</td><td>2</td><td>102 m²</td><td>—</td><td>€ 396,000</td></tr>
-          <tr class="duplex-row"><td>4 + 8</td><td>Duplex</td><td>2-bed duplex</td><td>4</td><td>4</td><td>204 m²</td><td>226 m²</td><td>€ 855,000</td></tr>
         </tbody>
       </table>
     </div>
@@ -222,7 +221,7 @@
       </div>
       <div class="section-head__body">
         <p>Each unit is designed with its own internal layout, optimised for orientation and outlook. Ground-floor units feature a private garden and veranda; first-floor units a terrace.</p>
-        <p class="plans__merge-note">Vertically adjacent units can be combined into a single residence arranged on two levels. Example: <strong>4 + 8</strong> as a duplex layout.</p>
+        <p class="plans__merge-note">Vertically adjacent units can be combined into a single residence arranged on two levels.</p>
       </div>
     </div>
   </div>
@@ -240,7 +239,7 @@
             <polygon class="keyplan__area" data-unit="1" tabindex="0" role="button" aria-label="Unit 1 — open floor plan" points="206,278 406,278 406,545 300,545 300,367 206,367"></polygon>
             <polygon class="keyplan__area" data-unit="2" tabindex="0" role="button" aria-label="Unit 2 — open floor plan" points="467,253 656,253 656,495 561,495 561,334 467,334"></polygon>
             <polygon class="keyplan__area" data-unit="3" tabindex="0" role="button" aria-label="Unit 3 — open floor plan" points="406,445 472,445 472,350 561,350 561,522 406,522"></polygon>
-            <polygon class="keyplan__area" data-unit="4" tabindex="0" role="button" aria-label="Unit 4 — open floor plan" points="639,322 900,322 900,472 639,472"></polygon>
+            <polygon class="keyplan__area keyplan__area--sold" data-unit="4" tabindex="0" role="button" aria-label="Unit 4 — sold" points="639,322 900,322 900,472 639,472"></polygon>
           </svg>
         </div>
         <figcaption class="keyplan__caption">Ground floor · Units 1–4</figcaption>
@@ -258,7 +257,7 @@
         <figcaption class="keyplan__caption">First floor · Units 5–8</figcaption>
       </figure>
     </div>
-    <p class="keyplan__note">All parking spaces are outdoor and uncovered, located along the internal driveway and independent of the units: each apartment includes one, and 4 additional spaces are available at € 20,000 each. Units 1 and 4 can also accommodate one or more cars within their private garden.</p>
+    <p class="keyplan__note">All parking spaces are outdoor and uncovered, located along the internal driveway and independent of the units: each apartment includes one, and 4 additional spaces are available at € 20,000 each. Unit 1 can also accommodate one or more cars within its private garden.</p>
   </div>
 
   <div class="slideshow reveal" id="slideshow-en">
@@ -300,15 +299,17 @@
         </div>
       </article>
 
-      <article class="slide">
-        <div class="slide__media"><img src="../assets/planimetrie/unit-4.jpg" alt="Floor plan unit 4 — ground floor, 2-bedroom with 226 sqm outdoor area" loading="lazy"></div>
+      <article class="slide slide--sold">
+        <div class="slide__media slide__media--sold">
+          <span class="slide__sold-badge">Sold</span>
+        </div>
         <div class="slide__caption">
           <div class="slide__num">04</div>
           <div>
             <div class="slide__title">Unit 4 · Ground floor</div>
-            <div class="slide__meta">2-bed · 2 bedrooms · 2 baths · 102 m² commercial · 226 m² outdoor area · Parking within the private garden</div>
+            <div class="slide__meta">2-bed · 2 bedrooms · 2 baths · 102 m² commercial · 226 m² outdoor area</div>
           </div>
-          <div class="slide__price">€ 459,000<span class="slide__validity">Prices excluding VAT · valid until 31 July 2026</span></div>
+          <div class="slide__price"><span class="sold-tag">Sold</span></div>
         </div>
       </article>
 
@@ -359,32 +360,6 @@
             <div class="slide__meta">2-bed · 2 bedrooms · 2 baths · 102 m² commercial · Outdoor parking space included</div>
           </div>
           <div class="slide__price">€ 396,000<span class="slide__validity">Prices excluding VAT · valid until 31 July 2026</span></div>
-        </div>
-      </article>
-
-      <article class="slide slide--duplex">
-        <div class="slide__media"><img src="../assets/planimetrie/duplex-4-8-ground.jpg" alt="Units 4 and 8 combined — duplex ground floor" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">4 + 8</div>
-          <div>
-            <span class="slide__tag">Combined duplex</span>
-            <div class="slide__title">Ground floor of duplex 4 + 8</div>
-            <div class="slide__meta">2-bed duplex · 4 bedrooms · 4 baths · 204 m² commercial · 226 m² outdoor area · Garden parking plus outdoor space</div>
-          </div>
-          <div class="slide__price">€ 855,000<span class="slide__validity">Prices excluding VAT · valid until 31 July 2026</span></div>
-        </div>
-      </article>
-
-      <article class="slide slide--duplex">
-        <div class="slide__media"><img src="../assets/planimetrie/duplex-4-8-upper.jpg" alt="Units 4 and 8 combined — duplex upper floor" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">4 + 8</div>
-          <div>
-            <span class="slide__tag">Combined duplex</span>
-            <div class="slide__title">Upper floor of duplex 4 + 8</div>
-            <div class="slide__meta">2-bed duplex · 4 bedrooms · 4 baths · 204 m² commercial · 226 m² outdoor area · Garden parking plus outdoor space</div>
-          </div>
-          <div class="slide__price">€ 855,000<span class="slide__validity">Prices excluding VAT · valid until 31 July 2026</span></div>
         </div>
       </article>
 
@@ -679,7 +654,7 @@
       1: { img: '../assets/planimetrie/unit-1.jpg', title: 'Unit 1 · Ground floor', meta: '2-bed · 2 bedrooms · 2 baths · 97 m² commercial · 280 m² outdoor area · Parking within the private garden', price: '€ 441,000' },
       2: { img: '../assets/planimetrie/unit-2.jpg', title: 'Unit 2 · Ground floor', meta: '2-bed · 2 bedrooms · 2 baths · 97 m² commercial · 52 m² outdoor area · Outdoor parking space included', price: '€ 396,000' },
       3: { img: '../assets/planimetrie/unit-3.jpg', title: 'Unit 3 · Ground floor', meta: '1-bed · 1 bedroom · 1 bath · 70 m² commercial · 47 m² outdoor area · Outdoor parking space included', price: '€ 288,000' },
-      4: { img: '../assets/planimetrie/unit-4.jpg', title: 'Unit 4 · Ground floor', meta: '2-bed · 2 bedrooms · 2 baths · 102 m² commercial · 226 m² outdoor area · Parking within the private garden', price: '€ 459,000' },
+      4: { img: null, title: 'Unit 4 · Ground floor', meta: '2-bed · 2 bedrooms · 2 baths · 102 m² commercial · 226 m² outdoor area', sold: true },
       5: { img: null, title: 'Unit 5 · First floor', meta: '2-bed · 2 bedrooms · 2 baths · 97 m² commercial', sold: true },
       6: { img: '../assets/planimetrie/unit-6.jpg', title: 'Unit 6 · First floor', meta: '2-bed · 2 bedrooms · 2 baths · 97 m² commercial · Outdoor parking space included', price: '€ 351,000' },
       7: { img: '../assets/planimetrie/unit-7.jpg', title: 'Unit 7 · First floor', meta: '1-bed · 1 bedroom · 1 bath · 70 m² commercial · Outdoor parking space included', price: '€ 261,000' },

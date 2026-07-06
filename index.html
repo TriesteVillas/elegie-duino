@@ -198,12 +198,11 @@
           <tr><td>1</td><td>Terra</td><td>Trilocale</td><td>2</td><td>2</td><td>97 m²</td><td>280 m²</td><td>€ 441.000</td></tr>
           <tr><td>2</td><td>Terra</td><td>Trilocale</td><td>2</td><td>2</td><td>97 m²</td><td>52 m²</td><td>€ 396.000</td></tr>
           <tr><td>3</td><td>Terra</td><td>Bilocale</td><td>1</td><td>1</td><td>70 m²</td><td>47 m²</td><td>€ 288.000</td></tr>
-          <tr><td>4</td><td>Terra</td><td>Trilocale</td><td>2</td><td>2</td><td>102 m²</td><td>226 m²</td><td>€ 459.000</td></tr>
+          <tr class="sold-row"><td>4</td><td>Terra</td><td>Trilocale</td><td>2</td><td>2</td><td>102 m²</td><td>226 m²</td><td><span class="sold-tag">Venduto</span></td></tr>
           <tr class="sold-row"><td>5</td><td>Primo</td><td>Trilocale</td><td>2</td><td>2</td><td>97 m²</td><td>—</td><td><span class="sold-tag">Venduto</span></td></tr>
           <tr><td>6</td><td>Primo</td><td>Trilocale</td><td>2</td><td>2</td><td>97 m²</td><td>—</td><td>€ 351.000</td></tr>
           <tr><td>7</td><td>Primo</td><td>Bilocale</td><td>1</td><td>1</td><td>70 m²</td><td>—</td><td>€ 261.000</td></tr>
           <tr><td>8</td><td>Primo</td><td>Trilocale</td><td>2</td><td>2</td><td>102 m²</td><td>—</td><td>€ 396.000</td></tr>
-          <tr class="duplex-row"><td>4 + 8</td><td>Duplex</td><td>Trilocale duplex</td><td>4</td><td>4</td><td>204 m²</td><td>226 m²</td><td>€ 855.000</td></tr>
         </tbody>
       </table>
     </div>
@@ -222,7 +221,7 @@
       </div>
       <div class="section-head__body">
         <p>Ciascuna unità è progettata con un proprio impianto distributivo, ottimizzato per esposizione e affaccio. Le unità al piano terra dispongono di giardino privato e veranda; quelle al piano primo di terrazza.</p>
-        <p class="plans__merge-note">Le unità accoppiate verticalmente possono essere accorpate in un'unica residenza disposta su due livelli. Esempio: <strong>4 + 8</strong> in soluzione duplex.</p>
+        <p class="plans__merge-note">Le unità accoppiate verticalmente possono essere accorpate in un'unica residenza disposta su due livelli.</p>
       </div>
     </div>
   </div>
@@ -240,7 +239,7 @@
             <polygon class="keyplan__area" data-unit="1" tabindex="0" role="button" aria-label="Unità 1 — apri la planimetria" points="206,278 406,278 406,545 300,545 300,367 206,367"></polygon>
             <polygon class="keyplan__area" data-unit="2" tabindex="0" role="button" aria-label="Unità 2 — apri la planimetria" points="467,253 656,253 656,495 561,495 561,334 467,334"></polygon>
             <polygon class="keyplan__area" data-unit="3" tabindex="0" role="button" aria-label="Unità 3 — apri la planimetria" points="406,445 472,445 472,350 561,350 561,522 406,522"></polygon>
-            <polygon class="keyplan__area" data-unit="4" tabindex="0" role="button" aria-label="Unità 4 — apri la planimetria" points="639,322 900,322 900,472 639,472"></polygon>
+            <polygon class="keyplan__area keyplan__area--sold" data-unit="4" tabindex="0" role="button" aria-label="Unità 4 — venduta" points="639,322 900,322 900,472 639,472"></polygon>
           </svg>
         </div>
         <figcaption class="keyplan__caption">Piano terra · Unità 1–4</figcaption>
@@ -258,7 +257,7 @@
         <figcaption class="keyplan__caption">Piano primo · Unità 5–8</figcaption>
       </figure>
     </div>
-    <p class="keyplan__note">Tutti i posti auto sono esterni e scoperti, collocati lungo la viabilità interna e indipendenti dalle unità: ogni appartamento ne include uno e 4 ulteriori sono disponibili a € 20.000 ciascuno. Le unità 1 e 4 possono inoltre ospitare una o più automobili all'interno del proprio giardino privato.</p>
+    <p class="keyplan__note">Tutti i posti auto sono esterni e scoperti, collocati lungo la viabilità interna e indipendenti dalle unità: ogni appartamento ne include uno e 4 ulteriori sono disponibili a € 20.000 ciascuno. L'unità 1 può inoltre ospitare una o più automobili all'interno del proprio giardino privato.</p>
   </div>
 
   <div class="slideshow reveal" id="slideshow-it">
@@ -300,15 +299,17 @@
         </div>
       </article>
 
-      <article class="slide">
-        <div class="slide__media"><img src="./assets/planimetrie/unit-4.jpg" alt="Planimetria unità 4 — piano terra, trilocale con area esterna 226 m²" loading="lazy"></div>
+      <article class="slide slide--sold">
+        <div class="slide__media slide__media--sold">
+          <span class="slide__sold-badge">Venduto</span>
+        </div>
         <div class="slide__caption">
           <div class="slide__num">04</div>
           <div>
             <div class="slide__title">Unità 4 · Piano terra</div>
-            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 102 m² commerciali · 226 m² area esterna · Parcheggio nel giardino privato</div>
+            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 102 m² commerciali · 226 m² area esterna</div>
           </div>
-          <div class="slide__price">€ 459.000<span class="slide__validity">Prezzi IVA esclusa · validi fino al 31.07.2026</span></div>
+          <div class="slide__price"><span class="sold-tag">Venduto</span></div>
         </div>
       </article>
 
@@ -359,32 +360,6 @@
             <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 102 m² commerciali · Posto auto esterno incluso</div>
           </div>
           <div class="slide__price">€ 396.000<span class="slide__validity">Prezzi IVA esclusa · validi fino al 31.07.2026</span></div>
-        </div>
-      </article>
-
-      <article class="slide slide--duplex">
-        <div class="slide__media"><img src="./assets/planimetrie/duplex-4-8-ground.jpg" alt="Accorpamento unità 4 e 8 — duplex piano terra" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">4 + 8</div>
-          <div>
-            <span class="slide__tag">Duplex accorpato</span>
-            <div class="slide__title">Piano terra del duplex 4 + 8</div>
-            <div class="slide__meta">Trilocale duplex · 4 camere · 4 bagni · 204 m² commerciali · 226 m² area esterna · Parcheggio nel giardino e posto auto esterno</div>
-          </div>
-          <div class="slide__price">€ 855.000<span class="slide__validity">Prezzi IVA esclusa · validi fino al 31.07.2026</span></div>
-        </div>
-      </article>
-
-      <article class="slide slide--duplex">
-        <div class="slide__media"><img src="./assets/planimetrie/duplex-4-8-upper.jpg" alt="Accorpamento unità 4 e 8 — duplex piano primo" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">4 + 8</div>
-          <div>
-            <span class="slide__tag">Duplex accorpato</span>
-            <div class="slide__title">Piano primo del duplex 4 + 8</div>
-            <div class="slide__meta">Trilocale duplex · 4 camere · 4 bagni · 204 m² commerciali · 226 m² area esterna · Parcheggio nel giardino e posto auto esterno</div>
-          </div>
-          <div class="slide__price">€ 855.000<span class="slide__validity">Prezzi IVA esclusa · validi fino al 31.07.2026</span></div>
         </div>
       </article>
 
@@ -679,7 +654,7 @@
       1: { img: './assets/planimetrie/unit-1.jpg', title: 'Unità 1 · Piano terra', meta: 'Trilocale · 2 camere · 2 bagni · 97 m² commerciali · 280 m² area esterna · Parcheggio nel giardino privato', price: '€ 441.000' },
       2: { img: './assets/planimetrie/unit-2.jpg', title: 'Unità 2 · Piano terra', meta: 'Trilocale · 2 camere · 2 bagni · 97 m² commerciali · 52 m² area esterna · Posto auto esterno incluso', price: '€ 396.000' },
       3: { img: './assets/planimetrie/unit-3.jpg', title: 'Unità 3 · Piano terra', meta: 'Bilocale · 1 camera · 1 bagno · 70 m² commerciali · 47 m² area esterna · Posto auto esterno incluso', price: '€ 288.000' },
-      4: { img: './assets/planimetrie/unit-4.jpg', title: 'Unità 4 · Piano terra', meta: 'Trilocale · 2 camere · 2 bagni · 102 m² commerciali · 226 m² area esterna · Parcheggio nel giardino privato', price: '€ 459.000' },
+      4: { img: null, title: 'Unità 4 · Piano terra', meta: 'Trilocale · 2 camere · 2 bagni · 102 m² commerciali · 226 m² area esterna', sold: true },
       5: { img: null, title: 'Unità 5 · Piano primo', meta: 'Trilocale · 2 camere · 2 bagni · 97 m² commerciali', sold: true },
       6: { img: './assets/planimetrie/unit-6.jpg', title: 'Unità 6 · Piano primo', meta: 'Trilocale · 2 camere · 2 bagni · 97 m² commerciali · Posto auto esterno incluso', price: '€ 351.000' },
       7: { img: './assets/planimetrie/unit-7.jpg', title: 'Unità 7 · Piano primo', meta: 'Bilocale · 1 camera · 1 bagno · 70 m² commerciali · Posto auto esterno incluso', price: '€ 261.000' },
