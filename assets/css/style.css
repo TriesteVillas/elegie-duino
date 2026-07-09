@@ -784,6 +784,22 @@ html[lang="en"] .slide__num {
   margin-bottom: 0.6rem;
 }
 
+/* Unit caption — stack on phones so title/meta/price aren't crushed ---------- */
+@media (max-width: 640px) {
+  .slide__caption,
+  .planbox__caption {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 1rem;
+    row-gap: 0.7rem;
+    align-items: start;
+  }
+  .slide__price,
+  .planbox__price {
+    grid-column: 1 / -1;
+    white-space: normal;
+  }
+}
+
 /* Hero logo ------------------------------------------------------------------ */
 .hero__logo {
   display: block;
