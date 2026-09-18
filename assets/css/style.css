@@ -1663,3 +1663,15 @@ html[lang="en"] .modal__title {
     transform: none;
   }
 }
+
+/* ── Banner consenso cookie (gemello dei siti Next del gruppo) ─────────────── */
+.cc-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; background: var(--cream, #fbfaf6);
+  border-top: 1px solid var(--rule, rgba(26,26,26,.12)); box-shadow: 0 -12px 40px -24px rgba(26,26,26,.5); }
+.cc-inner { margin: 0 auto; max-width: 72rem; padding: .9rem 1rem 1.1rem; display: flex; flex-direction: column; gap: .75rem; }
+@media (min-width: 768px) { .cc-inner { flex-direction: row; align-items: center; justify-content: space-between; padding: .9rem 1.5rem; gap: 1.5rem; } }
+.cc-text { font-family: var(--font-sans); font-size: .8125rem; line-height: 1.6; color: var(--ink-soft, #2c2c2c); margin: 0; }
+.cc-link { color: var(--sage-d, #5e6e54); text-decoration: underline; text-underline-offset: 3px; }
+.cc-actions { display: flex; gap: .6rem; flex-shrink: 0; }
+.cc-btn { flex: 1 1 auto; white-space: nowrap; border-radius: 9999px; border: 1px solid var(--sage-d, #5e6e54); background: transparent;
+  color: var(--sage-d, #5e6e54); font-family: var(--font-sans); font-size: .8125rem; font-weight: 600; padding: .55rem 1.35rem; cursor: pointer; }
+.cc-btn:hover { background: var(--sage-d, #5e6e54); color: #fff; }
