@@ -1,0 +1,14 @@
+# Controlla che le varianti AVIF/WebP servite dalle pagine siano state
+# rigenerate dopo ogni cambio di un originale (scripts/varianti.py --verifica).
+# Non pubblica nulla: il sito lo pubblica GitHub Pages dal ramo main.
+name: varianti immagini
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  verifica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/varianti.py --verifica

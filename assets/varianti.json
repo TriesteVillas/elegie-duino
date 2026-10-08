@@ -1,0 +1,172 @@
+{
+ "assets/images/exterior-sunset-garden.jpg": {
+  "sha256": "d8f4c91e087daa2df8cb1cfcf91bc0fcd6025f51216a8f61153104f0fbf53a9d",
+  "varianti": [
+   "assets/images/resp/exterior-sunset-garden-1280.avif",
+   "assets/images/resp/exterior-sunset-garden-1280.webp",
+   "assets/images/resp/exterior-sunset-garden-1920.avif",
+   "assets/images/resp/exterior-sunset-garden-1920.webp",
+   "assets/images/resp/exterior-sunset-garden-2400.avif",
+   "assets/images/resp/exterior-sunset-garden-2400.webp",
+   "assets/images/resp/exterior-sunset-garden-portrait-750.avif",
+   "assets/images/resp/exterior-sunset-garden-portrait-750.webp",
+   "assets/images/resp/exterior-sunset-garden-portrait-1004.avif",
+   "assets/images/resp/exterior-sunset-garden-portrait-1004.webp"
+  ]
+ },
+ "assets/images/prospetti.jpg": {
+  "sha256": "8a8e45dc95b4af3370ba3c074c374b6b818fed9653bfbbb3baf34a8e1c5319e3",
+  "varianti": [
+   "assets/images/resp/prospetti-800.avif",
+   "assets/images/resp/prospetti-800.webp",
+   "assets/images/resp/prospetti-1200.avif",
+   "assets/images/resp/prospetti-1200.webp",
+   "assets/images/resp/prospetti-1600.avif",
+   "assets/images/resp/prospetti-1600.webp",
+   "assets/images/resp/prospetti-2400.avif",
+   "assets/images/resp/prospetti-2400.webp"
+  ]
+ },
+ "assets/images/exterior-entrance-sunset.jpg": {
+  "sha256": "853c351bdd66e1a50405df5f27da36751e234183c1ee3a87d615f722155396b6",
+  "varianti": [
+   "assets/images/resp/exterior-entrance-sunset-640.avif",
+   "assets/images/resp/exterior-entrance-sunset-640.webp",
+   "assets/images/resp/exterior-entrance-sunset-1024.avif",
+   "assets/images/resp/exterior-entrance-sunset-1024.webp",
+   "assets/images/resp/exterior-entrance-sunset-1600.avif",
+   "assets/images/resp/exterior-entrance-sunset-1600.webp",
+   "assets/images/resp/exterior-entrance-sunset-2000.avif",
+   "assets/images/resp/exterior-entrance-sunset-2000.webp"
+  ]
+ },
+ "assets/images/exterior-garden-glazing.jpg": {
+  "sha256": "8d323bb43ba67731bcf453442f0278688e9bac0b6dca8c24d2e048b56f5008fd",
+  "varianti": [
+   "assets/images/resp/exterior-garden-glazing-640.avif",
+   "assets/images/resp/exterior-garden-glazing-640.webp",
+   "assets/images/resp/exterior-garden-glazing-1024.avif",
+   "assets/images/resp/exterior-garden-glazing-1024.webp",
+   "assets/images/resp/exterior-garden-glazing-1600.avif",
+   "assets/images/resp/exterior-garden-glazing-1600.webp"
+  ]
+ },
+ "assets/images/exterior-garden-corner.jpg": {
+  "sha256": "597ebcf60258a92b60a7c916e64c8f20c656f5c03caf09b4b6f4000eb5d0d2de",
+  "varianti": [
+   "assets/images/resp/exterior-garden-corner-640.avif",
+   "assets/images/resp/exterior-garden-corner-640.webp",
+   "assets/images/resp/exterior-garden-corner-1024.avif",
+   "assets/images/resp/exterior-garden-corner-1024.webp",
+   "assets/images/resp/exterior-garden-corner-1600.avif",
+   "assets/images/resp/exterior-garden-corner-1600.webp"
+  ]
+ },
+ "assets/images/construction-xlam.jpg": {
+  "sha256": "180ee296ee7ca2c49faf1750591f53d99c2e852bd2a1e53b110d220ecf6cfde2",
+  "varianti": [
+   "assets/images/resp/construction-xlam-640.avif",
+   "assets/images/resp/construction-xlam-640.webp",
+   "assets/images/resp/construction-xlam-1024.avif",
+   "assets/images/resp/construction-xlam-1024.webp",
+   "assets/images/resp/construction-xlam-1600.avif",
+   "assets/images/resp/construction-xlam-1600.webp"
+  ]
+ },
+ "assets/images/detail-bathrooms.jpg": {
+  "sha256": "cfbe0cd57b92d801c9c51e9f9ab30a82a9fb02ec4dceec28d73315384a6f3b31",
+  "varianti": [
+   "assets/images/resp/detail-bathrooms-640.avif",
+   "assets/images/resp/detail-bathrooms-640.webp",
+   "assets/images/resp/detail-bathrooms-1024.avif",
+   "assets/images/resp/detail-bathrooms-1024.webp",
+   "assets/images/resp/detail-bathrooms-1600.avif",
+   "assets/images/resp/detail-bathrooms-1600.webp"
+  ]
+ },
+ "assets/images/construction-insulation.jpg": {
+  "sha256": "fa7c8df1330a9b4886081cbf6b358152c4ab3ede04f24992968994afe0849e49",
+  "varianti": [
+   "assets/images/resp/construction-insulation-640.avif",
+   "assets/images/resp/construction-insulation-640.webp",
+   "assets/images/resp/construction-insulation-1024.avif",
+   "assets/images/resp/construction-insulation-1024.webp",
+   "assets/images/resp/construction-insulation-1600.avif",
+   "assets/images/resp/construction-insulation-1600.webp"
+  ]
+ },
+ "assets/images/detail-terrace.jpg": {
+  "sha256": "5696f9889339c1c8e65f2171e0166cf34ad0ab529bc838615143472abde9022a",
+  "varianti": [
+   "assets/images/resp/detail-terrace-640.avif",
+   "assets/images/resp/detail-terrace-640.webp",
+   "assets/images/resp/detail-terrace-1024.avif",
+   "assets/images/resp/detail-terrace-1024.webp",
+   "assets/images/resp/detail-terrace-1600.avif",
+   "assets/images/resp/detail-terrace-1600.webp"
+  ]
+ },
+ "assets/images/terrace-view.jpg": {
+  "sha256": "c973e9dcd79666b4e61423f3624302c28a1cd2f63d919449869a920ef7bcc48a",
+  "varianti": [
+   "assets/images/resp/terrace-view-640.avif",
+   "assets/images/resp/terrace-view-640.webp",
+   "assets/images/resp/terrace-view-1024.avif",
+   "assets/images/resp/terrace-view-1024.webp",
+   "assets/images/resp/terrace-view-1600.avif",
+   "assets/images/resp/terrace-view-1600.webp"
+  ]
+ },
+ "assets/images/exterior-parking.jpg": {
+  "sha256": "2b34c6052bb94e53a7c782a5c27e2680455edadb1713a1bdc22a07504031d758",
+  "varianti": [
+   "assets/images/resp/exterior-parking-640.avif",
+   "assets/images/resp/exterior-parking-640.webp",
+   "assets/images/resp/exterior-parking-1024.avif",
+   "assets/images/resp/exterior-parking-1024.webp",
+   "assets/images/resp/exterior-parking-1600.avif",
+   "assets/images/resp/exterior-parking-1600.webp"
+  ]
+ },
+ "assets/logos/elegie-duino-alpha.png": {
+  "sha256": "5cd8b9747e442ecb04e16e4cc788ef59016ab71651c206742c4f4b17b26d0521",
+  "varianti": [
+   "assets/logos/resp/elegie-duino-alpha-100.webp",
+   "assets/logos/resp/elegie-duino-alpha-100.png",
+   "assets/logos/resp/elegie-duino-alpha-150.webp",
+   "assets/logos/resp/elegie-duino-alpha-150.png"
+  ]
+ },
+ "assets/logos/logo-castello-white.png": {
+  "sha256": "984cbdbafb0d1ba2495eeb98f933318e836664992e5122aff2c45a9ba9bdb64a",
+  "varianti": [
+   "assets/logos/resp/logo-castello-white-640.webp",
+   "assets/logos/resp/logo-castello-white-640.png",
+   "assets/logos/resp/logo-castello-white-960.webp",
+   "assets/logos/resp/logo-castello-white-960.png",
+   "assets/logos/resp/logo-castello-white-1240.webp",
+   "assets/logos/resp/logo-castello-white-1240.png"
+  ]
+ },
+ "assets/logos/riccesi-holding.png": {
+  "sha256": "a16484b8a1775e3da0b56774ea57bc52748bcfdaf8ce6c95cb0e768c3f6b59e9",
+  "varianti": [
+   "assets/logos/resp/riccesi-holding-247.webp",
+   "assets/logos/resp/riccesi-holding-247.png"
+  ]
+ },
+ "assets/logos/soldano.png": {
+  "sha256": "60440f9b745debf5c9d065b4121240d94ac94211c3fde1909585ae5e411f6dfe",
+  "varianti": [
+   "assets/logos/resp/soldano-192.webp",
+   "assets/logos/resp/soldano-192.png"
+  ]
+ },
+ "assets/logos/triestevillas.png": {
+  "sha256": "d53ec268a82a1d87e60a81e7c3d713335d7fd8219cf3e5f7aef1ff052144ae5c",
+  "varianti": [
+   "assets/logos/resp/triestevillas-192.webp",
+   "assets/logos/resp/triestevillas-192.png"
+  ]
+ }
+}
