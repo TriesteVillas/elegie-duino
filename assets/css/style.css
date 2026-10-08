@@ -511,14 +511,14 @@ html[lang="en"] .project__stats dd {
   flex-direction: column;
   gap: 0.8rem;
 }
-.architecture__points h4 {
+.architecture__points h3 {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
   font-size: var(--fs-lg);
   color: var(--ink);
 }
-html[lang="en"] .architecture__points h4 {
+html[lang="en"] .architecture__points h3 {
   font-family: var(--font-sans);
   font-style: normal;
   font-weight: 500;
@@ -1211,7 +1211,7 @@ html[lang="en"] .planbox__num {
   color: var(--beige);
   padding-top: 0.35em;
 }
-.spec__points h4 {
+.spec__points h3 {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
@@ -1219,7 +1219,7 @@ html[lang="en"] .planbox__num {
   margin: 0 0 0.6rem;
   color: var(--cream);
 }
-html[lang="en"] .spec__points h4 {
+html[lang="en"] .spec__points h3 {
   font-family: var(--font-sans);
   font-style: normal;
 }
