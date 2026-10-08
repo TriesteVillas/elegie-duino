@@ -1749,3 +1749,60 @@ html[lang="en"] .modal__title {
 .cc-btn { flex: 1 1 auto; white-space: nowrap; border-radius: 9999px; border: 1px solid var(--sage-d, #5e6e54); background: transparent;
   color: var(--sage-d, #5e6e54); font-family: var(--font-sans); font-size: .8125rem; font-weight: 600; padding: .55rem 1.35rem; cursor: pointer; }
 .cc-btn:hover { background: var(--sage-d, #5e6e54); color: #fff; }
+
+/* ── Trasparenza AI sulle immagini (AI pledge del gruppo, 01/10/2026) ─────────
+   Etichetta in alto a destra su ogni immagine generata o rielaborata con l'AI
+   («AI · rendering», «AI») e sui rendering di progetto fatti senza AI
+   («Rendering»); la nota sotto la galleria spiega le due voci. Le piante non
+   si etichettano. */
+.elevations,
+.place__media,
+.gallery figure { position: relative; }
+.ai-tag {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  z-index: 2;
+  padding: 0.28rem 0.55rem 0.3rem;
+  border-radius: 2px;
+  background: rgba(26, 26, 26, 0.62);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: auto;
+  cursor: help;
+}
+.ai-tag--hero {
+  top: auto;
+  right: auto;
+  left: var(--gutter);
+  bottom: 1rem;
+  background: rgba(26, 26, 26, 0.45);
+}
+.gallery__note {
+  max-width: var(--measure);
+  margin-top: clamp(1.5rem, 3vh, 2.25rem);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--mute);
+}
+
+/* Dati societari nel piede (art. 2250 c.c. e art. 35 DPR 633/72), gli stessi
+   del piede di triestevillas.com. */
+.footer__legal {
+  max-width: var(--container);
+  margin: 1.5rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(214, 209, 197, 0.14);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  text-transform: none;
+  color: var(--mute-2);
+}
