@@ -28,6 +28,27 @@ continua a mostrare la versione vecchia; la Action `varianti immagini`
 ogni push. Le piante (`assets/planimetrie/`) restano JPEG: si caricano solo
 quando si scorre fin lì.
 
+### Immagini e AI: ogni immagine dichiara cos'è
+
+Nessuna immagine del sito è una fotografia. I due rendering di progetto fatti
+senza AI portano l'etichetta «Rendering»; tutte le altre sono passate da un
+modello generativo (Higgsfield, Google) e portano «AI · rendering», o «AI» quando
+non si sa se l'immagine è stata generata per intero (le due di struttura e
+cappotto, che fino all'8/10 erano presentate come «Cantiere»). Sotto la galleria
+una nota spiega le due voci. È la regola del gruppo (AI pledge del 01/10/2026,
+nella KB `progetti/ai-pledge/`): **un'immagine nuova entra con la sua etichetta**
+(`<span class="ai-tag" …>` subito dopo il `<picture>`), le piante no.
+
+### Brochure PDF
+
+`assets/pdf/elegie-duino-brochure.pdf` nasce dal render HTML su Drive
+(`TRIESTEVILLAS_CLAUDE/progetti/elegie_duino_brochure/render/ELEGIE_DUINO_A_apple.html`,
+generato da `concept_apple.py` + `content.py`/`content_en.py`) stampato con Chrome
+headless. L'edizione di ottobre 2026 è quella del 6 luglio con il testo corretto
+sul render: niente più «validi fino al 31.07.2026», recapiti 331 8940822 e
+richieste@, nota sulle immagini AI nelle condizioni. ⚠️ I sorgenti Python su
+Drive hanno ancora i testi di luglio: chi rigenera da lì li corregge prima.
+
 ## Struttura
 
 ```
