@@ -36,4 +36,4 @@ Tutti i testi sono dichiarati `lang="it"` o `lang="en"`. Per modificare un parag
 
 ## Owner
 
-TriesteVillas — `duino@triestevillas.com`
+TriesteVillas — `richieste@triestevillas.com` · 331 8940822 (telefono e WhatsApp)
