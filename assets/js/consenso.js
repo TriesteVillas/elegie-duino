@@ -56,9 +56,11 @@
     });
     document.body.appendChild(bar);
   }
-  // Gli eventi che contano (23/09/2026): un modulo inviato → generate_lead
-  // (param modulo), un clic su telefono/WhatsApp/email → contatto (param canale).
-  // Delegati al documento, in fase di cattura: contano la richiesta, non l'esito.
+  // Gli eventi che contano (23/09/2026): un clic su telefono/WhatsApp/email →
+  // contatto (param canale), delegato al documento.
+  // generate_lead NON più da qui (09/10/2026): contava ogni invio, anche quello
+  // fermato dalla validazione o rifiutato. Ora lo mandano i due moduli della
+  // pagina (informazioni e brochure) solo quando la porta del CRM ha risposto ok.
   function invia(nome, parametri) { try { gtag("event", nome, parametri); } catch (e) {} }
   document.addEventListener("click", function (e) {
     var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
@@ -67,11 +69,6 @@
     if (/^tel:/i.test(h)) invia("contatto", { canale: "telefono" });
     else if (/wa\.me|api\.whatsapp\.com|^whatsapp:/i.test(h)) invia("contatto", { canale: "whatsapp" });
     else if (/^mailto:/i.test(h)) invia("contatto", { canale: "email" });
-  }, true);
-  document.addEventListener("submit", function (e) {
-    var f = e.target;
-    if (!f || f.tagName !== "FORM") return;
-    invia("generate_lead", { modulo: f.id || f.getAttribute("name") || f.getAttribute("aria-label") || "form" });
   }, true);
   function pronto(fn) { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn); else fn(); }
   pronto(function () {

@@ -783,6 +783,8 @@
         let json = null;
         try { json = await res.json(); } catch (_) { /* corpo vuoto: 403 */ }
         if (res.ok && json && json.ok) {
+          // generate_lead solo a richiesta arrivata (la porta ha risposto ok).
+          try { if (window.gtag) window.gtag('event', 'generate_lead', { modulo: 'info' }); } catch (_) {}
           inviata = true;
           body.style.display = 'none';
           success.classList.add('is-visible');
@@ -876,7 +878,7 @@
   // le ricontrolla. Il PDF si apre solo se la porta ha preso la richiesta; se
   // non l'ha presa, l'errore lo dice e lascia comunque il link al PDF (che è
   // pubblico): la richiesta persa non diventa una brochure negata.
-  // Il conteggio su Analytics lo fa consenso.js a ogni invio: qui non si ripete.
+  // Il conteggio su Analytics (generate_lead) parte qui, solo a richiesta arrivata.
   (function () {
     const modal = document.getElementById('brochure-modal');
     if (!modal) return;
@@ -972,6 +974,7 @@
         let json = null;
         try { json = await res.json(); } catch (_) { /* corpo vuoto: 403 */ }
         if (res.ok && json && json.ok) {
+          try { if (window.gtag) window.gtag('event', 'generate_lead', { modulo: 'brochure' }); } catch (_) {}
           body.style.display = 'none';
           success.classList.add('is-visible');
           window.open(downloadHref, '_blank');
