@@ -549,32 +549,35 @@
       <p class="modal__lede">Inserisca i suoi dati. Il link al PDF apparirà subito qui e una copia della richiesta verrà inviata a TriesteVillas per il follow-up.</p>
 
       <form class="form" id="brochure-form" novalidate>
-        <input type="hidden" name="access_key" value="c2802082-4caf-4ed4-bf4d-d31056c4c023">
-        <input type="hidden" name="subject" value="Elegie Duino — Richiesta brochure">
-        <input type="hidden" name="from_name" value="Elegie Duino — Form sito">
-        <label class="form__hp" hidden>Non compilare questo campo <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label>
+        <!-- Dal 09/10/2026 la brochure bussa alla porta pubblica del CRM (tsv-pg
+             /api/modulo-pubblico, modulo «brochure»), non più a web3forms. I nomi
+             dei campi sono quelli che la porta legge (web/lib/ingresso/modulo-pubblico.ts). -->
+        <div class="form__hp" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="bf-hp">Non compilare questo campo</label>
+          <input type="text" id="bf-hp" name="hp_ed" tabindex="-1" autocomplete="off">
+        </div>
 
         <div class="form__row">
           <label class="form__label" for="bf-name">Nome e cognome <span class="req">*</span></label>
-          <input class="form__input" type="text" id="bf-name" name="name" required autocomplete="name" placeholder="Mario Rossi">
+          <input class="form__input" type="text" id="bf-name" name="nome" required maxlength="120" autocomplete="name" placeholder="Mario Rossi">
         </div>
 
         <div class="form__row">
           <label class="form__label" for="bf-email">Email <span class="req">*</span></label>
-          <input class="form__input" type="email" id="bf-email" name="email" required autocomplete="email" placeholder="mario@email.com">
+          <input class="form__input" type="email" id="bf-email" name="email" required maxlength="160" autocomplete="email" placeholder="mario@email.com">
         </div>
 
         <div class="form__row">
           <label class="form__label" for="bf-phone">Telefono</label>
-          <input class="form__input" type="tel" id="bf-phone" name="phone" autocomplete="tel" placeholder="+39 ...">
+          <input class="form__input" type="tel" id="bf-phone" name="telefono" maxlength="40" autocomplete="tel" placeholder="+39 ...">
         </div>
 
         <label class="form__consent">
-          <input type="checkbox" name="consent" required>
+          <input type="checkbox" id="bf-privacy" name="privacy" value="si" required>
           <span>Ho letto e accetto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la brochure ed eventuali aggiornamenti sull'iniziativa Elegie Duino.</span>
         </label>
 
-        <p class="form__error" id="bf-error">Si è verificato un errore. Riprova o scriva a richieste@triestevillas.com.</p>
+        <p class="form__error" id="bf-error" role="alert">Si è verificato un errore. Riprova o scriva a richieste@triestevillas.com.</p>
 
         <button type="submit" class="btn btn--ink form__submit">
           <span class="btn__label">Ricevi la brochure</span>
@@ -587,8 +590,8 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
       <h2 class="modal__title">Grazie. La brochure è pronta.</h2>
-      <p class="modal__lede">Il PDF è già aperto in una nuova scheda. Le invieremo a breve un riscontro all'indirizzo email indicato.</p>
-      <a href="./assets/pdf/elegie-duino-brochure.pdf" class="btn btn--ink" id="brochure-download-link" download target="_blank">Scarica di nuovo (PDF)</a>
+      <p class="modal__lede">La brochure si apre in una nuova scheda; se non la vede, usi il pulsante qui sotto. Le invieremo a breve un riscontro all'indirizzo email indicato.</p>
+      <a href="./assets/pdf/elegie-duino-brochure.pdf" class="btn btn--ink" id="brochure-download-link" download target="_blank">Apri la brochure (PDF)</a>
     </div>
   </div>
 </div>
@@ -783,7 +786,6 @@
           inviata = true;
           body.style.display = 'none';
           success.classList.add('is-visible');
-          if (window.gtag) window.gtag('event', 'generate_lead', { form: 'richiesta_informazioni' });
           return;
         }
         if (res.status === 429) errore('troppe');
@@ -867,22 +869,69 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   })();
 
-  // Brochure modal + Web3Forms submit
+  // Brochure: modulo verso la porta pubblica del CRM (tsv-pg /api/modulo-pubblico,
+  // modulo «brochure», dal 09/10/2026; prima web3forms). Stesse regole della
+  // porta: nome, email valida (obbligatoria: la brochure e il riscontro
+  // arrivano lì), telefono facoltativo ma con almeno 6 cifre, consenso. La porta
+  // le ricontrolla. Il PDF si apre solo se la porta ha preso la richiesta; se
+  // non l'ha presa, l'errore lo dice e lascia comunque il link al PDF (che è
+  // pubblico): la richiesta persa non diventa una brochure negata.
+  // Il conteggio su Analytics lo fa consenso.js a ogni invio: qui non si ripete.
   (function () {
     const modal = document.getElementById('brochure-modal');
     if (!modal) return;
+    const PORTA = 'https://tsv-pg.vercel.app/api/modulo-pubblico';
     const body = document.getElementById('brochure-modal-body');
     const success = document.getElementById('brochure-success');
     const form = document.getElementById('brochure-form');
     const errorEl = document.getElementById('bf-error');
     const submitBtn = form.querySelector('button[type="submit"]');
+    const label = submitBtn.querySelector('.btn__label');
     const downloadHref = './assets/pdf/elegie-duino-brochure.pdf';
+    const bf = (n) => form.elements[n];
+    const MSG = {
+      nome: 'Il nome è obbligatorio.', email: 'Serve un indirizzo email valido: la brochure e il riscontro arrivano lì.', recapito: 'Serve un indirizzo email valido: la brochure e il riscontro arrivano lì.',
+      telefono: 'Il numero di telefono non sembra valido (almeno 6 cifre).', privacy: 'Per ricevere la brochure serve il consenso al trattamento dei dati.',
+      troppe: 'Troppe richieste in questo momento: riprovate tra poco, o scrivete a richieste@triestevillas.com.', rete: 'La richiesta non è arrivata: riprovate tra poco, o scrivete a richieste@triestevillas.com.'
+    };
+    let apertoIl = 0;
+
+    const pulisci = () => {
+      errorEl.classList.remove('is-visible');
+      errorEl.textContent = '';
+      ['nome', 'email', 'telefono', 'privacy'].forEach(n => bf(n).removeAttribute('aria-invalid'));
+    };
+    const errore = (chiave, conPdf) => {
+      errorEl.textContent = MSG[chiave] || MSG.rete;
+      if (conPdf) {
+        const a = document.createElement('a');
+        a.href = downloadHref; a.target = '_blank'; a.rel = 'noopener';
+        a.textContent = 'Intanto la brochure è qui (PDF).';
+        errorEl.append(' ', a);
+      }
+      errorEl.classList.add('is-visible');
+      const n = chiave === 'recapito' ? 'email' : chiave;
+      if (bf(n)) { bf(n).setAttribute('aria-invalid', 'true'); bf(n).focus(); }
+    };
+    const verifica = () => {
+      const nome = bf('nome').value.trim().replace(/\s+/g, ' ');
+      const email = bf('email').value.trim();
+      const tel = bf('telefono').value.trim();
+      const cifre = (tel.match(/\d/g) || []).length;
+      if (nome.length < 2) return 'nome';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return 'email';
+      if (tel && (!/^[0-9+().\s\/-]{6,40}$/.test(tel) || cifre < 6 || cifre > 16)) return 'telefono';
+      if (!bf('privacy').checked) return 'privacy';
+      return null;
+    };
 
     const openModal = () => {
+      pulisci();
       modal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
       body.style.display = '';
       success.classList.remove('is-visible');
+      apertoIl = Date.now();
     };
     const closeModal = () => {
       modal.classList.remove('is-open');
@@ -900,56 +949,41 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      errorEl.classList.remove('is-visible');
-      // La validazione che mancava (09/10/2026): il modulo ha `novalidate` e
-      // fino a oggi partiva anche senza nome, email e consenso — web3forms
-      // inoltrava e il CRM ne faceva un lead. Stesse regole della porta del
-      // CRM: nome, email valida (qui obbligatoria: la brochure arriva lì),
-      // telefono facoltativo ma con almeno 6 cifre, consenso.
-      const bf = (n) => form.elements[n];
-      ['name', 'email', 'phone', 'consent'].forEach(n => bf(n).removeAttribute('aria-invalid'));
-      const bNome = bf('name').value.trim();
-      const bEmail = bf('email').value.trim();
-      const bTel = bf('phone').value.trim();
-      const bCifre = (bTel.match(/\d/g) || []).length;
-      const bErr =
-        bNome.length < 2 ? ['name', 'Il nome è obbligatorio.']
-        : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(bEmail) ? ['email', 'Serve un indirizzo email valido: la brochure e il riscontro arrivano lì.']
-        : bTel && (bCifre < 6 || bCifre > 16) ? ['phone', 'Il numero di telefono non sembra valido (almeno 6 cifre).']
-        : !bf('consent').checked ? ['consent', 'Per ricevere la brochure serve il consenso al trattamento dei dati.']
-        : null;
-      if (bErr) {
-        errorEl.textContent = bErr[1];
-        errorEl.classList.add('is-visible');
-        bf(bErr[0]).setAttribute('aria-invalid', 'true');
-        bf(bErr[0]).focus();
-        return;
-      }
+      pulisci();
+      const sbagliato = verifica();
+      if (sbagliato) { errore(sbagliato, false); return; }
+
+      const dati = new URLSearchParams();
+      dati.set('modulo', 'brochure');
+      dati.set('nome', bf('nome').value.trim());
+      dati.set('email', bf('email').value.trim());
+      dati.set('telefono', bf('telefono').value.trim());
+      dati.set('privacy', 'si');
+      dati.set('lingua', 'it');
+      dati.set('pagina', location.pathname);
+      dati.set('t', String(apertoIl ? Date.now() - apertoIl : ''));
+      dati.set('hp_ed', bf('hp_ed').value);
+
       submitBtn.disabled = true;
-      submitBtn.querySelector('.btn__label').textContent = 'Invio in corso…';
-
-
-      const data = new FormData(form);
+      label.textContent = 'Invio in corso…';
       try {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: data,
-        });
-        const json = await res.json();
-        if (json.success) {
+        // Corpo form-urlencoded: richiesta «semplice», niente preflight CORS.
+        const res = await fetch(PORTA, { method: 'POST', body: dati });
+        let json = null;
+        try { json = await res.json(); } catch (_) { /* corpo vuoto: 403 */ }
+        if (res.ok && json && json.ok) {
           body.style.display = 'none';
           success.classList.add('is-visible');
           window.open(downloadHref, '_blank');
-        } else {
-          throw new Error(json.message || 'submit failed');
+          return;
         }
+        if (res.status === 400 && json && json.campo && json.campo !== 'modulo') errore(json.campo, false);
+        else errore(res.status === 429 ? 'troppe' : 'rete', true);
       } catch (err) {
-        errorEl.classList.add('is-visible');
-        errorEl.textContent = 'Si è verificato un errore (' + (err.message || 'rete') + '). Riprova o scriva a richieste@triestevillas.com.';
+        errore('rete', true);
       } finally {
         submitBtn.disabled = false;
-        submitBtn.querySelector('.btn__label').textContent = 'Ricevi la brochure';
+        label.textContent = 'Ricevi la brochure';
       }
     });
   })();
