@@ -57,7 +57,7 @@
     <h1 class="hero__title">Otto residenze tra il Carso e il mare.</h1>
     <p class="hero__lede">Un'iniziativa di Ennio Riccesi Holding in Località Duino 69/A. Struttura X-LAM, classe A NZEB, giardini privati e terrazze affacciate sul Golfo di Trieste.</p>
     <div class="hero__cta">
-      <a class="btn btn--solid" href="https://airtable.com/app1ZDay9vQNU5V2u/pagzLV4zx6J0X85xt/form" target="_blank" rel="noopener" data-open-info>Richiedi informazioni</a>
+      <a class="btn btn--solid" href="mailto:richieste@triestevillas.com?subject=Elegie%20Duino%20%E2%80%94%20Richiesta%20informazioni" data-open-info>Richiedi informazioni</a>
     </div>
     <dl class="hero__meta">
       <div><dt>Unità</dt><dd>8 residenze</dd></div>
@@ -594,15 +594,69 @@
 </div>
 
 <!-- Modal richiesta informazioni -->
-<div class="modal" id="info-modal" role="dialog" aria-modal="true" aria-label="Richiesta informazioni">
-  <div class="modal__panel modal__panel--wide">
+<!-- Dal 09/10/2026 è un modulo HTML che bussa alla porta pubblica del CRM
+     (tsv-pg /api/modulo-pubblico): un sito statico non può firmare la porta
+     /api/ingresso. Prima era un form Airtable incorporato. I nomi dei campi
+     sono quelli che la porta legge (web/lib/ingresso/modulo-pubblico.ts):
+     cambiarli qui senza cambiarli là fa rifiutare ogni richiesta. -->
+<div class="modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-modal-title">
+  <div class="modal__panel">
     <button type="button" class="modal__close" data-close-info aria-label="Chiudi">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
-    <div class="modal__eyebrow">Elegie Duino</div>
-    <h2 class="modal__title">Richiesta informazioni</h2>
-    <p class="modal__lede">Lasciate i vostri recapiti: vi ricontatteremo al più presto.</p>
-    <iframe id="info-frame" class="modal__iframe" title="Modulo richiesta informazioni" src="about:blank"></iframe>
+
+    <div class="modal__body" id="info-modal-body">
+      <span class="modal__eyebrow">Elegie Duino</span>
+      <h2 class="modal__title" id="info-modal-title">Richiesta informazioni</h2>
+      <p class="modal__lede">Lasciate i vostri recapiti: vi ricontatteremo al più presto.</p>
+
+      <form class="form" id="info-form" novalidate>
+        <div class="form__hp" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
+          <label for="if-hp">Non compilare questo campo</label>
+          <input type="text" id="if-hp" name="hp_ed" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="if-nome">Nome e cognome <span class="req">*</span></label>
+          <input class="form__input" type="text" id="if-nome" name="nome" required maxlength="120" autocomplete="name" placeholder="Mario Rossi">
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="if-email">Email</label>
+          <input class="form__input" type="email" id="if-email" name="email" maxlength="160" autocomplete="email" placeholder="mario@email.com">
+        </div>
+
+        <div class="form__row">
+          <label class="form__label" for="if-tel">Telefono</label>
+          <input class="form__input" type="tel" id="if-tel" name="telefono" maxlength="40" autocomplete="tel" placeholder="+39 ...">
+        </div>
+        <p class="form__hint" id="if-hint">Email o telefono: basta uno dei due.</p>
+
+        <div class="form__row">
+          <label class="form__label" for="if-msg">Messaggio</label>
+          <textarea class="form__input form__textarea" id="if-msg" name="messaggio" rows="4" maxlength="2000" placeholder="Unità di interesse, domande, quando preferite essere richiamati…"></textarea>
+        </div>
+
+        <label class="form__consent">
+          <input type="checkbox" id="if-privacy" name="privacy" value="si" required>
+          <span>Ho letto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta da TriesteVillas sull'iniziativa Elegie Duino. <span class="req">*</span></span>
+        </label>
+
+        <p class="form__error" id="if-error" role="alert"></p>
+
+        <button type="submit" class="btn btn--ink form__submit">
+          <span class="btn__label">Invia la richiesta</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="form__success" id="info-success" role="status">
+      <div class="form__success-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2 class="modal__title">Grazie. La richiesta è arrivata.</h2>
+      <p class="modal__lede">Vi ricontatteremo al più presto. Per qualcosa di urgente: <a href="tel:+393318940822">331 8940822</a> · <a href="mailto:richieste@triestevillas.com">richieste@triestevillas.com</a>.</p>
+    </div>
   </div>
 </div>
 
@@ -626,24 +680,72 @@
 </div>
 
 <script>
-  // Modal richiesta informazioni (form Airtable in embed)
+  // Modal richiesta informazioni: modulo HTML verso la porta pubblica del CRM
+  // (tsv-pg /api/modulo-pubblico, dal 09/10/2026). Stesse regole della porta:
+  // nome, email valida OPPURE telefono con almeno 6 cifre, consenso. La porta
+  // le ricontrolla: questa è solo la cortesia di dirlo prima.
   (function () {
     const modal = document.getElementById('info-modal');
     if (!modal) return;
-    const frame = document.getElementById('info-frame');
-    const FORM = 'https://airtable.com/embed/app1ZDay9vQNU5V2u/pagzLV4zx6J0X85xt/form';
+    const PORTA = 'https://tsv-pg.vercel.app/api/modulo-pubblico';
+    const body = document.getElementById('info-modal-body');
+    const success = document.getElementById('info-success');
+    const form = document.getElementById('info-form');
+    const errorEl = document.getElementById('if-error');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const label = submitBtn.querySelector('.btn__label');
+    const campo = (n) => form.elements[n];
+    const MSG = {
+      nome: 'Il nome è obbligatorio.', email: "L'indirizzo email non sembra valido.", telefono: 'Il numero di telefono non sembra valido (almeno 6 cifre).',
+      recapito: 'Serve almeno un recapito: email o telefono.', privacy: 'Per inviare la richiesta serve il consenso al trattamento dei dati.', messaggio: 'Il messaggio è troppo lungo (massimo 2.000 caratteri).',
+      troppe: 'Troppe richieste in questo momento. Riprovate tra poco, o scrivete a richieste@triestevillas.com.', rete: 'La richiesta non è partita. Riprovate, o scrivete a richieste@triestevillas.com · 331 8940822.'
+    };
+    const FOCUS = { nome: 'nome', email: 'email', telefono: 'telefono', recapito: 'email', privacy: 'privacy', messaggio: 'messaggio' };
+    let apertoIl = 0;
+    let inviata = false;
+
+    const pulisci = () => {
+      errorEl.classList.remove('is-visible');
+      errorEl.textContent = '';
+      ['nome', 'email', 'telefono', 'messaggio', 'privacy'].forEach(n => campo(n).removeAttribute('aria-invalid'));
+    };
+    const errore = (chiave) => {
+      errorEl.textContent = MSG[chiave] || MSG.rete;
+      errorEl.classList.add('is-visible');
+      const n = FOCUS[chiave];
+      if (n) {
+        campo(n).setAttribute('aria-invalid', 'true');
+        if (chiave === 'recapito') campo('telefono').setAttribute('aria-invalid', 'true');
+        campo(n).focus();
+      }
+    };
+    const cifre = (v) => (v.match(/\d/g) || []).length;
+    const verifica = () => {
+      const nome = campo('nome').value.trim().replace(/\s+/g, ' ');
+      const email = campo('email').value.trim();
+      const tel = campo('telefono').value.trim();
+      if (nome.length < 2) return 'nome';
+      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return 'email';
+      if (tel && (!/^[0-9+().\s\/-]{6,40}$/.test(tel) || cifre(tel) < 6 || cifre(tel) > 16)) return 'telefono';
+      if (!email && !tel) return 'recapito';
+      if (campo('messaggio').value.trim().length > 2000) return 'messaggio';
+      if (!campo('privacy').checked) return 'privacy';
+      return null;
+    };
+
     const open = () => {
-      const now = new Date().toISOString();
-      frame.src = FORM
-        + '?prefill_canale=ElegieDuino_Web&hide_canale=true'
-        + '&prefill_data_contatto=' + encodeURIComponent(now) + '&hide_data_contatto=true';
+      if (inviata) { form.reset(); inviata = false; }
+      pulisci();
+      body.style.display = '';
+      success.classList.remove('is-visible');
+      apertoIl = Date.now();
       modal.classList.add('is-open');
       document.body.style.overflow = 'hidden';
+      setTimeout(() => campo('nome').focus(), 50);
     };
     const close = () => {
       modal.classList.remove('is-open');
       document.body.style.overflow = '';
-      frame.src = 'about:blank';
     };
     document.querySelectorAll('[data-open-info]').forEach(el => {
       el.addEventListener('click', e => { e.preventDefault(); open(); });
@@ -651,6 +753,49 @@
     modal.addEventListener('click', e => { if (e.target === modal) close(); });
     modal.querySelectorAll('[data-close-info]').forEach(el => el.addEventListener('click', close));
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      pulisci();
+      const sbagliato = verifica();
+      if (sbagliato) { errore(sbagliato); return; }
+
+      const dati = new URLSearchParams();
+      dati.set('modulo', 'info');
+      dati.set('nome', campo('nome').value.trim());
+      dati.set('email', campo('email').value.trim());
+      dati.set('telefono', campo('telefono').value.trim());
+      dati.set('messaggio', campo('messaggio').value.trim());
+      dati.set('privacy', 'si');
+      dati.set('lingua', 'it');
+      dati.set('pagina', location.pathname);
+      dati.set('t', String(apertoIl ? Date.now() - apertoIl : ''));
+      dati.set('hp_ed', campo('hp_ed').value);
+
+      submitBtn.disabled = true;
+      label.textContent = 'Invio in corso…';
+      try {
+        // Corpo form-urlencoded: richiesta «semplice», niente preflight CORS.
+        const res = await fetch(PORTA, { method: 'POST', body: dati });
+        let json = null;
+        try { json = await res.json(); } catch (_) { /* corpo vuoto: 403 */ }
+        if (res.ok && json && json.ok) {
+          inviata = true;
+          body.style.display = 'none';
+          success.classList.add('is-visible');
+          if (window.gtag) window.gtag('event', 'generate_lead', { form: 'richiesta_informazioni' });
+          return;
+        }
+        if (res.status === 429) errore('troppe');
+        else if (res.status === 400 && json && json.campo) errore(json.campo);
+        else errore('rete');
+      } catch (err) {
+        errore('rete');
+      } finally {
+        submitBtn.disabled = false;
+        label.textContent = 'Invia la richiesta';
+      }
+    });
   })();
 
   // Keyplan interattiva → lightbox planimetria
@@ -756,8 +901,33 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorEl.classList.remove('is-visible');
+      // La validazione che mancava (09/10/2026): il modulo ha `novalidate` e
+      // fino a oggi partiva anche senza nome, email e consenso — web3forms
+      // inoltrava e il CRM ne faceva un lead. Stesse regole della porta del
+      // CRM: nome, email valida (qui obbligatoria: la brochure arriva lì),
+      // telefono facoltativo ma con almeno 6 cifre, consenso.
+      const bf = (n) => form.elements[n];
+      ['name', 'email', 'phone', 'consent'].forEach(n => bf(n).removeAttribute('aria-invalid'));
+      const bNome = bf('name').value.trim();
+      const bEmail = bf('email').value.trim();
+      const bTel = bf('phone').value.trim();
+      const bCifre = (bTel.match(/\d/g) || []).length;
+      const bErr =
+        bNome.length < 2 ? ['name', 'Il nome è obbligatorio.']
+        : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(bEmail) ? ['email', 'Serve un indirizzo email valido: la brochure e il riscontro arrivano lì.']
+        : bTel && (bCifre < 6 || bCifre > 16) ? ['phone', 'Il numero di telefono non sembra valido (almeno 6 cifre).']
+        : !bf('consent').checked ? ['consent', 'Per ricevere la brochure serve il consenso al trattamento dei dati.']
+        : null;
+      if (bErr) {
+        errorEl.textContent = bErr[1];
+        errorEl.classList.add('is-visible');
+        bf(bErr[0]).setAttribute('aria-invalid', 'true');
+        bf(bErr[0]).focus();
+        return;
+      }
       submitBtn.disabled = true;
       submitBtn.querySelector('.btn__label').textContent = 'Invio in corso…';
+
 
       const data = new FormData(form);
       try {

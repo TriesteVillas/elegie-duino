@@ -1141,21 +1141,6 @@ html[lang="en"] .planbox__num {
   color: var(--cream);
 }
 
-/* Modal richiesta informazioni (Airtable embed) ------------------------------ */
-.modal__panel--wide {
-  max-width: 780px;
-  width: 100%;
-}
-.modal__iframe {
-  display: block;
-  width: 100%;
-  height: min(70vh, 720px);
-  border: 0;
-  border-radius: 6px;
-  background: var(--cream-2);
-  margin-top: 1.2rem;
-}
-
 /* Sold / Venduto status ----------------------------------------------------- */
 .sold-tag {
   display: inline-block;
@@ -1705,6 +1690,19 @@ html[lang="en"] .modal__title {
   display: none;
 }
 .form__error.is-visible { display: block; }
+/* Il modulo «Richiedi informazioni» (09/10/2026) */
+.form__hp { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.form__textarea { resize: vertical; min-height: 6.5rem; line-height: 1.5; }
+.form__hint {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--mute);
+  margin: -0.5rem 0 0;
+  letter-spacing: 0.02em;
+}
+.form__input[aria-invalid="true"],
+.form__consent input[aria-invalid="true"] { border-color: #b14242; outline: 1px solid #b14242; }
+.form__success a { color: var(--sage-d); border-bottom: 1px solid var(--sage); }
 
 .form__success {
   display: none;
