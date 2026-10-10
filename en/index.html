@@ -772,6 +772,8 @@
       dati.set('privacy', 'si');
       dati.set('lingua', 'en');
       dati.set('pagina', location.pathname);
+      // Da dove è arrivata la visita (assets/js/provenienza.js): il CRM la mette sul lead.
+      if (window.edProvenienza) { const pv = window.edProvenienza(); if (pv) dati.set('provenienza', pv); }
       dati.set('t', String(apertoIl ? Date.now() - apertoIl : ''));
       dati.set('hp_ed', campo('hp_ed').value);
 
@@ -961,6 +963,8 @@
       dati.set('privacy', 'si');
       dati.set('lingua', 'en');
       dati.set('pagina', location.pathname);
+      // Da dove è arrivata la visita (assets/js/provenienza.js): il CRM la mette sul lead.
+      if (window.edProvenienza) { const pv = window.edProvenienza(); if (pv) dati.set('provenienza', pv); }
       dati.set('t', String(apertoIl ? Date.now() - apertoIl : ''));
       dati.set('hp_ed', bf('hp_ed').value);
 
@@ -1022,5 +1026,6 @@
 </script>
 
 <script src="../assets/js/consenso.js" data-ga="G-YL07ZJ3PVX"></script>
+<script src="../assets/js/provenienza.js"></script>
 </body>
 </html>
