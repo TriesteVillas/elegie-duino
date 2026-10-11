@@ -35,7 +35,7 @@
 <main class="legal">
   <div class="legal__container">
     <h1>Privacy policy.</h1>
-    <span class="legal__updated">Last updated · 9 October 2026</span>
+    <span class="legal__updated">Last updated · 11 October 2026</span>
 
     <p>This notice describes how personal data collected through the <strong>elegieduino.it</strong> website (the "Site") is processed, in accordance with EU Regulation 2016/679 — GDPR.</p>
 
@@ -71,7 +71,11 @@
 
     <h2>8. Cookies</h2>
     <p>The site uses technical cookies required for operation and, only with your consent, Google Analytics 4 statistics cookies (Google Ireland Ltd) to understand how the site is used. No statistics cookie is set until you choose; you can change your mind at any time via the “Cookie preferences” link at the bottom of every page. No advertising, no profiling.</p>
-    <h2>9. Changes</h2>
+    <h2 id="contatore">9. Visit statistics without cookies</h2>
+    <p>To know how many people visit our sites and which pages they read, each page sends a minimal request, with no identifiers, to our management system, without cookies and without needing your consent. For each page we record only the day, the page address (without parameters), the country, the type of device (computer, phone or tablet), the language of the page and, if you arrive from another site, its domain and the kind of source (for example a search engine or an email). When you move from one page to another without reloading, or open a page your browser had already prepared, the browser tells us with a minimal request that contains no identifiers. In the same way we count, only as totals, clicks on the phone, WhatsApp and email buttons and the enquiries sent through the forms. To estimate how many different visitors arrive in a day, the site computes a temporary code from your shortened IP address (without its last part) and your browser type, mixed with a random value that changes every day: the code is valid only for this site and that day, and at the end of the day it is deleted together with the random value, so that it can no longer be linked to anyone. The full IP address is never stored. We use this data only for aggregate statistics on the use of our sites: we do no profiling or advertising and we do not link it to the contact details you leave us. The legal basis is our legitimate interest in knowing how our sites are used (Art. 6(1)(f) GDPR); as first-party statistics treated like technical tools (Italian Data Protection Authority guidelines of 10 June 2021, section 7.2), no consent is required. The aggregate, anonymous counts are kept for 25 months. The data is processed on our behalf by Vercel Inc. (hosting, United States, under the Standard Contractual Clauses) and Neon Inc. (database, United Kingdom, a country covered by a European Commission adequacy decision). If your browser sends the Global Privacy Control signal we do not compute the daily code; you can also ask not to be counted with the link below, which stores your choice in your browser. The rights described in this notice still apply.</p>
+    <p><a href="#contatore" data-contatore="no" rel="nofollow">Don't count my visits</a> · <a href="#contatore" data-contatore="si" rel="nofollow">Count them again</a></p>
+    <p data-contatore-esito role="status" hidden></p>
+    <h2>10. Changes</h2>
     <p>This notice may be updated. The current version is always published on this page with the date of last update indicated above.</p>
 
     <a class="legal__back" href="./">← Back to home</a>
@@ -91,5 +95,6 @@
 </footer>
 
 <script src="../assets/js/consenso.js" data-ga="G-YL07ZJ3PVX"></script>
+<script src="../assets/js/contatore.js" defer></script>
 </body>
 </html>

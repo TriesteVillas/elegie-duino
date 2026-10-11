@@ -787,6 +787,8 @@
         if (res.ok && json && json.ok) {
           // generate_lead solo a richiesta arrivata (la porta ha risposto ok).
           try { if (window.gtag) window.gtag('event', 'generate_lead', { modulo: 'info' }); } catch (_) {}
+          // Lo stesso, senza cookie, nel contatore del traffico (assets/js/contatore.js).
+          try { if (window.edContaEvento) window.edContaEvento('lead:info'); } catch (_) {}
           inviata = true;
           body.style.display = 'none';
           success.classList.add('is-visible');
@@ -977,6 +979,7 @@
         try { json = await res.json(); } catch (_) { /* corpo vuoto: 403 */ }
         if (res.ok && json && json.ok) {
           try { if (window.gtag) window.gtag('event', 'generate_lead', { modulo: 'brochure' }); } catch (_) {}
+          try { if (window.edContaEvento) window.edContaEvento('lead:brochure'); } catch (_) {}
           body.style.display = 'none';
           success.classList.add('is-visible');
           window.open(downloadHref, '_blank');
@@ -1027,5 +1030,6 @@
 
 <script src="../assets/js/consenso.js" data-ga="G-YL07ZJ3PVX"></script>
 <script src="../assets/js/provenienza.js"></script>
+<script src="../assets/js/contatore.js" defer></script>
 </body>
 </html>
