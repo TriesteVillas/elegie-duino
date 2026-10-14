@@ -13,7 +13,9 @@
     it: { testo: "Usiamo cookie tecnici e, solo se acconsenti, cookie di statistica (Google Analytics) per capire come viene usato il sito. Nessuna pubblicità, nessuna profilazione.",
           accetta: "Accetta", rifiuta: "Solo necessari", privacy: "Privacy e cookie", aria: "Consenso ai cookie" },
     en: { testo: "We use technical cookies and, only with your consent, statistics cookies (Google Analytics) to understand how the site is used. No advertising, no profiling.",
-          accetta: "Accept", rifiuta: "Essential only", privacy: "Privacy and cookies", aria: "Cookie consent" }
+          accetta: "Accept", rifiuta: "Essential only", privacy: "Privacy and cookies", aria: "Cookie consent" },
+    sl: { testo: "Uporabljamo tehnične piškotke in – samo z vašim soglasjem – statistične piškotke (Google Analytics), da razumemo, kako se spletna stran uporablja. Brez oglasov, brez profiliranja.",
+          accetta: "Sprejmem", rifiuta: "Samo nujni", privacy: "Zasebnost in piškotki", aria: "Soglasje za piškotke" }
   };
   var T = TESTI[lingua] || TESTI.it;
 

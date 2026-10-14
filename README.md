@@ -8,6 +8,7 @@ Iniziativa di **Ennio Riccesi Holding**. Progetto **Studio Architettura Soldano*
 
 - IT: https://elegieduino.it/
 - EN: https://elegieduino.it/en/
+- SL: https://elegieduino.it/sl/ (dal 14/10/2026)
 
 GitHub Pages dal ramo `main` (dominio nel file `CNAME`; `www` e il vecchio
 indirizzo `triestevillas.github.io/elegie-duino/` rimandano qui con un 301).
@@ -55,6 +56,7 @@ Drive hanno ancora i testi di luglio: chi rigenera da lì li corregge prima.
 .
 ├── index.html              # versione italiana
 ├── en/index.html           # versione inglese
+├── sl/index.html           # versione slovena (dal 14/10/2026)
 ├── assets/
 │   ├── css/style.css       # palette + tipografia + layout condivisi
 │   ├── fonts/              # Lora + Inter Tight (woff2, OFL)
@@ -70,7 +72,9 @@ Drive hanno ancora i testi di luglio: chi rigenera da lì li corregge prima.
 
 ## Modifiche editoriali
 
-Tutti i testi sono dichiarati `lang="it"` o `lang="en"`. Per modificare un paragrafo, aprire l'`index.html` corrispondente e cercare l'ancora di sezione (`#luogo`, `#progetto`, `#architettura`, `#interni`, `#listino`, `#capitolato`, `#contatti`).
+Tutti i testi sono dichiarati `lang="it"`, `lang="en"` o `lang="sl"`. **Un testo che cambia, cambia nelle tre lingue** (e il listino nelle tre tabelle, nelle slide e nella mappa delle unità dello script di ogni pagina). Per modificare un paragrafo, aprire l'`index.html` corrispondente e cercare l'ancora di sezione: IT `#progetto` `#listino` `#planimetrie` `#capitolato` `#contatti` · EN `#project` `#pricing` `#plans` `#spec` `#contact` · SL `#projekt` `#cenik` `#tlorisi` `#tehnicni-opis` `#kontakt`.
+
+**Sloveno** (14/10/2026): toponimi come su triestevillas.com/sl (Devin, Devin - Nabrežina, Trst, Kras, Sesljan, Ronke, Miramar), si dà del «vi», i prezzi col simbolo dopo la cifra (`441.000 €`), le etichette delle immagini «UI · vizualizacija», «Vizualizacija», «UI». La brochure PDF è una sola, in italiano e inglese: la pagina slovena lo dice.
 
 ## Owner
 

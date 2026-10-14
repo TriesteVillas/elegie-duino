@@ -109,7 +109,10 @@
           errore: "Non è stato possibile salvare la scelta in questo browser (la memoria del sito è bloccata)." },
     en: { no: "Done: from now on visits from this browser are not included in this site's count of unique visitors.",
           si: "Done: visits from this browser are counted again, anonymously and in aggregate.",
-          errore: "Your choice could not be saved in this browser (site storage is blocked)." }
+          errore: "Your choice could not be saved in this browser (site storage is blocked)." },
+    sl: { no: "Opravljeno: od zdaj obiski iz tega brskalnika ne štejejo v število edinstvenih obiskovalcev te spletne strani.",
+          si: "Opravljeno: obiski iz tega brskalnika se znova štejejo, anonimno in zbirno.",
+          errore: "Vaše izbire ni bilo mogoče shraniti v tem brskalniku (shramba spletne strani je blokirana)." }
   };
   function scelta(no) {
     var lingua = (document.documentElement.lang || "it").slice(0, 2);
