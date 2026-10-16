@@ -1804,3 +1804,55 @@ html[lang="en"] .modal__title {
   text-transform: none;
   color: var(--mute-2);
 }
+
+/* Lifting 17/10/2026 -------------------------------------------------------- */
+/* Il corsivo dei titoli sul fondo scuro del capitolato si leggeva appena. */
+.spec .section-head__title em { color: var(--beige); }
+
+.listing__cta { margin-top: 1.8rem; }
+
+/* Listino al telefono: niente scorrimento laterale che nasconde il prezzo. Ogni
+   riga diventa una scheda — numero, tipologia e prezzo in alto, poi piano e
+   superfici con la loro etichetta (data-label). Camere e bagni li dice già la
+   tipologia; l'area esterna vuota (primo piano) non si mostra. */
+@media (max-width: 720px) {
+  .listing__table-wrap { overflow-x: visible; }
+  .listing table { min-width: 0; }
+  .listing thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .listing tbody tr {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+    grid-template-areas: "n t p" "n a a" "n b b" "n c c";
+    column-gap: 0.9rem;
+    row-gap: 0.35rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .listing tbody td { padding: 0; border: 0; }
+  .listing tbody td:first-child { grid-area: n; width: auto; }
+  .listing td.c-tipo { grid-area: t; font-size: var(--fs-md); color: var(--ink); }
+  .listing td.c-prezzo { grid-area: p; }
+  .listing td.c-piano { grid-area: a; }
+  .listing td.c-comm { grid-area: b; }
+  .listing td.c-est { grid-area: c; }
+  .listing td.c-cam,
+  .listing td.c-bag,
+  .listing td.c-est.is-empty { display: none; }
+  .listing td[data-label] { font-size: var(--fs-sm); }
+  .listing td[data-label]::before {
+    content: attr(data-label);
+    display: inline-block;
+    min-width: 8.6rem;
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .listing tbody tr:hover td { background: transparent; }
+  /* Il logo della testata, largo almeno 320px, copriva il menu sui telefoni. */
+  .hero__logo { width: min(64vw, 260px); }
+}

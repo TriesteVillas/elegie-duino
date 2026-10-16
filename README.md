@@ -74,6 +74,8 @@ Drive hanno ancora i testi di luglio: chi rigenera da lì li corregge prima.
 
 Tutti i testi sono dichiarati `lang="it"`, `lang="en"` o `lang="sl"`. **Un testo che cambia, cambia nelle tre lingue** (e il listino nelle tre tabelle, nelle slide e nella mappa delle unità dello script di ogni pagina). Per modificare un paragrafo, aprire l'`index.html` corrispondente e cercare l'ancora di sezione: IT `#progetto` `#listino` `#planimetrie` `#capitolato` `#contatti` · EN `#project` `#pricing` `#plans` `#spec` `#contact` · SL `#projekt` `#cenik` `#tlorisi` `#tehnicni-opis` `#kontakt`.
 
+**Superfici e listino** (17/10/2026): le superfici sono quelle della tabella del progettista («Località Duino n. 69/a – SUPERFICI COMMERCIALI», Studio Architettura Soldano, in Drive con i documenti di Elegie), con due decimali: commerciale e, per il piano terra, area esterna a parte — la commerciale **non** comprende giardino né posto auto. Le stesse cifre stanno in quattro posti per lingua: tabella del listino, slide delle piante, mappa delle unità nello script, testo alternativo delle piante. Al telefono la tabella diventa una scheda per riga: ogni cella porta la classe (`c-piano`, `c-comm`, `c-est`…) e l'etichetta in `data-label`, e un'area esterna vuota ha `is-empty`. Un'unità venduta: riga `sold-row`, «Disponibili N residenze su 8» in testata e `numberOfAvailableAccommodationUnits` nel JSON-LD, nelle tre lingue.
+
 **Sloveno** (14/10/2026): toponimi come su triestevillas.com/sl (Devin, Devin - Nabrežina, Trst, Kras, Sesljan, Ronke, Miramar), si dà del «vi», i prezzi col simbolo dopo la cifra (`441.000 €`), le etichette delle immagini «UI · vizualizacija», «Vizualizacija», «UI». La brochure PDF è una sola, in italiano e inglese: la pagina slovena lo dice.
 
 ## Owner
