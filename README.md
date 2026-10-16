@@ -31,7 +31,7 @@ quando si scorre fin lì.
 
 ### Immagini e AI: ogni immagine dichiara cos'è
 
-Nessuna immagine del sito è una fotografia. I due rendering di progetto fatti
+Una sola immagine del sito è una fotografia: la **foto da drone del 12/08/2026** di «Il luogo, dall'alto» (`assets/images/aerial-originale.jpg`, col perimetro del lotto disegnato sopra; etichetta «Foto · 12.08.2026», classe `aerial__tag`), messa a confronto con un cursore col **fotoinserimento** del 16/09 (`aerial-fotoinserimento.jpg`, versione v2_A, etichetta «AI · fotoinserimento»). Sorgenti in Drive `Vendite/2026 TRIESTEVILLAS/ELEGIE DUINO/FOTOINSERIMENTO 16.09.26/`, metodo nella KB `protocols/fotoinserimento.md`; fuori dal lotto la simulazione toglie solo le auto in sosta davanti al lotto, e la didascalia lo dice. Le altre non sono fotografie. I due rendering di progetto fatti
 senza AI portano l'etichetta «Rendering»; tutte le altre sono passate da un
 modello generativo (Higgsfield, Google) e portano «AI · rendering», o «AI» quando
 non si sa se l'immagine è stata generata per intero (le due di struttura e

@@ -110,6 +110,22 @@
       </div>
     </div>
 
+    <figure class="aerial reveal" id="dall-alto">
+      <div class="aerial__head">
+        <span class="section-num">The place, from above</span>
+        <p class="aerial__lede">The castle, the sea and the village as they are today, in a drone photograph taken on 12 August 2026. Inside it, in its place, the project.</p>
+      </div>
+      <div class="aerial__frame" data-ba>
+        <picture><source type="image/avif" srcset="../assets/images/resp/aerial-fotoinserimento-800.avif 800w, ../assets/images/resp/aerial-fotoinserimento-1280.avif 1280w, ../assets/images/resp/aerial-fotoinserimento-1920.avif 1920w, ../assets/images/resp/aerial-fotoinserimento-2400.avif 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><source type="image/webp" srcset="../assets/images/resp/aerial-fotoinserimento-800.webp 800w, ../assets/images/resp/aerial-fotoinserimento-1280.webp 1280w, ../assets/images/resp/aerial-fotoinserimento-1920.webp 1920w, ../assets/images/resp/aerial-fotoinserimento-2400.webp 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><img src="../assets/images/aerial-fotoinserimento.jpg" alt="Duino from above: the castle, the sea and the village, with the Elegie Duino building simulated in its place" width="2400" height="1350" loading="lazy" decoding="async"></picture>
+        <span class="ai-tag" title="Simulation of the project generated with artificial intelligence inside a real photograph">AI · photo insertion</span>
+        <div class="aerial__before"><picture><source type="image/avif" srcset="../assets/images/resp/aerial-originale-800.avif 800w, ../assets/images/resp/aerial-originale-1280.avif 1280w, ../assets/images/resp/aerial-originale-1920.avif 1920w, ../assets/images/resp/aerial-originale-2400.avif 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><source type="image/webp" srcset="../assets/images/resp/aerial-originale-800.webp 800w, ../assets/images/resp/aerial-originale-1280.webp 1280w, ../assets/images/resp/aerial-originale-1920.webp 1920w, ../assets/images/resp/aerial-originale-2400.webp 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><img src="../assets/images/aerial-originale.jpg" alt="Duino from above, drone photograph of 12 August 2026, with the boundary of the Elegie Duino plot" width="2400" height="1350" loading="lazy" decoding="async"></picture></div>
+        <span class="aerial__tag" title="Drone photograph, not retouched: the plot boundary is drawn on it">Photo · 12.08.2026</span>
+        <div class="aerial__divider" aria-hidden="true"></div>
+        <input class="aerial__range" type="range" min="0" max="100" value="38" aria-label="Compare the photograph as it is with the simulation of the project">
+      </div>
+      <figcaption class="aerial__caption">On the left, the photograph as it is, with the plot boundary drawn on it; on the right, the same photograph with the building and gardens simulated with artificial intelligence (photo insertion). Outside the plot the image is the real one, except for the cars parked in front of the plot, removed in the simulation. Drag the slider to compare.</figcaption>
+    </figure>
+
     <dl class="project__stats reveal">
       <div><dt>Units</dt><dd>8 residences</dd></div>
       <div><dt>Layouts</dt><dd>1 &amp; 2 bedrooms</dd></div>
@@ -1035,5 +1051,23 @@
 <script src="../assets/js/consenso.js" data-ga="G-YL07ZJ3PVX"></script>
 <script src="../assets/js/provenienza.js"></script>
 <script src="../assets/js/contatore.js" defer></script>
+<script>
+  // «Il luogo, dall'alto»: il cursore sposta il confine fra foto e simulazione.
+  document.querySelectorAll('[data-ba]').forEach(function (f) {
+    var r = f.querySelector('input[type=range]');
+    var set = function () { f.style.setProperty('--pos', r.value + '%'); };
+    r.addEventListener('input', set); set();
+    // Col dito (iPhone) il cursore nativo si prende solo dal pomello: si segue il trascinamento ovunque.
+    var tira = false;
+    var segui = function (e) {
+      var b = f.getBoundingClientRect();
+      r.value = Math.round(Math.max(0, Math.min(100, (e.clientX - b.left) / b.width * 100))); set();
+    };
+    f.addEventListener('pointerdown', function (e) { tira = true; segui(e); });
+    window.addEventListener('pointermove', function (e) { if (tira) segui(e); });
+    window.addEventListener('pointerup', function () { tira = false; });
+    window.addEventListener('pointercancel', function () { tira = false; });
+  });
+</script>
 </body>
 </html>

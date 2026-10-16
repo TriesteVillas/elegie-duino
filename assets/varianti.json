@@ -128,6 +128,32 @@
    "assets/images/resp/exterior-parking-1600.webp"
   ]
  },
+ "assets/images/aerial-fotoinserimento.jpg": {
+  "sha256": "6d29f3eec0f4556ecffcf4c05ba0b988f81875df725e4733706a983ff352b1d4",
+  "varianti": [
+   "assets/images/resp/aerial-fotoinserimento-800.avif",
+   "assets/images/resp/aerial-fotoinserimento-800.webp",
+   "assets/images/resp/aerial-fotoinserimento-1280.avif",
+   "assets/images/resp/aerial-fotoinserimento-1280.webp",
+   "assets/images/resp/aerial-fotoinserimento-1920.avif",
+   "assets/images/resp/aerial-fotoinserimento-1920.webp",
+   "assets/images/resp/aerial-fotoinserimento-2400.avif",
+   "assets/images/resp/aerial-fotoinserimento-2400.webp"
+  ]
+ },
+ "assets/images/aerial-originale.jpg": {
+  "sha256": "48006f7cbf9bc4123ac9cec4cebe45d61d7b596d3545f86c57c187b23d5ad6d6",
+  "varianti": [
+   "assets/images/resp/aerial-originale-800.avif",
+   "assets/images/resp/aerial-originale-800.webp",
+   "assets/images/resp/aerial-originale-1280.avif",
+   "assets/images/resp/aerial-originale-1280.webp",
+   "assets/images/resp/aerial-originale-1920.avif",
+   "assets/images/resp/aerial-originale-1920.webp",
+   "assets/images/resp/aerial-originale-2400.avif",
+   "assets/images/resp/aerial-originale-2400.webp"
+  ]
+ },
  "assets/logos/elegie-duino-alpha.png": {
   "sha256": "5cd8b9747e442ecb04e16e4cc788ef59016ab71651c206742c4f4b17b26d0521",
   "varianti": [

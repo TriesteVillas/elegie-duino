@@ -35,6 +35,9 @@ FOTO = {
     'detail-terrace': [640, 1024, 1600],
     'terrace-view': [640, 1024, 1600],
     'exterior-parking': [640, 1024, 1600],
+    # Fotoinserimento dal drone (17/10/2026): la foto vera e la simulazione, stesse misure.
+    'aerial-fotoinserimento': [800, 1280, 1920, 2400],
+    'aerial-originale': [800, 1280, 1920, 2400],
 }
 # Taglio verticale 3:4 della hero per i telefoni (tutta l'altezza, centrato).
 HERO_VERTICALE = ('exterior-sunset-garden', [750, None])  # None = larghezza nativa del taglio
