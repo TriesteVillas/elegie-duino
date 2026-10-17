@@ -1,17 +1,21 @@
 {
  "assets/images/exterior-sunset-garden.jpg": {
-  "sha256": "d8f4c91e087daa2df8cb1cfcf91bc0fcd6025f51216a8f61153104f0fbf53a9d",
+  "sha256": "e8546d36bbb2b6ddd1b4d85e97e7b50214e9e0de0f7c3416966febe7b578467a",
   "varianti": [
+   "assets/images/resp/exterior-sunset-garden-640.avif",
+   "assets/images/resp/exterior-sunset-garden-640.webp",
    "assets/images/resp/exterior-sunset-garden-1280.avif",
    "assets/images/resp/exterior-sunset-garden-1280.webp",
    "assets/images/resp/exterior-sunset-garden-1920.avif",
    "assets/images/resp/exterior-sunset-garden-1920.webp",
    "assets/images/resp/exterior-sunset-garden-2400.avif",
    "assets/images/resp/exterior-sunset-garden-2400.webp",
+   "assets/images/resp/exterior-sunset-garden-3200.avif",
+   "assets/images/resp/exterior-sunset-garden-3200.webp",
    "assets/images/resp/exterior-sunset-garden-portrait-750.avif",
    "assets/images/resp/exterior-sunset-garden-portrait-750.webp",
-   "assets/images/resp/exterior-sunset-garden-portrait-1004.avif",
-   "assets/images/resp/exterior-sunset-garden-portrait-1004.webp"
+   "assets/images/resp/exterior-sunset-garden-portrait-1340.avif",
+   "assets/images/resp/exterior-sunset-garden-portrait-1340.webp"
   ]
  },
  "assets/images/prospetti.jpg": {
@@ -41,14 +45,18 @@
   ]
  },
  "assets/images/exterior-garden-glazing.jpg": {
-  "sha256": "8d323bb43ba67731bcf453442f0278688e9bac0b6dca8c24d2e048b56f5008fd",
+  "sha256": "f1706a74f9cc9c7eda9c5d91b890d8741367247f88e9dc5a66de599dab392794",
   "varianti": [
    "assets/images/resp/exterior-garden-glazing-640.avif",
    "assets/images/resp/exterior-garden-glazing-640.webp",
    "assets/images/resp/exterior-garden-glazing-1024.avif",
    "assets/images/resp/exterior-garden-glazing-1024.webp",
    "assets/images/resp/exterior-garden-glazing-1600.avif",
-   "assets/images/resp/exterior-garden-glazing-1600.webp"
+   "assets/images/resp/exterior-garden-glazing-1600.webp",
+   "assets/images/resp/exterior-garden-glazing-2400.avif",
+   "assets/images/resp/exterior-garden-glazing-2400.webp",
+   "assets/images/resp/exterior-garden-glazing-3200.avif",
+   "assets/images/resp/exterior-garden-glazing-3200.webp"
   ]
  },
  "assets/images/exterior-garden-corner.jpg": {
@@ -154,47 +162,6 @@
    "assets/images/resp/aerial-originale-2400.webp"
   ]
  },
- "assets/logos/elegie-duino-alpha.png": {
-  "sha256": "5cd8b9747e442ecb04e16e4cc788ef59016ab71651c206742c4f4b17b26d0521",
-  "varianti": [
-   "assets/logos/resp/elegie-duino-alpha-100.webp",
-   "assets/logos/resp/elegie-duino-alpha-100.png",
-   "assets/logos/resp/elegie-duino-alpha-150.webp",
-   "assets/logos/resp/elegie-duino-alpha-150.png"
-  ]
- },
- "assets/logos/logo-castello-white.png": {
-  "sha256": "984cbdbafb0d1ba2495eeb98f933318e836664992e5122aff2c45a9ba9bdb64a",
-  "varianti": [
-   "assets/logos/resp/logo-castello-white-640.webp",
-   "assets/logos/resp/logo-castello-white-640.png",
-   "assets/logos/resp/logo-castello-white-960.webp",
-   "assets/logos/resp/logo-castello-white-960.png",
-   "assets/logos/resp/logo-castello-white-1240.webp",
-   "assets/logos/resp/logo-castello-white-1240.png"
-  ]
- },
- "assets/logos/riccesi-holding.png": {
-  "sha256": "a16484b8a1775e3da0b56774ea57bc52748bcfdaf8ce6c95cb0e768c3f6b59e9",
-  "varianti": [
-   "assets/logos/resp/riccesi-holding-247.webp",
-   "assets/logos/resp/riccesi-holding-247.png"
-  ]
- },
- "assets/logos/soldano.png": {
-  "sha256": "60440f9b745debf5c9d065b4121240d94ac94211c3fde1909585ae5e411f6dfe",
-  "varianti": [
-   "assets/logos/resp/soldano-192.webp",
-   "assets/logos/resp/soldano-192.png"
-  ]
- },
- "assets/logos/triestevillas.png": {
-  "sha256": "d53ec268a82a1d87e60a81e7c3d713335d7fd8219cf3e5f7aef1ff052144ae5c",
-  "varianti": [
-   "assets/logos/resp/triestevillas-192.webp",
-   "assets/logos/resp/triestevillas-192.png"
-  ]
- },
  "assets/images/drone-duino.jpg": {
   "sha256": "300de9a43081cc99dc832f0176b622cbe8655c2092d86c592587d1ebdefd16b8",
   "varianti": [
@@ -247,7 +214,74 @@
    "assets/images/resp/interno-giardino-1024.avif",
    "assets/images/resp/interno-giardino-1024.webp",
    "assets/images/resp/interno-giardino-1600.avif",
-   "assets/images/resp/interno-giardino-1600.webp"
+   "assets/images/resp/interno-giardino-1600.webp",
+   "assets/images/resp/interno-giardino-1920.avif",
+   "assets/images/resp/interno-giardino-1920.webp",
+   "assets/images/resp/interno-giardino-2400.avif",
+   "assets/images/resp/interno-giardino-2400.webp"
+  ]
+ },
+ "assets/images/duino-castello.jpg": {
+  "sha256": "e62f157c9481d3971509320c8c3810547c5bd099d77629e10ba2242ee96f7e3b",
+  "varianti": [
+   "assets/images/resp/duino-castello-800.avif",
+   "assets/images/resp/duino-castello-800.webp",
+   "assets/images/resp/duino-castello-1280.avif",
+   "assets/images/resp/duino-castello-1280.webp",
+   "assets/images/resp/duino-castello-1920.avif",
+   "assets/images/resp/duino-castello-1920.webp",
+   "assets/images/resp/duino-castello-2400.avif",
+   "assets/images/resp/duino-castello-2400.webp"
+  ]
+ },
+ "assets/images/duino-castello-verticale.jpg": {
+  "sha256": "6adb6dcb143ee7f1d8dcdfe1f084269ecd4cf8025401a749a974865e7eef4395",
+  "varianti": [
+   "assets/images/resp/duino-castello-verticale-750.avif",
+   "assets/images/resp/duino-castello-verticale-750.webp",
+   "assets/images/resp/duino-castello-verticale-1080.avif",
+   "assets/images/resp/duino-castello-verticale-1080.webp"
+  ]
+ },
+ "assets/logos/elegie-duino-alpha.png": {
+  "sha256": "5cd8b9747e442ecb04e16e4cc788ef59016ab71651c206742c4f4b17b26d0521",
+  "varianti": [
+   "assets/logos/resp/elegie-duino-alpha-100.webp",
+   "assets/logos/resp/elegie-duino-alpha-100.png",
+   "assets/logos/resp/elegie-duino-alpha-150.webp",
+   "assets/logos/resp/elegie-duino-alpha-150.png"
+  ]
+ },
+ "assets/logos/logo-castello-white.png": {
+  "sha256": "984cbdbafb0d1ba2495eeb98f933318e836664992e5122aff2c45a9ba9bdb64a",
+  "varianti": [
+   "assets/logos/resp/logo-castello-white-640.webp",
+   "assets/logos/resp/logo-castello-white-640.png",
+   "assets/logos/resp/logo-castello-white-960.webp",
+   "assets/logos/resp/logo-castello-white-960.png",
+   "assets/logos/resp/logo-castello-white-1240.webp",
+   "assets/logos/resp/logo-castello-white-1240.png"
+  ]
+ },
+ "assets/logos/riccesi-holding.png": {
+  "sha256": "a16484b8a1775e3da0b56774ea57bc52748bcfdaf8ce6c95cb0e768c3f6b59e9",
+  "varianti": [
+   "assets/logos/resp/riccesi-holding-247.webp",
+   "assets/logos/resp/riccesi-holding-247.png"
+  ]
+ },
+ "assets/logos/soldano.png": {
+  "sha256": "60440f9b745debf5c9d065b4121240d94ac94211c3fde1909585ae5e411f6dfe",
+  "varianti": [
+   "assets/logos/resp/soldano-192.webp",
+   "assets/logos/resp/soldano-192.png"
+  ]
+ },
+ "assets/logos/triestevillas.png": {
+  "sha256": "d53ec268a82a1d87e60a81e7c3d713335d7fd8219cf3e5f7aef1ff052144ae5c",
+  "varianti": [
+   "assets/logos/resp/triestevillas-192.webp",
+   "assets/logos/resp/triestevillas-192.png"
   ]
  }
 }

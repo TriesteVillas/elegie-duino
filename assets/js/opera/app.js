@@ -22,9 +22,10 @@ $('.barra__menu')?.addEventListener('click', () => {
 $$('.barra__voci a').forEach((a) => a.addEventListener('click', () => barra.classList.remove('aperta')));
 function aggiornaBarra() {
   const el = document.elementFromPoint(Math.min(innerWidth - 2, 40), 70);
-  const foglio = el && el.closest('.foglio, .nome, .piede');
-  barra.classList.toggle('su-carta', !!foglio && !foglio.classList.contains('foglio--notte') && !foglio.classList.contains('piede'));
-  barra.classList.toggle('su-notte', !foglio && scrollY > innerHeight * 0.6 || (!!foglio && (foglio.classList.contains('foglio--notte') || foglio.classList.contains('piede'))));
+  const foglio = el && el.closest('.foglio, .nome, .piede, .vivere');
+  const scuro = (f) => f.classList.contains('foglio--notte') || f.classList.contains('piede') || f.classList.contains('vivere');
+  barra.classList.toggle('su-carta', !!foglio && !scuro(foglio));
+  barra.classList.toggle('su-notte', !foglio && scrollY > innerHeight * 0.6 || (!!foglio && scuro(foglio)));
 }
 
 // ------------------------------------------------------------------ rivelazione
@@ -69,6 +70,31 @@ const avviaQuando = () => { removeEventListener('scroll', avviaQuando); avvia3D(
 addEventListener('scroll', avviaQuando, { passive: true });
 if ('requestIdleCallback' in window) requestIdleCallback(() => avvia3D(), { timeout: 2500 }); else setTimeout(avvia3D, 1500);
 
+// ------------------------------------------------------------------ le scene di «Vivere qui»
+// Immagini a tutta pagina che scorrono un po' più lente della pagina; le due animate (AI, dichiarate)
+// si scaricano e partono solo quando la scena è sullo schermo, e mai col risparmio dati o il movimento ridotto.
+const SCENE = $$('.scena');
+const ioScene = new IntersectionObserver((es) => es.forEach((e) => {
+  const sc = e.target; const v = sc.querySelector('video');
+  if (e.isIntersecting) {
+    sc.classList.add('in-vista');
+    if (v && !ridotto && !risparmio) {
+      if (!v.getAttribute('src')) { v.src = v.dataset.src; v.addEventListener('playing', () => v.classList.add('vivo'), { once: true }); }
+      v.play().catch(() => {});
+    }
+  } else if (v) v.pause();
+}), { threshold: 0.2 });
+SCENE.forEach((sc) => ioScene.observe(sc));
+function scene() {
+  if (ridotto) return;
+  for (const sc of SCENE) {
+    const b = sc.getBoundingClientRect();
+    if (b.bottom < 0 || b.top > innerHeight) continue;
+    const t = (b.top + b.height / 2 - innerHeight / 2) / innerHeight;
+    sc.style.setProperty('--par', (t * -3).toFixed(2) + '%');
+  }
+}
+
 // ------------------------------------------------------------------ regia dello scorrimento
 const apertura = $('.apertura');
 const foto = $('.apertura__foto');
@@ -93,6 +119,7 @@ const zoomFoto = { ritorno: 0, t0: performance.now() };
 
 function regia() {
   aggiornaBarra();
+  scene();
   // apertura: foto → modello → l'edificio che sorge
   const r = apertura.getBoundingClientRect();
   const corsa = apertura.offsetHeight - innerHeight;
@@ -138,7 +165,7 @@ function regia() {
     fasiEl?.classList.remove('vista');
   }
   // la tela si ferma quando un foglio la copre tutta
-  const coperta = document.elementFromPoint(innerWidth / 2, innerHeight / 2)?.closest('.foglio, .nome, .piede');
+  const coperta = document.elementFromPoint(innerWidth / 2, innerHeight / 2)?.closest('.foglio, .nome, .piede, .vivere');
   scena.attiva(!coperta);
 }
 let rafRegia = 0;
@@ -259,6 +286,7 @@ async function apriScheda(n) {
   const vista = $('#scheda-vista');
   if (u.vista) { vista.querySelector('p').textContent = u.vista; vista.hidden = false; } else vista.hidden = true;
   $('#scheda-azioni').hidden = !!u.venduta;
+  const cuoreScheda = $('#scheda-cuore'); cuoreScheda.dataset.unita = n; cuoreScheda.hidden = !!u.venduta; aggiornaCuori();
   $$('[data-scheda-richiedi]').forEach((b) => (b.dataset.unita = n));
   $$('[data-scheda-conto]').forEach((b) => (b.dataset.unita = n));
   scheda.classList.add('aperta'); veloScheda.classList.add('aperta');
@@ -335,6 +363,9 @@ function conto() {
   $('#c-posti').textContent = C.posti ? euro(C.posti * D.postoAuto) + ' + ' + T.conto.iva : '';
   $('#c-posti-et').textContent = T.conto.posti.replace('{n}', C.posti);
   $('#c-posti-n').textContent = C.posti;
+  // come si paga: 10 / 20 / 70 sul prezzo della casa scelta (le quote sono nel testo, gli importi qui)
+  const quote = [0.10, 0.20, 0.70];
+  $$('[data-passo]').forEach((el) => { el.textContent = euro(u.prezzo * quote[+el.dataset.passo]); });
 }
 cSel?.addEventListener('change', conto);
 $$('[data-prima]').forEach((b) => b.addEventListener('click', () => {
@@ -345,8 +376,14 @@ $$('[data-posti]').forEach((b) => b.addEventListener('click', () => { C.posti = 
 conto();
 document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-scheda-conto]'); if (!b) return;
-  if (cSel) { cSel.value = b.dataset.unita; conto(); }
-  chiudiScheda(); setTimeout(() => $('#conto').scrollIntoView({ behavior: ridotto ? 'auto' : 'smooth' }), 50);
+  if (cSel && UNITA[b.dataset.unita] && !UNITA[b.dataset.unita].venduta) { cSel.value = b.dataset.unita; conto(); }
+  if (scheda.classList.contains('aperta')) chiudiScheda();
+  setTimeout(() => $('#conto').scrollIntoView({ behavior: ridotto ? 'auto' : 'smooth' }), 50);
+});
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-apri-unita]'); if (!b) return;
+  if (b.closest('.modale')) chiudiModale(b.closest('.modale'));
+  apriScheda(b.dataset.apriUnita);
 });
 document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-scheda-richiedi]'); if (!b) return;
@@ -430,13 +467,24 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
 }
 collega($('#info-form'), { tipo: 'info', emailObbligatoria: false, errore: $('#if-error'), ok: $('#info-ok') });
 collega($('#brochure-form'), { tipo: 'brochure', emailObbligatoria: true, errore: $('#bf-error'), ok: $('#brochure-ok'), dopo: () => window.open(BASE + 'pdf/elegie-duino-brochure.pdf', '_blank') });
-const modale = $('#brochure-modale');
+// modali: brochure, confronto delle preferite, tour 3D del terreno
 let fuocoModale = null;
-$$('[data-apri-brochure]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); fuocoModale = b; modale.classList.add('aperta'); setTimeout(() => $('#bf-nome').focus(), 40); }));
-const chiudiModale = () => { modale.classList.remove('aperta'); fuocoModale && fuocoModale.focus(); };
-$$('[data-chiudi-modale]').forEach((b) => b.addEventListener('click', chiudiModale));
-modale?.addEventListener('click', (e) => { if (e.target === modale) chiudiModale(); });
-addEventListener('keydown', (e) => { if (e.key === 'Escape' && modale?.classList.contains('aperta')) chiudiModale(); });
+function apriModale(id, da, fuoco) {
+  const m = $('#' + id); if (!m) return;
+  fuocoModale = da || document.activeElement;
+  m.classList.add('aperta');
+  setTimeout(() => (fuoco ? $(fuoco, m) : m.querySelector('.modale__chiudi'))?.focus(), 40);
+}
+function chiudiModale(m) {
+  m = m || $('.modale.aperta'); if (!m) return;
+  m.classList.remove('aperta');
+  if (m.id === 'tour') svuotaTour();
+  fuocoModale && document.contains(fuocoModale) && fuocoModale.focus();
+}
+$$('[data-apri-brochure]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); apriModale('brochure-modale', b, '#bf-nome'); }));
+$$('[data-chiudi-modale]').forEach((b) => b.addEventListener('click', () => chiudiModale(b.closest('.modale'))));
+$$('.modale').forEach((m) => m.addEventListener('click', (e) => { if (e.target === m) chiudiModale(m); }));
+addEventListener('keydown', (e) => { if (e.key === 'Escape' && $('.modale.aperta')) chiudiModale(); });
 $$('[data-vai-contatti]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); $('#contatti').scrollIntoView({ behavior: ridotto ? 'auto' : 'smooth' }); setTimeout(() => $('#if-nome')?.focus({ preventScroll: true }), 600); }));
 
 // ------------------------------------------------------------------ la bora (capitolo «Il nome»)
@@ -461,3 +509,108 @@ $$('[data-vai-contatti]').forEach((b) => b.addEventListener('click', (e) => { e.
   new IntersectionObserver(([e]) => { vivo = e.isIntersecting; cancelAnimationFrame(raf); if (vivo) { if (!W) misura(); disegna(); } }).observe(sez);
   addEventListener('resize', () => { if (W) { misura(); if (!vivo) disegna(); } });
 })();
+
+// ------------------------------------------------------------------ le piante, una accanto all'altra
+const P = D.piante;
+const svgCache = {};
+const svgPianta = (n) => (svgCache[n] ||= fetch(BASE + 'piante/u' + n + '.svg').then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); }));
+async function mettiPianta(box, n) {
+  try {
+    box.innerHTML = await svgPianta(n);
+    localizzaPianta(box);
+    const s = box.querySelector('svg'); if (s) { s.removeAttribute('role'); s.setAttribute('aria-hidden', 'true'); }
+  } catch (err) { /* resta il segnaposto */ }
+}
+const ioPiante = new IntersectionObserver((es) => es.forEach((e) => {
+  if (!e.isIntersecting) return; ioPiante.unobserve(e.target); mettiPianta(e.target, e.target.dataset.pianta);
+}), { rootMargin: '700px 0px' });
+$$('.pianta-mini').forEach((m) => ioPiante.observe(m));
+$$('.filtri button').forEach((b) => b.addEventListener('click', () => {
+  $$('.filtri button').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  const f = b.dataset.filtro;
+  $$('.pianta-carta').forEach((c) => { c.hidden = !c.dataset.filtri.split(' ').includes(f); });
+}));
+
+// ------------------------------------------------------------------ preferite e confronto
+// Le preferite restano in questo browser (localStorage): nessun dato parte da qui.
+const CHIAVE_PREF = 'ed_preferite_v1';
+const CF = D.confronto;
+let preferite = [];
+try { preferite = JSON.parse(localStorage.getItem(CHIAVE_PREF) || '[]').filter((n) => UNITA[n] && !UNITA[n].venduta); } catch (e) { preferite = []; }
+const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+function salvaPref() { try { localStorage.setItem(CHIAVE_PREF, JSON.stringify(preferite)); } catch (e) { /* memoria bloccata: valgono per questa visita */ } }
+function aggiornaCuori() {
+  const etichetta = (on) => (on ? P.salvata : P.salva);
+  $$('[data-cuore]').forEach((b) => { const on = preferite.includes(b.dataset.cuore); b.setAttribute('aria-pressed', String(on)); b.setAttribute('aria-label', etichetta(on)); b.title = etichetta(on); });
+  const sc = $('#scheda-cuore');
+  if (sc && sc.dataset.unita) { const on = preferite.includes(sc.dataset.unita); sc.setAttribute('aria-pressed', String(on)); sc.setAttribute('aria-label', etichetta(on)); sc.title = etichetta(on); }
+  const bar = $('.preferite'); if (bar) { bar.hidden = preferite.length === 0; $('#pref-n').textContent = preferite.length; }
+  if ($('#confronto')?.classList.contains('aperta')) disegnaConfronto();
+}
+function alterna(n, btn) {
+  const i = preferite.indexOf(n);
+  if (i >= 0) preferite.splice(i, 1); else preferite.push(n);
+  salvaPref(); aggiornaCuori();
+  if (btn) { btn.classList.remove('pop'); void btn.offsetWidth; btn.classList.add('pop'); }
+  try { if (i < 0 && window.edContaEvento) window.edContaEvento('preferita:' + n); } catch (e) {}
+}
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-cuore]'); if (b) { alterna(b.dataset.cuore, b); return; }
+  const t = e.target.closest('[data-togli]'); if (t) alterna(t.dataset.togli);
+});
+$('#scheda-cuore')?.addEventListener('click', (e) => { const n = e.currentTarget.dataset.unita; if (n) alterna(n, e.currentTarget); });
+$('[data-svuota]')?.addEventListener('click', () => { preferite = []; salvaPref(); aggiornaCuori(); });
+$('[data-confronta]')?.addEventListener('click', (e) => { disegnaConfronto(); apriModale('confronto', e.currentTarget); });
+async function disegnaConfronto() {
+  const box = $('#confronto-tavola'); if (!box) return;
+  if (!preferite.length) { box.innerHTML = `<p class="confronto__vuoto">${esc(CF.vuoto)}</p>`; return; }
+  const us = preferite.map((n) => UNITA[n]).filter(Boolean);
+  const tab = await caricaTabellaSole();
+  const sole = (n, g) => minutiSole(tab, n, g, false);
+  const valore = (u, k) => {
+    const c = u.confronto;
+    if (k === 'prezzo' || k === 'totale1' || k === 'totale2') return euro(c[k]);
+    if (k.startsWith('sole')) return oreTesto(sole(u.n, +k.slice(4)));
+    return c[k] ?? '—';
+  };
+  // in grassetto il migliore di ogni riga numerica: il prezzo più basso, il sole più lungo
+  const migliore = {};
+  for (const k of ['prezzo', 'totale1', 'totale2']) migliore[k] = Math.min(...us.map((u) => u.confronto[k]));
+  for (const g of [355, 80, 172]) migliore['sole' + g] = Math.max(...us.map((u) => sole(u.n, g) ?? -1));
+  const eMigliore = (u, k) => us.length > 1 && (k in migliore) && (k.startsWith('sole') ? sole(u.n, +k.slice(4)) === migliore[k] : u.confronto[k] === migliore[k]);
+  let h = '<table><thead><tr><th scope="col"><span class="sr">—</span></th>';
+  for (const u of us) h += `<th scope="col"><b class="num">${esc(u.n)}</b><span>${esc(u.tipologia)}</span><br><button type="button" data-togli="${esc(u.n)}">${esc(CF.togli)}</button></th>`;
+  h += '</tr></thead><tbody>';
+  for (const [k, et] of CF.righe) {
+    h += `<tr><th scope="row">${esc(et)}</th>`;
+    for (const u of us) {
+      if (k === 'pianta') h += `<td><button type="button" class="mini" data-apri-unita="${esc(u.n)}" data-mini="${esc(u.n)}" aria-label="${esc(P.apri)} · ${esc(u.titolo)}"></button></td>`;
+      else h += `<td class="num${eMigliore(u, k) ? ' migliore' : ''}">${esc(valore(u, k))}</td>`;
+    }
+    h += '</tr>';
+  }
+  h += '</tbody></table>';
+  if (us.length < 2) h = `<p class="confronto__vuoto" style="font-size:18px;margin-bottom:14px">${esc(CF.vuoto)}</p>` + h;
+  box.innerHTML = h;
+  $$('[data-mini]', box).forEach((b) => mettiPianta(b, b.dataset.mini));
+}
+aggiornaCuori();
+
+// ------------------------------------------------------------------ il terreno oggi: tour 3D (Matterport, 15/09/2026)
+// Il visore è un servizio esterno: si carica solo quando la persona lo chiede, mai da solo.
+function svuotaTour() {
+  const t = $('#tour-tela'); const f = t && t.querySelector('iframe');
+  if (f) { f.remove(); t.querySelector('.tour__invito').hidden = false; }
+}
+$$('[data-apri-tour]').forEach((b) => b.addEventListener('click', () => apriModale('tour', b, '[data-carica-tour]')));
+$('[data-carica-tour]')?.addEventListener('click', () => {
+  const t = $('#tour-tela'); if (!t || t.querySelector('iframe')) return;
+  const f = document.createElement('iframe');
+  f.src = D.tour + '&play=1&qs=1';
+  f.title = $('#tour-t').textContent;
+  f.allow = 'fullscreen; xr-spatial-tracking';
+  f.setAttribute('allowfullscreen', '');
+  t.querySelector('.tour__invito').hidden = true;
+  t.appendChild(f);
+  try { window.edContaEvento && window.edContaEvento('tour3d:terreno'); } catch (e) {}
+});

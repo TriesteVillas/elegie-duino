@@ -1,0 +1,386 @@
+{
+ "_che_cosa_e": "I fatti pubblici di Elegie Duino, gli stessi del sito elegieduino.it, per il concierge AI. Generato da scripts/opera/conoscenza.py.",
+ "aggiornato": "2026-10-17",
+ "sito": "https://elegieduino.it/ (italiano), /en/, /de/, /sl/",
+ "progetto": {
+  "nome": "Elegie Duino",
+  "indirizzo": "Località Duino 69/A, 34011 Duino Aurisina (TS), Italia",
+  "che_cosa": "Otto case nuove su due piani in un unico edificio: quattro al piano terra con giardino privato, quattro al primo piano con veranda vetrata con parapetto. Bilocali e trilocali.",
+  "stato_vendite": "6 disponibili su 8 (vendute: case 4 e 5).",
+  "struttura": "Legno X-LAM (pannelli di abete a strati incrociati, montaggio a secco) su fondazioni in cemento armato a travi rovesce; cappotto in lana di roccia; tetto piano con fotovoltaico.",
+  "classe_energetica": "A NZEB di progetto: l'attestato (APE) si fa a fine lavori.",
+  "tempi": "Cantiere iniziato a giugno 2026; consegna entro il 2027. Le date precise le fissano preliminare e rogito.",
+  "orientamento": "Verande e giardini guardano a sud-sud-est (164°); sul fronte nord, verso la strada, l'ingresso comune e i posti auto.",
+  "vista_mare": "Non c'è vista mare: misurata sul rilievo LiDAR della Regione e sulle case vicine. Dal primo piano, per le case 6 e 8, al massimo una fessura di qualche grado sul mare lontano verso ovest, che basta un tetto o una chioma a chiudere.",
+  "facciata": "Intonachino grigio caldo scuro (tipo Sandtex n. 36), il colore approvato dall'autorizzazione paesaggistica. Alcuni rendering la mostrano più chiara.",
+  "duplex": "Non si propongono accorpamenti fra le case."
+ },
+ "case": [
+  {
+   "casa": "1",
+   "piano": "piano terra",
+   "tipologia": "trilocale",
+   "camere": 2,
+   "bagni": 2,
+   "superficie_commerciale_mq": "97,24 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "giardino privato di 280,02 m²",
+   "posto_auto": "nel giardino privato, compreso",
+   "stato": "disponibile",
+   "prezzo_iva_esclusa_eur": 441000,
+   "totale_prima_casa_eur": 459240,
+   "totale_seconda_casa_eur": 485700,
+   "pagamenti_eur": {
+    "prenotazione_10": 44100,
+    "preliminare_20": 88200,
+    "rogito_70": 308700
+   },
+   "pianta": "https://elegieduino.it/#unita-1",
+   "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
+    "21 dicembre": {
+     "senza_alberi": "4 h",
+     "con_alberi_come_chiome_piene": "0 h"
+    },
+    "21 marzo": {
+     "senza_alberi": "9 h 10 min",
+     "con_alberi_come_chiome_piene": "7 h 50 min"
+    },
+    "21 giugno": {
+     "senza_alberi": "11 h 30 min",
+     "con_alberi_come_chiome_piene": "8 h"
+    }
+   },
+   "vista": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."
+  },
+  {
+   "casa": "2",
+   "piano": "piano terra",
+   "tipologia": "trilocale",
+   "camere": 2,
+   "bagni": 2,
+   "superficie_commerciale_mq": "97,44 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "giardino privato di 51,65 m²",
+   "posto_auto": "uno esterno, compreso",
+   "stato": "disponibile",
+   "prezzo_iva_esclusa_eur": 396000,
+   "totale_prima_casa_eur": 412440,
+   "totale_seconda_casa_eur": 436200,
+   "pagamenti_eur": {
+    "prenotazione_10": 39600,
+    "preliminare_20": 79200,
+    "rogito_70": 277200
+   },
+   "pianta": "https://elegieduino.it/#unita-2",
+   "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
+    "21 dicembre": {
+     "senza_alberi": "1 h 25 min",
+     "con_alberi_come_chiome_piene": "0 h 20 min"
+    },
+    "21 marzo": {
+     "senza_alberi": "8 h 05 min",
+     "con_alberi_come_chiome_piene": "5 h 30 min"
+    },
+    "21 giugno": {
+     "senza_alberi": "7 h 40 min",
+     "con_alberi_come_chiome_piene": "5 h 20 min"
+    }
+   },
+   "vista": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."
+  },
+  {
+   "casa": "3",
+   "piano": "piano terra",
+   "tipologia": "bilocale",
+   "camere": 1,
+   "bagni": 1,
+   "superficie_commerciale_mq": "70,40 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "giardino privato di 47,48 m²",
+   "posto_auto": "uno esterno, compreso",
+   "stato": "disponibile",
+   "prezzo_iva_esclusa_eur": 288000,
+   "totale_prima_casa_eur": 300120,
+   "totale_seconda_casa_eur": 317400,
+   "pagamenti_eur": {
+    "prenotazione_10": 28800,
+    "preliminare_20": 57600,
+    "rogito_70": 201600
+   },
+   "pianta": "https://elegieduino.it/#unita-3",
+   "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
+    "21 dicembre": {
+     "senza_alberi": "2 h 05 min",
+     "con_alberi_come_chiome_piene": "0 h 35 min"
+    },
+    "21 marzo": {
+     "senza_alberi": "9 h 25 min",
+     "con_alberi_come_chiome_piene": "7 h"
+    },
+    "21 giugno": {
+     "senza_alberi": "9 h 40 min",
+     "con_alberi_come_chiome_piene": "6 h 40 min"
+    }
+   },
+   "vista": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."
+  },
+  {
+   "casa": "4",
+   "piano": "piano terra",
+   "tipologia": "trilocale",
+   "camere": 2,
+   "bagni": 2,
+   "superficie_commerciale_mq": "102,38 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "giardino privato di 226,02 m²",
+   "posto_auto": "uno esterno, compreso",
+   "stato": "venduta",
+   "nota": "Venduta. Chi l'ha comprata è riservato."
+  },
+  {
+   "casa": "5",
+   "piano": "primo piano",
+   "tipologia": "trilocale",
+   "camere": 2,
+   "bagni": 2,
+   "superficie_commerciale_mq": "97 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "veranda vetrata con parapetto",
+   "posto_auto": "uno esterno, compreso",
+   "stato": "venduta",
+   "nota": "Venduta. Chi l'ha comprata è riservato."
+  },
+  {
+   "casa": "6",
+   "piano": "primo piano",
+   "tipologia": "trilocale",
+   "camere": 2,
+   "bagni": 2,
+   "superficie_commerciale_mq": "97,44 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "veranda vetrata con parapetto",
+   "posto_auto": "uno esterno, compreso",
+   "stato": "disponibile",
+   "prezzo_iva_esclusa_eur": 351000,
+   "totale_prima_casa_eur": 365640,
+   "totale_seconda_casa_eur": 386700,
+   "pagamenti_eur": {
+    "prenotazione_10": 35100,
+    "preliminare_20": 70200,
+    "rogito_70": 245700
+   },
+   "pianta": "https://elegieduino.it/#unita-6",
+   "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
+    "21 dicembre": {
+     "senza_alberi": "6 h 35 min",
+     "con_alberi_come_chiome_piene": "3 h 55 min"
+    },
+    "21 marzo": {
+     "senza_alberi": "7 h 55 min",
+     "con_alberi_come_chiome_piene": "6 h 20 min"
+    },
+    "21 giugno": {
+     "senza_alberi": "9 h 15 min",
+     "con_alberi_come_chiome_piene": "9 h 05 min"
+    }
+   },
+   "vista": "Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa due gradi e mezzo sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."
+  },
+  {
+   "casa": "7",
+   "piano": "primo piano",
+   "tipologia": "bilocale",
+   "camere": 1,
+   "bagni": 1,
+   "superficie_commerciale_mq": "70,40 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "veranda vetrata con parapetto",
+   "posto_auto": "uno esterno, compreso",
+   "stato": "disponibile",
+   "prezzo_iva_esclusa_eur": 261000,
+   "totale_prima_casa_eur": 272040,
+   "totale_seconda_casa_eur": 287700,
+   "pagamenti_eur": {
+    "prenotazione_10": 26100,
+    "preliminare_20": 52200,
+    "rogito_70": 182700
+   },
+   "pianta": "https://elegieduino.it/#unita-7",
+   "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
+    "21 dicembre": {
+     "senza_alberi": "6 h 15 min",
+     "con_alberi_come_chiome_piene": "3 h 55 min"
+    },
+    "21 marzo": {
+     "senza_alberi": "9 h 35 min",
+     "con_alberi_come_chiome_piene": "7 h 55 min"
+    },
+    "21 giugno": {
+     "senza_alberi": "10 h 05 min",
+     "con_alberi_come_chiome_piene": "9 h 10 min"
+    }
+   },
+   "vista": "Dalla veranda il mare non si vede: l'orizzonte è fatto dei tetti e del verde del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."
+  },
+  {
+   "casa": "8",
+   "piano": "primo piano",
+   "tipologia": "trilocale",
+   "camere": 2,
+   "bagni": 2,
+   "superficie_commerciale_mq": "102,38 (veranda compresa, dalle tavole del progettista)",
+   "all_aperto": "veranda vetrata con parapetto",
+   "posto_auto": "uno esterno, compreso",
+   "stato": "disponibile",
+   "prezzo_iva_esclusa_eur": 396000,
+   "totale_prima_casa_eur": 412440,
+   "totale_seconda_casa_eur": 436200,
+   "pagamenti_eur": {
+    "prenotazione_10": 39600,
+    "preliminare_20": 79200,
+    "rogito_70": 277200
+   },
+   "pianta": "https://elegieduino.it/#unita-8",
+   "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
+    "21 dicembre": {
+     "senza_alberi": "7 h 05 min",
+     "con_alberi_come_chiome_piene": "1 h 10 min"
+    },
+    "21 marzo": {
+     "senza_alberi": "10 h 10 min",
+     "con_alberi_come_chiome_piene": "6 h 25 min"
+    },
+    "21 giugno": {
+     "senza_alberi": "10 h 20 min",
+     "con_alberi_come_chiome_piene": "7 h 10 min"
+    }
+   },
+   "vista": "Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa cinque gradi sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."
+  }
+ ],
+ "case_con_giardino_disponibili": {
+  "quante": 3,
+  "da_eur_iva_esclusa": 288000,
+  "a_eur_iva_esclusa": 441000,
+  "risposta_breve": "Le case con giardino libere sono al piano terra: la 3 (bilocale, giardino di 47,48 m², € 288.000), la 2 (trilocale, giardino di 51,65 m², € 396.000), la 1 (trilocale, giardino di 280,02 m² con il posto auto dentro, € 441.000), IVA esclusa."
+ },
+ "posti_auto": "Uno esterno compreso in ogni casa (per la casa 1 è nel giardino). Altri 4 disponibili a € 20.000 ciascuno più IVA.",
+ "costi": {
+  "prezzi": "Prezzi di listino IVA esclusa. Il listino può cambiare: il prezzo definitivo si fissa nella proposta d'acquisto.",
+  "iva": "Si compra dall'impresa che costruisce: IVA al 4% se è la prima casa (requisiti verificati dal notaio, legati alla residenza in Italia), al 10% altrimenti.",
+  "imposte_fisse": "Imposte di registro, ipotecaria e catastale: 200 € ciascuna, 600 € in tutto.",
+  "esclusi": "Fuori dal conto: onorario del notaio, eventuale mutuo."
+ },
+ "pagamenti": {
+  "schema": "10% alla prenotazione; 20% al preliminare, dal notaio (indicativamente entro la fine del 2026); 70% al rogito, entro la fine del 2027.",
+  "iva_sui_pagamenti": "Le percentuali sono sul prezzo. L'IVA si versa secondo le fatture dell'impresa; i dettagli li fissano la proposta e il preliminare.",
+  "tutele_di_legge": "Per le case da costruire la legge tutela chi compra come persona fisica (D.Lgs. 122/2005, modificato dal D.Lgs. 14/2019): il preliminare si firma davanti al notaio; le somme versate prima del rogito (caparre e acconti) sono garantite da una fideiussione di una banca o di un'assicurazione che il costruttore deve consegnare; al rogito il costruttore consegna una polizza assicurativa decennale sull'edificio."
+ },
+ "impianti_e_finiture": {
+  "riscaldamento_raffrescamento": "Pompa di calore aria-acqua, una per casa: scalda, raffresca e fa l'acqua calda senza gas, con accumulo da 200 litri; ventilconvettori stanza per stanza, comandabili dal telefono.",
+  "fotovoltaico": "Ogni casa ha il suo impianto sul tetto e il suo contatore, fino a 6 kW.",
+  "auto_elettrica": "Ogni posto auto è predisposto per la ricarica elettrica.",
+  "serramenti": "A taglio termico (alluminio o PVC), grigio antracite RAL 7016, vetrocamera stratificata basso emissiva.",
+  "oscuri": "Sul fronte strada, doghe verticali in composito.",
+  "pavimenti": "Gres porcellanato 60×60 o 120×60 nella zona giorno e nei bagni; parquet di rovere prefinito nelle camere.",
+  "bagni": "Sanitari sospesi S.D.R. Ceramiche serie BUL, rubinetteria Paffoni serie LIGHT, o equivalenti; piatto doccia in resina bianca.",
+  "porta_ingresso": "Portoncino blindato, classe antieffrazione 3 o superiore.",
+  "predisposizioni": "Allarme, fibra ottica (dove arriva), rete dati, domotica delle luci; videocitofono che registra chi ha suonato.",
+  "soffitti": "Solai in legno; in alcune stanze del primo piano travi in legno lamellare a vista.",
+  "giardini": "Siepi sempreverdi, specie autoctone del Carso che chiedono poca acqua; posti auto in calcestruzzo drenante; cancelli carrabili motorizzati.",
+  "tolleranze": "Le misure delle stanze possono variare del 5% rispetto ai disegni; il venditore può cambiare materiali e soluzioni senza ridurne valore e prestazioni (dal capitolato).",
+  "capitolato_e_brochure": "Il capitolato integrale e la brochure PDF si ricevono dal sito (sezione Capitolato) o su richiesta."
+ },
+ "luoghi_e_tempi": {
+  "fonte": "Tempi calcolati con OSRM sulle strade di OpenStreetMap, dal cancello di Elegie, a passo normale e traffico libero.",
+  "elenco": [
+   {
+    "luogo": "Castello di Duino",
+    "a_piedi": "5 min (0,4 km)",
+    "in_auto": "1 min (0,3 km)"
+   },
+   {
+    "luogo": "Sentiero Rilke, inizio",
+    "a_piedi": "4 min (0,3 km)"
+   },
+   {
+    "luogo": "Porticciolo di Duino",
+    "a_piedi": "9 min (0,7 km)",
+    "in_auto": "2 min (0,9 km)"
+   },
+   {
+    "luogo": "Fermata del bus «Duino centro»",
+    "a_piedi": "3 min (0,2 km)"
+   },
+   {
+    "luogo": "Alimentari in paese",
+    "a_piedi": "2 min (0,2 km)"
+   },
+   {
+    "luogo": "Scuole primarie (italiana e slovena)",
+    "a_piedi": "2 min (0,2 km)"
+   },
+   {
+    "luogo": "Sentiero Rilke fino a Sistiana",
+    "a_piedi": "30 min (2,3 km)"
+   },
+   {
+    "luogo": "Scoglio di Dante",
+    "nota": "Lo «Scoglio di Dante» è una leggenda: nessuna prova che Dante sia stato a Duino."
+   },
+   {
+    "luogo": "Baia di Sistiana",
+    "in_auto": "7 min (4,2 km)"
+   },
+   {
+    "luogo": "Portopiccolo",
+    "in_auto": "7 min (4,2 km)"
+   },
+   {
+    "luogo": "Monfalcone",
+    "in_auto": "11 min (7,4 km)"
+   },
+   {
+    "luogo": "Confine sloveno (Jamiano)",
+    "in_auto": "11 min (8,0 km)"
+   },
+   {
+    "luogo": "Aeroporto di Trieste",
+    "in_auto": "18 min (18,4 km)"
+   },
+   {
+    "luogo": "Trieste, Piazza Unità",
+    "in_auto": "30 min (23,9 km)"
+   }
+  ]
+ },
+ "dintorni": "Sotto il paese la Riserva naturale delle Falesie di Duino (107 ettari, dal 1996), l'unica falesia alta della costa adriatica settentrionale italiana; il Sentiero Rilke la percorre per circa 1,7 km fino alla baia di Sistiana. Più a est l'Area marina protetta di Miramare.",
+ "il_nome": "Rainer Maria Rilke, ospite della principessa Marie von Thurn und Taxis nel Castello di Duino, nel gennaio 1912 vi cominciò le «Elegie duinesi» (finite nel 1922 in Svizzera, pubblicate nel 1923). Il racconto della mattina di bora in cui gli venne il primo verso è nei ricordi della Principessa.",
+ "il_terreno_oggi": {
+  "tour_3d": "https://my.matterport.com/show/?m=AQp72tPqpWV",
+  "che_cosa": "Scansione Matterport del terreno dopo la demolizione, del 15 settembre 2026. Sul sito c'è anche la foto da drone del 12 agosto 2026."
+ },
+ "chi": {
+  "sviluppo_e_costruzione": "Ennio Riccesi Holding (come scritto sul sito, sezione «Chi lo fa»).",
+  "progetto": "Studio Architettura Soldano, Trieste: Arch. Pier Paolo Soldano e Arch. Alessandra Belleli.",
+  "vendite": "TriesteVillas srl, Via Milano 5, Trieste; ufficio vendite Via Torino 34, Trieste."
+ },
+ "contatti": {
+  "telefono_e_whatsapp": "331 8940822 (dall'estero +39 331 8940822)",
+  "email": "richieste@triestevillas.com",
+  "visite": "Su appuntamento, anche in cantiere.",
+  "moduli": "Sul sito: «Richiedi informazioni» e, nel concierge, «Parla con una persona»."
+ },
+ "immagini": "Sul sito i rendering di progetto sono segnati «Rendering»; quelli generati o rielaborati con l'intelligenza artificiale «AI». Il modello 3D è ricostruito dalle tavole e dal CAD dello Studio Soldano, senza AI; il paese intorno viene dai dati pubblici della Regione e di OpenStreetMap.",
+ "non_lo_sappiamo": [
+  "spese condominiali (non ancora definite)",
+  "onorario del notaio",
+  "condizioni d'agenzia per chi compra",
+  "data esatta del preliminare e del rogito",
+  "personalizzazioni oltre il capitolato (si valutano con l'impresa)",
+  "mutui e finanziamenti"
+ ],
+ "sezioni_del_sito": {
+  "le case in 3D": "#case",
+  "le piante e il confronto": "#piante",
+  "prezzi, costi e pagamenti": "#prezzi",
+  "il luogo e i tempi": "#luogo",
+  "la luce e il sole": "#luce",
+  "come è fatta": "#costruzione",
+  "capitolato e brochure": "#capitolato",
+  "contatti": "#contatti"
+ }
+}

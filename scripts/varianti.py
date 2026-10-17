@@ -25,10 +25,10 @@ MANIFEST = os.path.join(ROOT, 'assets', 'varianti.json')
 
 # Foto: originale → larghezze (AVIF qualità 55, WebP 78).
 FOTO = {
-    'exterior-sunset-garden': [1280, 1920, 2400],
+    'exterior-sunset-garden': [640, 1280, 1920, 2400, 3200],
     'prospetti': [800, 1200, 1600, 2400],
     'exterior-entrance-sunset': [640, 1024, 1600, 2000],
-    'exterior-garden-glazing': [640, 1024, 1600],
+    'exterior-garden-glazing': [640, 1024, 1600, 2400, 3200],
     'exterior-garden-corner': [640, 1024, 1600],
     'construction-xlam': [640, 1024, 1600],
     'detail-bathrooms': [640, 1024, 1600],
@@ -45,7 +45,11 @@ FOTO = {
     'drone-duino-verticale': [750, 1080],
     'rend-fronte-nord': [640, 1024, 1600],
     'rend-ingresso-nord': [640, 1024, 1600],
-    'interno-giardino': [640, 1024, 1600],
+    'interno-giardino': [640, 1024, 1600, 1920, 2400],
+    # Il «salto di qualità» (17/10/2026 sera): le scene a tutta pagina di «Vivere qui». Il Castello e il mare
+    # sono ritagliati dalla foto vera da drone del 12/08 (DJI_0755), sopra il perimetro magenta del lotto.
+    'duino-castello': [800, 1280, 1920, 2400],
+    'duino-castello-verticale': [750, 1080],
 }
 # Taglio verticale 3:4 della hero per i telefoni (tutta l'altezza, centrato).
 HERO_VERTICALE = ('exterior-sunset-garden', [750, None])  # None = larghezza nativa del taglio

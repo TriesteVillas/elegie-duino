@@ -14,6 +14,8 @@
           accetta: "Accetta", rifiuta: "Solo necessari", privacy: "Privacy e cookie", aria: "Consenso ai cookie" },
     en: { testo: "We use technical cookies and, only with your consent, statistics cookies (Google Analytics) to understand how the site is used. No advertising, no profiling.",
           accetta: "Accept", rifiuta: "Essential only", privacy: "Privacy and cookies", aria: "Cookie consent" },
+    de: { testo: "Wir verwenden technische Cookies und, nur mit Ihrer Einwilligung, Statistik-Cookies (Google Analytics), um zu verstehen, wie die Website genutzt wird. Keine Werbung, kein Profiling.",
+          accetta: "Akzeptieren", rifiuta: "Nur notwendige", privacy: "Datenschutz und Cookies", aria: "Cookie-Einwilligung" },
     sl: { testo: "Uporabljamo tehnične piškotke in – samo z vašim soglasjem – statistične piškotke (Google Analytics), da razumemo, kako se spletna stran uporablja. Brez oglasov, brez profiliranja.",
           accetta: "Sprejmem", rifiuta: "Samo nujni", privacy: "Zasebnost in piškotki", aria: "Soglasje za piškotke" }
   };
