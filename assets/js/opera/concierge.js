@@ -175,17 +175,26 @@ lettera?.addEventListener('submit', async (e) => {
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return sbaglio('email', f.email);
   if (tel && (!/^[0-9+().\s\/-]{6,40}$/.test(tel) || cifre(tel) < 6 || cifre(tel) > 16)) return sbaglio('telefono', f.telefono);
   if (!email && !tel) return sbaglio('recapito', f.telefono);
+  // il CRM vuole il recapito che va con la scelta: la mail per «una mail», il telefono per chiamata e WhatsApp
+  const pref = (lettera.querySelector('input[name=preferenza]:checked') || {}).value || 'richiamo';
+  const manca = (testo, campo) => { errEl.textContent = testo; errEl.classList.add('visibile'); campo.setAttribute('aria-invalid', 'true'); campo.focus(); };
+  if (pref === 'email' && !email) return manca(Q.serve_email, f.email);
+  if (pref !== 'email' && !tel) return manca(Q.serve_tel, f.telefono);
   if (!f.consenso.checked) return sbaglio('privacy', f.consenso);
   const corpo = {
     sid, lingua: LINGUA, pagina: location.pathname, unita: unitaAperta(), hp_ed: f.hp_ed.value,
-    lettera: { nome, email, telefono: tel, preferenza: (lettera.querySelector('input[name=preferenza]:checked') || {}).value || 'richiamo', nota: f.nota.value.trim().slice(0, 600), consenso: true },
+    lettera: { nome, email, telefono: tel, preferenza: pref, nota: f.nota.value.trim().slice(0, 600), consenso: true },
   };
   if (window.edProvenienza) { try { corpo.provenienza = window.edProvenienza(); } catch (err) {} }
   const prima = et.textContent; btn.disabled = true; et.textContent = MSG.invio;
   try {
     const r = await fetch(Q.url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) });
     const j = await r.json().catch(() => null);
-    if (!r.ok || !j || !j.ok) { sbaglio(r.status === 429 ? 'troppe' : 'rete'); return; }
+    if (!r.ok || !j || !j.ok) {
+      const campi = { nome: ['nome', f.nome], email: ['email', f.email], telefono: ['telefono', f.telefono], recapito: ['recapito', f.telefono], consenso: ['privacy', f.consenso] };
+      if (j && campi[j.campo]) return sbaglio(campi[j.campo][0], campi[j.campo][1]);
+      sbaglio(r.status === 429 ? 'troppe' : 'rete'); return;
+    }
     stato.consegnato = j.testo || Q.manda_ok; memoria.scrivi(CHIAVE_STATO, stato);
     try { if (window.gtag) window.gtag('event', 'generate_lead', { modulo: 'chat' }); } catch (err) {}
     try { if (window.edContaEvento) window.edContaEvento('lead:chat'); } catch (err) {}
