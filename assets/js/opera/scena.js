@@ -218,7 +218,7 @@ export async function creaScena({ tela, base, dati, onProgress, onPronta, lingua
 
   // pavimenti disegnati (piante del DWG)
   const texLoader = new THREE.TextureLoader();
-  for (const n of ['1', '2', '3', '4', '6', '7', '8']) {
+  for (const n of ['1', '2', '3', '4', '5', '6', '7', '8']) {
     const m = pezzi['pianta_u' + n]; if (!m) continue;
     texLoader.load(base + '3d/pav_u' + n + '.jpg', (t) => { t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; m.material = new THREE.MeshStandardMaterial({ map: t, roughness: 0.95 }); });
   }

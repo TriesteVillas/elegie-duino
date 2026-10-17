@@ -45,7 +45,7 @@ IT = {
   'p1_kicker': 'Oggi · 12 agosto 2026', 'p1_titolo': 'Il terreno è quel vuoto fra le case.',
   'p1_testo': "Una foto da drone: il Castello, il mare, il paese. L'unico segno aggiunto è il perimetro magenta del terreno di Elegie, in primo piano accanto alla strada.",
   'p2_kicker': 'Domani · consegna entro il 2027', 'p2_titolo': "Al suo posto, l'edificio.",
-  'p2_testo': 'Lo abbiamo ricostruito in 3D dalle tavole dello Studio Architettura Soldano: misure, finestre, verande, orientamento. Il paese intorno è quello vero, dai rilievi della Regione. Il modello è misurato, non generato.',
+  'p2_testo': 'Lo abbiamo ricostruito in 3D dai disegni dello Studio Architettura Soldano, fino agli esecutivi di settembre: misure, finestre, verande, orientamento. Il paese intorno è quello vero, dai rilievi della Regione. Il modello è misurato, non generato.',
   'scorri': 'Scorri', 'p1_link': 'Il terreno oggi, in 3D',
  },
  'luogo': {
@@ -111,6 +111,7 @@ IT = {
   'terra_sotto': 'con giardino · da {min}', 'primo_sotto': 'con veranda · da {min}', 'giardino': 'giardino {mq}',
   'veranda': 'veranda vetrata', 'posto_giardino': 'posto auto nel giardino', 'iva': '+ IVA',
   'pianta_alt': 'Pianta generale, {piano}: le case colorate una per una',
+  'pianta_fonte': 'Piante ridisegnate dai disegni esecutivi dello Studio Architettura Soldano (settembre 2026); gli alberi sono indicativi.',
   'paga_t': 'Come si paga',
   'paga': [
     ('10%', 'alla prenotazione'),
@@ -125,7 +126,7 @@ IT = {
   'giardino_mq': 'Giardino privato, {mq}', 'posto': 'Posto auto', 'posto_incluso': 'Uno esterno, compreso',
   'posto_giardino': 'Nel giardino privato, compreso', 'classe': 'Classe energetica',
   'classe_v': 'A NZEB di progetto', 'pianta': 'La pianta',
-  'pianta_nota': "Dalle tavole commerciali dello Studio Architettura Soldano (30/06/2026), con gli arredi d'esempio. La superficie commerciale comprende la veranda.",
+  'pianta_nota': "Ridisegnata dai disegni esecutivi dello Studio Architettura Soldano (settembre 2026), con gli arredi d'esempio. La superficie commerciale comprende la veranda.",
   'sole': 'Il sole sulla veranda',
   'sole_nota': "Ore di sole diretto sulla vetrata della veranda in tre giorni dell'anno, calcolate come nel capitolo «La luce»; sotto, il conto con gli alberi come chiome piene.",
   'vista': 'Che cosa si vede', 'richiedi': 'Chiedi di questa casa', 'conto': 'Il conto', 'salva': 'Salva',
@@ -176,7 +177,7 @@ IT = {
   'nuova': 'Nuova costruzione · Località Duino 69/A, Duino Aurisina (TS)',
   'cookie': 'Preferenze cookie',
   'trasparenza': [
-    "<b>Che cosa stai guardando.</b> La foto di apertura è vera, da drone, del 12 agosto 2026: l'unico segno aggiunto è il perimetro del lotto. Il modello 3D dell'edificio è ricostruito dalle tavole e dal disegno CAD dello Studio Architettura Soldano, senza intelligenza artificiale: è un modello indicativo, bianco come un plastico (la facciata vera è grigio caldo scuro), non un elaborato di progetto; la posizione dei pannelli fotovoltaici è ricavata dai prospetti. Le immagini segnate «AI» sono generate o rielaborate con l'intelligenza artificiale.",
+    "<b>Che cosa stai guardando.</b> La foto di apertura è vera, da drone, del 12 agosto 2026: l'unico segno aggiunto è il perimetro del lotto. Il modello 3D dell'edificio è ricostruito dalle tavole e dai disegni CAD dello Studio Architettura Soldano (gli esecutivi di settembre 2026), senza intelligenza artificiale: è un modello indicativo, bianco come un plastico (la facciata vera è grigio caldo scuro), non un elaborato di progetto; la posizione dei pannelli fotovoltaici è ricavata dai prospetti. Le immagini segnate «AI» sono generate o rielaborate con l'intelligenza artificiale.",
     '<b>Dati del paese.</b> Terreno: modello digitale LiDAR della Regione FVG, rilievi 2006–2009 (IODL 2.0). Ortofoto: Regione FVG, true ortofoto 2017–2020 con piccole integrazioni 2012 (CC BY 4.0). Edifici: © contributori OpenStreetMap (ODbL). Chiome degli alberi: Meta e World Resources Institute, High Resolution Canopy Height (CC BY 4.0). Tempi: OSRM su dati OpenStreetMap.',
   ],
   'legale': 'Vendite a cura di TriesteVillas srl · Via Milano 5, 34132 Trieste · C.F./P.IVA 01235580329 · REA TS 134793, CCIAA Venezia Giulia',
@@ -316,7 +317,7 @@ EN = {
   'p1_kicker': 'Today · 12 August 2026', 'p1_titolo': 'The plot is that gap between the houses.',
   'p1_testo': 'A drone photograph: the Castle, the sea, the village. The only thing added is the magenta outline of the Elegie plot, in the foreground next to the road.',
   'p2_kicker': 'Tomorrow · completion by 2027', 'p2_titolo': 'In its place, the building.',
-  'p2_testo': "We rebuilt it in 3D from the drawings of Studio Architettura Soldano: dimensions, windows, verandas, orientation. The village around it is the real one, from the Region's surveys. The model is measured, not generated.",
+  'p2_testo': "We rebuilt it in 3D from the drawings of Studio Architettura Soldano, down to the September construction drawings: dimensions, windows, verandas, orientation. The village around it is the real one, from the Region's surveys. The model is measured, not generated.",
   'scorri': 'Scroll', 'p1_link': 'The plot today, in 3D',
  },
  'luogo': {
@@ -381,7 +382,8 @@ EN = {
   'testo': 'A private garden on the ground floor, a veranda on the first. Tap a home to open its floor plan, the sun on its veranda and the full cost.',
   'terra_sotto': 'with garden · from {min}', 'primo_sotto': 'with veranda · from {min}', 'giardino': 'garden {mq}',
   'veranda': 'glazed veranda', 'posto_giardino': 'parking in the garden', 'iva': '+ VAT',
-  'pianta_alt': 'Site plan, {piano}: each home in its own colour', 'paga_t': 'How you pay',
+  'pianta_alt': 'Site plan, {piano}: each home in its own colour',
+  'pianta_fonte': 'Plans redrawn from the construction drawings of Studio Architettura Soldano (September 2026); the trees are indicative.', 'paga_t': 'How you pay',
   'paga': [
     ('10%', 'on reservation'),
     ('20%', 'at the preliminary contract, before the notary, indicatively by the end of 2026'),
@@ -395,7 +397,7 @@ EN = {
   'giardino_mq': 'Private garden, {mq}', 'posto': 'Parking', 'posto_incluso': 'One outdoor space, included',
   'posto_giardino': 'In the private garden, included', 'classe': 'Energy class', 'classe_v': 'A NZEB by design',
   'pianta': 'The floor plan',
-  'pianta_nota': 'From the sales drawings of Studio Architettura Soldano (30/06/2026), with sample furniture. The commercial area includes the veranda.',
+  'pianta_nota': 'Redrawn from the construction drawings of Studio Architettura Soldano (September 2026), with sample furniture. The commercial area includes the veranda.',
   'sole': 'The sun on the veranda',
   'sole_nota': 'Hours of direct sun on the veranda glazing on three days of the year, calculated as in the chapter "The light"; below, the count with trees as solid crowns.',
   'vista': 'What you see', 'richiedi': 'Ask about this home', 'conto': 'The cost', 'salva': 'Save',
@@ -447,7 +449,7 @@ EN = {
   'nuova': 'New build · Località Duino 69/A, Duino Aurisina (TS), Italy',
   'cookie': 'Cookie preferences',
   'trasparenza': [
-    '<b>What you are looking at.</b> The opening photo is real, taken by drone on 12 August 2026: the only thing added is the outline of the plot. The 3D model of the building is rebuilt from the drawings and CAD file of Studio Architettura Soldano, without artificial intelligence: it is an indicative model, white like an architect\'s maquette (the real façade is a dark warm grey), not a design document; the position of the solar panels is taken from the elevations. Images marked "AI" were generated or edited with artificial intelligence.',
+    '<b>What you are looking at.</b> The opening photo is real, taken by drone on 12 August 2026: the only thing added is the outline of the plot. The 3D model of the building is rebuilt from the drawings and CAD files of Studio Architettura Soldano (the construction drawings of September 2026), without artificial intelligence: it is an indicative model, white like an architect\'s maquette (the real façade is a dark warm grey), not a design document; the position of the solar panels is taken from the elevations. Images marked "AI" were generated or edited with artificial intelligence.',
     '<b>Village data.</b> Terrain: LiDAR digital model of the FVG Region, 2006–2009 surveys (IODL 2.0). Orthophoto: FVG Region, 2017–2020 true orthophoto with small 2012 infills (CC BY 4.0). Buildings: © OpenStreetMap contributors (ODbL). Tree crowns: Meta and World Resources Institute, High Resolution Canopy Height (CC BY 4.0). Times: OSRM on OpenStreetMap data.',
   ],
   'legale': 'Sales by TriesteVillas srl · Via Milano 5, 34132 Trieste, Italy · VAT IT01235580329 · REA TS 134793, CCIAA Venezia Giulia',
@@ -587,7 +589,7 @@ DE = {
   'p1_kicker': 'Heute · 12. August 2026', 'p1_titolo': 'Das Grundstück ist die Lücke zwischen den Häusern.',
   'p1_testo': 'Ein Drohnenfoto: die Burg, das Meer, der Ort. Hinzugefügt ist nur der magentafarbene Umriss des Grundstücks von Elegie, vorn an der Straße.',
   'p2_kicker': 'Morgen · Fertigstellung bis 2027', 'p2_titolo': 'An seiner Stelle: das Haus.',
-  'p2_testo': 'Wir haben es aus den Plänen des Studio Architettura Soldano in 3D nachgebaut: Maße, Fenster, Veranden, Ausrichtung. Der Ort ringsum ist der echte, aus den Vermessungsdaten der Region. Das Modell ist vermessen, nicht generiert.',
+  'p2_testo': 'Wir haben es aus den Plänen des Studio Architettura Soldano in 3D nachgebaut, bis zu den Ausführungsplänen vom September: Maße, Fenster, Veranden, Ausrichtung. Der Ort ringsum ist der echte, aus den Vermessungsdaten der Region. Das Modell ist vermessen, nicht generiert.',
   'scorri': 'Scrollen', 'p1_link': 'Das Grundstück heute, in 3D',
  },
  'luogo': {
@@ -652,7 +654,8 @@ DE = {
   'testo': 'Im Erdgeschoss der eigene Garten, im Obergeschoss die Veranda. Tippen Sie auf eine Wohnung: Grundriss, Sonne auf der Veranda und Kosten öffnen sich.',
   'terra_sotto': 'mit Garten · ab {min}', 'primo_sotto': 'mit Veranda · ab {min}', 'giardino': 'Garten {mq}',
   'veranda': 'verglaste Veranda', 'posto_giardino': 'Stellplatz im Garten', 'iva': 'zzgl. MwSt.',
-  'pianta_alt': 'Lageplan, {piano}: jede Wohnung in ihrer Farbe', 'paga_t': 'Wie Sie zahlen',
+  'pianta_alt': 'Lageplan, {piano}: jede Wohnung in ihrer Farbe',
+  'pianta_fonte': 'Pläne nach den Ausführungsplänen des Studio Architettura Soldano (September 2026) neu gezeichnet; die Bäume sind nur zur Orientierung eingezeichnet.', 'paga_t': 'Wie Sie zahlen',
   'paga': [
     ('10 %', 'bei der Reservierung'),
     ('20 %', 'beim Vorvertrag vor dem Notar, voraussichtlich bis Ende 2026'),
@@ -666,7 +669,7 @@ DE = {
   'veranda_si': 'Verglaste Veranda mit Brüstung', 'giardino_mq': 'Eigener Garten, {mq}', 'posto': 'Stellplatz',
   'posto_incluso': 'Ein Außenstellplatz, inklusive', 'posto_giardino': 'Im eigenen Garten, inklusive',
   'classe': 'Energieklasse', 'classe_v': 'A NZEB laut Planung', 'pianta': 'Der Grundriss',
-  'pianta_nota': 'Aus den Verkaufsplänen des Studio Architettura Soldano (30.06.2026), mit Beispielmöblierung. Die Verkaufsfläche schließt die Veranda ein.',
+  'pianta_nota': 'Nach den Ausführungsplänen des Studio Architettura Soldano (September 2026) neu gezeichnet, mit Beispielmöblierung. Die Verkaufsfläche schließt die Veranda ein.',
   'sole': 'Die Sonne auf der Veranda',
   'sole_nota': 'Stunden direkter Sonne auf der Verglasung der Veranda an drei Tagen im Jahr, berechnet wie im Kapitel „Das Licht“; darunter die Rechnung mit den Bäumen als volle Kronen.',
   'vista': 'Was man sieht', 'richiedi': 'Zu dieser Wohnung anfragen', 'conto': 'Die Kosten', 'salva': 'Merken',
@@ -720,7 +723,7 @@ DE = {
   'nuova': 'Neubau · Località Duino 69/A, Duino Aurisina (TS), Italien',
   'cookie': 'Cookie-Einstellungen',
   'trasparenza': [
-    '<b>Was Sie sehen.</b> Das Eröffnungsfoto ist echt, mit der Drohne aufgenommen am 12. August 2026: hinzugefügt ist nur der Umriss des Grundstücks. Das 3D-Modell des Hauses ist aus den Plänen und der CAD-Datei des Studio Architettura Soldano nachgebaut, ohne künstliche Intelligenz: ein Modell zur Orientierung, weiß wie ein Architekturmodell (die echte Fassade ist ein dunkles warmes Grau), keine Planunterlage; die Lage der Solarmodule stammt aus den Ansichten. Die mit „KI“ markierten Bilder sind mit künstlicher Intelligenz erzeugt oder bearbeitet.',
+    '<b>Was Sie sehen.</b> Das Eröffnungsfoto ist echt, mit der Drohne aufgenommen am 12. August 2026: hinzugefügt ist nur der Umriss des Grundstücks. Das 3D-Modell des Hauses ist aus den Plänen und CAD-Dateien des Studio Architettura Soldano (den Ausführungsplänen vom September 2026) nachgebaut, ohne künstliche Intelligenz: ein Modell zur Orientierung, weiß wie ein Architekturmodell (die echte Fassade ist ein dunkles warmes Grau), keine Planunterlage; die Lage der Solarmodule stammt aus den Ansichten. Die mit „KI“ markierten Bilder sind mit künstlicher Intelligenz erzeugt oder bearbeitet.',
     '<b>Daten zum Ort.</b> Gelände: digitales LiDAR-Modell der Region Friaul-Julisch Venetien, Befliegungen 2006–2009 (IODL 2.0). Orthofoto: Region FJV, True-Orthofoto 2017–2020 mit kleinen Ergänzungen von 2012 (CC BY 4.0). Gebäude: © OpenStreetMap-Mitwirkende (ODbL). Baumkronen: Meta und World Resources Institute, High Resolution Canopy Height (CC BY 4.0). Zeiten: OSRM auf Daten von OpenStreetMap.',
   ],
   'legale': 'Verkauf durch TriesteVillas srl · Via Milano 5, 34132 Triest, Italien · USt-IdNr. IT01235580329 · REA TS 134793, CCIAA Venezia Giulia',
@@ -858,7 +861,7 @@ SL = {
   'p1_kicker': 'Danes · 12. avgust 2026', 'p1_titolo': 'Zemljišče je ta praznina med hišami.',
   'p1_testo': 'Fotografija z drona: grad, morje, vas. Dodan je le obris zemljišča Elegie v magenti, v ospredju ob cesti.',
   'p2_kicker': 'Jutri · vselitev do 2027', 'p2_titolo': 'Na njegovem mestu stavba.',
-  'p2_testo': 'Stavbo smo v 3D obnovili iz načrtov biroja Studio Architettura Soldano: mere, okna, verande, orientacija. Vas okoli nje je resnična, iz meritev Dežele. Model je izmerjen, ne generiran.',
+  'p2_testo': 'Stavbo smo v 3D obnovili iz načrtov biroja Studio Architettura Soldano, vse do izvedbenih načrtov iz septembra: mere, okna, verande, orientacija. Vas okoli nje je resnična, iz meritev Dežele. Model je izmerjen, ne generiran.',
   'scorri': 'Pomaknite', 'p1_link': 'Zemljišče danes, v 3D',
  },
  'luogo': {
@@ -924,6 +927,7 @@ SL = {
   'terra_sotto': 'z vrtom · od {min}', 'primo_sotto': 'z verando · od {min}', 'giardino': 'vrt {mq}',
   'veranda': 'zastekljena veranda', 'posto_giardino': 'parkirišče na vrtu', 'iva': '+ DDV',
   'pianta_alt': 'Splošni tloris, {piano}: vsako stanovanje v svoji barvi',
+  'pianta_fonte': 'Tlorisi, na novo narisani po izvedbenih načrtih biroja Studio Architettura Soldano (september 2026); drevesa so okvirna.',
   'paga_t': 'Kako se plača',
   'paga': [
     ('10 %', 'ob rezervaciji'),
@@ -938,7 +942,7 @@ SL = {
   'veranda_si': 'Zastekljena veranda z ograjo', 'giardino_mq': 'Zasebni vrt, {mq}', 'posto': 'Parkirišče',
   'posto_incluso': 'Eno zunanje, vključeno', 'posto_giardino': 'Na zasebnem vrtu, vključeno',
   'classe': 'Energijski razred', 'classe_v': 'A NZEB po projektu', 'pianta': 'Tloris',
-  'pianta_nota': 'Iz prodajnih načrtov biroja Studio Architettura Soldano (30. 6. 2026), z vzorčnim pohištvom. Prodajna površina vključuje verando.',
+  'pianta_nota': 'Na novo narisan po izvedbenih načrtih biroja Studio Architettura Soldano (september 2026), z vzorčnim pohištvom. Prodajna površina vključuje verando.',
   'sole': 'Sonce na verandi',
   'sole_nota': 'Ure neposrednega sonca na zasteklitvi verande v treh dneh leta, izračunane kot v poglavju »Svetloba«; spodaj izračun z drevesi kot polnimi krošnjami.',
   'vista': 'Kaj se vidi', 'richiedi': 'Vprašajte o tem stanovanju', 'conto': 'Strošek', 'salva': 'Shrani',
@@ -984,7 +988,7 @@ SL = {
   'nuova': 'Novogradnja · Località Duino 69/A, Devin - Nabrežina (TS), Italija',
   'cookie': 'Nastavitve piškotkov',
   'trasparenza': [
-    '<b>Kaj gledate.</b> Uvodna fotografija je resnična, posneta z dronom 12. avgusta 2026: dodan je le obris zemljišča. 3D-model stavbe je obnovljen iz načrtov in datoteke CAD biroja Studio Architettura Soldano, brez umetne inteligence: je okvirni model, bel kot arhitekturna maketa (resnična fasada je temno toplo siva), in ni projektna dokumentacija; položaj sončnih panelov je povzet po fasadah. Slike z oznako »UI« so ustvarjene ali obdelane z umetno inteligenco.',
+    '<b>Kaj gledate.</b> Uvodna fotografija je resnična, posneta z dronom 12. avgusta 2026: dodan je le obris zemljišča. 3D-model stavbe je obnovljen iz načrtov in datotek CAD biroja Studio Architettura Soldano (izvedbenih načrtov iz septembra 2026), brez umetne inteligence: je okvirni model, bel kot arhitekturna maketa (resnična fasada je temno toplo siva), in ni projektna dokumentacija; položaj sončnih panelov je povzet po fasadah. Slike z oznako »UI« so ustvarjene ali obdelane z umetno inteligenco.',
     '<b>Podatki o vasi.</b> Teren: digitalni model LiDAR Dežele FJK, posnetki 2006–2009 (IODL 2.0). Ortofoto: Dežela FJK, prava ortofoto 2017–2020 z manjšimi dopolnitvami iz 2012 (CC BY 4.0). Stavbe: © avtorji OpenStreetMap (ODbL). Krošnje: Meta in World Resources Institute, High Resolution Canopy Height (CC BY 4.0). Časi: OSRM na podatkih OpenStreetMap.',
   ],
   'legale': 'Prodaja TriesteVillas srl · Via Milano 5, 34132 Trst, Italija · ID za DDV IT01235580329 · REA TS 134793, CCIAA Venezia Giulia',

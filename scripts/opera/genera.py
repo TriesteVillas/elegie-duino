@@ -4,7 +4,8 @@
     python3 scripts/opera/genera.py
 
 Fonti: scripts/opera/unita.json (case e prezzi), scripts/opera/fatti.json (luoghi e tempi misurati, scene,
-costruzione), scripts/opera/pianta_piani.json (le piante per piano e i contorni delle case), scripts/opera/testi.py
+costruzione), scripts/opera/pianta_piani.json (le piante per piano, ridisegnate dall'esecutivo, e i contorni delle
+case), scripts/opera/testi.py
 (le parole nelle quattro lingue). Le pagine prodotte (index.html, en/, de/, sl/) si committano: GitHub Pages non ha
 un build. Scrive anche il sapere del concierge (assets/concierge/conoscenza.json, scripts/opera/conoscenza.py).
 ⚠️ Si cambiano i testi qui, non nell'HTML: la prossima generazione sovrascrive le pagine.
@@ -42,9 +43,9 @@ def num(L, n):
 def euro(L, n): return '€\u00a0' + num(L, n)   # spazio indivisibile: «€» non va mai a capo da solo
 def mq(L, s):
     if s is None: return '—'
-    return (s.replace(',', '.') if L['lingua'] == 'en' else s) + ' m²'
+    return (s.replace(',', '.') if L['lingua'] == 'en' else s) + '\u00a0m²'
 def mq_tondi(L, s):
-    return f"{round(float(s.replace(',', '.'))):d} m²"
+    return f"{round(float(s.replace(',', '.'))):d}\u00a0m²"
 
 def minuti(L, sec):
     m = max(1, round(sec / 60))
@@ -173,34 +174,26 @@ def etichetta_casa(L, u):
     return f"{L['casa_n'].format(n=u['n'])} · {L['tipi'][u['tipo']]} · {mq(L, u['commerciale'])} · {fuori_breve(L, u)} · {prezzo}"
 
 def pianta_piano_html(L, base, piano):
+    """La pianta del piano (SVG ridisegnato dall'esecutivo, coi colori di giugno e «Venduta» già scritto) e sopra i
+    contorni cliccabili delle case, con le maschere che velano le altre quando si passa su una."""
     CA = L['case']; P = PP[piano]; W, H = P['w'], P['h']
-    nome_piano = CA[piano]
-    larg = FOTO[P['img']]
-    av = ', '.join(f'{base}images/resp/{P["img"]}-{x}.avif {x}w' for x in larg)
-    wb = ', '.join(f'{base}images/resp/{P["img"]}-{x}.webp {x}w' for x in larg)
-    sizes = '(max-width: 960px) 100vw, 62vw'
-    pic = (f'<picture><source type="image/avif" srcset="{av}" sizes="{sizes}"><source type="image/webp" srcset="{wb}" sizes="{sizes}">'
-           f'<img src="{base}images/{P["img"]}.jpg" alt="{e(CA["pianta_alt"].format(piano=nome_piano.lower() if L["lingua"] in ("it", "sl") else nome_piano))}" width="{W}" height="{H}" loading="lazy" decoding="async"></picture>')
-    maschere, poligoni, vendute = [], [], []
+    alt = CA['pianta_alt'].format(piano=CA[piano].lower() if L['lingua'] in ('it', 'sl') else CA[piano])
+    pic = f'<img src="{base}images/{P["img"]}.svg" alt="{e(alt)}" width="{W}" height="{H}" loading="lazy" decoding="async">'
+    maschere, poligoni = [], []
     for n, d in P['unita'].items():
         u = next(x for x in U['unita'] if x['n'] == n)
         punti = ' '.join(f'{x},{y}' for x, y in d['punti'])
         maschere.append(f'<mask id="mk-{n}" maskUnits="userSpaceOnUse" x="0" y="0" width="{W}" height="{H}"><rect width="{W}" height="{H}" fill="#fff"/><polygon points="{punti}" fill="#000"/></mask>')
         cls = 'kp-u kp-u--venduta' if u['venduta'] else 'kp-u'
-        tratto = f' style="fill:url(#tratto-{piano})"' if u['venduta'] else ''
         xs = [x for x, _ in d['punti']]; ys = [y for _, y in d['punti']]
         cx_pc, cy_pc = (min(xs) + max(xs)) / 2 / W * 100, min(ys) / H * 100   # l'etichetta sta sopra la casa
-        poligoni.append(f'<polygon class="{cls}" data-unita="{n}" data-cx="{cx_pc:.2f}" data-cy="{cy_pc:.2f}" points="{punti}"{tratto} tabindex="0" role="button" aria-label="{e(etichetta_casa(L, u))}"/>')
-        if u['venduta']:
-            cx, cy = d['centro']
-            vendute.append(f'<g class="kp-v" aria-hidden="true"><rect x="{cx - 118}" y="{cy - 34}" width="236" height="68" rx="34"/><text x="{cx}" y="{cy + 13}">{e(L["venduta"])}</text></g>')
+        poligoni.append(f'<polygon class="{cls}" data-unita="{n}" data-cx="{cx_pc:.2f}" data-cy="{cy_pc:.2f}" points="{punti}" tabindex="0" role="button" aria-label="{e(etichetta_casa(L, u))}"/>')
     return f'''<figure class="kp" data-piano="{piano}">
         {pic}
         <svg class="kp__sopra" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid meet">
-          <defs><pattern id="tratto-{piano}" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="22" height="22" fill="rgba(251,250,246,.62)"/><line x1="0" y1="0" x2="0" y2="22" stroke="rgba(27,33,37,.28)" stroke-width="5"/></pattern>{''.join(maschere)}</defs>
+          <defs>{''.join(maschere)}</defs>
           <rect class="kp__velo" width="{W}" height="{H}"/>
           {''.join(poligoni)}
-          {''.join(vendute)}
         </svg>
         <div class="kp__info" aria-hidden="true" hidden></div>
       </figure>'''
@@ -246,6 +239,7 @@ def case_html(L, base, k_case):
       <button type="button" role="tab" id="tab-primo" aria-controls="piano-primo" aria-selected="false" tabindex="-1" data-piano="primo"><b>{e(CA['primo'])}</b><span class="num">{e(CA['primo_sotto'].format(min=euro(L, min_p)))}</span></button>
     </div>
     {''.join(pannelli)}
+    <p class="nota piani__fonte">{e(CA['pianta_fonte'])}</p>
     <div class="paga rivela">
       <h3 class="paga__t">{e(CA['paga_t'])}</h3>
       <ol class="paga__passi">{passi}</ol>

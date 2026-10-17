@@ -42,11 +42,11 @@
     },
     "21 marzo": {
      "senza_alberi": "9 h 10 min",
-     "con_alberi_come_chiome_piene": "7 h 50 min"
+     "con_alberi_come_chiome_piene": "6 h 55 min"
     },
     "21 giugno": {
-     "senza_alberi": "11 h 30 min",
-     "con_alberi_come_chiome_piene": "8 h"
+     "senza_alberi": "12 h 05 min",
+     "con_alberi_come_chiome_piene": "9 h"
     }
    },
    "vista": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."
@@ -72,16 +72,16 @@
    "pianta": "https://elegieduino.it/#unita-2",
    "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
     "21 dicembre": {
-     "senza_alberi": "1 h 25 min",
+     "senza_alberi": "0 h 50 min",
      "con_alberi_come_chiome_piene": "0 h 20 min"
     },
     "21 marzo": {
-     "senza_alberi": "8 h 05 min",
-     "con_alberi_come_chiome_piene": "5 h 30 min"
+     "senza_alberi": "8 h 10 min",
+     "con_alberi_come_chiome_piene": "5 h 15 min"
     },
     "21 giugno": {
-     "senza_alberi": "7 h 40 min",
-     "con_alberi_come_chiome_piene": "5 h 20 min"
+     "senza_alberi": "7 h 55 min",
+     "con_alberi_come_chiome_piene": "6 h 40 min"
     }
    },
    "vista": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."
@@ -108,15 +108,15 @@
    "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
     "21 dicembre": {
      "senza_alberi": "2 h 05 min",
-     "con_alberi_come_chiome_piene": "0 h 35 min"
+     "con_alberi_come_chiome_piene": "0 h 30 min"
     },
     "21 marzo": {
-     "senza_alberi": "9 h 25 min",
-     "con_alberi_come_chiome_piene": "7 h"
+     "senza_alberi": "9 h 30 min",
+     "con_alberi_come_chiome_piene": "5 h 35 min"
     },
     "21 giugno": {
      "senza_alberi": "9 h 40 min",
-     "con_alberi_come_chiome_piene": "6 h 40 min"
+     "con_alberi_come_chiome_piene": "7 h 40 min"
     }
    },
    "vista": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."
@@ -166,16 +166,16 @@
    "pianta": "https://elegieduino.it/#unita-6",
    "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
     "21 dicembre": {
-     "senza_alberi": "6 h 35 min",
-     "con_alberi_come_chiome_piene": "3 h 55 min"
+     "senza_alberi": "5 h 55 min",
+     "con_alberi_come_chiome_piene": "3 h 25 min"
     },
     "21 marzo": {
-     "senza_alberi": "7 h 55 min",
-     "con_alberi_come_chiome_piene": "6 h 20 min"
+     "senza_alberi": "8 h 10 min",
+     "con_alberi_come_chiome_piene": "7 h 15 min"
     },
     "21 giugno": {
-     "senza_alberi": "9 h 15 min",
-     "con_alberi_come_chiome_piene": "9 h 05 min"
+     "senza_alberi": "9 h 25 min",
+     "con_alberi_come_chiome_piene": "9 h 15 min"
     }
    },
    "vista": "Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa due gradi e mezzo sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."
@@ -202,15 +202,15 @@
    "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
     "21 dicembre": {
      "senza_alberi": "6 h 15 min",
-     "con_alberi_come_chiome_piene": "3 h 55 min"
+     "con_alberi_come_chiome_piene": "2 h 25 min"
     },
     "21 marzo": {
-     "senza_alberi": "9 h 35 min",
-     "con_alberi_come_chiome_piene": "7 h 55 min"
+     "senza_alberi": "9 h 40 min",
+     "con_alberi_come_chiome_piene": "8 h 30 min"
     },
     "21 giugno": {
-     "senza_alberi": "10 h 05 min",
-     "con_alberi_come_chiome_piene": "9 h 10 min"
+     "senza_alberi": "10 h 20 min",
+     "con_alberi_come_chiome_piene": "9 h 30 min"
     }
    },
    "vista": "Dalla veranda il mare non si vede: l'orizzonte è fatto dei tetti e del verde del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."
@@ -237,15 +237,15 @@
    "ore_di_sole_diretto_sulla_vetrata_della_veranda": {
     "21 dicembre": {
      "senza_alberi": "7 h 05 min",
-     "con_alberi_come_chiome_piene": "1 h 10 min"
+     "con_alberi_come_chiome_piene": "4 h 45 min"
     },
     "21 marzo": {
      "senza_alberi": "10 h 10 min",
-     "con_alberi_come_chiome_piene": "6 h 25 min"
+     "con_alberi_come_chiome_piene": "6 h 50 min"
     },
     "21 giugno": {
-     "senza_alberi": "10 h 20 min",
-     "con_alberi_come_chiome_piene": "7 h 10 min"
+     "senza_alberi": "10 h 25 min",
+     "con_alberi_come_chiome_piene": "7 h 50 min"
     }
    },
    "vista": "Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa cinque gradi sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."

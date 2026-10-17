@@ -45,9 +45,6 @@ FOTO = {
     'drone-duino-verticale': [750, 1080],
     'rend-fronte-nord': [640, 1024, 1600],
     'rend-ingresso-nord': [640, 1024, 1600],
-    # La pagina corta (18/10/2026): le piante per piano del sito di prima, una per piano, con le case cliccabili.
-    'pianta-terra': [800, 1200, 1600, 2000],
-    'pianta-primo': [800, 1200, 1600, 2000],
 }
 # Taglio verticale 3:4 della hero per i telefoni (tutta l'altezza, centrato).
 HERO_VERTICALE = ('exterior-sunset-garden', [750, None])  # None = larghezza nativa del taglio
