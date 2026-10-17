@@ -194,5 +194,60 @@
    "assets/logos/resp/triestevillas-192.webp",
    "assets/logos/resp/triestevillas-192.png"
   ]
+ },
+ "assets/images/drone-duino.jpg": {
+  "sha256": "300de9a43081cc99dc832f0176b622cbe8655c2092d86c592587d1ebdefd16b8",
+  "varianti": [
+   "assets/images/resp/drone-duino-800.avif",
+   "assets/images/resp/drone-duino-800.webp",
+   "assets/images/resp/drone-duino-1280.avif",
+   "assets/images/resp/drone-duino-1280.webp",
+   "assets/images/resp/drone-duino-1920.avif",
+   "assets/images/resp/drone-duino-1920.webp",
+   "assets/images/resp/drone-duino-2400.avif",
+   "assets/images/resp/drone-duino-2400.webp"
+  ]
+ },
+ "assets/images/drone-duino-verticale.jpg": {
+  "sha256": "40c422e215a7645862e59ed742ec07d10bc9b367008208a5d02cdcc1f43fc399",
+  "varianti": [
+   "assets/images/resp/drone-duino-verticale-750.avif",
+   "assets/images/resp/drone-duino-verticale-750.webp",
+   "assets/images/resp/drone-duino-verticale-1080.avif",
+   "assets/images/resp/drone-duino-verticale-1080.webp"
+  ]
+ },
+ "assets/images/rend-fronte-nord.jpg": {
+  "sha256": "8c98e59c341090a94d37f2206c296ec5b9b84e45811431fecc340587ce8f83ed",
+  "varianti": [
+   "assets/images/resp/rend-fronte-nord-640.avif",
+   "assets/images/resp/rend-fronte-nord-640.webp",
+   "assets/images/resp/rend-fronte-nord-1024.avif",
+   "assets/images/resp/rend-fronte-nord-1024.webp",
+   "assets/images/resp/rend-fronte-nord-1600.avif",
+   "assets/images/resp/rend-fronte-nord-1600.webp"
+  ]
+ },
+ "assets/images/rend-ingresso-nord.jpg": {
+  "sha256": "3367140398090f60b747ba2a45ae8e162412c0e483d19de37529bba471894294",
+  "varianti": [
+   "assets/images/resp/rend-ingresso-nord-640.avif",
+   "assets/images/resp/rend-ingresso-nord-640.webp",
+   "assets/images/resp/rend-ingresso-nord-1024.avif",
+   "assets/images/resp/rend-ingresso-nord-1024.webp",
+   "assets/images/resp/rend-ingresso-nord-1600.avif",
+   "assets/images/resp/rend-ingresso-nord-1600.webp"
+  ]
+ },
+ "assets/images/interno-giardino.jpg": {
+  "sha256": "8336474bf9cab927ebbb821a78aee6a6540275eedd495b9cc03d6c4d9a388804",
+  "varianti": [
+   "assets/images/resp/interno-giardino-640.avif",
+   "assets/images/resp/interno-giardino-640.webp",
+   "assets/images/resp/interno-giardino-1024.avif",
+   "assets/images/resp/interno-giardino-1024.webp",
+   "assets/images/resp/interno-giardino-1600.avif",
+   "assets/images/resp/interno-giardino-1600.webp"
+  ]
  }
 }

@@ -11,6 +11,7 @@ le pagine continuano a mostrare la variante VECCHIA finché non si rilancia:
 
     python3 scripts/varianti.py            # rigenera tutto (serve Pillow ≥ 11 con AVIF)
     python3 scripts/varianti.py --verifica # solo controlla (basta Python: niente Pillow)
+    python3 scripts/varianti.py --solo drone-duino,rend-fronte-nord   # rigenera solo quelle foto
 
 `--verifica` confronta l'impronta SHA-256 di ogni originale con quella scritta
 in `assets/varianti.json` al momento della generazione, e fallisce se un
@@ -38,6 +39,13 @@ FOTO = {
     # Fotoinserimento dal drone (17/10/2026): la foto vera e la simulazione, stesse misure.
     'aerial-fotoinserimento': [800, 1280, 1920, 2400],
     'aerial-originale': [800, 1280, 1920, 2400],
+    # Il sito «opera» (17/10/2026): la foto da drone vera in apertura (anche nel taglio verticale per
+    # i telefoni), due rendering del fronte nord dello Studio Soldano e un interno AI illustrativo.
+    'drone-duino': [800, 1280, 1920, 2400],
+    'drone-duino-verticale': [750, 1080],
+    'rend-fronte-nord': [640, 1024, 1600],
+    'rend-ingresso-nord': [640, 1024, 1600],
+    'interno-giardino': [640, 1024, 1600],
 }
 # Taglio verticale 3:4 della hero per i telefoni (tutta l'altezza, centrato).
 HERO_VERTICALE = ('exterior-sunset-garden', [750, None])  # None = larghezza nativa del taglio
@@ -55,12 +63,19 @@ def sha(path):
     return h.hexdigest()
 
 
-def genera():
+def genera(solo=None):
+    """`solo`: insieme di nomi da rigenerare (le altre voci del manifesto restano com'erano)."""
     from PIL import Image  # solo qui: la verifica non lo richiede
     manifest = {}
+    if solo:
+        with open(MANIFEST, encoding='utf-8') as f:
+            manifest = json.load(f)
 
     def registra(sorgente, uscite):
         rel = os.path.relpath(sorgente, ROOT)
+        if solo:
+            manifest[rel] = {'sha256': sha(sorgente), 'varianti': []} if rel not in manifest or manifest[rel].get('_rifatto') is None else manifest[rel]
+            manifest[rel]['_rifatto'] = True
         manifest.setdefault(rel, {'sha256': sha(sorgente), 'varianti': []})
         manifest[rel]['varianti'] += [os.path.relpath(u, ROOT) for u in uscite]
 
@@ -86,12 +101,23 @@ def genera():
     os.makedirs(os.path.join(dir_loghi, 'resp'), exist_ok=True)
 
     for nome, larghezze in FOTO.items():
+        if solo and nome not in solo:
+            continue
         src = os.path.join(dir_foto, f'{nome}.jpg')
         im = Image.open(src).convert('RGB')
         uscite = []
         for w in larghezze:
             uscite += salva(scala(im, w), os.path.join(dir_foto, 'resp', nome), ('avif', 'webp'))
         registra(src, uscite)
+
+    if solo:
+        for v in manifest.values():
+            v.pop('_rifatto', None)
+        with open(MANIFEST, 'w', encoding='utf-8') as f:
+            json.dump(manifest, f, indent=1, ensure_ascii=False)
+            f.write('\n')
+        print('rigenerati:', ', '.join(sorted(solo)))
+        return
 
     nome, larghezze = HERO_VERTICALE
     src = os.path.join(dir_foto, f'{nome}.jpg')
@@ -146,4 +172,9 @@ def verifica():
 
 
 if __name__ == '__main__':
-    verifica() if '--verifica' in sys.argv else genera()
+    if '--verifica' in sys.argv:
+        verifica()
+    elif '--solo' in sys.argv:
+        genera(set(sys.argv[sys.argv.index('--solo') + 1].split(',')))
+    else:
+        genera()

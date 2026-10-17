@@ -1,0 +1,856 @@
+{
+ "_fonti": "Verifica del 17/10/2026 (KB progetti/elegie-duino/FATTI-SITO-2026-10-17.md): capitolato tecnico REV03 (citazioni verbatim), tavole TAV_5/6/7 dello Studio Soldano, sito della Riserva delle Falesie, sito del Castello, Frare 2022 (Università di Trieste), prima edizione Insel 1923. Tempi: OSRM (routing.openstreetmap.de) dal cancello del lotto.",
+ "lat": 45.773912,
+ "lon": 13.605925,
+ "rilke": {
+  "versi": [
+   "Wer, wenn ich schriee, hörte mich denn aus der Engel",
+   "Ordnungen? und gesetzt selbst, es nähme",
+   "einer mich plötzlich ans Herz: ich verginge von seinem",
+   "stärkeren Dasein."
+  ]
+ },
+ "luoghi": [
+  {
+   "k": "castello_mastio",
+   "nome": {
+    "it": "Castello di Duino",
+    "en": "Duino Castle",
+    "sl": "Devinski grad"
+   },
+   "etichetta": true,
+   "mondo": [
+    -161.7,
+    56.1,
+    208.7
+   ],
+   "piedi_s": 302.4,
+   "piedi_m": 375.3,
+   "solo": "piedi",
+   "auto_s": 48.9,
+   "auto_m": 287.9
+  },
+  {
+   "k": "rilke_inizio_duino",
+   "nome": {
+    "it": "Sentiero Rilke, inizio",
+    "en": "Rilke Path, start",
+    "sl": "Rilkejeva pot, začetek"
+   },
+   "etichetta": true,
+   "mondo": [
+    -17.4,
+    47.0,
+    107.0
+   ],
+   "piedi_s": 227.8,
+   "piedi_m": 284.7,
+   "solo": "piedi"
+  },
+  {
+   "k": "porticciolo_duino",
+   "nome": {
+    "it": "Porticciolo di Duino",
+    "en": "Duino harbour",
+    "sl": "Devinsko pristanišče"
+   },
+   "etichetta": true,
+   "mondo": [
+    -529.7,
+    0.0,
+    62.5
+   ],
+   "piedi_s": 520.9,
+   "piedi_m": 651.6,
+   "solo": "piedi",
+   "auto_s": 137.3,
+   "auto_m": 893.4
+  },
+  {
+   "k": "bus_duino_centro",
+   "nome": {
+    "it": "Fermata del bus «Duino centro»",
+    "en": "Bus stop \"Duino centro\"",
+    "sl": "Avtobusna postaja »Duino centro«"
+   },
+   "etichetta": false,
+   "mondo": [
+    -63.5,
+    42.6,
+    65.0
+   ],
+   "piedi_s": 159.3,
+   "piedi_m": 199,
+   "solo": "piedi"
+  },
+  {
+   "k": "supermercato_tuttidi",
+   "nome": {
+    "it": "Alimentari in paese",
+    "en": "Village grocery",
+    "sl": "Trgovina v vasi"
+   },
+   "etichetta": false,
+   "mondo": [
+    -144.5,
+    41.5,
+    68.8
+   ],
+   "piedi_s": 143.4,
+   "piedi_m": 179.3,
+   "solo": "piedi"
+  },
+  {
+   "k": "scuola_primaria_dante",
+   "nome": {
+    "it": "Scuole primarie (italiana e slovena)",
+    "en": "Primary schools (Italian and Slovene)",
+    "sl": "Osnovni šoli (italijanska in slovenska)"
+   },
+   "etichetta": false,
+   "mondo": [
+    -62.8,
+    42.9,
+    -87.2
+   ],
+   "piedi_s": 144.2,
+   "piedi_m": 180.4,
+   "solo": "piedi"
+  },
+  {
+   "k": "rilke_fine_sistiana",
+   "nome": {
+    "it": "Sentiero Rilke fino a Sistiana",
+    "en": "Rilke Path to Sistiana",
+    "sl": "Rilkejeva pot do Sesljana"
+   },
+   "etichetta": false,
+   "mondo": [
+    1679.0,
+    58.6,
+    194.7
+   ],
+   "piedi_s": 1821.4,
+   "piedi_m": 2276.4,
+   "solo": "piedi"
+  },
+  {
+   "k": "scoglio_dante",
+   "nome": {
+    "it": "Scoglio di Dante",
+    "en": "Dante's Rock",
+    "sl": "Dantejeva skala"
+   },
+   "etichetta": false,
+   "mondo": [
+    -310.9,
+    0.0,
+    247.7
+   ]
+  },
+  {
+   "k": "baia_sistiana",
+   "nome": {
+    "it": "Baia di Sistiana",
+    "en": "Sistiana Bay",
+    "sl": "Sesljanski zaliv"
+   },
+   "etichetta": true,
+   "mondo": [
+    1799.6,
+    0.0,
+    520.0
+   ],
+   "auto_s": 401.3,
+   "auto_m": 4161.2,
+   "solo": "auto"
+  },
+  {
+   "k": "portopiccolo",
+   "nome": {
+    "it": "Portopiccolo",
+    "en": "Portopiccolo",
+    "sl": "Portopiccolo"
+   },
+   "etichetta": true,
+   "mondo": [
+    2440.6,
+    7.6,
+    922.2
+   ],
+   "auto_s": 421.5,
+   "auto_m": 4245.9,
+   "solo": "auto"
+  },
+  {
+   "k": "monfalcone",
+   "nome": {
+    "it": "Monfalcone",
+    "en": "Monfalcone",
+    "sl": "Tržič"
+   },
+   "etichetta": false,
+   "mondo": [
+    -5601.8,
+    3.8,
+    -3549.3
+   ],
+   "auto_s": 655.4,
+   "auto_m": 7399,
+   "solo": "auto"
+  },
+  {
+   "k": "confine_slovenia",
+   "nome": {
+    "it": "Confine sloveno (Jamiano)",
+    "en": "Slovenian border (Jamiano)",
+    "sl": "Slovenska meja (Jamlje)"
+   },
+   "etichetta": false,
+   "mondo": [
+    -655.7,
+    30.1,
+    -4559.4
+   ],
+   "auto_s": 669.4,
+   "auto_m": 8044.2,
+   "solo": "auto"
+  },
+  {
+   "k": "aeroporto_trieste",
+   "nome": {
+    "it": "Aeroporto di Trieste",
+    "en": "Trieste Airport",
+    "sl": "Letališče Trst"
+   },
+   "etichetta": false,
+   "mondo": [
+    -9356.9,
+    8.2,
+    -5472.9
+   ],
+   "auto_s": 1081.5,
+   "auto_m": 18431.3,
+   "solo": "auto"
+  },
+  {
+   "k": "piazza_unita",
+   "nome": {
+    "it": "Trieste, Piazza Unità",
+    "en": "Trieste, Piazza Unità",
+    "sl": "Trst, Trg Unità"
+   },
+   "etichetta": false,
+   "mondo": [
+    12381.5,
+    6.0,
+    13916.6
+   ],
+   "auto_s": 1771.2,
+   "auto_m": 23901.5,
+   "solo": "auto"
+  }
+ ],
+ "vista": {
+  "1": {
+   "it": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m.",
+   "en": "The sea is not visible from the veranda: in front is the private garden and, beyond the hedges, the greenery and houses of the village. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye at 1.6 m.",
+   "sl": "Z verande se morje ne vidi: pred njo je zasebni vrt, za živo mejo pa zelenje in hiše vasi. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom na 1,6 m."
+  },
+  "2": {
+   "it": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m.",
+   "en": "The sea is not visible from the veranda: in front is the private garden and, beyond the hedges, the greenery and houses of the village. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye at 1.6 m.",
+   "sl": "Z verande se morje ne vidi: pred njo je zasebni vrt, za živo mejo pa zelenje in hiše vasi. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom na 1,6 m."
+  },
+  "3": {
+   "it": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m.",
+   "en": "The sea is not visible from the veranda: in front is the private garden and, beyond the hedges, the greenery and houses of the village. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye at 1.6 m.",
+   "sl": "Z verande se morje ne vidi: pred njo je zasebni vrt, za živo mejo pa zelenje in hiše vasi. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom na 1,6 m."
+  },
+  "4": {
+   "it": "Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m.",
+   "en": "The sea is not visible from the veranda: in front is the private garden and, beyond the hedges, the greenery and houses of the village. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye at 1.6 m.",
+   "sl": "Z verande se morje ne vidi: pred njo je zasebni vrt, za živo mejo pa zelenje in hiše vasi. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom na 1,6 m."
+  },
+  "5": {
+   "it": "Dalla veranda il mare non si vede: l'orizzonte è fatto dei tetti e del verde del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino.",
+   "en": "The sea is not visible from the veranda: the horizon is made of the village's roofs and greenery. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye 4.7 m above the garden.",
+   "sl": "Z verande se morje ne vidi: obzorje sestavljajo strehe in zelenje vasi. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom 4,7 m nad vrtom."
+  },
+  "7": {
+   "it": "Dalla veranda il mare non si vede: l'orizzonte è fatto dei tetti e del verde del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino.",
+   "en": "The sea is not visible from the veranda: the horizon is made of the village's roofs and greenery. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye 4.7 m above the garden.",
+   "sl": "Z verande se morje ne vidi: obzorje sestavljajo strehe in zelenje vasi. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom 4,7 m nad vrtom."
+  },
+  "6": {
+   "it": "Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa due gradi e mezzo sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino.",
+   "en": "This is not a sea view. Between the roofs, to the west, there is a slit of about two and a half degrees of distant sea (the Gulf of Panzano, beyond Monfalcone), just clearing what is in front: a roof ridge or a tree crown is enough to close it. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye 4.7 m above the garden.",
+   "sl": "To ni pogled na morje. Med strehami proti zahodu ostane reža približno dveh stopinj in pol oddaljenega morja (Tržiški zaliv, za Tržičem), tik nad ovirami: dovolj je sleme strehe ali krošnja, da jo zapre. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom 4,7 m nad vrtom."
+  },
+  "8": {
+   "it": "Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa cinque gradi sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino.",
+   "en": "This is not a sea view. Between the roofs, to the west, there is a slit of about five degrees of distant sea (the Gulf of Panzano, beyond Monfalcone), just clearing what is in front: a roof ridge or a tree crown is enough to close it. Measured on the Region's LiDAR survey and the neighbouring houses, with the eye 4.7 m above the garden.",
+   "sl": "To ni pogled na morje. Med strehami proti zahodu ostane reža približno petih stopinj oddaljenega morja (Tržiški zaliv, za Tržičem), tik nad ovirami: dovolj je sleme strehe ali krošnja, da jo zapre. Izmerjeno na deželnem LiDAR posnetku in sosednjih hišah, z očesom 4,7 m nad vrtom."
+  }
+ },
+ "fasi": [
+  {
+   "it": {
+    "fase": "Fondazioni",
+    "titolo": "Travi rovesce in cemento armato.",
+    "testo": "Sotto l'edificio, fondazioni in cemento armato a travi rovesce, dimensionate sulla relazione geologica e sul calcolo strutturale. Fra il terreno e il pavimento del piano terra, un'intercapedine aerata.",
+    "citazione": "travi rovesce, dimensionate in conformità alle risultanze della relazione geologica e del calcolo strutturale"
+   },
+   "en": {
+    "fase": "Foundations",
+    "titolo": "Upturned reinforced-concrete beams.",
+    "testo": "Under the building, reinforced-concrete foundations with upturned beams, sized on the geological report and the structural calculations. Between the ground and the ground-floor slab, a ventilated air gap.",
+    "citazione": "travi rovesce, dimensionate in conformità alle risultanze della relazione geologica e del calcolo strutturale"
+   },
+   "sl": {
+    "fase": "Temelji",
+    "titolo": "Obrnjeni armiranobetonski nosilci.",
+    "testo": "Pod stavbo so temelji iz armiranega betona z obrnjenimi nosilci, dimenzionirani po geološkem poročilu in statičnem izračunu. Med terenom in pritlično ploščo je zračni prostor.",
+    "citazione": "travi rovesce, dimensionate in conformità alle risultanze della relazione geologica e del calcolo strutturale"
+   }
+  },
+  {
+   "it": {
+    "fase": "Pareti in X-LAM",
+    "titolo": "Abete a strati incrociati.",
+    "testo": "Tutto ciò che sta sopra il terreno è portato da pannelli di legno massiccio: tavole di abete essiccate e incollate a fibre incrociate, con marcatura CE e valutazione tecnica europea. Lo stesso pannello fa il muro esterno e quello fra una casa e l'altra, con gli strati che le separano acusticamente.",
+    "citazione": "il legno impiegato proviene esclusivamente da foreste gestite in modo sostenibile e certificate PEFC"
+   },
+   "en": {
+    "fase": "X-LAM walls",
+    "titolo": "Cross-laminated spruce.",
+    "testo": "Everything above ground is carried by solid timber panels: kiln-dried spruce boards glued with crossed grain, CE-marked and with a European Technical Assessment. The same panel forms the outer wall and the wall between homes, with layers that separate them acoustically.",
+    "citazione": "il legno impiegato proviene esclusivamente da foreste gestite in modo sostenibile e certificate PEFC"
+   },
+   "sl": {
+    "fase": "Stene X-LAM",
+    "titolo": "Križno lepljena smreka.",
+    "testo": "Vse nad terenom nosijo plošče iz masivnega lesa: posušene smrekove deske, zlepljene s prekrižanimi vlakni, z oznako CE in evropsko tehnično oceno. Ista plošča tvori zunanjo steno in steno med stanovanji, s plastmi, ki ju zvočno ločijo.",
+    "citazione": "il legno impiegato proviene esclusivamente da foreste gestite in modo sostenibile e certificate PEFC"
+   }
+  },
+  {
+   "it": {
+    "fase": "Solai",
+    "titolo": "Legno anche sopra la testa.",
+    "testo": "Fra i due piani il solaio è ancora X-LAM; il tetto poggia su travi di legno lamellare con un doppio tavolato incrociato, che in alcune stanze del primo piano resta a vista. Sopra i solai, un massetto alleggerito che contiene tubi e cavi.",
+    "citazione": "struttura in travi in legno lamellare […] abbinata a un doppio tavolato incrociato"
+   },
+   "en": {
+    "fase": "Floors",
+    "titolo": "Timber overhead too.",
+    "testo": "Between the two floors the slab is X-LAM again; the roof rests on glulam beams with a double cross boarding, left exposed in some first-floor rooms. Above the slabs, a lightweight screed that carries pipes and cables.",
+    "citazione": "struttura in travi in legno lamellare […] abbinata a un doppio tavolato incrociato"
+   },
+   "sl": {
+    "fase": "Stropovi",
+    "titolo": "Les tudi nad glavo.",
+    "testo": "Med etažama je strop spet iz X-LAM; streha sloni na lepljenih lesenih nosilcih z dvojnim križnim opažem, ki v nekaterih sobah v prvem nadstropju ostane viden. Nad ploščami je lahek estrih z cevmi in kabli.",
+    "citazione": "struttura in travi in legno lamellare […] abbinata a un doppio tavolato incrociato"
+   }
+  },
+  {
+   "it": {
+    "fase": "Cappotto",
+    "titolo": "Lana di roccia, fuori.",
+    "testo": "Le pareti si avvolgono in un cappotto di lana di roccia: non brucia (classe A1), rispetta i Criteri Ambientali Minimi, lo spessore lo decide il calcolo termotecnico. La finitura vera è un intonachino grigio caldo scuro; qui il modello resta bianco, come un plastico.",
+    "citazione": "tonalità grigio caldo scuro (tipo Sandtex n. 36) come da progetto approvato in sede di autorizzazione paesaggistica"
+   },
+   "en": {
+    "fase": "Insulation",
+    "titolo": "Rock wool, outside.",
+    "testo": "The walls are wrapped in an external rock-wool insulation: it does not burn (class A1), meets Italy's Minimum Environmental Criteria, and its thickness comes from the energy calculations. The real finish is a dark warm grey render; here the model stays white, like a maquette.",
+    "citazione": "tonalità grigio caldo scuro (tipo Sandtex n. 36) come da progetto approvato in sede di autorizzazione paesaggistica"
+   },
+   "sl": {
+    "fase": "Toplotna izolacija",
+    "titolo": "Kamena volna, zunaj.",
+    "testo": "Stene ovija fasadna izolacija iz kamene volne: ne gori (razred A1), ustreza italijanskim minimalnim okoljskim merilom, debelino pa določi energetski izračun. Resnični zaključni sloj je temno topel siv omet; model ostaja bel, kot maketa.",
+    "citazione": "tonalità grigio caldo scuro (tipo Sandtex n. 36) come da progetto approvato in sede di autorizzazione paesaggistica"
+   }
+  },
+  {
+   "it": {
+    "fase": "Serramenti",
+    "titolo": "Vetri stratificati, telai antracite.",
+    "testo": "Finestre e portefinestre a taglio termico, grigio antracite RAL 7016, con doppio vetro stratificato basso emissivo: se una lastra si rompe, resta incollata. Le verande del primo piano hanno la ringhiera in metallo dello stesso colore.",
+    "citazione": "vetrocamera stratificata in lastre di vetro 3+3 mm interno, camera 14/16 mm, vetro 4+4 mm esterno"
+   },
+   "en": {
+    "fase": "Windows",
+    "titolo": "Laminated glass, anthracite frames.",
+    "testo": "Thermally broken windows and French windows in anthracite grey RAL 7016, with laminated low-emissivity double glazing: if a pane breaks, it stays in one piece. The first-floor verandas have metal railings in the same colour.",
+    "citazione": "vetrocamera stratificata in lastre di vetro 3+3 mm interno, camera 14/16 mm, vetro 4+4 mm esterno"
+   },
+   "sl": {
+    "fase": "Okna",
+    "titolo": "Lepljeno steklo, antracitni okvirji.",
+    "testo": "Okna in balkonska vrata s prekinjenim toplotnim mostom, antracitno sive barve RAL 7016, z lepljeno nizkoemisijsko dvojno zasteklitvijo: če se steklo razbije, ostane skupaj. Verande v prvem nadstropju imajo kovinsko ograjo enake barve.",
+    "citazione": "vetrocamera stratificata in lastre di vetro 3+3 mm interno, camera 14/16 mm, vetro 4+4 mm esterno"
+   }
+  },
+  {
+   "it": {
+    "fase": "Oscuri",
+    "titolo": "Doghe verticali, sul fronte strada.",
+    "testo": "Sul fronte nord, verso la strada, gli oscuri accompagnano le finestre alte: doghe verticali in materiale composito, effetto legno nei prospetti del progettista. Stesse doghe all'ingresso comune.",
+    "citazione": "realizzati in composito a doghe verticali"
+   },
+   "en": {
+    "fase": "Shutters",
+    "titolo": "Vertical slats on the street side.",
+    "testo": "On the north side, towards the street, the shutters run beside the tall windows: vertical slats in composite material, wood-effect in the architect's elevations. The same slats at the shared entrance.",
+    "citazione": "realizzati in composito a doghe verticali"
+   },
+   "sl": {
+    "fase": "Polkna",
+    "titolo": "Navpične letve na strani ceste.",
+    "testo": "Na severni strani, proti cesti, polkna spremljajo visoka okna: navpične letve iz kompozita, v arhitektovih fasadah v videzu lesa. Enake letve pri skupnem vhodu.",
+    "citazione": "realizzati in composito a doghe verticali"
+   }
+  },
+  {
+   "it": {
+    "fase": "Copertura",
+    "titolo": "Un tetto che lavora.",
+    "testo": "Il tetto piano è impermeabilizzato con due guaine incrociate e zavorrato con ciottoli di fiume. Ospita l'impianto fotovoltaico di ogni casa e le macchine esterne delle pompe di calore, schermate. Bordi e gronde in alluminio antracite.",
+    "citazione": "Sulle porzioni di tetto piano saranno alloggiati gli impianti fotovoltaici dedicati a ciascuna unità immobiliare"
+   },
+   "en": {
+    "fase": "Roof",
+    "titolo": "A roof that works.",
+    "testo": "The flat roof is waterproofed with two crossed membranes and ballasted with river pebbles. It holds each home's solar panels and the screened outdoor units of the heat pumps. Edges and gutters in anthracite aluminium.",
+    "citazione": "Sulle porzioni di tetto piano saranno alloggiati gli impianti fotovoltaici dedicati a ciascuna unità immobiliare"
+   },
+   "sl": {
+    "fase": "Streha",
+    "titolo": "Streha, ki dela.",
+    "testo": "Ravna streha je hidroizolirana z dvema prekrižanima trakovoma in obtežena z rečnimi prodniki. Na njej so sončni paneli vsakega stanovanja in zunanje enote toplotnih črpalk, zakrite. Robovi in žlebovi iz antracitnega aluminija.",
+    "citazione": "Sulle porzioni di tetto piano saranno alloggiati gli impianti fotovoltaici dedicati a ciascuna unità immobiliare"
+   }
+  },
+  {
+   "it": {
+    "fase": "Esterni",
+    "titolo": "Giardini, siepi, posti auto.",
+    "testo": "Ogni casa al piano terra ha il suo giardino, chiuso da siepi sempreverdi, con piante autoctone del Carso che chiedono poca acqua. Posti auto in calcestruzzo drenante, ognuno predisposto per la ricarica elettrica; cancelli carrabili motorizzati.",
+    "citazione": "Ciascuna unità al piano terra sarà dotata di giardino privato di pertinenza esclusiva"
+   },
+   "en": {
+    "fase": "Outside",
+    "titolo": "Gardens, hedges, parking.",
+    "testo": "Each ground-floor home has its own garden, enclosed by evergreen hedges, planted with native Karst species that need little water. Parking in permeable concrete, each space wired for an EV charger; motorised driveway gates.",
+    "citazione": "Ciascuna unità al piano terra sarà dotata di giardino privato di pertinenza esclusiva"
+   },
+   "sl": {
+    "fase": "Zunanjost",
+    "titolo": "Vrtovi, žive meje, parkirišča.",
+    "testo": "Vsako pritlično stanovanje ima svoj vrt, obdan z zimzeleno živo mejo, z avtohtonimi kraškimi rastlinami, ki potrebujejo malo vode. Parkirišča iz vodoprepustnega betona, vsako pripravljeno za polnilnico; motorizirana dvoriščna vrata.",
+    "citazione": "Ciascuna unità al piano terra sarà dotata di giardino privato di pertinenza esclusiva"
+   }
+  }
+ ],
+ "galleria": [
+  {
+   "file": "images/exterior-garden-glazing.jpg",
+   "w": 2000,
+   "h": 1125,
+   "tag": "rendering",
+   "alt": {
+    "it": "Il fronte sud di Elegie Duino, con le verande vetrate sul giardino",
+    "en": "The south front of Elegie Duino, with the glazed verandas on the garden",
+    "sl": "Južna fasada Elegie Duino z zastekljenimi verandami nad vrtom"
+   },
+   "didascalia": {
+    "it": "Il fronte sud, verso i giardini · rendering di progetto",
+    "en": "The south front, towards the gardens · architectural rendering",
+    "sl": "Južna fasada, proti vrtovom · projektna upodobitev"
+   }
+  },
+  {
+   "file": "images/exterior-garden-corner.jpg",
+   "w": 2000,
+   "h": 1125,
+   "tag": "rendering",
+   "alt": {
+    "it": "L'angolo dell'edificio sul giardino privato",
+    "en": "The corner of the building on the private garden",
+    "sl": "Vogal stavbe ob zasebnem vrtu"
+   },
+   "didascalia": {
+    "it": "Volumi semplici sul giardino privato · rendering di progetto",
+    "en": "Simple volumes on the private garden · architectural rendering",
+    "sl": "Preprosti volumni ob zasebnem vrtu · projektna upodobitev"
+   }
+  },
+  {
+   "file": "images/rend-fronte-nord.jpg",
+   "w": 2400,
+   "h": 1350,
+   "tag": "rendering",
+   "larghezze": [
+    640,
+    1024,
+    1600
+   ],
+   "alt": {
+    "it": "Il fronte nord con gli oscuri a doghe verticali e le siepi",
+    "en": "The north front with vertical-slat shutters and hedges",
+    "sl": "Severna fasada s polkni iz navpičnih letev in živo mejo"
+   },
+   "didascalia": {
+    "it": "Il fronte nord, con gli oscuri a doghe · rendering di progetto",
+    "en": "The north front, with slatted shutters · architectural rendering",
+    "sl": "Severna fasada s polkni iz letev · projektna upodobitev"
+   }
+  },
+  {
+   "file": "images/rend-ingresso-nord.jpg",
+   "w": 2400,
+   "h": 1350,
+   "tag": "rendering",
+   "larghezze": [
+    640,
+    1024,
+    1600
+   ],
+   "alt": {
+    "it": "L'ingresso comune sul fronte nord e i posti auto",
+    "en": "The shared entrance on the north front and the parking",
+    "sl": "Skupni vhod na severni fasadi in parkirišča"
+   },
+   "didascalia": {
+    "it": "L'ingresso comune e i posti auto · rendering di progetto",
+    "en": "The shared entrance and parking · architectural rendering",
+    "sl": "Skupni vhod in parkirišča · projektna upodobitev"
+   }
+  },
+  {
+   "file": "images/exterior-sunset-garden.jpg",
+   "w": 2400,
+   "h": 1339,
+   "tag": "ai_rendering",
+   "larghezze": [
+    1280,
+    1920
+   ],
+   "alt": {
+    "it": "Il fronte sud al tramonto, immagine generata con l'intelligenza artificiale",
+    "en": "The south front at sunset, image generated with artificial intelligence",
+    "sl": "Južna fasada ob sončnem zahodu, slika, ustvarjena z umetno inteligenco"
+   },
+   "didascalia": {
+    "it": "Il fronte sud al tramonto · immagine AI",
+    "en": "The south front at sunset · AI image",
+    "sl": "Južna fasada ob zahodu · slika UI"
+   }
+  },
+  {
+   "file": "images/interno-giardino.jpg",
+   "w": 2400,
+   "h": 1350,
+   "tag": "ai",
+   "larghezze": [
+    640,
+    1024,
+    1600
+   ],
+   "alt": {
+    "it": "Un soggiorno affacciato sul giardino, immagine illustrativa generata con l'intelligenza artificiale",
+    "en": "A living room facing the garden, illustrative image generated with artificial intelligence",
+    "sl": "Dnevna soba z razgledom na vrt, ilustrativna slika, ustvarjena z umetno inteligenco"
+   },
+   "didascalia": {
+    "it": "Un soggiorno sul giardino · immagine AI illustrativa",
+    "en": "A living room on the garden · illustrative AI image",
+    "sl": "Dnevna soba ob vrtu · ilustrativna slika UI"
+   }
+  },
+  {
+   "file": "images/detail-bathrooms.jpg",
+   "w": 2000,
+   "h": 1116,
+   "tag": "ai_rendering",
+   "alt": {
+    "it": "Un bagno in gres porcellanato, immagine generata con l'intelligenza artificiale",
+    "en": "A porcelain-stoneware bathroom, image generated with artificial intelligence",
+    "sl": "Kopalnica iz porcelanaste keramike, slika, ustvarjena z umetno inteligenco"
+   },
+   "didascalia": {
+    "it": "Bagno in gres porcellanato · immagine AI",
+    "en": "Bathroom in porcelain stoneware · AI image",
+    "sl": "Kopalnica iz porcelanaste keramike · slika UI"
+   }
+  },
+  {
+   "file": "images/exterior-entrance-sunset.jpg",
+   "w": 2000,
+   "h": 1116,
+   "tag": "ai_rendering",
+   "larghezze": [
+    640,
+    1024,
+    1600
+   ],
+   "alt": {
+    "it": "L'ingresso al tramonto, immagine generata con l'intelligenza artificiale",
+    "en": "The entrance at sunset, image generated with artificial intelligence",
+    "sl": "Vhod ob sončnem zahodu, slika, ustvarjena z umetno inteligenco"
+   },
+   "didascalia": {
+    "it": "L'ingresso al tramonto · immagine AI",
+    "en": "The entrance at sunset · AI image",
+    "sl": "Vhod ob zahodu · slika UI"
+   }
+  }
+ ],
+ "materiali": [
+  {
+   "colori": [
+    [
+     "#a9a59d",
+     {
+      "it": "grigi",
+      "en": "greys",
+      "sl": "sive"
+     }
+    ],
+    [
+     "#cbbda4",
+     {
+      "it": "beige sabbia",
+      "en": "sand beige",
+      "sl": "peščeno bež"
+     }
+    ]
+   ],
+   "it": {
+    "titolo": "Zona giorno e bagni",
+    "testo": "Gres porcellanato 60×60 o 120×60, effetto cemento o pietra, nei toni del grigio o del beige sabbia. Nei bagni, rivestimento 120×60 fino a 120 cm, fino a 210 cm nella doccia."
+   },
+   "en": {
+    "titolo": "Living areas and bathrooms",
+    "testo": "Porcelain stoneware 60×60 or 120×60, concrete or stone effect, in grey or sand-beige tones. In the bathrooms, 120×60 wall tiles up to 120 cm, up to 210 cm in the shower."
+   },
+   "sl": {
+    "titolo": "Bivalni prostori in kopalnice",
+    "testo": "Porcelanasta keramika 60×60 ali 120×60, videz betona ali kamna, v sivih ali peščeno bež tonih. V kopalnicah stenske ploščice 120×60 do višine 120 cm, v tušu do 210 cm."
+   }
+  },
+  {
+   "colori": [
+    [
+     "#c6a47e",
+     {
+      "it": "rovere naturale",
+      "en": "natural oak",
+      "sl": "naravni hrast"
+     }
+    ],
+    [
+     "#8c6a4d",
+     {
+      "it": "varianti colorate",
+      "en": "coloured options",
+      "sl": "barvne različice"
+     }
+    ]
+   ],
+   "it": {
+    "titolo": "Camere",
+    "testo": "Parquet prefinito di rovere, doghe 15×190 cm, naturale verniciato opaco oppure in varianti colorate."
+   },
+   "en": {
+    "titolo": "Bedrooms",
+    "testo": "Prefinished oak parquet, 15×190 cm boards, natural matt or in coloured options."
+   },
+   "sl": {
+    "titolo": "Spalnice",
+    "testo": "Gotov hrastov parket, deske 15×190 cm, naraven mat ali v barvnih različicah."
+   }
+  },
+  {
+   "colori": [
+    [
+     "#f4f3ef",
+     {
+      "it": "sanitari bianchi",
+      "en": "white sanitaryware",
+      "sl": "bela sanitarna keramika"
+     }
+    ],
+    [
+     "#c9ccce",
+     {
+      "it": "cromo lucido",
+      "en": "polished chrome",
+      "sl": "svetel krom"
+     }
+    ]
+   ],
+   "it": {
+    "titolo": "Sanitari e rubinetti",
+    "testo": "Sanitari sospesi filo muro S.D.R. Ceramiche serie BUL, rubinetteria Paffoni serie LIGHT cromo lucido, o equivalenti; piatto doccia in resina bianca."
+   },
+   "en": {
+    "titolo": "Sanitaryware and taps",
+    "testo": "Wall-hung S.D.R. Ceramiche BUL sanitaryware, Paffoni LIGHT taps in polished chrome, or equivalents; white resin shower tray."
+   },
+   "sl": {
+    "titolo": "Sanitarije in armature",
+    "testo": "Stenske sanitarije S.D.R. Ceramiche BUL, armature Paffoni LIGHT v svetlem kromu ali enakovredne; bela tuš kad iz smole."
+   }
+  },
+  {
+   "colori": [
+    [
+     "#383e42",
+     {
+      "it": "RAL 7016",
+      "en": "RAL 7016",
+      "sl": "RAL 7016"
+     }
+    ],
+    [
+     "#c9c5bb",
+     {
+      "it": "grigio pietra d'Istria",
+      "en": "Istrian-stone grey",
+      "sl": "istrsko kamnito siva"
+     }
+    ]
+   ],
+   "it": {
+    "titolo": "Fuori",
+    "testo": "Serramenti, ringhiere, gronde e cancelli grigio antracite RAL 7016; zoccolo e camminamenti in gres grigio pietra d'Istria; facciate in intonachino grigio caldo scuro."
+   },
+   "en": {
+    "titolo": "Outside",
+    "testo": "Windows, railings, gutters and gates in anthracite RAL 7016; plinth and paths in Istrian-stone-grey stoneware; façades in a dark warm grey render."
+   },
+   "sl": {
+    "titolo": "Zunanjost",
+    "testo": "Okna, ograje, žlebovi in vrata v antracitni RAL 7016; podstavek in poti iz keramike v istrsko kamnito sivi; fasade v temno toplo sivem ometu."
+   }
+  }
+ ],
+ "voci": [
+  {
+   "it": {
+    "titolo": "Pompa di calore aria-acqua",
+    "testo": "Una per casa: scalda, raffresca e fa l'acqua calda senza gas, con un accumulo da 200 litri. Ventilconvettori stanza per stanza, si regola dal telefono."
+   },
+   "en": {
+    "titolo": "Air-to-water heat pump",
+    "testo": "One per home: heating, cooling and hot water without gas, with a 200-litre tank. Fan coils room by room, controlled from your phone."
+   },
+   "sl": {
+    "titolo": "Toplotna črpalka zrak-voda",
+    "testo": "Ena na stanovanje: ogreva, hladi in pripravlja toplo vodo brez plina, z 200-litrskim hranilnikom. Konvektorji v vsakem prostoru, upravljanje s telefona."
+   }
+  },
+  {
+   "it": {
+    "titolo": "Fotovoltaico per ogni casa",
+    "testo": "Ciascuna casa ha il suo impianto sul tetto e il suo contatore, fino a 6 kW."
+   },
+   "en": {
+    "titolo": "Solar panels for every home",
+    "testo": "Each home has its own system on the roof and its own meter, up to 6 kW."
+   },
+   "sl": {
+    "titolo": "Sončna elektrarna za vsako stanovanje",
+    "testo": "Vsako stanovanje ima svoj sistem na strehi in svoj števec, do 6 kW."
+   }
+  },
+  {
+   "it": {
+    "titolo": "Ricarica dell'auto",
+    "testo": "Ogni posto auto è predisposto per una colonnina di ricarica elettrica."
+   },
+   "en": {
+    "titolo": "EV charging",
+    "testo": "Every parking space is wired for an electric charging point."
+   },
+   "sl": {
+    "titolo": "Polnjenje avtomobila",
+    "testo": "Vsako parkirno mesto je pripravljeno za električno polnilnico."
+   }
+  },
+  {
+   "it": {
+    "titolo": "Porta blindata",
+    "testo": "Portoncino corazzato tipo Stark o equivalente, classe antieffrazione 3 o superiore."
+   },
+   "en": {
+    "titolo": "Security door",
+    "testo": "Armoured front door, Stark type or equivalent, burglary class 3 or higher."
+   },
+   "sl": {
+    "titolo": "Varnostna vrata",
+    "testo": "Protivlomna vhodna vrata tipa Stark ali enakovredna, razred 3 ali višji."
+   }
+  },
+  {
+   "it": {
+    "titolo": "Predisposizioni",
+    "testo": "Allarme, fibra ottica (se arriva in zona), rete dati e gestione domotica delle luci."
+   },
+   "en": {
+    "titolo": "Pre-wiring",
+    "testo": "Alarm, optical fibre (where available), data network and smart lighting control."
+   },
+   "sl": {
+    "titolo": "Pripravljene napeljave",
+    "testo": "Alarm, optično vlakno (kjer je na voljo), podatkovno omrežje in pametno upravljanje luči."
+   }
+  },
+  {
+   "it": {
+    "titolo": "Videocitofono",
+    "testo": "Registra chi ha suonato se in casa nessuno risponde."
+   },
+   "en": {
+    "titolo": "Video door phone",
+    "testo": "Records whoever rang if no one answers."
+   },
+   "sl": {
+    "titolo": "Video domofon",
+    "testo": "Posname, kdo je pozvonil, če nihče ne odgovori."
+   }
+  },
+  {
+   "it": {
+    "titolo": "Porte interne",
+    "testo": "Laminato avorio o bianco a venatura orizzontale, serratura magnetica."
+   },
+   "en": {
+    "titolo": "Interior doors",
+    "testo": "Ivory or white laminate with horizontal grain, magnetic lock."
+   },
+   "sl": {
+    "titolo": "Notranja vrata",
+    "testo": "Laminat v slonokoščeni ali beli barvi z vodoravnimi vlakni, magnetna ključavnica."
+   }
+  },
+  {
+   "it": {
+    "titolo": "Tolleranze e varianti",
+    "testo": "Le misure delle stanze possono variare del 5% rispetto ai disegni; il venditore può cambiare materiali e soluzioni senza ridurne valore e prestazioni."
+   },
+   "en": {
+    "titolo": "Tolerances and changes",
+    "testo": "Room sizes may vary by 5% from the drawings; the seller may change materials and solutions without lowering their value or performance."
+   },
+   "sl": {
+    "titolo": "Tolerance in spremembe",
+    "testo": "Mere prostorov se lahko od načrtov razlikujejo za 5 %; prodajalec lahko spremeni materiale in rešitve, ne da bi zmanjšal njihovo vrednost ali lastnosti."
+   }
+  }
+ ]
+}

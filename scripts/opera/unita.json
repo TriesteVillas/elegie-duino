@@ -1,0 +1,15 @@
+{
+ "_fonte": "KB progetti/elegie-duino/RIPRESA.md §1 (17/10/2026): superfici commerciali dalle tavole del progettista (veranda compresa), prezzi IVA esclusa. Unità 4 e 5 vendute.",
+ "posto_auto_extra_prezzo": 20000,
+ "posti_auto_extra": 4,
+ "unita": [
+  {"n": "1", "piano": "terra", "tipo": "trilocale", "camere": 2, "bagni": 2, "commerciale": "97,24", "esterna": "280,02", "prezzo": 441000, "venduta": false, "parcheggio_giardino": true},
+  {"n": "2", "piano": "terra", "tipo": "trilocale", "camere": 2, "bagni": 2, "commerciale": "97,44", "esterna": "51,65", "prezzo": 396000, "venduta": false},
+  {"n": "3", "piano": "terra", "tipo": "bilocale", "camere": 1, "bagni": 1, "commerciale": "70,40", "esterna": "47,48", "prezzo": 288000, "venduta": false},
+  {"n": "4", "piano": "terra", "tipo": "trilocale", "camere": 2, "bagni": 2, "commerciale": "102,38", "esterna": "226,02", "prezzo": null, "venduta": true},
+  {"n": "5", "piano": "primo", "tipo": "trilocale", "camere": 2, "bagni": 2, "commerciale": "97", "esterna": null, "prezzo": null, "venduta": true},
+  {"n": "6", "piano": "primo", "tipo": "trilocale", "camere": 2, "bagni": 2, "commerciale": "97,44", "esterna": null, "prezzo": 351000, "venduta": false},
+  {"n": "7", "piano": "primo", "tipo": "bilocale", "camere": 1, "bagni": 1, "commerciale": "70,40", "esterna": null, "prezzo": 261000, "venduta": false},
+  {"n": "8", "piano": "primo", "tipo": "trilocale", "camere": 2, "bagni": 2, "commerciale": "102,38", "esterna": null, "prezzo": 396000, "venduta": false}
+ ]
+}

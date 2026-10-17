@@ -2,1077 +2,404 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="google-site-verification" content="wDNn457_HwX7O_N0yoqqtISGwWY10QP7rJBd195c40k">
-<title>Elegie Duino — Otto residenze tra il Carso e il mare · Trieste</title>
-<meta name="description" content="Otto residenze in X-LAM, classe A NZEB, a Duino Aurisina (Trieste): bilocali e trilocali con giardino privato o terrazza. Vendite TriesteVillas.">
-
+<title>Elegie Duino — Otto case nuove a Duino, tra il Carso e il mare</title>
+<meta name="description" content="Otto case nuove in legno X-LAM a Duino Aurisina (Trieste), classe A di progetto: sei ancora libere, bilocali e trilocali con giardino o veranda. Il progetto in 3D nel paese vero, il sole ora per ora, il conto senza sorprese.">
 <link rel="alternate" hreflang="it" href="https://elegieduino.it/">
 <link rel="alternate" hreflang="en" href="https://elegieduino.it/en/">
 <link rel="alternate" hreflang="sl" href="https://elegieduino.it/sl/">
 <link rel="alternate" hreflang="x-default" href="https://elegieduino.it/">
 <link rel="canonical" href="https://elegieduino.it/">
-
 <link rel="icon" type="image/x-icon" href="./assets/favicons/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="./assets/favicons/icon-192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="./assets/favicons/icon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
-<meta name="theme-color" content="#fbfaf6">
-
-<meta property="og:title" content="Elegie Duino — Otto residenze tra il Carso e il mare">
-<meta property="og:description" content="Otto residenze in X-LAM a Duino Aurisina, Trieste. Classe A NZEB. Vendite TriesteVillas.">
-<meta property="og:image" content="https://elegieduino.it/assets/images/exterior-sunset-garden.jpg">
+<meta name="theme-color" content="#0d171c">
+<meta property="og:title" content="Elegie Duino — otto case nuove a Duino">
+<meta property="og:description" content="Otto case nuove in legno X-LAM a Duino Aurisina (Trieste), classe A di progetto: sei ancora libere, bilocali e trilocali con giardino o veranda. Il progetto in 3D nel paese vero, il sole ora per ora, il conto senza sorprese.">
+<meta property="og:image" content="https://elegieduino.it/assets/images/drone-duino.jpg">
 <meta property="og:url" content="https://elegieduino.it/">
 <meta property="og:locale" content="it_IT">
-<meta property="og:locale:alternate" content="en_GB">
-<meta property="og:locale:alternate" content="sl_SI">
 <meta property="og:type" content="website">
-
-<link rel="preload" href="./assets/fonts/lora-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="./assets/css/style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://elegieduino.it/#website","url":"https://elegieduino.it/","name":"Elegie Duino","inLanguage":["it","en","sl"],"publisher":{"@id":"https://triestevillas.com/#agency"}},{"@type":"WebPage","@id":"https://elegieduino.it/#webpage","url":"https://elegieduino.it/","name":"Elegie Duino — Otto residenze tra il Carso e il mare","inLanguage":"it","isPartOf":{"@id":"https://elegieduino.it/#website"},"about":{"@id":"https://elegieduino.it/#residenze"},"primaryImageOfPage":"https://elegieduino.it/assets/images/exterior-sunset-garden.jpg"},{"@type":"ApartmentComplex","@id":"https://elegieduino.it/#residenze","name":"Elegie Duino","description":"Otto residenze in struttura X-LAM, classe energetica A NZEB, su due livelli: bilocali e trilocali con giardino privato al piano terra e terrazza al piano primo.","url":"https://elegieduino.it/","image":"https://elegieduino.it/assets/images/exterior-sunset-garden.jpg","numberOfAccommodationUnits":8,"numberOfAvailableAccommodationUnits":6,"address":{"@type":"PostalAddress","streetAddress":"Località Duino 69/A","addressLocality":"Duino Aurisina","addressCountry":"IT"}},{"@type":"RealEstateAgent","@id":"https://triestevillas.com/#agency","name":"TriesteVillas","legalName":"TriesteVillas srl","vatID":"IT01235580329","url":"https://triestevillas.com","telephone":"+393318940822","email":"richieste@triestevillas.com"}]}</script>
+<link rel="preload" href="./assets/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/inter-tight-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/avif" imagesrcset="./assets/images/resp/drone-duino-800.avif 800w, ./assets/images/resp/drone-duino-1280.avif 1280w, ./assets/images/resp/drone-duino-1920.avif 1920w, ./assets/images/resp/drone-duino-2400.avif 2400w" imagesizes="(max-aspect-ratio: 16/9) 178vh, 100vw" media="(min-aspect-ratio: 4/5)">
+<link rel="stylesheet" href="./assets/css/opera.css">
+<script type="importmap">{"imports":{"three":"./assets/vendor/three/three.module.min.js","three/addons/":"./assets/vendor/three/addons/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://elegieduino.it/#website","url":"https://elegieduino.it/","name":"Elegie Duino","inLanguage":["it","en","sl"],"publisher":{"@id":"https://triestevillas.com/#agency"}},{"@type":"WebPage","@id":"https://elegieduino.it/#webpage","url":"https://elegieduino.it/","name":"Elegie Duino — Otto case nuove a Duino, tra il Carso e il mare","inLanguage":"it","isPartOf":{"@id":"https://elegieduino.it/#website"},"about":{"@id":"https://elegieduino.it/#residenze"},"primaryImageOfPage":"https://elegieduino.it/assets/images/drone-duino.jpg"},{"@type":"ApartmentComplex","@id":"https://elegieduino.it/#residenze","name":"Elegie Duino","description":"Otto case in struttura X-LAM su due piani, classe energetica A NZEB di progetto: bilocali e trilocali con giardino privato al piano terra e veranda al primo piano.","url":"https://elegieduino.it/","image":"https://elegieduino.it/assets/images/drone-duino.jpg","numberOfAccommodationUnits":8,"numberOfAvailableAccommodationUnits":6,"address":{"@type":"PostalAddress","streetAddress":"Località Duino 69/A","addressLocality":"Duino Aurisina","postalCode":"34011","addressRegion":"TS","addressCountry":"IT"},"geo":{"@type":"GeoCoordinates","latitude":45.773912,"longitude":13.605925}},{"@type":"RealEstateAgent","@id":"https://triestevillas.com/#agency","name":"TriesteVillas","legalName":"TriesteVillas srl","vatID":"IT01235580329","url":"https://triestevillas.com","telephone":"+393318940822","email":"richieste@triestevillas.com"}]}</script>
 </head>
 <body>
+<a class="salta" href="#case">Vai alle case</a>
 
-<nav class="nav" id="nav">
-  <a href="#" class="nav__brand" aria-label="Elegie Duino — Home">
-    <picture><source type="image/webp" srcset="./assets/logos/resp/elegie-duino-alpha-100.webp 100w, ./assets/logos/resp/elegie-duino-alpha-150.webp 150w" sizes="50px"><img class="nav__logo" src="./assets/logos/resp/elegie-duino-alpha-100.png" srcset="./assets/logos/resp/elegie-duino-alpha-100.png 100w, ./assets/logos/resp/elegie-duino-alpha-150.png 150w" sizes="50px" alt="Elegie Duino" width="200" height="178"></picture>
+<header class="barra" id="barra">
+  <a class="barra__marchio" href="#apertura" aria-label="Elegie Duino">
+    <img src="./assets/logos/resp/elegie-duino-alpha-100.png" alt="" width="100" height="89"><span>Elegie Duino</span>
   </a>
-  <div class="nav__links">
-    <a href="#progetto">Il progetto</a>
-    <a href="#listino">Listino</a>
-    <a href="#planimetrie">Planimetrie</a>
-    <a href="#capitolato">Capitolato</a>
-    <a href="#contatti">Contatti</a>
+  <nav class="barra__voci" aria-label="Menu">
+    <a href="#luogo">Il luogo</a><a href="#costruzione">Come è fatta</a><a href="#luce">La luce</a><a href="#case">Le case</a><a href="#conto">Il conto</a><a href="#capitolato">Capitolato</a>
+  </nav>
+  <div class="barra__lingue">
+    <a href="./" hreflang="it" lang="it" aria-current="true">IT</a>
+    <a href="./en/" hreflang="en" lang="en">EN</a>
+    <a href="./sl/" hreflang="sl" lang="sl">SL</a>
   </div>
-  <div class="nav__lang">
-    <a href="./" aria-current="true">IT</a><span>·</span><a href="./en/">EN</a><span>·</span><a href="./sl/">SL</a>
-  </div>
-</nav>
-
-<main id="contenuto">
-<header class="hero" id="top">
-  <div class="hero__bg" aria-hidden="true"><picture><source media="(max-aspect-ratio: 4/5)" type="image/avif" srcset="./assets/images/resp/exterior-sunset-garden-portrait-750.avif 750w, ./assets/images/resp/exterior-sunset-garden-portrait-1004.avif 1004w" sizes="100vw"><source media="(max-aspect-ratio: 4/5)" type="image/webp" srcset="./assets/images/resp/exterior-sunset-garden-portrait-750.webp 750w, ./assets/images/resp/exterior-sunset-garden-portrait-1004.webp 1004w" sizes="100vw"><source type="image/avif" srcset="./assets/images/resp/exterior-sunset-garden-1280.avif 1280w, ./assets/images/resp/exterior-sunset-garden-1920.avif 1920w, ./assets/images/resp/exterior-sunset-garden-2400.avif 2400w" sizes="(max-aspect-ratio: 1792/1000) 179vh, 100vw"><source type="image/webp" srcset="./assets/images/resp/exterior-sunset-garden-1280.webp 1280w, ./assets/images/resp/exterior-sunset-garden-1920.webp 1920w, ./assets/images/resp/exterior-sunset-garden-2400.webp 2400w" sizes="(max-aspect-ratio: 1792/1000) 179vh, 100vw"><img src="./assets/images/exterior-sunset-garden.jpg" alt="" width="2400" height="1339" fetchpriority="high" decoding="async"></picture></div>
-  <div class="hero__content">
-    <picture><source type="image/webp" srcset="./assets/logos/resp/logo-castello-white-640.webp 640w, ./assets/logos/resp/logo-castello-white-960.webp 960w, ./assets/logos/resp/logo-castello-white-1240.webp 1240w" sizes="(max-width: 727px) 320px, (max-width: 1409px) 44vw, 620px"><img class="hero__logo" src="./assets/logos/resp/logo-castello-white-960.png" srcset="./assets/logos/resp/logo-castello-white-640.png 640w, ./assets/logos/resp/logo-castello-white-960.png 960w, ./assets/logos/resp/logo-castello-white-1240.png 1240w" sizes="(max-width: 727px) 320px, (max-width: 1409px) 44vw, 620px" alt="Elegie Duino" width="1400" height="962" fetchpriority="high"></picture>
-    <div class="hero__eyebrow">Duino Aurisina · Trieste · Italia</div>
-    <h1 class="hero__title">Otto residenze tra il Carso e il mare.</h1>
-    <p class="hero__lede">Un'iniziativa di Ennio Riccesi Holding in Località Duino 69/A, a cinque minuti a piedi dal Castello e dal porticciolo. Struttura X-LAM, classe A NZEB di progetto, giardini privati al piano terra e terrazze al primo piano.</p>
-    <div class="hero__cta">
-      <a class="btn btn--solid" href="mailto:richieste@triestevillas.com?subject=Elegie%20Duino%20%E2%80%94%20Richiesta%20informazioni" data-open-info>Richiedi informazioni</a>
-    </div>
-    <dl class="hero__meta">
-      <div><dt>Disponibili</dt><dd>6 residenze su 8</dd></div>
-      <div><dt>Tipologie</dt><dd>Bilocali · Trilocali</dd></div>
-      <div><dt>Struttura</dt><dd>X-LAM · Classe A NZEB</dd></div>
-      <div><dt>Inizio cantiere</dt><dd>Giugno 2026</dd></div>
-      <div><dt>Consegna</dt><dd>Entro 2027</dd></div>
-    </dl>
-  </div>
-  <span class="ai-tag ai-tag--hero" title="Immagine generata con l'intelligenza artificiale">AI · rendering</span>
-  <div class="hero__scroll" aria-hidden="true">Scroll</div>
+  <a class="barra__cta" href="#contatti" data-vai-contatti>Richiedi informazioni</a>
+  <button class="barra__menu" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
 </header>
 
-<figure class="elevations">
-  <picture><source type="image/avif" srcset="./assets/images/resp/prospetti-800.avif 800w, ./assets/images/resp/prospetti-1200.avif 1200w, ./assets/images/resp/prospetti-1600.avif 1600w, ./assets/images/resp/prospetti-2400.avif 2400w" sizes="100vw"><source type="image/webp" srcset="./assets/images/resp/prospetti-800.webp 800w, ./assets/images/resp/prospetti-1200.webp 1200w, ./assets/images/resp/prospetti-1600.webp 1600w, ./assets/images/resp/prospetti-2400.webp 2400w" sizes="100vw"><img src="./assets/images/prospetti.jpg" alt="Prospetti di Elegie Duino — fronte giardino e fronte strada" width="2400" height="1339" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine generata con l'intelligenza artificiale">AI · rendering</span>
-</figure>
+<div id="tela" aria-hidden="true"></div>
+<div class="etichette3d" aria-hidden="true"></div>
+<div class="carica3d" hidden aria-live="polite"></div>
+<ol class="fasi" aria-hidden="true">
+<li><span>Fondazioni</span></li>
+<li><span>Pareti in X-LAM</span></li>
+<li><span>Solai</span></li>
+<li><span>Cappotto</span></li>
+<li><span>Serramenti</span></li>
+<li><span>Oscuri</span></li>
+<li><span>Copertura</span></li>
+<li><span>Esterni</span></li>
+</ol>
 
-<!-- ===== IL PROGETTO (luogo · architettura · interni) ===== -->
-<section class="project" id="progetto">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-head__meta">
-        <span class="section-num">01 · Il progetto</span>
-        <h2 class="section-head__title">Otto residenze tra Castello, falesie e <em>mare aperto.</em></h2>
+<main id="contenuto">
+
+<section class="apertura" id="apertura" aria-label="Apertura">
+  <div class="apertura__tenda">
+    <div class="apertura__foto">
+      <picture>
+        <source media="(max-aspect-ratio: 4/5)" type="image/avif" srcset="./assets/images/resp/drone-duino-verticale-750.avif 750w, ./assets/images/resp/drone-duino-verticale-1080.avif 1080w" sizes="100vw">
+        <source media="(max-aspect-ratio: 4/5)" type="image/webp" srcset="./assets/images/resp/drone-duino-verticale-750.webp 750w, ./assets/images/resp/drone-duino-verticale-1080.webp 1080w" sizes="100vw">
+        <source type="image/avif" srcset="./assets/images/resp/drone-duino-800.avif 800w, ./assets/images/resp/drone-duino-1280.avif 1280w, ./assets/images/resp/drone-duino-1920.avif 1920w, ./assets/images/resp/drone-duino-2400.avif 2400w" sizes="(max-aspect-ratio: 16/9) 178vh, 100vw">
+        <source type="image/webp" srcset="./assets/images/resp/drone-duino-800.webp 800w, ./assets/images/resp/drone-duino-1280.webp 1280w, ./assets/images/resp/drone-duino-1920.webp 1920w, ./assets/images/resp/drone-duino-2400.webp 2400w" sizes="(max-aspect-ratio: 16/9) 178vh, 100vw">
+        <img src="./assets/images/drone-duino.jpg" alt="Duino dall&#x27;alto, il 12 agosto 2026: il Castello sul mare, il paese, e in primo piano, contornato in magenta, il terreno libero dove sorgerà Elegie" width="2400" height="1350" fetchpriority="high" decoding="async">
+      </picture>
+    </div>
+    <div class="apertura__velo"></div>
+    <span class="etichetta-foto" title="Fotografia vera: l&#x27;unico segno aggiunto è il perimetro del lotto">Foto da drone · 12.08.2026 · perimetro disegnato</span>
+    <div class="apertura__testo">
+      <p class="kicker">Duino Aurisina · Località Duino 69/A · Nuova costruzione</p>
+      <div class="apertura__titolo">
+        <h1 class="h-display">Elegie<span class="sr"> Duino — otto case nuove a Duino</span></h1>
+        <div class="apertura__sotto"><p class="lede">Otto case nuove nel paese dove Rilke cominciò le <em>Elegie duinesi</em>. Sei sono ancora libere.</p></div>
       </div>
-      <div class="section-head__body">
-        <p>A pochi passi dal Castello dei Principi della Torre e Tasso e dal Sentiero Rilke, Elegie Duino occupa una posizione rara, dove il paesaggio carsico incontra l'Adriatico. Otto unità su due livelli — bilocali e trilocali, ciascuna con posto auto pertinenziale — con giardino privato al piano terra e terrazza al piano primo.</p>
-        <p>Volumi puri, coperture piane e ampie superfici vetrate favoriscono la continuità tra interno ed esterno: parquet rovere nelle zone notte, gres effetto pietra nelle zone giorno, vetrate a tutta altezza su giardini e terrazze. Classe A · NZEB.</p>
+      <ul class="apertura__fatti num"><li><span>Libere</span> 6 su 8</li><li><span>Bilocali e trilocali</span> 70–102 m²</li><li><span>Da</span> € 261.000 + IVA</li><li><span>Classe</span> A di progetto</li><li><span>Consegna</span> entro il 2027</li></ul>
+      <div class="apertura__azioni">
+        <a class="btn btn--chiaro" href="#case">Scegli la casa</a>
+        <a class="btn btn--linea" href="#contatti" data-vai-contatti>Richiedi informazioni</a>
       </div>
     </div>
-
-    <div class="place__grid reveal">
-      <figure class="place__media">
-        <picture><source type="image/avif" srcset="./assets/images/resp/exterior-entrance-sunset-640.avif 640w, ./assets/images/resp/exterior-entrance-sunset-1024.avif 1024w, ./assets/images/resp/exterior-entrance-sunset-1600.avif 1600w, ./assets/images/resp/exterior-entrance-sunset-2000.avif 2000w" sizes="(max-width: 900px) 100vw, (max-width: 1240px) 45vw, 560px"><source type="image/webp" srcset="./assets/images/resp/exterior-entrance-sunset-640.webp 640w, ./assets/images/resp/exterior-entrance-sunset-1024.webp 1024w, ./assets/images/resp/exterior-entrance-sunset-1600.webp 1600w, ./assets/images/resp/exterior-entrance-sunset-2000.webp 2000w" sizes="(max-width: 900px) 100vw, (max-width: 1240px) 45vw, 560px"><img src="./assets/images/exterior-entrance-sunset.jpg" alt="Ingresso di Elegie Duino al tramonto con illuminazione esterna" width="2000" height="1116" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine generata con l'intelligenza artificiale">AI · rendering</span>
-        <figcaption class="place__caption">Vista esterna · L'ingresso al tramonto</figcaption>
-      </figure>
-      <div class="place__body">
-        <p>Pochi minuti a piedi dal porticciolo di Duino, ristoranti e stabilimenti balneari; dieci minuti dalle spiagge di Sistiana e Portopiccolo; quindici dall'aeroporto di Ronchi dei Legionari. Trieste, la Slovenia e l'asse autostradale A4 sono alle porte.</p>
-        <p>L'intorno comprende la Riserva Naturale delle Falesie di Duino, l'Area Marina Protetta di Miramare — Riserva della Biosfera UNESCO — e i vigneti di Vitovska e Terrano del Carso.</p>
-        <div class="place__pills">
-          <span>Castello di Duino · 5'</span>
-          <span>Sentiero Rilke · 5'</span>
-          <span>Portopiccolo · 10'</span>
-          <span>Aeroporto · 15'</span>
-          <span>Trieste · 25'</span>
-        </div>
-      </div>
+    <div class="apertura__passi" aria-live="polite">
+      <div class="passo-apertura"><p class="kicker">Oggi · 12 agosto 2026</p><h2 class="h3">Il terreno è quel vuoto fra le case.</h2><p>Una foto da drone: il Castello, il mare, il paese. L&#x27;unico segno aggiunto è il perimetro magenta del terreno di Elegie, in primo piano accanto alla strada.</p></div>
+      <div class="passo-apertura"><p class="kicker">Domani · consegna entro il 2027</p><h2 class="h3">Al suo posto, l&#x27;edificio.</h2><p>Lo abbiamo ricostruito in 3D dalle tavole dello Studio Architettura Soldano: misure, finestre, verande, orientamento. Il paese intorno è quello vero, dai rilievi della Regione. Nessuna immagine qui è generata.</p></div>
     </div>
-
-    <figure class="aerial reveal" id="dall-alto">
-      <div class="aerial__head">
-        <span class="section-num">Il luogo, dall'alto</span>
-        <p class="aerial__lede">Il Castello, il mare e il paese come sono oggi, in una foto da drone del 12 agosto 2026. Dentro, al suo posto, il progetto.</p>
-      </div>
-      <div class="aerial__frame" data-ba>
-        <picture><source type="image/avif" srcset="./assets/images/resp/aerial-fotoinserimento-800.avif 800w, ./assets/images/resp/aerial-fotoinserimento-1280.avif 1280w, ./assets/images/resp/aerial-fotoinserimento-1920.avif 1920w, ./assets/images/resp/aerial-fotoinserimento-2400.avif 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><source type="image/webp" srcset="./assets/images/resp/aerial-fotoinserimento-800.webp 800w, ./assets/images/resp/aerial-fotoinserimento-1280.webp 1280w, ./assets/images/resp/aerial-fotoinserimento-1920.webp 1920w, ./assets/images/resp/aerial-fotoinserimento-2400.webp 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><img src="./assets/images/aerial-fotoinserimento.jpg" alt="Duino dall'alto: il Castello, il mare e il paese, con l'edificio di Elegie Duino simulato al suo posto" width="2400" height="1350" loading="lazy" decoding="async"></picture>
-        <span class="ai-tag" title="Simulazione del progetto generata con l'intelligenza artificiale dentro una foto vera">AI · fotoinserimento</span>
-        <div class="aerial__before"><picture><source type="image/avif" srcset="./assets/images/resp/aerial-originale-800.avif 800w, ./assets/images/resp/aerial-originale-1280.avif 1280w, ./assets/images/resp/aerial-originale-1920.avif 1920w, ./assets/images/resp/aerial-originale-2400.avif 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><source type="image/webp" srcset="./assets/images/resp/aerial-originale-800.webp 800w, ./assets/images/resp/aerial-originale-1280.webp 1280w, ./assets/images/resp/aerial-originale-1920.webp 1920w, ./assets/images/resp/aerial-originale-2400.webp 2400w" sizes="(max-width: 1240px) 100vw, 1180px"><img src="./assets/images/aerial-originale.jpg" alt="Duino dall'alto, foto da drone del 12 agosto 2026, con il perimetro del lotto di Elegie Duino" width="2400" height="1350" loading="lazy" decoding="async"></picture></div>
-        <span class="aerial__tag" title="Fotografia da drone, non ritoccata: il perimetro del lotto è disegnato sopra">Foto · 12.08.2026</span>
-        <div class="aerial__divider" aria-hidden="true"></div>
-        <input class="aerial__range" type="range" min="0" max="100" value="38" aria-label="Confronta la foto com'è con la simulazione del progetto">
-      </div>
-      <figcaption class="aerial__caption">A sinistra la foto com'è, con il perimetro del lotto disegnato sopra; a destra la stessa foto con l'edificio e i giardini simulati con l'intelligenza artificiale (fotoinserimento). Fuori dal lotto l'immagine è quella vera, salvo le auto in sosta davanti al lotto, tolte nella simulazione. Trascina il cursore per confrontare.</figcaption>
-    </figure>
-
-    <dl class="project__stats reveal">
-      <div><dt>Unità</dt><dd>8 residenze</dd></div>
-      <div><dt>Tipologie</dt><dd>Bilocali · Trilocali</dd></div>
-      <div><dt>Struttura</dt><dd>X-LAM · PEFC · CE · ETA</dd></div>
-      <div><dt>Classe energetica</dt><dd>A · NZEB di progetto</dd></div>
-      <div><dt>Tempi</dt><dd>Cantiere 06.2026 · Consegna 2027</dd></div>
-    </dl>
-
-    <ul class="architecture__points reveal">
-      <li>
-        <span class="section-num">A.</span>
-        <h3>Struttura X-LAM in abete PEFC</h3>
-        <p>Pannelli portanti in legno massiccio a strati incrociati. Marcatura CE e certificazione ETA. Cantiere a secco, tempi ridotti, sismicamente performante.</p>
-      </li>
-      <li>
-        <span class="section-num">B.</span>
-        <h3>Cappotto in lana di roccia</h3>
-        <p>Isolamento ad alto spessore, classe di reazione al fuoco A1, ottime prestazioni acustiche e termiche in estate e inverno.</p>
-      </li>
-      <li>
-        <span class="section-num">C.</span>
-        <h3>Pompa di calore + fotovoltaico</h3>
-        <p>Ogni residenza con pompa di calore aria-acqua, ventilconvettori incassati o a vista, impianto fotovoltaico dedicato in copertura e predisposizione ricarica elettrica.</p>
-      </li>
-    </ul>
-
-    <div class="gallery reveal">
-      <figure class="g--wide">
-        <picture><source type="image/avif" srcset="./assets/images/resp/exterior-garden-glazing-640.avif 640w, ./assets/images/resp/exterior-garden-glazing-1024.avif 1024w, ./assets/images/resp/exterior-garden-glazing-1600.avif 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 66vw, 760px"><source type="image/webp" srcset="./assets/images/resp/exterior-garden-glazing-640.webp 640w, ./assets/images/resp/exterior-garden-glazing-1024.webp 1024w, ./assets/images/resp/exterior-garden-glazing-1600.webp 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 66vw, 760px"><img src="./assets/images/exterior-garden-glazing.jpg" alt="Prospetto sul giardino con vetrate a tutta altezza" width="2000" height="1125" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Rendering di progetto, senza intelligenza artificiale">Rendering</span>
-        <figcaption>Lato giardino · Vetrate a tutta altezza</figcaption>
-      </figure>
-      <figure class="g--tall">
-        <picture><source type="image/avif" srcset="./assets/images/resp/exterior-garden-corner-640.avif 640w, ./assets/images/resp/exterior-garden-corner-1024.avif 1024w, ./assets/images/resp/exterior-garden-corner-1600.avif 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><source type="image/webp" srcset="./assets/images/resp/exterior-garden-corner-640.webp 640w, ./assets/images/resp/exterior-garden-corner-1024.webp 1024w, ./assets/images/resp/exterior-garden-corner-1600.webp 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><img src="./assets/images/exterior-garden-corner.jpg" alt="Volumi puri affacciati sul giardino privato" width="2000" height="1125" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Rendering di progetto, senza intelligenza artificiale">Rendering</span>
-        <figcaption>Giardino privato · Volumi puri</figcaption>
-      </figure>
-      <figure class="g--third">
-        <picture><source type="image/avif" srcset="./assets/images/resp/construction-xlam-640.avif 640w, ./assets/images/resp/construction-xlam-1024.avif 1024w, ./assets/images/resp/construction-xlam-1600.avif 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><source type="image/webp" srcset="./assets/images/resp/construction-xlam-640.webp 640w, ./assets/images/resp/construction-xlam-1024.webp 1024w, ./assets/images/resp/construction-xlam-1600.webp 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><img src="./assets/images/construction-xlam.jpg" alt="Immagine illustrativa di una struttura portante X-LAM in abete" width="1600" height="678" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine passata da un modello generativo (intelligenza artificiale)">AI</span>
-        <figcaption>Struttura X-LAM · Immagine illustrativa</figcaption>
-      </figure>
-      <figure class="g--third">
-        <picture><source type="image/avif" srcset="./assets/images/resp/detail-bathrooms-640.avif 640w, ./assets/images/resp/detail-bathrooms-1024.avif 1024w, ./assets/images/resp/detail-bathrooms-1600.avif 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><source type="image/webp" srcset="./assets/images/resp/detail-bathrooms-640.webp 640w, ./assets/images/resp/detail-bathrooms-1024.webp 1024w, ./assets/images/resp/detail-bathrooms-1600.webp 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><img src="./assets/images/detail-bathrooms.jpg" alt="Dettaglio bagno in gres porcellanato" width="2000" height="1116" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine generata con l'intelligenza artificiale">AI · rendering</span>
-        <figcaption>Bagno · Gres porcellanato</figcaption>
-      </figure>
-      <figure class="g--third">
-        <picture><source type="image/avif" srcset="./assets/images/resp/construction-insulation-640.avif 640w, ./assets/images/resp/construction-insulation-1024.avif 1024w, ./assets/images/resp/construction-insulation-1600.avif 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><source type="image/webp" srcset="./assets/images/resp/construction-insulation-640.webp 640w, ./assets/images/resp/construction-insulation-1024.webp 1024w, ./assets/images/resp/construction-insulation-1600.webp 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 33vw, 380px"><img src="./assets/images/construction-insulation.jpg" alt="Immagine illustrativa della posa di un cappotto esterno in lana di roccia" width="1600" height="678" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine passata da un modello generativo (intelligenza artificiale)">AI</span>
-        <figcaption>Cappotto in lana di roccia · Immagine illustrativa</figcaption>
-      </figure>
-      <figure class="g--half">
-        <picture><source type="image/avif" srcset="./assets/images/resp/detail-terrace-640.avif 640w, ./assets/images/resp/detail-terrace-1024.avif 1024w, ./assets/images/resp/detail-terrace-1600.avif 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 50vw, 570px"><source type="image/webp" srcset="./assets/images/resp/detail-terrace-640.webp 640w, ./assets/images/resp/detail-terrace-1024.webp 1024w, ./assets/images/resp/detail-terrace-1600.webp 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 50vw, 570px"><img src="./assets/images/detail-terrace.jpg" alt="Dettaglio della terrazza al primo piano" width="2000" height="1116" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine generata con l'intelligenza artificiale">AI · rendering</span>
-        <figcaption>Terrazza · Piano primo</figcaption>
-      </figure>
-      <figure class="g--half">
-        <picture><source type="image/avif" srcset="./assets/images/resp/terrace-view-640.avif 640w, ./assets/images/resp/terrace-view-1024.avif 1024w, ./assets/images/resp/terrace-view-1600.avif 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 50vw, 570px"><source type="image/webp" srcset="./assets/images/resp/terrace-view-640.webp 640w, ./assets/images/resp/terrace-view-1024.webp 1024w, ./assets/images/resp/terrace-view-1600.webp 1600w" sizes="(max-width: 820px) 100vw, (max-width: 1240px) 50vw, 570px"><img src="./assets/images/terrace-view.jpg" alt="Vista dalla terrazza sul verde circostante al tramonto" width="2000" height="1116" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine generata con l'intelligenza artificiale">AI · rendering</span>
-        <figcaption>Terrazza · Affaccio sul verde</figcaption>
-      </figure>
-      <figure class="g--full">
-        <picture><source type="image/avif" srcset="./assets/images/resp/exterior-parking-640.avif 640w, ./assets/images/resp/exterior-parking-1024.avif 1024w, ./assets/images/resp/exterior-parking-1600.avif 1600w" sizes="(max-width: 1240px) 100vw, 1144px"><source type="image/webp" srcset="./assets/images/resp/exterior-parking-640.webp 640w, ./assets/images/resp/exterior-parking-1024.webp 1024w, ./assets/images/resp/exterior-parking-1600.webp 1600w" sizes="(max-width: 1240px) 100vw, 1144px"><img src="./assets/images/exterior-parking.jpg" alt="Vista retro dell'edificio con posti auto pertinenziali" width="2000" height="1116" loading="lazy" decoding="async"></picture><span class="ai-tag" title="Immagine generata con l'intelligenza artificiale">AI · rendering</span>
-        <figcaption>Sistemazioni esterne · Posti auto pertinenziali</figcaption>
-      </figure>
-    </div>
-    <p class="gallery__note reveal">Le immagini di questa pagina non sono fotografie dell'edificio né del cantiere: quelle segnate «Rendering» sono rendering di progetto, quelle segnate «AI» sono state generate o rielaborate con l'intelligenza artificiale. Servono a illustrare il progetto.</p>
+    <div class="scorri" aria-hidden="true">Scorri</div>
   </div>
 </section>
 
-<!-- ===== LISTINO ===== -->
-<section class="listing" id="listino">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-head__meta">
-        <span class="section-num">02 · Listino</span>
-        <h2 class="section-head__title">Sei residenze, <em>ancora disponibili.</em></h2>
-      </div>
-      <div class="section-head__body">
-        <p>Bilocali e trilocali su due livelli fuori terra, consegna entro il 2027. Le unità al piano terra dispongono di giardino privato e veranda; quelle al piano primo di terrazza. Posto auto privato pertinenziale incluso.</p>
-      </div>
+<section class="palco" id="luogo" aria-labelledby="luogo-t">
+  <div class="palco__passo palco__passo--alto" data-stato="luogo">
+    <div class="carta3d carta3d--larga rivela">
+      <p class="kicker">01 · Il luogo</p>
+      <h2 class="h2" id="luogo-t">Il paese, <em>misurato.</em></h2>
+      <p>Duino è un paese di poche strade fra il Carso e il mare. Dal cancello di Elegie si va a piedi al Castello, al porticciolo e all&#x27;inizio del Sentiero Rilke; in auto, a Trieste e all&#x27;aeroporto.</p>
+      <div class="commuta" role="group" aria-label="Tempi a piedi o in auto"><button type="button" data-modo="piedi" aria-pressed="true">A piedi</button><button type="button" data-modo="auto" aria-pressed="false">In auto</button></div>
+      <ul class="tempi num">
+<li data-modo="piedi"><span>Castello di Duino</span><span class="d">380 m</span><span class="t">5 min</span></li>
+<li data-modo="piedi"><span>Sentiero Rilke, inizio</span><span class="d">280 m</span><span class="t">4 min</span></li>
+<li data-modo="piedi"><span>Porticciolo di Duino</span><span class="d">650 m</span><span class="t">9 min</span></li>
+<li data-modo="piedi"><span>Fermata del bus «Duino centro»</span><span class="d">200 m</span><span class="t">3 min</span></li>
+<li data-modo="piedi"><span>Alimentari in paese</span><span class="d">180 m</span><span class="t">2 min</span></li>
+<li data-modo="piedi"><span>Scuole primarie (italiana e slovena)</span><span class="d">180 m</span><span class="t">2 min</span></li>
+<li data-modo="piedi"><span>Sentiero Rilke fino a Sistiana</span><span class="d">2,3 km</span><span class="t">30 min</span></li>
+<li data-modo="auto" hidden><span>Baia di Sistiana</span><span class="d">4,2 km</span><span class="t">7 min</span></li>
+<li data-modo="auto" hidden><span>Portopiccolo</span><span class="d">4,2 km</span><span class="t">7 min</span></li>
+<li data-modo="auto" hidden><span>Monfalcone</span><span class="d">7,4 km</span><span class="t">11 min</span></li>
+<li data-modo="auto" hidden><span>Confine sloveno (Jamiano)</span><span class="d">8,0 km</span><span class="t">11 min</span></li>
+<li data-modo="auto" hidden><span>Aeroporto di Trieste</span><span class="d">18,4 km</span><span class="t">18 min</span></li>
+<li data-modo="auto" hidden><span>Trieste, Piazza Unità</span><span class="d">23,9 km</span><span class="t">30 min</span></li>
+      </ul>
+      <span class="fonte">Tempi calcolati sulle strade di OpenStreetMap (OSRM), a passo normale e a traffico libero.</span>
     </div>
+  </div>
+  <div class="palco__passo destra" data-stato="luogo">
+    <div class="carta3d rivela"><p class="kicker">Intorno</p><h3 class="h3">Le falesie, la riserva, il mare.</h3><p>Sotto il paese, la Riserva naturale delle Falesie di Duino: 107 ettari dal 1996, l&#x27;unica scogliera alta della costa adriatica settentrionale italiana. Il Sentiero Rilke la percorre per circa 1,7 km, fino alla baia di Sistiana. Più a est, verso Trieste, l&#x27;Area marina protetta di Miramare.</p></div>
+  </div>
+  <div class="ripiego foglio--notte" style="padding:0 var(--gutter) 40px"><picture><source type="image/avif" srcset="./assets/images/resp/aerial-originale-1280.avif"><img src="./assets/images/aerial-originale.jpg" alt="Duino dall&#x27;alto, il 12 agosto 2026: il Castello sul mare, il paese, e in primo piano, contornato in magenta, il terreno libero dove sorgerà Elegie" loading="lazy" width="2400" height="1350"></picture></div>
+</section>
 
-    <div class="listing__table-wrap reveal">
-      <table>
-        <thead>
-          <tr>
-            <th>Unità</th>
-            <th>Piano</th>
-            <th>Tipologia</th>
-            <th>Camere</th>
-            <th>Bagni</th>
-            <th>Commerciali</th>
-            <th>Area esterna</th>
-            <th>Listino</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td class="c-piano" data-label="Piano">Terra</td><td class="c-tipo">Trilocale</td><td class="c-cam">2</td><td class="c-bag">2</td><td class="c-comm" data-label="Commerciali">97,24 m²</td><td class="c-est" data-label="Area esterna">280,02 m²</td><td class="c-prezzo">€ 441.000</td></tr>
-          <tr><td>2</td><td class="c-piano" data-label="Piano">Terra</td><td class="c-tipo">Trilocale</td><td class="c-cam">2</td><td class="c-bag">2</td><td class="c-comm" data-label="Commerciali">97,44 m²</td><td class="c-est" data-label="Area esterna">51,65 m²</td><td class="c-prezzo">€ 396.000</td></tr>
-          <tr><td>3</td><td class="c-piano" data-label="Piano">Terra</td><td class="c-tipo">Bilocale</td><td class="c-cam">1</td><td class="c-bag">1</td><td class="c-comm" data-label="Commerciali">70,40 m²</td><td class="c-est" data-label="Area esterna">47,48 m²</td><td class="c-prezzo">€ 288.000</td></tr>
-          <tr class="sold-row"><td>4</td><td class="c-piano" data-label="Piano">Terra</td><td class="c-tipo">Trilocale</td><td class="c-cam">2</td><td class="c-bag">2</td><td class="c-comm" data-label="Commerciali">102,38 m²</td><td class="c-est" data-label="Area esterna">226,02 m²</td><td class="c-prezzo"><span class="sold-tag">Venduto</span></td></tr>
-          <tr class="sold-row"><td>5</td><td class="c-piano" data-label="Piano">Primo</td><td class="c-tipo">Trilocale</td><td class="c-cam">2</td><td class="c-bag">2</td><td class="c-comm" data-label="Commerciali">97 m²</td><td class="c-est is-empty" data-label="Area esterna">—</td><td class="c-prezzo"><span class="sold-tag">Venduto</span></td></tr>
-          <tr><td>6</td><td class="c-piano" data-label="Piano">Primo</td><td class="c-tipo">Trilocale</td><td class="c-cam">2</td><td class="c-bag">2</td><td class="c-comm" data-label="Commerciali">97,44 m²</td><td class="c-est is-empty" data-label="Area esterna">—</td><td class="c-prezzo">€ 351.000</td></tr>
-          <tr><td>7</td><td class="c-piano" data-label="Piano">Primo</td><td class="c-tipo">Bilocale</td><td class="c-cam">1</td><td class="c-bag">1</td><td class="c-comm" data-label="Commerciali">70,40 m²</td><td class="c-est is-empty" data-label="Area esterna">—</td><td class="c-prezzo">€ 261.000</td></tr>
-          <tr><td>8</td><td class="c-piano" data-label="Piano">Primo</td><td class="c-tipo">Trilocale</td><td class="c-cam">2</td><td class="c-bag">2</td><td class="c-comm" data-label="Commerciali">102,38 m²</td><td class="c-est is-empty" data-label="Area esterna">—</td><td class="c-prezzo">€ 396.000</td></tr>
-        </tbody>
-      </table>
+<section class="nome" id="nome" aria-labelledby="nome-t">
+  <canvas class="nome__vento" aria-hidden="true"></canvas>
+  <div class="nome__dentro">
+    <div class="rivela">
+      <p class="kicker" style="color:var(--legno)">02 · Il nome</p>
+      <h2 class="nome__anno" id="nome-t">Gennaio 1912.<em>Castello di Duino</em></h2>
     </div>
-    <p class="listing__note">Prezzi IVA esclusa. Si compra dall'impresa che costruisce: l'IVA è al 4% sulla prima casa e al 10% negli altri casi, e le imposte di registro, ipotecaria e catastale sono fisse, 200 € ciascuna. Listino soggetto a variazioni; la quotazione definitiva è formalizzata in sede di proposta d'acquisto. Superfici commerciali dell'alloggio, veranda compresa, come dalle tavole del progettista (Studio Architettura Soldano); l'area esterna delle unità al piano terra è indicata a parte. Classe energetica A NZEB di progetto: l'attestato di prestazione energetica si redige a fine lavori.</p>
-    <div class="listing__cta"><a class="btn btn--ink" href="mailto:richieste@triestevillas.com?subject=Elegie%20Duino%20%E2%80%94%20Richiesta%20informazioni" data-open-info>Richiedi informazioni su un'unità</a></div>
-
+    <div class="nome__racconto rivela">
+      <p>Rainer Maria Rilke è ospite della principessa Marie von Thurn und Taxis nel Castello di Duino dall&#x27;ottobre del 1911.</p><p>Una mattina, racconta la Principessa, soffia una bora violenta ma c&#x27;è il sole, e il mare è «come coperto d&#x27;argento». Rilke cammina sui bastioni ai piedi del Castello, a picco sugli scogli, pensando alla risposta a una lettera noiosa. Si ferma: nel fragore del vento gli pare che una voce gli gridi un verso. La sera stessa ha la prima elegia.</p><p>Le elegie diventeranno dieci. Le finirà nel febbraio del 1922, in Svizzera, e le pubblicherà nel 1923 col nome del luogo in cui erano cominciate.</p>
+      <figure class="verso">
+        <blockquote lang="de"><p>Wer, wenn ich schriee, hörte mich denn aus der Engel</p><p>Ordnungen? und gesetzt selbst, es nähme</p><p>einer mich plötzlich ans Herz: ich verginge von seinem</p><p>stärkeren Dasein.</p></blockquote>
+        <p class="trad">Chi, se io gridassi, mi udrebbe dagli ordini degli angeli? E anche ammesso che uno di loro d&#x27;un tratto mi stringesse al cuore: io svanirei davanti al suo esistere più forte.</p>
+        <figcaption>Rainer Maria Rilke, Prima elegia (1912; Duineser Elegien, Insel-Verlag, Lipsia 1923). Traduzione nostra. Il racconto della mattina è nei ricordi della Principessa, pubblicati vent&#x27;anni dopo.</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
-<!-- ===== PLANIMETRIE ===== -->
-<section class="plans" id="planimetrie">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-head__meta">
-        <span class="section-num">03 · Planimetrie</span>
-        <h2 class="section-head__title">Otto unità, <em>una pianta per ognuna.</em></h2>
+<section class="palco" id="costruzione" aria-labelledby="costruzione-t">
+  <div class="palco__passo palco__passo--alto" data-stato="costruzione:0">
+    <div class="carta3d carta3d--larga rivela"><p class="kicker">03 · Come è fatta</p><h2 class="h2" id="costruzione-t">Si costruisce <em>a strati.</em></h2><p>Scorrendo, l&#x27;edificio si monta come in cantiere, dalle fondazioni al tetto. Ogni strato con le parole del capitolato.</p></div>
+  </div>
+<div class="palco__passo" data-stato="costruzione:1">
+      <div class="carta3d rivela"><div class="kicker"><i>1</i>Fondazioni</div><h3 class="h3">Travi rovesce in cemento armato.</h3><p>Sotto l&#x27;edificio, fondazioni in cemento armato a travi rovesce, dimensionate sulla relazione geologica e sul calcolo strutturale. Fra il terreno e il pavimento del piano terra, un&#x27;intercapedine aerata.</p><span class="fonte"><q lang="it">travi rovesce, dimensionate in conformità alle risultanze della relazione geologica e del calcolo strutturale</q> — dal capitolato</span></div>
+    </div>
+<div class="palco__passo destra" data-stato="costruzione:2">
+      <div class="carta3d rivela"><div class="kicker"><i>2</i>Pareti in X-LAM</div><h3 class="h3">Abete a strati incrociati.</h3><p>Tutto ciò che sta sopra il terreno è portato da pannelli di legno massiccio: tavole di abete essiccate e incollate a fibre incrociate, con marcatura CE e valutazione tecnica europea. Lo stesso pannello fa il muro esterno e quello fra una casa e l&#x27;altra, con gli strati che le separano acusticamente.</p><span class="fonte"><q lang="it">il legno impiegato proviene esclusivamente da foreste gestite in modo sostenibile e certificate PEFC</q> — dal capitolato</span></div>
+    </div>
+<div class="palco__passo" data-stato="costruzione:3">
+      <div class="carta3d rivela"><div class="kicker"><i>3</i>Solai</div><h3 class="h3">Legno anche sopra la testa.</h3><p>Fra i due piani il solaio è ancora X-LAM; il tetto poggia su travi di legno lamellare con un doppio tavolato incrociato, che in alcune stanze del primo piano resta a vista. Sopra i solai, un massetto alleggerito che contiene tubi e cavi.</p><span class="fonte"><q lang="it">struttura in travi in legno lamellare […] abbinata a un doppio tavolato incrociato</q> — dal capitolato</span></div>
+    </div>
+<div class="palco__passo destra" data-stato="costruzione:4">
+      <div class="carta3d rivela"><div class="kicker"><i>4</i>Cappotto</div><h3 class="h3">Lana di roccia, fuori.</h3><p>Le pareti si avvolgono in un cappotto di lana di roccia: non brucia (classe A1), rispetta i Criteri Ambientali Minimi, lo spessore lo decide il calcolo termotecnico. La finitura vera è un intonachino grigio caldo scuro; qui il modello resta bianco, come un plastico.</p><span class="fonte"><q lang="it">tonalità grigio caldo scuro (tipo Sandtex n. 36) come da progetto approvato in sede di autorizzazione paesaggistica</q> — dal capitolato</span></div>
+    </div>
+<div class="palco__passo" data-stato="costruzione:5">
+      <div class="carta3d rivela"><div class="kicker"><i>5</i>Serramenti</div><h3 class="h3">Vetri stratificati, telai antracite.</h3><p>Finestre e portefinestre a taglio termico, grigio antracite RAL 7016, con doppio vetro stratificato basso emissivo: se una lastra si rompe, resta incollata. Le verande del primo piano hanno la ringhiera in metallo dello stesso colore.</p><span class="fonte"><q lang="it">vetrocamera stratificata in lastre di vetro 3+3 mm interno, camera 14/16 mm, vetro 4+4 mm esterno</q> — dal capitolato</span></div>
+    </div>
+<div class="palco__passo destra" data-stato="costruzione:6">
+      <div class="carta3d rivela"><div class="kicker"><i>6</i>Oscuri</div><h3 class="h3">Doghe verticali, sul fronte strada.</h3><p>Sul fronte nord, verso la strada, gli oscuri accompagnano le finestre alte: doghe verticali in materiale composito, effetto legno nei prospetti del progettista. Stesse doghe all&#x27;ingresso comune.</p><span class="fonte"><q lang="it">realizzati in composito a doghe verticali</q> — dal capitolato</span></div>
+    </div>
+<div class="palco__passo" data-stato="costruzione:7">
+      <div class="carta3d rivela"><div class="kicker"><i>7</i>Copertura</div><h3 class="h3">Un tetto che lavora.</h3><p>Il tetto piano è impermeabilizzato con due guaine incrociate e zavorrato con ciottoli di fiume. Ospita l&#x27;impianto fotovoltaico di ogni casa e le macchine esterne delle pompe di calore, schermate. Bordi e gronde in alluminio antracite.</p><span class="fonte"><q lang="it">Sulle porzioni di tetto piano saranno alloggiati gli impianti fotovoltaici dedicati a ciascuna unità immobiliare</q> — dal capitolato</span></div>
+    </div>
+<div class="palco__passo destra" data-stato="costruzione:8">
+      <div class="carta3d rivela"><div class="kicker"><i>8</i>Esterni</div><h3 class="h3">Giardini, siepi, posti auto.</h3><p>Ogni casa al piano terra ha il suo giardino, chiuso da siepi sempreverdi, con piante autoctone del Carso che chiedono poca acqua. Posti auto in calcestruzzo drenante, ognuno predisposto per la ricarica elettrica; cancelli carrabili motorizzati.</p><span class="fonte"><q lang="it">Ciascuna unità al piano terra sarà dotata di giardino privato di pertinenza esclusiva</q> — dal capitolato</span></div>
+    </div>
+</section>
+
+<section class="palco" id="luce" aria-labelledby="luce-t">
+  <div class="palco__passo palco__passo--alto" data-stato="luce">
+    <div class="carta3d carta3d--larga rivela"><p class="kicker">04 · La luce</p><h2 class="h2" id="luce-t">Il sole, <em>ora per ora.</em></h2><p>Le verande guardano a sud-sud-est (164°). Scegli un giorno e un&#x27;ora: luce e ombre sono calcolate per Duino, con il terreno, le case e gli alberi veri intorno.</p></div>
+  </div>
+  <div class="palco__passo" data-stato="luce">
+    <div class="sole">
+      <h3 class="h3">Il sole su Elegie</h3>
+      <div class="sole__righe">
+        <div class="sole__giorni" role="group" aria-label="Giorni dell&#x27;anno">
+          <button type="button" data-giorno="oggi" aria-pressed="false">Oggi</button>
+          <button type="button" data-giorno="355" aria-pressed="false">21 dicembre</button>
+          <button type="button" data-giorno="80" aria-pressed="false">21 marzo</button>
+          <button type="button" data-giorno="172" aria-pressed="false">21 giugno</button>
+        </div>
+        <label>Giorno<input type="range" id="luce-giorno" min="1" max="365" value="172"><output id="luce-giorno-out"></output></label>
+        <label>Ora<input type="range" id="luce-ora" min="300" max="1290" step="5" value="1020"><output id="luce-ora-out"></output></label>
       </div>
-      <div class="section-head__body">
-        <p>Ciascuna unità è progettata con un proprio impianto distributivo, ottimizzato per esposizione e affaccio. Le unità al piano terra dispongono di giardino privato e veranda; quelle al piano primo di terrazza.</p>
-        <p class="plans__merge-note">Le unità accoppiate verticalmente possono essere accorpate in un'unica residenza disposta su due livelli.</p>
+      <div class="sole__dati num"><span>Alba <b id="luce-alba">—</b></span><span>Tramonto <b id="luce-tramonto">—</b></span><span>Sole a <b id="luce-alt">—</b></span><button type="button" class="sole__play" aria-pressed="false" aria-label="Fai scorrere la giornata"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5l12 7-12 7z"/></svg></button></div>
+      <p class="nota" style="margin:16px 0 6px">Ore di sole diretto sulla vetrata della veranda, nel giorno scelto</p>
+      <div class="sole__ore num">
+<div data-unita="1"><small>Casa 1</small><b>—</b></div>
+<div data-unita="2"><small>Casa 2</small><b>—</b></div>
+<div data-unita="3"><small>Casa 3</small><b>—</b></div>
+<div data-unita="4" class="no"><small>Casa 4 · Venduta</small><b>—</b></div>
+<div data-unita="5" class="no"><small>Casa 5 · Venduta</small><b>—</b></div>
+<div data-unita="6"><small>Casa 6</small><b>—</b></div>
+<div data-unita="7"><small>Casa 7</small><b>—</b></div>
+<div data-unita="8"><small>Casa 8</small><b>—</b></div>
       </div>
+      <details class="sole__come"><summary>Come si calcola</summary><p class="nota">Calcolo sulla vetrata esterna di ogni veranda (per la casa 1 sul filo del portico), a un metro e mezzo d&#x27;altezza, ogni cinque minuti, con il terreno (LiDAR della Regione), le case vicine e l&#x27;edificio stesso. Il secondo numero conta anche gli alberi come chiome piene: è il conto più severo, perché d&#x27;inverno molte chiome sono spoglie. Le nuvole non ci sono; alba e tramonto sono quelli sull&#x27;orizzonte libero.</p></details>
     </div>
   </div>
+</section>
 
-  <div class="keyplan reveal">
-    <div class="keyplan__head">
-      <h3 class="keyplan__title">La mappa delle unità</h3>
-      <p class="keyplan__hint">Selezionare un'unità sulla planimetria per aprirne la pianta</p>
+<section class="palco" id="case" aria-labelledby="case-t">
+  <div class="palco__passo palco__passo--case" data-stato="case">
+    <div class="case">
+      <p class="kicker" style="color:var(--sale-2)">05 · Le case</p>
+      <h2 class="h3" id="case-t">Scegli la tua casa</h2>
+      <div class="case__piani solo3d" role="group" aria-label="Mostra un piano">
+        <button type="button" data-piano="" aria-pressed="true">Tutto</button>
+        <button type="button" data-piano="terra" aria-pressed="false">Piano terra</button>
+        <button type="button" data-piano="primo" aria-pressed="false">Primo piano</button>
+      </div>
+      <ul class="case__elenco num">
+<li><button type="button" data-unita="1"><b>1</b><span>Terra · Trilocale · 97,24 m²</span><em>€ 441.000</em></button></li>
+<li><button type="button" data-unita="2"><b>2</b><span>Terra · Trilocale · 97,44 m²</span><em>€ 396.000</em></button></li>
+<li><button type="button" data-unita="3"><b>3</b><span>Terra · Bilocale · 70,40 m²</span><em>€ 288.000</em></button></li>
+<li><button type="button" data-unita="4" class="venduta"><b>4</b><span>Terra · Trilocale · 102,38 m²</span><em>Venduta</em></button></li>
+<li><button type="button" data-unita="5" class="venduta"><b>5</b><span>Primo · Trilocale · 97 m²</span><em>Venduta</em></button></li>
+<li><button type="button" data-unita="6"><b>6</b><span>Primo · Trilocale · 97,44 m²</span><em>€ 351.000</em></button></li>
+<li><button type="button" data-unita="7"><b>7</b><span>Primo · Bilocale · 70,40 m²</span><em>€ 261.000</em></button></li>
+<li><button type="button" data-unita="8"><b>8</b><span>Primo · Trilocale · 102,38 m²</span><em>€ 396.000</em></button></li>
+      </ul>
+      <p class="case__suggerimento solo3d">Tocca una casa nel modello o nell&#x27;elenco. Col mouse puoi girare intorno all&#x27;edificio.</p>
+      <p class="case__suggerimento">Prezzi IVA esclusa · un posto auto esterno compreso per casa.</p>
     </div>
-    <div class="keyplan__floors">
-      <figure class="keyplan__floor">
-        <div class="keyplan__media">
-          <img src="./assets/planimetrie/keyplan-ground.jpg" alt="Planimetria generale del piano terra con le unità 1, 2, 3 e 4" loading="lazy">
-          <svg class="keyplan__overlay" viewBox="0 0 1000 707" preserveAspectRatio="none" role="group" aria-label="Unità del piano terra">
-            <polygon class="keyplan__area" data-unit="1" tabindex="0" role="button" aria-label="Unità 1 — apri la planimetria" points="206,278 406,278 406,545 300,545 300,367 206,367"></polygon>
-            <polygon class="keyplan__area" data-unit="2" tabindex="0" role="button" aria-label="Unità 2 — apri la planimetria" points="467,253 656,253 656,495 561,495 561,334 467,334"></polygon>
-            <polygon class="keyplan__area" data-unit="3" tabindex="0" role="button" aria-label="Unità 3 — apri la planimetria" points="406,445 472,445 472,350 561,350 561,522 406,522"></polygon>
-            <polygon class="keyplan__area keyplan__area--sold" data-unit="4" tabindex="0" role="button" aria-label="Unità 4 — venduta" points="639,322 900,322 900,472 639,472"></polygon>
-          </svg>
-        </div>
-        <figcaption class="keyplan__caption">Piano terra · Unità 1–4</figcaption>
-      </figure>
-      <figure class="keyplan__floor">
-        <div class="keyplan__media">
-          <img src="./assets/planimetrie/keyplan-first.jpg" alt="Planimetria generale del piano primo con le unità 5, 6, 7 e 8" loading="lazy">
-          <svg class="keyplan__overlay" viewBox="0 0 1000 707" preserveAspectRatio="none" role="group" aria-label="Unità del piano primo">
-            <polygon class="keyplan__area keyplan__area--sold" data-unit="5" tabindex="0" role="button" aria-label="Unità 5 — venduta" points="208,279 400,279 400,559 313,559 313,354 208,354"></polygon>
-            <polygon class="keyplan__area" data-unit="6" tabindex="0" role="button" aria-label="Unità 6 — apri la planimetria" points="454,250 671,250 671,500 546,500 546,329 454,329"></polygon>
-            <polygon class="keyplan__area" data-unit="7" tabindex="0" role="button" aria-label="Unità 7 — apri la planimetria" points="450,354 550,354 550,546 404,546 404,446 450,446"></polygon>
-            <polygon class="keyplan__area" data-unit="8" tabindex="0" role="button" aria-label="Unità 8 — apri la planimetria" points="633,338 892,338 892,479 633,479"></polygon>
-          </svg>
-        </div>
-        <figcaption class="keyplan__caption">Piano primo · Unità 5–8</figcaption>
-      </figure>
-    </div>
-    <p class="keyplan__note">Tutti i posti auto sono esterni e scoperti, collocati lungo la viabilità interna e indipendenti dalle unità: ogni appartamento ne include uno e 4 ulteriori sono disponibili a € 20.000 ciascuno. L'unità 1 può inoltre ospitare una o più automobili all'interno del proprio giardino privato.</p>
   </div>
+</section>
 
-  <div class="slideshow reveal" id="slideshow-it">
-    <div class="slideshow__viewport" role="region" aria-label="Planimetrie delle unità">
-
-      <article class="slide">
-        <div class="slide__media"><img src="./assets/planimetrie/unit-1.jpg" alt="Planimetria unità 1 — piano terra, trilocale con area esterna 280,02 m²" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">01</div>
-          <div>
-            <div class="slide__title">Unità 1 · Piano terra</div>
-            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 97,24 m² commerciali · 280,02 m² area esterna · Parcheggio nel giardino privato</div>
-          </div>
-          <div class="slide__price">€ 441.000<span class="slide__validity">Prezzi IVA esclusa</span></div>
-        </div>
-      </article>
-
-      <article class="slide">
-        <div class="slide__media"><img src="./assets/planimetrie/unit-2.jpg" alt="Planimetria unità 2 — piano terra, trilocale con area esterna 51,65 m²" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">02</div>
-          <div>
-            <div class="slide__title">Unità 2 · Piano terra</div>
-            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 97,44 m² commerciali · 51,65 m² area esterna · Posto auto esterno incluso</div>
-          </div>
-          <div class="slide__price">€ 396.000<span class="slide__validity">Prezzi IVA esclusa</span></div>
-        </div>
-      </article>
-
-      <article class="slide">
-        <div class="slide__media"><img src="./assets/planimetrie/unit-3.jpg" alt="Planimetria unità 3 — piano terra, bilocale con area esterna 47,48 m²" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">03</div>
-          <div>
-            <div class="slide__title">Unità 3 · Piano terra</div>
-            <div class="slide__meta">Bilocale · 1 camera · 1 bagno · 70,40 m² commerciali · 47,48 m² area esterna · Posto auto esterno incluso</div>
-          </div>
-          <div class="slide__price">€ 288.000<span class="slide__validity">Prezzi IVA esclusa</span></div>
-        </div>
-      </article>
-
-      <article class="slide slide--sold">
-        <div class="slide__media slide__media--sold">
-          <span class="slide__sold-badge">Venduto</span>
-        </div>
-        <div class="slide__caption">
-          <div class="slide__num">04</div>
-          <div>
-            <div class="slide__title">Unità 4 · Piano terra</div>
-            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 102,38 m² commerciali · 226,02 m² area esterna</div>
-          </div>
-          <div class="slide__price"><span class="sold-tag">Venduto</span></div>
-        </div>
-      </article>
-
-      <article class="slide slide--sold">
-        <div class="slide__media slide__media--sold">
-          <span class="slide__sold-badge">Venduto</span>
-        </div>
-        <div class="slide__caption">
-          <div class="slide__num">05</div>
-          <div>
-            <div class="slide__title">Unità 5 · Piano primo</div>
-            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 97 m² commerciali</div>
-          </div>
-          <div class="slide__price"><span class="sold-tag">Venduto</span></div>
-        </div>
-      </article>
-
-      <article class="slide">
-        <div class="slide__media"><img src="./assets/planimetrie/unit-6.jpg" alt="Planimetria unità 6 — piano primo, trilocale con terrazza" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">06</div>
-          <div>
-            <div class="slide__title">Unità 6 · Piano primo</div>
-            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 97,44 m² commerciali · Posto auto esterno incluso</div>
-          </div>
-          <div class="slide__price">€ 351.000<span class="slide__validity">Prezzi IVA esclusa</span></div>
-        </div>
-      </article>
-
-      <article class="slide">
-        <div class="slide__media"><img src="./assets/planimetrie/unit-7.jpg" alt="Planimetria unità 7 — piano primo, bilocale con terrazza" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">07</div>
-          <div>
-            <div class="slide__title">Unità 7 · Piano primo</div>
-            <div class="slide__meta">Bilocale · 1 camera · 1 bagno · 70,40 m² commerciali · Posto auto esterno incluso</div>
-          </div>
-          <div class="slide__price">€ 261.000<span class="slide__validity">Prezzi IVA esclusa</span></div>
-        </div>
-      </article>
-
-      <article class="slide">
-        <div class="slide__media"><img src="./assets/planimetrie/unit-8.jpg" alt="Planimetria unità 8 — piano primo, trilocale con terrazza" loading="lazy"></div>
-        <div class="slide__caption">
-          <div class="slide__num">08</div>
-          <div>
-            <div class="slide__title">Unità 8 · Piano primo</div>
-            <div class="slide__meta">Trilocale · 2 camere · 2 bagni · 102,38 m² commerciali · Posto auto esterno incluso</div>
-          </div>
-          <div class="slide__price">€ 396.000<span class="slide__validity">Prezzi IVA esclusa</span></div>
-        </div>
-      </article>
-
+<section class="foglio foglio--bianco" id="dentro" aria-labelledby="dentro-t">
+  <div class="foglio__dentro">
+    <div class="testata"><div class="rivela"><p class="kicker">06 · Dentro</p><h2 class="h2" id="dentro-t">Le immagini <em>del progetto.</em></h2></div><p class="lede rivela">Rendering e immagini di progetto. Quelle segnate «AI» sono generate o rielaborate con l&#x27;intelligenza artificiale: danno l&#x27;idea, non sono fotografie.</p></div>
+    <div class="galleria" tabindex="0" aria-label="Immagini del progetto">
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/exterior-garden-glazing-640.avif 640w, ./assets/images/resp/exterior-garden-glazing-1024.avif 1024w, ./assets/images/resp/exterior-garden-glazing-1600.avif 1600w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/exterior-garden-glazing-640.webp 640w, ./assets/images/resp/exterior-garden-glazing-1024.webp 1024w, ./assets/images/resp/exterior-garden-glazing-1600.webp 1600w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/exterior-garden-glazing.jpg" alt="Il fronte sud di Elegie Duino, con le verande vetrate sul giardino" width="2000" height="1125" loading="lazy" decoding="async"></picture><span class="tag-ai tag-ai--vero" title="Rendering di progetto, senza intelligenza artificiale">Rendering</span><figcaption>Il fronte sud, verso i giardini · rendering di progetto</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/exterior-garden-corner-640.avif 640w, ./assets/images/resp/exterior-garden-corner-1024.avif 1024w, ./assets/images/resp/exterior-garden-corner-1600.avif 1600w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/exterior-garden-corner-640.webp 640w, ./assets/images/resp/exterior-garden-corner-1024.webp 1024w, ./assets/images/resp/exterior-garden-corner-1600.webp 1600w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/exterior-garden-corner.jpg" alt="L&#x27;angolo dell&#x27;edificio sul giardino privato" width="2000" height="1125" loading="lazy" decoding="async"></picture><span class="tag-ai tag-ai--vero" title="Rendering di progetto, senza intelligenza artificiale">Rendering</span><figcaption>Volumi semplici sul giardino privato · rendering di progetto</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/rend-fronte-nord-640.avif 640w, ./assets/images/resp/rend-fronte-nord-1024.avif 1024w, ./assets/images/resp/rend-fronte-nord-1600.avif 1600w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/rend-fronte-nord-640.webp 640w, ./assets/images/resp/rend-fronte-nord-1024.webp 1024w, ./assets/images/resp/rend-fronte-nord-1600.webp 1600w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/rend-fronte-nord.jpg" alt="Il fronte nord con gli oscuri a doghe verticali e le siepi" width="2400" height="1350" loading="lazy" decoding="async"></picture><span class="tag-ai tag-ai--vero" title="Rendering di progetto, senza intelligenza artificiale">Rendering</span><figcaption>Il fronte nord, con gli oscuri a doghe · rendering di progetto</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/rend-ingresso-nord-640.avif 640w, ./assets/images/resp/rend-ingresso-nord-1024.avif 1024w, ./assets/images/resp/rend-ingresso-nord-1600.avif 1600w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/rend-ingresso-nord-640.webp 640w, ./assets/images/resp/rend-ingresso-nord-1024.webp 1024w, ./assets/images/resp/rend-ingresso-nord-1600.webp 1600w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/rend-ingresso-nord.jpg" alt="L&#x27;ingresso comune sul fronte nord e i posti auto" width="2400" height="1350" loading="lazy" decoding="async"></picture><span class="tag-ai tag-ai--vero" title="Rendering di progetto, senza intelligenza artificiale">Rendering</span><figcaption>L&#x27;ingresso comune e i posti auto · rendering di progetto</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/exterior-sunset-garden-1280.avif 1280w, ./assets/images/resp/exterior-sunset-garden-1920.avif 1920w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/exterior-sunset-garden-1280.webp 1280w, ./assets/images/resp/exterior-sunset-garden-1920.webp 1920w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/exterior-sunset-garden.jpg" alt="Il fronte sud al tramonto, immagine generata con l&#x27;intelligenza artificiale" width="2400" height="1339" loading="lazy" decoding="async"></picture><span class="tag-ai" title="Rendering generato con l&#x27;intelligenza artificiale">AI · rendering</span><figcaption>Il fronte sud al tramonto · immagine AI</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/interno-giardino-640.avif 640w, ./assets/images/resp/interno-giardino-1024.avif 1024w, ./assets/images/resp/interno-giardino-1600.avif 1600w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/interno-giardino-640.webp 640w, ./assets/images/resp/interno-giardino-1024.webp 1024w, ./assets/images/resp/interno-giardino-1600.webp 1600w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/interno-giardino.jpg" alt="Un soggiorno affacciato sul giardino, immagine illustrativa generata con l&#x27;intelligenza artificiale" width="2400" height="1350" loading="lazy" decoding="async"></picture><span class="tag-ai" title="Immagine generata o rielaborata con l&#x27;intelligenza artificiale">AI</span><figcaption>Un soggiorno sul giardino · immagine AI illustrativa</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/detail-bathrooms-640.avif 640w, ./assets/images/resp/detail-bathrooms-1024.avif 1024w, ./assets/images/resp/detail-bathrooms-1600.avif 1600w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/detail-bathrooms-640.webp 640w, ./assets/images/resp/detail-bathrooms-1024.webp 1024w, ./assets/images/resp/detail-bathrooms-1600.webp 1600w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/detail-bathrooms.jpg" alt="Un bagno in gres porcellanato, immagine generata con l&#x27;intelligenza artificiale" width="2000" height="1116" loading="lazy" decoding="async"></picture><span class="tag-ai" title="Rendering generato con l&#x27;intelligenza artificiale">AI · rendering</span><figcaption>Bagno in gres porcellanato · immagine AI</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="./assets/images/resp/exterior-entrance-sunset-640.avif 640w, ./assets/images/resp/exterior-entrance-sunset-1024.avif 1024w, ./assets/images/resp/exterior-entrance-sunset-1600.avif 1600w" sizes="(max-width: 900px) 78vw, 820px"><source type="image/webp" srcset="./assets/images/resp/exterior-entrance-sunset-640.webp 640w, ./assets/images/resp/exterior-entrance-sunset-1024.webp 1024w, ./assets/images/resp/exterior-entrance-sunset-1600.webp 1600w" sizes="(max-width: 900px) 78vw, 820px"><img src="./assets/images/exterior-entrance-sunset.jpg" alt="L&#x27;ingresso al tramonto, immagine generata con l&#x27;intelligenza artificiale" width="2000" height="1116" loading="lazy" decoding="async"></picture><span class="tag-ai" title="Rendering generato con l&#x27;intelligenza artificiale">AI · rendering</span><figcaption>L&#x27;ingresso al tramonto · immagine AI</figcaption></figure>
     </div>
+    <div class="galleria__comandi"><button type="button" data-dir="indietro" aria-label="Immagine precedente"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-dir="avanti" aria-label="Immagine successiva"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
+  </div>
+</section>
 
-    <div class="container">
-      <div class="slideshow__controls">
-        <div class="slideshow__hint">← Trascina o usa le frecce</div>
-        <div class="slideshow__arrows">
-          <button class="slideshow__arrow" data-dir="prev" aria-label="Planimetria precedente">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>
-          </button>
-          <button class="slideshow__arrow" data-dir="next" aria-label="Planimetria successiva">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
-          </button>
-        </div>
+<section class="foglio" id="conto" aria-labelledby="conto-t">
+  <div class="foglio__dentro">
+    <div class="testata"><div class="rivela"><p class="kicker">07 · Il conto</p><h2 class="h2" id="conto-t">Quanto costa, <em>davvero.</em></h2></div><p class="lede rivela">Si compra dall&#x27;impresa che costruisce: c&#x27;è l&#x27;IVA, e le imposte di registro, ipotecaria e catastale sono fisse. Ecco il conto, casa per casa.</p></div>
+    <div class="conto">
+      <div class="conto__scelte">
+        <div class="campo"><label for="conto-unita">La casa</label><select id="conto-unita"><option value="1">Casa 1 · piano terra — € 441.000</option>
+<option value="2">Casa 2 · piano terra — € 396.000</option>
+<option value="3">Casa 3 · piano terra — € 288.000</option>
+<option value="6" selected>Casa 6 · primo piano — € 351.000</option>
+<option value="7">Casa 7 · primo piano — € 261.000</option>
+<option value="8">Casa 8 · primo piano — € 396.000</option></select></div>
+        <div class="campo"><fieldset><legend>È la tua prima casa?</legend><div class="scelta"><button type="button" data-prima="si" aria-pressed="true">Sì</button><button type="button" data-prima="no" aria-pressed="false">No</button></div></fieldset></div>
+        <div class="campo"><fieldset><legend>Posti auto in più</legend><div class="contatore"><button type="button" data-posti="-1" aria-label="Un posto in meno">−</button><output id="c-posti-n">0</output><button type="button" data-posti="1" aria-label="Un posto in più">+</button></div><p class="nota" style="margin-top:8px">Uno è già compreso in ogni casa; altri quattro sono disponibili a € 20.000 l&#x27;uno.</p></fieldset></div>
+      </div>
+      <div class="ricevuta" aria-live="polite">
+        <table class="num">
+          <tr><td>Prezzo<small>IVA esclusa, da listino</small></td><td id="c-prezzo"></td></tr>
+          <tr><td><span id="c-iva-et"></span><small>Sulla casa, versata all&#x27;impresa</small></td><td id="c-iva"></td></tr>
+          <tr><td>Imposte di registro, ipotecaria e catastale<small>200 € ciascuna, fisse</small></td><td id="c-imposte"></td></tr>
+          <tr class="tot"><td>Totale casa</td><td id="c-totale"></td></tr>
+          <tr id="c-posti-riga" hidden><td><span id="c-posti-et"></span></td><td id="c-posti"></td></tr>
+        </table>
+        <p class="nota">Conto indicativo. I requisiti della prima casa e le imposte li verifica il notaio; restano fuori il suo onorario e un eventuale mutuo. Il listino può variare: la quotazione definitiva si formalizza nella proposta d&#x27;acquisto.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CAPITOLATO ===== -->
-<section class="spec" id="capitolato">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-head__meta">
-        <span class="section-num">04 · Capitolato tecnico</span>
-        <h2 class="section-head__title">Specifiche tecniche, <em>per esteso.</em></h2>
-      </div>
-      <div class="section-head__body">
-        <p>Quattordici sezioni di capitolato firmato — dalle fondazioni alle sistemazioni esterne, dall'impiantistica alle scelte di finitura. La brochure completa è disponibile in download; il capitolato tecnico integrale viene fornito su richiesta in fase di trattativa.</p>
-      </div>
+<section class="foglio foglio--bianco" id="capitolato" aria-labelledby="capitolato-t">
+  <div class="foglio__dentro">
+    <div class="testata"><div class="rivela"><p class="kicker">08 · Il capitolato</p><h2 class="h2" id="capitolato-t">Le scelte, <em>per esteso.</em></h2></div><div class="rivela"><p class="lede">Ecco che cosa è compreso, con le parole del capitolato tecnico. Il capitolato integrale e la brochure si ricevono su richiesta.</p><p style="margin-top:22px"><button type="button" class="btn btn--scuro" data-apri-brochure>Ricevi la brochure (PDF)</button></p></div></div>
+    <div class="materiali">
+<figure class="rivela"><div class="tinte"><span class="tinta"><i style="background:#a9a59d"></i>grigi</span><span class="tinta"><i style="background:#cbbda4"></i>beige sabbia</span></div><figcaption><b>Zona giorno e bagni</b><span>Gres porcellanato 60×60 o 120×60, effetto cemento o pietra, nei toni del grigio o del beige sabbia. Nei bagni, rivestimento 120×60 fino a 120 cm, fino a 210 cm nella doccia.</span></figcaption></figure>
+<figure class="rivela"><div class="tinte"><span class="tinta"><i style="background:#c6a47e"></i>rovere naturale</span><span class="tinta"><i style="background:#8c6a4d"></i>varianti colorate</span></div><figcaption><b>Camere</b><span>Parquet prefinito di rovere, doghe 15×190 cm, naturale verniciato opaco oppure in varianti colorate.</span></figcaption></figure>
+<figure class="rivela"><div class="tinte"><span class="tinta"><i style="background:#f4f3ef"></i>sanitari bianchi</span><span class="tinta"><i style="background:#c9ccce"></i>cromo lucido</span></div><figcaption><b>Sanitari e rubinetti</b><span>Sanitari sospesi filo muro S.D.R. Ceramiche serie BUL, rubinetteria Paffoni serie LIGHT cromo lucido, o equivalenti; piatto doccia in resina bianca.</span></figcaption></figure>
+<figure class="rivela"><div class="tinte"><span class="tinta"><i style="background:#383e42"></i>RAL 7016</span><span class="tinta"><i style="background:#c9c5bb"></i>grigio pietra d&#x27;Istria</span></div><figcaption><b>Fuori</b><span>Serramenti, ringhiere, gronde e cancelli grigio antracite RAL 7016; zoccolo e camminamenti in gres grigio pietra d&#x27;Istria; facciate in intonachino grigio caldo scuro.</span></figcaption></figure>
     </div>
-
-    <div class="spec__points reveal">
-      <div>
-        <span class="num">01</span>
-        <div>
-          <h3>Strutture · X-LAM in abete PEFC</h3>
-          <p>Pannelli portanti in legno massiccio a strati incrociati per pareti e solai. Solaio di copertura in legno lamellare con doppio tavolato. Marcatura CE, certificazione ETA, filiera tracciata PEFC.</p>
-        </div>
-      </div>
-      <div>
-        <span class="num">02</span>
-        <div>
-          <h3>Involucro · Cappotto in lana di roccia</h3>
-          <p>Cappotto termoisolante in lana di roccia ad alto spessore, intonachino acril-silossanico in tonalità grigio caldo scuro come da autorizzazione paesaggistica. Classe di reazione al fuoco A1.</p>
-        </div>
-      </div>
-      <div>
-        <span class="num">03</span>
-        <div>
-          <h3>Serramenti · Alluminio RAL 7016</h3>
-          <p>Finestre e portefinestre in alluminio a taglio termico, vetrocamera stratificata basso-emissiva con PVB antinfortunio. Frangisole verticali in composito su facciata stradale, tende filtranti su prospetti sud e ovest.</p>
-        </div>
-      </div>
-      <div>
-        <span class="num">04</span>
-        <div>
-          <h3>Pavimenti · Parquet rovere e gres</h3>
-          <p>Parquet prefinito in rovere 15×190 cm nelle camere; gres porcellanato 30×60 / 60×60 nei soggiorni e bagni, effetto pietra o cemento. Sigillatura fughe in pasta cromia.</p>
-        </div>
-      </div>
-      <div>
-        <span class="num">05</span>
-        <div>
-          <h3>Climatizzazione · Pompa di calore aria-acqua</h3>
-          <p>Impianto autonomo per ogni unità: riscaldamento, raffrescamento e ACS via pompa di calore ad alta efficienza con accumulo 200 L. Ventilconvettori di design, controllo remoto via app.</p>
-        </div>
-      </div>
-      <div>
-        <span class="num">06</span>
-        <div>
-          <h3>Elettrico · Fotovoltaico + ricarica elettrica</h3>
-          <p>Impianto fotovoltaico dedicato per ogni unità, predisposizione colonnina di ricarica al posto auto, videocitofono con registrazione chiamata, predisposizione fibra, dati e Wi-Fi.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="spec__cta reveal">
-      <button type="button" class="btn btn--solid" data-open-brochure>Scarica brochure (PDF)</button>
+    <div class="voci">
+<div class="rivela"><i>01</i><div><h3>Pompa di calore aria-acqua</h3><p>Una per casa: scalda, raffresca e fa l&#x27;acqua calda senza gas, con un accumulo da 200 litri. Ventilconvettori stanza per stanza, si regola dal telefono.</p></div></div>
+<div class="rivela"><i>02</i><div><h3>Fotovoltaico per ogni casa</h3><p>Ciascuna casa ha il suo impianto sul tetto e il suo contatore, fino a 6 kW.</p></div></div>
+<div class="rivela"><i>03</i><div><h3>Ricarica dell&#x27;auto</h3><p>Ogni posto auto è predisposto per una colonnina di ricarica elettrica.</p></div></div>
+<div class="rivela"><i>04</i><div><h3>Porta blindata</h3><p>Portoncino corazzato tipo Stark o equivalente, classe antieffrazione 3 o superiore.</p></div></div>
+<div class="rivela"><i>05</i><div><h3>Predisposizioni</h3><p>Allarme, fibra ottica (se arriva in zona), rete dati e gestione domotica delle luci.</p></div></div>
+<div class="rivela"><i>06</i><div><h3>Videocitofono</h3><p>Registra chi ha suonato se in casa nessuno risponde.</p></div></div>
+<div class="rivela"><i>07</i><div><h3>Porte interne</h3><p>Laminato avorio o bianco a venatura orizzontale, serratura magnetica.</p></div></div>
+<div class="rivela"><i>08</i><div><h3>Tolleranze e varianti</h3><p>Le misure delle stanze possono variare del 5% rispetto ai disegni; il venditore può cambiare materiali e soluzioni senza ridurne valore e prestazioni.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTATTI ===== -->
-<section class="contact" id="contatti">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-head__meta">
-        <span class="section-num">05 · Contatti</span>
-        <h2 class="section-head__title">Una visita <em>su appuntamento.</em></h2>
-      </div>
-      <div class="section-head__body">
-        <p>Per documentazione completa, planimetrie, capitolato tecnico, scelte materiali e una visita al cantiere, contattare TriesteVillas Luxury Real Estate. Assistenza dedicata a buyer privati e investitori italiani e internazionali.</p>
+<section class="foglio" id="chi" aria-labelledby="chi-t">
+  <div class="foglio__dentro">
+    <div class="testata"><div class="rivela"><p class="kicker">09 · Chi lo fa</p><h2 class="h2" id="chi-t">Tre firme, <em>un cantiere.</em></h2></div><p class="lede rivela">Un&#x27;impresa che costruisce, uno studio che ha disegnato ogni muro, un&#x27;agenzia che conosce il territorio.</p></div>
+    <div class="chi">
+      <div class="rivela"><p class="kicker" style="margin:0">Sviluppo</p><img src="./assets/logos/resp/riccesi-holding-247.png" alt="Ennio Riccesi Holding" width="247" height="192" loading="lazy"><p>Ennio Riccesi Holding promuove e costruisce l&#x27;intervento, con un bilancio di sostenibilità che rendiconta ambiente, persone e governance.</p><a class="vai" href="https://riccesi.eu/" target="_blank" rel="noopener">riccesi.eu</a></div>
+      <div class="rivela"><p class="kicker" style="margin:0">Progetto</p><img src="./assets/logos/resp/soldano-192.png" alt="Studio Architettura Soldano" width="192" height="192" loading="lazy"><p>Studio Architettura Soldano, Trieste: Arch. Pier Paolo Soldano e Arch. Alessandra Belleli.</p><a class="vai" href="https://www.studioarchitetturasoldano.it/" target="_blank" rel="noopener">studioarchitetturasoldano.it</a></div>
+      <div class="rivela"><p class="kicker" style="margin:0">Vendite</p><img src="./assets/logos/resp/triestevillas-192.png" alt="TriesteVillas" width="192" height="192" loading="lazy"><p>TriesteVillas segue la vendita, per chi cerca casa qui e per chi arriva da fuori.</p><a class="vai" href="https://triestevillas.com" target="_blank" rel="noopener">triestevillas.com</a></div>
+    </div>
+    <div class="calendario num"><div class="rivela"><b>06 · 2026</b><span>inizio del cantiere</span></div><div class="rivela"><b>X-LAM</b><span>struttura in legno, montaggio a secco</span></div><div class="rivela"><b>2027</b><span>consegna, entro l&#x27;anno</span></div></div>
+  </div>
+</section>
+
+<section class="foglio foglio--notte" id="contatti" aria-labelledby="contatti-t">
+  <div class="foglio__dentro contatti">
+    <div>
+      <p class="kicker">10 · Contatti</p>
+      <h2 class="h2" id="contatti-t">Una visita, <em>su appuntamento.</em></h2>
+      <p class="lede" style="margin-top:22px">Planimetrie, capitolato, scelta dei materiali, una visita al cantiere: scrivici o chiamaci.</p>
+      <div class="contatti__righe">
+        <a href="tel:+393318940822"><span>Telefono</span>331 8940822</a>
+        <a href="https://wa.me/393318940822" target="_blank" rel="noopener"><span>WhatsApp</span>331 8940822</a>
+        <a href="mailto:richieste@triestevillas.com"><span>Email</span>richieste@triestevillas.com</a>
+        <a href="https://maps.google.com/?q=Localit%C3%A0+Duino+69%2FA+Duino+Aurisina" target="_blank" rel="noopener"><span>Cantiere</span>Località Duino 69/A · Duino Aurisina (TS)</a>
+        <a href="https://maps.google.com/?q=Via+Torino+34+Trieste" target="_blank" rel="noopener"><span>Ufficio vendite</span>Via Torino 34 · Trieste</a>
       </div>
     </div>
-
-    <div class="contact__grid reveal">
-      <div>
-        <p class="contact__lead">"Duino è un luogo dove il tempo rallenta, tra falesie, vento e luce."</p>
-        <div class="contact__lines">
-          <div>
-            <span class="label">Indirizzo cantiere</span>
-            <a href="https://maps.google.com/?q=Localit%C3%A0+Duino+69%2FA+Duino+Aurisina" target="_blank" rel="noopener">Località Duino 69/A · Duino Aurisina · Trieste</a>
-          </div>
-          <div>
-            <span class="label">Sede vendite</span>
-            <a href="https://maps.google.com/?q=Via+Torino+34+Trieste" target="_blank" rel="noopener">Via Torino 34 · 34123 Trieste · Italia</a>
-          </div>
+    <div>
+      <form class="form" id="info-form" novalidate>
+        <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="if-hp">Non compilare questo campo</label><input type="text" id="if-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
+        <div class="form__riga"><label class="form__label" for="if-nome">Nome e cognome <span class="req">*</span></label><input class="form__input" type="text" id="if-nome" name="nome" required maxlength="120" autocomplete="name"></div>
+        <div class="form__riga form__riga--due">
+          <div class="form__riga"><label class="form__label" for="if-email">Email</label><input class="form__input" type="email" id="if-email" name="email" maxlength="160" autocomplete="email"></div>
+          <div class="form__riga"><label class="form__label" for="if-tel">Telefono</label><input class="form__input" type="tel" id="if-tel" name="telefono" maxlength="40" autocomplete="tel"></div>
         </div>
-      </div>
-
-      <div>
-        <div class="contact__lines">
-          <div>
-            <span class="label">Email</span>
-            <a href="mailto:richieste@triestevillas.com">richieste@triestevillas.com</a>
-          </div>
-          <div>
-            <span class="label">Telefono</span>
-            <a href="tel:+393318940822">331 8940822</a>
-          </div>
-          <div>
-            <span class="label">WhatsApp</span>
-            <a href="https://wa.me/393318940822" target="_blank" rel="noopener">331 8940822</a>
-          </div>
-          <div>
-            <span class="label">Web</span>
-            <a href="https://triestevillas.com" target="_blank" rel="noopener">triestevillas.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="credits reveal">
-      <div>
-        <span class="label">Sviluppatore</span>
-        <a href="https://riccesi.eu/" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="./assets/logos/resp/riccesi-holding-247.webp"><img src="./assets/logos/resp/riccesi-holding-247.png" alt="Ennio Riccesi Holding" width="247" height="192" loading="lazy" decoding="async"></picture></a>
-        <p>Ennio Riccesi Holding — promotore dell'iniziativa, da sempre orientata ai principi ESG di sostenibilità ambientale, responsabilità sociale e buona governance.</p>
-        <a class="credits__link" href="https://riccesi.eu/" target="_blank" rel="noopener">riccesi.eu →</a>
-      </div>
-      <div>
-        <span class="label">Progetto architettonico</span>
-        <a href="https://www.studioarchitetturasoldano.it/" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="./assets/logos/resp/soldano-192.webp"><img src="./assets/logos/resp/soldano-192.png" alt="Studio Architettura Soldano" width="192" height="192" loading="lazy" decoding="async"></picture></a>
-        <p>Studio Architettura Soldano — Arch. Pier Paolo Soldano · Arch. Alessandra Belleli. Via Belpoggio 25/1, Trieste.</p>
-        <a class="credits__link" href="https://www.studioarchitetturasoldano.it/" target="_blank" rel="noopener">studioarchitetturasoldano.it →</a>
-      </div>
-      <div>
-        <span class="label">Vendite</span>
-        <a href="https://triestevillas.com" target="_blank" rel="noopener"><picture><source type="image/webp" srcset="./assets/logos/resp/triestevillas-192.webp"><img src="./assets/logos/resp/triestevillas-192.png" alt="TriesteVillas Luxury Real Estate" width="192" height="192" loading="lazy" decoding="async"></picture></a>
-        <p>TriesteVillas Luxury Real Estate — assistenza dedicata a buyer privati e investitori italiani e internazionali.</p>
-        <a class="credits__link" href="https://triestevillas.com" target="_blank" rel="noopener">triestevillas.com →</a>
-      </div>
+        <p class="form__hint">Email o telefono: basta uno dei due.</p>
+        <div class="form__riga"><label class="form__label" for="if-msg">Messaggio</label><textarea class="form__input" id="if-msg" name="messaggio" rows="4" maxlength="2000" placeholder="La casa che ti interessa, le tue domande, quando richiamarti…"></textarea></div>
+        <label class="form__consenso"><input type="checkbox" id="if-privacy" name="privacy" value="si" required><span>Ho letto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta da TriesteVillas sull'iniziativa Elegie Duino. <span class="req">*</span></span></label>
+        <p class="form__errore" id="if-error" role="alert"></p>
+        <div><button type="submit" class="btn btn--chiaro"><span class="btn__label">Invia la richiesta</span></button></div>
+      </form>
+      <div class="form__ok" id="info-ok" role="status" tabindex="-1"><p class="h3">Grazie, la richiesta è arrivata.</p><p>Ti ricontattiamo al più presto. Per qualcosa di urgente: <a href="tel:+393318940822">331 8940822</a>.</p></div>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="footer">
-  <div class="footer__inner">
-    <div>
-      <span class="footer__brand">Elegie</span> Duino · Nuova Costruzione · 2026
-    </div>
-    <div>
-      <a href="./en/">English version</a> · <a href="./sl/">Slovenska različica</a> · <a href="./privacy.html">Privacy</a> · <a href="#" data-cc-prefs>Preferenze cookie</a> · <a href="mailto:richieste@triestevillas.com">richieste@triestevillas.com</a>
+<aside class="scheda" aria-hidden="true" aria-labelledby="scheda-titolo" role="dialog">
+  <div class="scheda__testa"><p class="kicker" style="margin:0">Elegie Duino</p><button type="button" class="scheda__chiudi" aria-label="Chiudi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="scheda__corpo">
+    <div class="scheda__titolo"><b id="scheda-numero" class="num"></b><div><h2 class="h3" id="scheda-titolo"></h2><p class="nota" id="scheda-tipo" style="margin:4px 0 0"></p></div></div>
+    <div class="scheda__prezzo"><div id="scheda-prezzo"></div><span id="scheda-prezzo-nota"></span></div>
+    <dl class="scheda__dati" id="scheda-dati"></dl>
+    <div class="scheda__sezione"><h4>La pianta</h4><div class="scheda__pianta" id="scheda-pianta"></div><p class="nota">Dalle tavole commerciali dello Studio Architettura Soldano (30/06/2026), con gli arredi d&#x27;esempio. La superficie commerciale comprende la veranda.</p></div>
+    <div class="scheda__sezione"><h4>Il sole sulla veranda</h4><div class="scheda__sole num" id="scheda-sole"></div><p class="nota" style="margin-top:8px">Ore di sole diretto sulla vetrata della veranda in tre giorni dell&#x27;anno, calcolate come nel capitolo «La luce»; sotto, il conto con gli alberi come chiome piene.</p></div>
+    <div class="scheda__sezione" id="scheda-vista" hidden><h4>Che cosa si vede</h4><p></p></div>
+    <div class="scheda__azioni" id="scheda-azioni">
+      <button type="button" class="btn btn--scuro" data-scheda-richiedi>Chiedi di questa casa</button>
+      <button type="button" class="btn btn--linea" data-scheda-conto>Fai il conto</button>
     </div>
   </div>
-  <p class="footer__legal">Vendite a cura di TriesteVillas srl · Via Milano 5, 34132 Trieste · C.F./P.IVA 01235580329 · REA TS 134793, CCIAA Venezia Giulia</p>
+</aside>
+<div class="velo-scheda"></div>
+
+<div class="lente" role="dialog" aria-modal="true" aria-label="La pianta"><div class="lente__tela"></div><button type="button" class="btn btn--scuro lente__chiudi">Chiudi</button></div>
+
+<div class="modale" id="brochure-modale" role="dialog" aria-modal="true" aria-labelledby="brochure-t">
+  <div class="modale__pannello">
+    <button type="button" class="modale__chiudi" data-chiudi-modale aria-label="Chiudi"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <p class="kicker" style="color:var(--legno)">Brochure · PDF</p>
+    <h2 class="h3" id="brochure-t" style="margin-bottom:10px">Ricevi la brochure completa.</h2>
+    <p class="nota" style="margin-bottom:18px">Lascia i tuoi dati: il PDF si apre subito e una copia della richiesta arriva a TriesteVillas.</p>
+    <form class="form" id="brochure-form" novalidate>
+      <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="bf-hp">Non compilare questo campo</label><input type="text" id="bf-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
+      <div class="form__riga"><label class="form__label" for="bf-nome">Nome e cognome <span class="req">*</span></label><input class="form__input" type="text" id="bf-nome" name="nome" required maxlength="120" autocomplete="name"></div>
+      <div class="form__riga"><label class="form__label" for="bf-email">Email <span class="req">*</span></label><input class="form__input" type="email" id="bf-email" name="email" required maxlength="160" autocomplete="email"></div>
+      <div class="form__riga"><label class="form__label" for="bf-tel">Telefono</label><input class="form__input" type="tel" id="bf-tel" name="telefono" maxlength="40" autocomplete="tel"></div>
+      <label class="form__consenso"><input type="checkbox" id="bf-privacy" name="privacy" value="si" required><span>Ho letto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la brochure ed eventuali aggiornamenti sull'iniziativa Elegie Duino. <span class="req">*</span></span></label>
+      <p class="form__errore" id="bf-error" role="alert"></p>
+      <div><button type="submit" class="btn btn--scuro"><span class="btn__label">Ricevi la brochure</span></button></div>
+    </form>
+    <div class="form__ok" id="brochure-ok" role="status" tabindex="-1"><p class="h3">Grazie, la brochure è pronta.</p><p>Si apre in una nuova scheda; se non la vedi: <a href="./assets/pdf/elegie-duino-brochure.pdf" target="_blank" rel="noopener">apri il PDF</a></p></div>
+  </div>
+</div>
+
+<footer class="piede">
+  <div class="piede__dentro">
+    <div class="piede__righe"><span><b style="color:var(--sale)">Elegie Duino</b> · Nuova costruzione · Località Duino 69/A, Duino Aurisina (TS)</span><a href="./privacy.html">Privacy</a><a href="#" data-cc-prefs>Preferenze cookie</a><a href="mailto:richieste@triestevillas.com">richieste@triestevillas.com</a><a href="./en/" hreflang="en" lang="en">English</a><a href="./sl/" hreflang="sl" lang="sl">Slovenščina</a></div>
+    <div class="piede__trasparenza"><p style="margin:0"><b>Che cosa stai guardando.</b> La foto di apertura è vera, da drone, del 12 agosto 2026: l'unico segno aggiunto è il perimetro del lotto. Il modello 3D dell'edificio è ricostruito dalle tavole e dal disegno CAD dello Studio Architettura Soldano, senza intelligenza artificiale: è un modello indicativo, bianco come un plastico (la facciata vera è grigio caldo scuro), non un elaborato di progetto; la posizione dei pannelli fotovoltaici è ricavata dai prospetti. Le immagini segnate «AI» sono generate o rielaborate con l'intelligenza artificiale.</p><p style="margin:0"><b>Dati del paese.</b> Terreno: modello digitale LiDAR della Regione FVG, rilievi 2006–2009 (IODL 2.0). Ortofoto: Regione FVG, true ortofoto 2017–2020 con piccole integrazioni 2012 (CC BY 4.0). Edifici: © contributori OpenStreetMap (ODbL). Chiome degli alberi: Meta e World Resources Institute, High Resolution Canopy Height (CC BY 4.0). Tempi: OSRM su dati OpenStreetMap.</p></div>
+    <p style="margin:0">Vendite a cura di TriesteVillas srl · Via Milano 5, 34132 Trieste · C.F./P.IVA 01235580329 · REA TS 134793, CCIAA Venezia Giulia</p>
+  </div>
 </footer>
 
-<!-- Brochure download modal -->
-<div class="modal" id="brochure-modal" role="dialog" aria-modal="true" aria-labelledby="brochure-modal-title">
-  <div class="modal__panel">
-    <button type="button" class="modal__close" data-close-modal aria-label="Chiudi">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-
-    <div class="modal__body" id="brochure-modal-body">
-      <span class="modal__eyebrow">Brochure · PDF</span>
-      <h2 class="modal__title" id="brochure-modal-title">Riceva la brochure completa.</h2>
-      <p class="modal__lede">Inserisca i suoi dati. Il link al PDF apparirà subito qui e una copia della richiesta verrà inviata a TriesteVillas per il follow-up.</p>
-
-      <form class="form" id="brochure-form" novalidate>
-        <!-- Dal 09/10/2026 la brochure bussa alla porta pubblica del CRM (tsv-pg
-             /api/modulo-pubblico, modulo «brochure»), non più a web3forms. I nomi
-             dei campi sono quelli che la porta legge (web/lib/ingresso/modulo-pubblico.ts). -->
-        <div class="form__hp" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
-          <label for="bf-hp">Non compilare questo campo</label>
-          <input type="text" id="bf-hp" name="hp_ed" tabindex="-1" autocomplete="off">
-        </div>
-
-        <div class="form__row">
-          <label class="form__label" for="bf-name">Nome e cognome <span class="req">*</span></label>
-          <input class="form__input" type="text" id="bf-name" name="nome" required maxlength="120" autocomplete="name" placeholder="Mario Rossi">
-        </div>
-
-        <div class="form__row">
-          <label class="form__label" for="bf-email">Email <span class="req">*</span></label>
-          <input class="form__input" type="email" id="bf-email" name="email" required maxlength="160" autocomplete="email" placeholder="mario@email.com">
-        </div>
-
-        <div class="form__row">
-          <label class="form__label" for="bf-phone">Telefono</label>
-          <input class="form__input" type="tel" id="bf-phone" name="telefono" maxlength="40" autocomplete="tel" placeholder="+39 ...">
-        </div>
-
-        <label class="form__consent">
-          <input type="checkbox" id="bf-privacy" name="privacy" value="si" required>
-          <span>Ho letto e accetto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la brochure ed eventuali aggiornamenti sull'iniziativa Elegie Duino.</span>
-        </label>
-
-        <p class="form__error" id="bf-error" role="alert">Si è verificato un errore. Riprova o scriva a richieste@triestevillas.com.</p>
-
-        <button type="submit" class="btn btn--ink form__submit">
-          <span class="btn__label">Ricevi la brochure</span>
-        </button>
-      </form>
-    </div>
-
-    <div class="form__success" id="brochure-success">
-      <div class="form__success-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h2 class="modal__title">Grazie. La brochure è pronta.</h2>
-      <p class="modal__lede">La brochure si apre in una nuova scheda; se non la vede, usi il pulsante qui sotto. Le invieremo a breve un riscontro all'indirizzo email indicato.</p>
-      <a href="./assets/pdf/elegie-duino-brochure.pdf" class="btn btn--ink" id="brochure-download-link" download target="_blank">Apri la brochure (PDF)</a>
-    </div>
-  </div>
-</div>
-
-<!-- Modal richiesta informazioni -->
-<!-- Dal 09/10/2026 è un modulo HTML che bussa alla porta pubblica del CRM
-     (tsv-pg /api/modulo-pubblico): un sito statico non può firmare la porta
-     /api/ingresso. Prima era un form Airtable incorporato. I nomi dei campi
-     sono quelli che la porta legge (web/lib/ingresso/modulo-pubblico.ts):
-     cambiarli qui senza cambiarli là fa rifiutare ogni richiesta. -->
-<div class="modal" id="info-modal" role="dialog" aria-modal="true" aria-labelledby="info-modal-title">
-  <div class="modal__panel">
-    <button type="button" class="modal__close" data-close-info aria-label="Chiudi">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-
-    <div class="modal__body" id="info-modal-body">
-      <span class="modal__eyebrow">Elegie Duino</span>
-      <h2 class="modal__title" id="info-modal-title">Richiesta informazioni</h2>
-      <p class="modal__lede">Lasciate i vostri recapiti: vi ricontatteremo al più presto.</p>
-
-      <form class="form" id="info-form" novalidate>
-        <div class="form__hp" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">
-          <label for="if-hp">Non compilare questo campo</label>
-          <input type="text" id="if-hp" name="hp_ed" tabindex="-1" autocomplete="off">
-        </div>
-
-        <div class="form__row">
-          <label class="form__label" for="if-nome">Nome e cognome <span class="req">*</span></label>
-          <input class="form__input" type="text" id="if-nome" name="nome" required maxlength="120" autocomplete="name" placeholder="Mario Rossi">
-        </div>
-
-        <div class="form__row">
-          <label class="form__label" for="if-email">Email</label>
-          <input class="form__input" type="email" id="if-email" name="email" maxlength="160" autocomplete="email" placeholder="mario@email.com">
-        </div>
-
-        <div class="form__row">
-          <label class="form__label" for="if-tel">Telefono</label>
-          <input class="form__input" type="tel" id="if-tel" name="telefono" maxlength="40" autocomplete="tel" placeholder="+39 ...">
-        </div>
-        <p class="form__hint" id="if-hint">Email o telefono: basta uno dei due.</p>
-
-        <div class="form__row">
-          <label class="form__label" for="if-msg">Messaggio</label>
-          <textarea class="form__input form__textarea" id="if-msg" name="messaggio" rows="4" maxlength="2000" placeholder="Unità di interesse, domande, quando preferite essere richiamati…"></textarea>
-        </div>
-
-        <label class="form__consent">
-          <input type="checkbox" id="if-privacy" name="privacy" value="si" required>
-          <span>Ho letto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta da TriesteVillas sull'iniziativa Elegie Duino. <span class="req">*</span></span>
-        </label>
-
-        <p class="form__error" id="if-error" role="alert"></p>
-
-        <button type="submit" class="btn btn--ink form__submit">
-          <span class="btn__label">Invia la richiesta</span>
-        </button>
-      </form>
-    </div>
-
-    <div class="form__success" id="info-success" role="status">
-      <div class="form__success-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h2 class="modal__title">Grazie. La richiesta è arrivata.</h2>
-      <p class="modal__lede">Vi ricontatteremo al più presto. Per qualcosa di urgente: <a href="tel:+393318940822">331 8940822</a> · <a href="mailto:richieste@triestevillas.com">richieste@triestevillas.com</a>.</p>
-    </div>
-  </div>
-</div>
-
-<div class="planbox" id="planbox" hidden role="dialog" aria-modal="true" aria-label="Planimetria unità">
-  <div class="planbox__backdrop" data-planbox-close></div>
-  <figure class="planbox__panel">
-    <button class="planbox__close" type="button" data-planbox-close aria-label="Chiudi">&times;</button>
-    <div class="planbox__media">
-      <img id="planbox-img" src="" alt="">
-      <div class="planbox__sold" id="planbox-sold" hidden><span class="slide__sold-badge">Venduto</span></div>
-    </div>
-    <figcaption class="planbox__caption">
-      <div class="planbox__num" id="planbox-num"></div>
-      <div>
-        <div class="planbox__title" id="planbox-title"></div>
-        <div class="planbox__meta" id="planbox-meta"></div>
-      </div>
-      <div class="planbox__price" id="planbox-price"></div>
-    </figcaption>
-  </figure>
-</div>
-
-<script>
-  // Modal richiesta informazioni: modulo HTML verso la porta pubblica del CRM
-  // (tsv-pg /api/modulo-pubblico, dal 09/10/2026). Stesse regole della porta:
-  // nome, email valida OPPURE telefono con almeno 6 cifre, consenso. La porta
-  // le ricontrolla: questa è solo la cortesia di dirlo prima.
-  (function () {
-    const modal = document.getElementById('info-modal');
-    if (!modal) return;
-    const PORTA = 'https://tsv-pg.vercel.app/api/modulo-pubblico';
-    const body = document.getElementById('info-modal-body');
-    const success = document.getElementById('info-success');
-    const form = document.getElementById('info-form');
-    const errorEl = document.getElementById('if-error');
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const label = submitBtn.querySelector('.btn__label');
-    const campo = (n) => form.elements[n];
-    const MSG = {
-      nome: 'Il nome è obbligatorio.', email: "L'indirizzo email non sembra valido.", telefono: 'Il numero di telefono non sembra valido (almeno 6 cifre).',
-      recapito: 'Serve almeno un recapito: email o telefono.', privacy: 'Per inviare la richiesta serve il consenso al trattamento dei dati.', messaggio: 'Il messaggio è troppo lungo (massimo 2.000 caratteri).',
-      troppe: 'Troppe richieste in questo momento. Riprovate tra poco, o scrivete a richieste@triestevillas.com.', rete: 'La richiesta non è partita. Riprovate, o scrivete a richieste@triestevillas.com · 331 8940822.'
-    };
-    const FOCUS = { nome: 'nome', email: 'email', telefono: 'telefono', recapito: 'email', privacy: 'privacy', messaggio: 'messaggio' };
-    let apertoIl = 0;
-    let inviata = false;
-
-    const pulisci = () => {
-      errorEl.classList.remove('is-visible');
-      errorEl.textContent = '';
-      ['nome', 'email', 'telefono', 'messaggio', 'privacy'].forEach(n => campo(n).removeAttribute('aria-invalid'));
-    };
-    const errore = (chiave) => {
-      errorEl.textContent = MSG[chiave] || MSG.rete;
-      errorEl.classList.add('is-visible');
-      const n = FOCUS[chiave];
-      if (n) {
-        campo(n).setAttribute('aria-invalid', 'true');
-        if (chiave === 'recapito') campo('telefono').setAttribute('aria-invalid', 'true');
-        campo(n).focus();
-      }
-    };
-    const cifre = (v) => (v.match(/\d/g) || []).length;
-    const verifica = () => {
-      const nome = campo('nome').value.trim().replace(/\s+/g, ' ');
-      const email = campo('email').value.trim();
-      const tel = campo('telefono').value.trim();
-      if (nome.length < 2) return 'nome';
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return 'email';
-      if (tel && (!/^[0-9+().\s\/-]{6,40}$/.test(tel) || cifre(tel) < 6 || cifre(tel) > 16)) return 'telefono';
-      if (!email && !tel) return 'recapito';
-      if (campo('messaggio').value.trim().length > 2000) return 'messaggio';
-      if (!campo('privacy').checked) return 'privacy';
-      return null;
-    };
-
-    const open = () => {
-      if (inviata) { form.reset(); inviata = false; }
-      pulisci();
-      body.style.display = '';
-      success.classList.remove('is-visible');
-      apertoIl = Date.now();
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => campo('nome').focus(), 50);
-    };
-    const close = () => {
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-    };
-    document.querySelectorAll('[data-open-info]').forEach(el => {
-      el.addEventListener('click', e => { e.preventDefault(); open(); });
-    });
-    modal.addEventListener('click', e => { if (e.target === modal) close(); });
-    modal.querySelectorAll('[data-close-info]').forEach(el => el.addEventListener('click', close));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      pulisci();
-      const sbagliato = verifica();
-      if (sbagliato) { errore(sbagliato); return; }
-
-      const dati = new URLSearchParams();
-      dati.set('modulo', 'info');
-      dati.set('nome', campo('nome').value.trim());
-      dati.set('email', campo('email').value.trim());
-      dati.set('telefono', campo('telefono').value.trim());
-      dati.set('messaggio', campo('messaggio').value.trim());
-      dati.set('privacy', 'si');
-      dati.set('lingua', 'it');
-      dati.set('pagina', location.pathname);
-      // Da dove è arrivata la visita (assets/js/provenienza.js): il CRM la mette sul lead.
-      if (window.edProvenienza) { const pv = window.edProvenienza(); if (pv) dati.set('provenienza', pv); }
-      dati.set('t', String(apertoIl ? Date.now() - apertoIl : ''));
-      dati.set('hp_ed', campo('hp_ed').value);
-
-      submitBtn.disabled = true;
-      label.textContent = 'Invio in corso…';
-      try {
-        // Corpo form-urlencoded: richiesta «semplice», niente preflight CORS.
-        const res = await fetch(PORTA, { method: 'POST', body: dati });
-        let json = null;
-        try { json = await res.json(); } catch (_) { /* corpo vuoto: 403 */ }
-        if (res.ok && json && json.ok) {
-          // generate_lead solo a richiesta arrivata (la porta ha risposto ok).
-          try { if (window.gtag) window.gtag('event', 'generate_lead', { modulo: 'info' }); } catch (_) {}
-          // Lo stesso, senza cookie, nel contatore del traffico (assets/js/contatore.js).
-          try { if (window.edContaEvento) window.edContaEvento('lead:info'); } catch (_) {}
-          inviata = true;
-          body.style.display = 'none';
-          success.classList.add('is-visible');
-          return;
-        }
-        if (res.status === 429) errore('troppe');
-        else if (res.status === 400 && json && json.campo) errore(json.campo);
-        else errore('rete');
-      } catch (err) {
-        errore('rete');
-      } finally {
-        submitBtn.disabled = false;
-        label.textContent = 'Invia la richiesta';
-      }
-    });
-  })();
-
-  // Keyplan interattiva → lightbox planimetria
-  (function () {
-    const box = document.getElementById('planbox');
-    if (!box) return;
-    const UNITS = {
-      1: { img: './assets/planimetrie/unit-1.jpg', title: 'Unità 1 · Piano terra', meta: 'Trilocale · 2 camere · 2 bagni · 97,24 m² commerciali · 280,02 m² area esterna · Parcheggio nel giardino privato', price: '€ 441.000' },
-      2: { img: './assets/planimetrie/unit-2.jpg', title: 'Unità 2 · Piano terra', meta: 'Trilocale · 2 camere · 2 bagni · 97,44 m² commerciali · 51,65 m² area esterna · Posto auto esterno incluso', price: '€ 396.000' },
-      3: { img: './assets/planimetrie/unit-3.jpg', title: 'Unità 3 · Piano terra', meta: 'Bilocale · 1 camera · 1 bagno · 70,40 m² commerciali · 47,48 m² area esterna · Posto auto esterno incluso', price: '€ 288.000' },
-      4: { img: null, title: 'Unità 4 · Piano terra', meta: 'Trilocale · 2 camere · 2 bagni · 102,38 m² commerciali · 226,02 m² area esterna', sold: true },
-      5: { img: null, title: 'Unità 5 · Piano primo', meta: 'Trilocale · 2 camere · 2 bagni · 97 m² commerciali', sold: true },
-      6: { img: './assets/planimetrie/unit-6.jpg', title: 'Unità 6 · Piano primo', meta: 'Trilocale · 2 camere · 2 bagni · 97,44 m² commerciali · Posto auto esterno incluso', price: '€ 351.000' },
-      7: { img: './assets/planimetrie/unit-7.jpg', title: 'Unità 7 · Piano primo', meta: 'Bilocale · 1 camera · 1 bagno · 70,40 m² commerciali · Posto auto esterno incluso', price: '€ 261.000' },
-      8: { img: './assets/planimetrie/unit-8.jpg', title: 'Unità 8 · Piano primo', meta: 'Trilocale · 2 camere · 2 bagni · 102,38 m² commerciali · Posto auto esterno incluso', price: '€ 396.000' }
-    };
-    const SOLD_LABEL = 'Venduto';
-    const imgEl = document.getElementById('planbox-img');
-    const soldEl = document.getElementById('planbox-sold');
-    const numEl = document.getElementById('planbox-num');
-    const titleEl = document.getElementById('planbox-title');
-    const metaEl = document.getElementById('planbox-meta');
-    const priceEl = document.getElementById('planbox-price');
-    let lastFocus = null;
-
-    const open = (n) => {
-      const u = UNITS[n];
-      if (!u) return;
-      numEl.textContent = String(n).padStart(2, '0');
-      titleEl.textContent = u.title;
-      metaEl.textContent = u.meta;
-      if (u.sold) {
-        imgEl.hidden = true; imgEl.src = '';
-        soldEl.hidden = false;
-        priceEl.innerHTML = '<span class="sold-tag">' + SOLD_LABEL + '</span>';
-      } else {
-        soldEl.hidden = true;
-        imgEl.hidden = false;
-        imgEl.src = u.img;
-        imgEl.alt = 'Planimetria ' + u.title;
-        priceEl.innerHTML = u.price + '<span class="planbox__validity">Prezzi IVA esclusa</span>';
-      }
-      lastFocus = document.activeElement;
-      box.hidden = false;
-      document.body.style.overflow = 'hidden';
-      box.querySelector('.planbox__close').focus();
-    };
-    const close = () => {
-      box.hidden = true;
-      document.body.style.overflow = '';
-      if (lastFocus) lastFocus.focus();
-    };
-
-    document.querySelectorAll('.keyplan__area').forEach(area => {
-      area.addEventListener('click', () => open(area.dataset.unit));
-      area.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(area.dataset.unit); }
-      });
-    });
-    box.querySelectorAll('[data-planbox-close]').forEach(el => el.addEventListener('click', close));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.hidden) close(); });
-  })();
-
-  // Nav scroll state
-  (function () {
-    const nav = document.getElementById('nav');
-    const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 80);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  })();
-
-  // Brochure: modulo verso la porta pubblica del CRM (tsv-pg /api/modulo-pubblico,
-  // modulo «brochure», dal 09/10/2026; prima web3forms). Stesse regole della
-  // porta: nome, email valida (obbligatoria: la brochure e il riscontro
-  // arrivano lì), telefono facoltativo ma con almeno 6 cifre, consenso. La porta
-  // le ricontrolla. Il PDF si apre solo se la porta ha preso la richiesta; se
-  // non l'ha presa, l'errore lo dice e lascia comunque il link al PDF (che è
-  // pubblico): la richiesta persa non diventa una brochure negata.
-  // Il conteggio su Analytics (generate_lead) parte qui, solo a richiesta arrivata.
-  (function () {
-    const modal = document.getElementById('brochure-modal');
-    if (!modal) return;
-    const PORTA = 'https://tsv-pg.vercel.app/api/modulo-pubblico';
-    const body = document.getElementById('brochure-modal-body');
-    const success = document.getElementById('brochure-success');
-    const form = document.getElementById('brochure-form');
-    const errorEl = document.getElementById('bf-error');
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const label = submitBtn.querySelector('.btn__label');
-    const downloadHref = './assets/pdf/elegie-duino-brochure.pdf';
-    const bf = (n) => form.elements[n];
-    const MSG = {
-      nome: 'Il nome è obbligatorio.', email: 'Serve un indirizzo email valido: la brochure e il riscontro arrivano lì.', recapito: 'Serve un indirizzo email valido: la brochure e il riscontro arrivano lì.',
-      telefono: 'Il numero di telefono non sembra valido (almeno 6 cifre).', privacy: 'Per ricevere la brochure serve il consenso al trattamento dei dati.',
-      troppe: 'Troppe richieste in questo momento: riprovate tra poco, o scrivete a richieste@triestevillas.com.', rete: 'La richiesta non è arrivata: riprovate tra poco, o scrivete a richieste@triestevillas.com.'
-    };
-    let apertoIl = 0;
-
-    const pulisci = () => {
-      errorEl.classList.remove('is-visible');
-      errorEl.textContent = '';
-      ['nome', 'email', 'telefono', 'privacy'].forEach(n => bf(n).removeAttribute('aria-invalid'));
-    };
-    const errore = (chiave, conPdf) => {
-      errorEl.textContent = MSG[chiave] || MSG.rete;
-      if (conPdf) {
-        const a = document.createElement('a');
-        a.href = downloadHref; a.target = '_blank'; a.rel = 'noopener';
-        a.textContent = 'Intanto la brochure è qui (PDF).';
-        errorEl.append(' ', a);
-      }
-      errorEl.classList.add('is-visible');
-      const n = chiave === 'recapito' ? 'email' : chiave;
-      if (bf(n)) { bf(n).setAttribute('aria-invalid', 'true'); bf(n).focus(); }
-    };
-    const verifica = () => {
-      const nome = bf('nome').value.trim().replace(/\s+/g, ' ');
-      const email = bf('email').value.trim();
-      const tel = bf('telefono').value.trim();
-      const cifre = (tel.match(/\d/g) || []).length;
-      if (nome.length < 2) return 'nome';
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return 'email';
-      if (tel && (!/^[0-9+().\s\/-]{6,40}$/.test(tel) || cifre < 6 || cifre > 16)) return 'telefono';
-      if (!bf('privacy').checked) return 'privacy';
-      return null;
-    };
-
-    const openModal = () => {
-      pulisci();
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-      body.style.display = '';
-      success.classList.remove('is-visible');
-      apertoIl = Date.now();
-    };
-    const closeModal = () => {
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-    };
-
-    document.querySelectorAll('[data-open-brochure]').forEach(el => {
-      el.addEventListener('click', e => { e.preventDefault(); openModal(); });
-    });
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    document.querySelectorAll('[data-close-modal]').forEach(el => {
-      el.addEventListener('click', closeModal);
-    });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      pulisci();
-      const sbagliato = verifica();
-      if (sbagliato) { errore(sbagliato, false); return; }
-
-      const dati = new URLSearchParams();
-      dati.set('modulo', 'brochure');
-      dati.set('nome', bf('nome').value.trim());
-      dati.set('email', bf('email').value.trim());
-      dati.set('telefono', bf('telefono').value.trim());
-      dati.set('privacy', 'si');
-      dati.set('lingua', 'it');
-      dati.set('pagina', location.pathname);
-      // Da dove è arrivata la visita (assets/js/provenienza.js): il CRM la mette sul lead.
-      if (window.edProvenienza) { const pv = window.edProvenienza(); if (pv) dati.set('provenienza', pv); }
-      dati.set('t', String(apertoIl ? Date.now() - apertoIl : ''));
-      dati.set('hp_ed', bf('hp_ed').value);
-
-      submitBtn.disabled = true;
-      label.textContent = 'Invio in corso…';
-      try {
-        // Corpo form-urlencoded: richiesta «semplice», niente preflight CORS.
-        const res = await fetch(PORTA, { method: 'POST', body: dati });
-        let json = null;
-        try { json = await res.json(); } catch (_) { /* corpo vuoto: 403 */ }
-        if (res.ok && json && json.ok) {
-          try { if (window.gtag) window.gtag('event', 'generate_lead', { modulo: 'brochure' }); } catch (_) {}
-          try { if (window.edContaEvento) window.edContaEvento('lead:brochure'); } catch (_) {}
-          body.style.display = 'none';
-          success.classList.add('is-visible');
-          window.open(downloadHref, '_blank');
-          return;
-        }
-        if (res.status === 400 && json && json.campo && json.campo !== 'modulo') errore(json.campo, false);
-        else errore(res.status === 429 ? 'troppe' : 'rete', true);
-      } catch (err) {
-        errore('rete', true);
-      } finally {
-        submitBtn.disabled = false;
-        label.textContent = 'Ricevi la brochure';
-      }
-    });
-  })();
-
-  // Slideshow prev/next
-  (function () {
-    document.querySelectorAll('.slideshow').forEach(slideshow => {
-      const viewport = slideshow.querySelector('.slideshow__viewport');
-      const arrows = slideshow.querySelectorAll('.slideshow__arrow');
-      if (!viewport || !arrows.length) return;
-      arrows.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const slide = viewport.querySelector('.slide');
-          if (!slide) return;
-          const step = slide.offsetWidth + parseFloat(getComputedStyle(viewport).columnGap || 16);
-          viewport.scrollBy({ left: btn.dataset.dir === 'next' ? step : -step, behavior: 'smooth' });
-        });
-      });
-    });
-  })();
-
-  // Reveal on scroll
-  (function () {
-    if (!('IntersectionObserver' in window)) {
-      document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-in'));
-      return;
-    }
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  })();
-</script>
-
+<script type="application/json" id="dati">{"lingua":"it","base":"./assets/","lat":45.773912,"lon":13.605925,"unita":[{"n":"1","venduta":false,"prezzo":441000,"piano":"terra","titolo":"Casa 1 · piano terra","tipologia":"Trilocale · 97,24 m²","prezzoBreve":"€ 441.000","dati":[["Piano","piano terra"],["Tipologia","Trilocale"],["Camere","2"],["Bagni","2"],["Superficie commerciale","97,24 m²"],["All'aperto","Giardino privato, 280,02 m²"],["Posto auto","Nel giardino privato, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":true,"vista":"Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."},{"n":"2","venduta":false,"prezzo":396000,"piano":"terra","titolo":"Casa 2 · piano terra","tipologia":"Trilocale · 97,44 m²","prezzoBreve":"€ 396.000","dati":[["Piano","piano terra"],["Tipologia","Trilocale"],["Camere","2"],["Bagni","2"],["Superficie commerciale","97,44 m²"],["All'aperto","Giardino privato, 51,65 m²"],["Posto auto","Uno esterno, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":true,"vista":"Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."},{"n":"3","venduta":false,"prezzo":288000,"piano":"terra","titolo":"Casa 3 · piano terra","tipologia":"Bilocale · 70,40 m²","prezzoBreve":"€ 288.000","dati":[["Piano","piano terra"],["Tipologia","Bilocale"],["Camere","1"],["Bagni","1"],["Superficie commerciale","70,40 m²"],["All'aperto","Giardino privato, 47,48 m²"],["Posto auto","Uno esterno, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":true,"vista":"Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."},{"n":"4","venduta":true,"prezzo":null,"piano":"terra","titolo":"Casa 4 · piano terra","tipologia":"Trilocale · 102,38 m²","prezzoBreve":"","dati":[["Piano","piano terra"],["Tipologia","Trilocale"],["Camere","2"],["Bagni","2"],["Superficie commerciale","102,38 m²"],["All'aperto","Giardino privato, 226,02 m²"],["Posto auto","Uno esterno, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":false,"vista":"Dalla veranda il mare non si vede: davanti c'è il giardino privato e, oltre le siepi, il verde e le case del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 1,6 m."},{"n":"5","venduta":true,"prezzo":null,"piano":"primo","titolo":"Casa 5 · primo piano","tipologia":"Trilocale · 97 m²","prezzoBreve":"","dati":[["Piano","primo piano"],["Tipologia","Trilocale"],["Camere","2"],["Bagni","2"],["Superficie commerciale","97 m²"],["All'aperto","Veranda vetrata con parapetto"],["Posto auto","Uno esterno, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":false,"vista":"Dalla veranda il mare non si vede: l'orizzonte è fatto dei tetti e del verde del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."},{"n":"6","venduta":false,"prezzo":351000,"piano":"primo","titolo":"Casa 6 · primo piano","tipologia":"Trilocale · 97,44 m²","prezzoBreve":"€ 351.000","dati":[["Piano","primo piano"],["Tipologia","Trilocale"],["Camere","2"],["Bagni","2"],["Superficie commerciale","97,44 m²"],["All'aperto","Veranda vetrata con parapetto"],["Posto auto","Uno esterno, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":true,"vista":"Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa due gradi e mezzo sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."},{"n":"7","venduta":false,"prezzo":261000,"piano":"primo","titolo":"Casa 7 · primo piano","tipologia":"Bilocale · 70,40 m²","prezzoBreve":"€ 261.000","dati":[["Piano","primo piano"],["Tipologia","Bilocale"],["Camere","1"],["Bagni","1"],["Superficie commerciale","70,40 m²"],["All'aperto","Veranda vetrata con parapetto"],["Posto auto","Uno esterno, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":true,"vista":"Dalla veranda il mare non si vede: l'orizzonte è fatto dei tetti e del verde del paese. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."},{"n":"8","venduta":false,"prezzo":396000,"piano":"primo","titolo":"Casa 8 · primo piano","tipologia":"Trilocale · 102,38 m²","prezzoBreve":"€ 396.000","dati":[["Piano","primo piano"],["Tipologia","Trilocale"],["Camere","2"],["Bagni","2"],["Superficie commerciale","102,38 m²"],["All'aperto","Veranda vetrata con parapetto"],["Posto auto","Uno esterno, compreso"],["Classe energetica","A NZEB di progetto"]],"pianta":true,"vista":"Non è una vista mare. Fra i tetti, verso ovest, resta una fessura di circa cinque gradi sul mare lontano (il golfo di Panzano, oltre Monfalcone), a filo degli ostacoli: basta il colmo di un tetto o una chioma a chiuderla. Misura sul rilievo LiDAR della Regione e sulle case vicine, con l'occhio a 4,7 m sopra il giardino."}],"luoghi":[{"nome":"Castello di Duino","sotto":"5 min a piedi","mondo":[-161.7,82.1,208.7]},{"nome":"Sentiero Rilke, inizio","sotto":"4 min a piedi","mondo":[-17.4,55.0,107.0]},{"nome":"Porticciolo di Duino","sotto":"9 min a piedi","mondo":[-529.7,14.0,62.5]},{"nome":"Baia di Sistiana","sotto":"7 min in auto","mondo":[1799.6,14.0,520.0]},{"nome":"Portopiccolo","sotto":"7 min in auto","mondo":[2440.6,15.6,922.2]}],"postoAuto":20000,"postiExtra":4,"testi":{"carico":"Carico il paese in 3D","qui":"Elegie","quiSotto":"Località Duino 69/A","venduta":"Venduta","ivaEsclusa":"IVA esclusa · posto auto compreso","ingrandisci":"Ingrandisci","piantaAria":"Pianta della casa con muri, finestre e arredi d'esempio","sottoOrizzonte":"sotto l'orizzonte","mesi":["gen","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"],"giorni":{"inverno":"21 dicembre","equinozio":"21 marzo","estate":"21 giugno"},"conAlberi":"con le chiome: {h}","stanze":{"camera":"camera","bagno":"bagno","dis":"disimp.","soggiorno":"soggiorno","cucina":"cucina","veranda":"veranda","portico":"portico","terrazza":"terrazza"},"richiestaUnita":"Vorrei informazioni sulla casa {n} ({titolo}).","conto":{"ivaPrima":"IVA al 4% · prima casa","ivaSeconda":"IVA al 10%","iva":"IVA","posti":"Posti auto in più: {n}"},"moduli":{"nome":"Il nome è obbligatorio.","email":"L'indirizzo email non sembra valido.","telefono":"Il numero di telefono non sembra valido (almeno 6 cifre).","recapito":"Serve almeno un recapito: email o telefono.","privacy":"Per inviare serve il consenso al trattamento dei dati.","messaggio":"Il messaggio è troppo lungo (massimo 2.000 caratteri).","troppe":"Troppe richieste in questo momento: riprova tra poco, o scrivi a richieste@triestevillas.com.","rete":"La richiesta non è partita. Riprova, o scrivi a richieste@triestevillas.com · 331 8940822.","invio":"Invio in corso…","pdfComunque":"Intanto la brochure è qui (PDF)."}}}</script>
+<script type="module" src="./assets/js/opera/app.js"></script>
 <script src="./assets/js/consenso.js" data-ga="G-YL07ZJ3PVX"></script>
 <script src="./assets/js/provenienza.js"></script>
 <script src="./assets/js/contatore.js" defer></script>
-<script>
-  // «Il luogo, dall'alto»: il cursore sposta il confine fra foto e simulazione.
-  document.querySelectorAll('[data-ba]').forEach(function (f) {
-    var r = f.querySelector('input[type=range]');
-    var set = function () { f.style.setProperty('--pos', r.value + '%'); };
-    r.addEventListener('input', set); set();
-    // Col dito (iPhone) il cursore nativo si prende solo dal pomello: si segue il trascinamento ovunque.
-    var tira = false;
-    var segui = function (e) {
-      var b = f.getBoundingClientRect();
-      r.value = Math.round(Math.max(0, Math.min(100, (e.clientX - b.left) / b.width * 100))); set();
-    };
-    f.addEventListener('pointerdown', function (e) { tira = true; segui(e); });
-    window.addEventListener('pointermove', function (e) { if (tira) segui(e); });
-    window.addEventListener('pointerup', function () { tira = false; });
-    window.addEventListener('pointercancel', function () { tira = false; });
-  });
-</script>
 </body>
 </html>
