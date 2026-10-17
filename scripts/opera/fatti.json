@@ -1017,21 +1017,6 @@
    "tag_video": "ai_animazione"
   },
   {
-   "file": "interno-giardino",
-   "tag": "ai",
-   "w": 2400,
-   "h": 1350,
-   "pos": "50% 55%",
-   "alt": {
-    "it": "Un soggiorno affacciato sul giardino, immagine illustrativa generata con l'intelligenza artificiale",
-    "en": "A living room facing the garden, illustrative image generated with artificial intelligence",
-    "sl": "Dnevna soba z razgledom na vrt, ilustrativna slika, ustvarjena z umetno inteligenco",
-    "de": "Ein Wohnzimmer zum Garten, mit künstlicher Intelligenz erzeugtes Illustrationsbild"
-   },
-   "video": "interno-giardino.mp4",
-   "tag_video": "ai_animazione"
-  },
-  {
    "file": "exterior-garden-glazing",
    "tag": "rendering",
    "w": 3200,
@@ -1043,25 +1028,7 @@
     "sl": "Južna fasada Elegie Duino z zastekljenimi verandami nad vrtom",
     "de": "Die Südfront von Elegie Duino mit den verglasten Veranden zum Garten"
    }
-  },
-  {
-   "file": "duino-castello",
-   "tag": "foto",
-   "w": 2400,
-   "h": 1350,
-   "verticale": "duino-castello-verticale",
-   "verticale_larghezze": [
-    750,
-    1080
-   ],
-   "pos": "30% 40%",
-   "alt": {
-    "it": "Il Castello di Duino sul mare e il paese, dall'alto: foto da drone del 12 agosto 2026",
-    "en": "Duino Castle above the sea and the village, from above: drone photo of 12 August 2026",
-    "de": "Schloss Duino über dem Meer und der Ort von oben: Drohnenfoto vom 12. August 2026",
-    "sl": "Devinski grad nad morjem in vas od zgoraj: fotografija z drona, 12. avgust 2026"
-   }
   }
  ],
- "_media": "Media delle scene (17/10/2026 sera): exterior-sunset-garden.jpg dal finale AI pulito «hf_20260611_151441…» (5504 px, Drive ELEGIE DUINO/FINAL PICS 12.06.26), ridotto a 3200; exterior-garden-glazing.jpg dal render dello Studio Soldano «1_0000 WIP.jpg» (4444 px, stessa cartella), ridotto a 3200; assets/video/interno-giardino.mp4 dalla clip Higgsfield «hf_20260426_124456…» (MATERIALE MARE VITOVSKA/CLIP RICCESI VIDEO LOOP MARE VITOVSKA), andata e ritorno, 1600 px; la clip del tramonto del 25/06 (hf_20260625_151736) NON si usa: parte dalla versione con i cerchi rossi di correzione e le lamelle sul giardino. assets/video/tramonto-giardino.mp4: animazione Higgsfield Kling 3.0 (pro, 6 s, senza audio) del finale pulito, con lo stesso fotogramma all'inizio e alla fine (giro senza stacchi), job db35029f-ed7b-4069-9349-a47009f2bc4e del 17/10/2026, 9 crediti; controllata a occhio: architettura invariata, si muovono luce, foglie e un avvicinamento lieve."
+ "_media": "Media delle scene (17/10/2026 sera): exterior-sunset-garden.jpg dal finale AI pulito «hf_20260611_151441…» (5504 px, Drive ELEGIE DUINO/FINAL PICS 12.06.26), ridotto a 3200; exterior-garden-glazing.jpg dal render dello Studio Soldano «1_0000 WIP.jpg» (4444 px, stessa cartella), ridotto a 3200; la clip del tramonto del 25/06 (hf_20260625_151736) NON si usa: parte dalla versione con i cerchi rossi di correzione e le lamelle sul giardino. assets/video/tramonto-giardino.mp4: animazione Higgsfield Kling 3.0 (pro, 6 s, senza audio) del finale pulito, con lo stesso fotogramma all'inizio e alla fine (giro senza stacchi), job db35029f-ed7b-4069-9349-a47009f2bc4e del 17/10/2026, 9 crediti; controllata a occhio: architettura invariata, si muovono luce, foglie e un avvicinamento lieve. Dal 18/10 la pagina corta tiene due scene sole (il giardino e la veranda): l'interno AI è tolto perché sbagliato (dal giardino si vede l'edificio stesso, Martino 17/10), il Castello ritagliato dal drone non serve più."
 }

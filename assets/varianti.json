@@ -206,43 +206,6 @@
    "assets/images/resp/rend-ingresso-nord-1600.webp"
   ]
  },
- "assets/images/interno-giardino.jpg": {
-  "sha256": "8336474bf9cab927ebbb821a78aee6a6540275eedd495b9cc03d6c4d9a388804",
-  "varianti": [
-   "assets/images/resp/interno-giardino-640.avif",
-   "assets/images/resp/interno-giardino-640.webp",
-   "assets/images/resp/interno-giardino-1024.avif",
-   "assets/images/resp/interno-giardino-1024.webp",
-   "assets/images/resp/interno-giardino-1600.avif",
-   "assets/images/resp/interno-giardino-1600.webp",
-   "assets/images/resp/interno-giardino-1920.avif",
-   "assets/images/resp/interno-giardino-1920.webp",
-   "assets/images/resp/interno-giardino-2400.avif",
-   "assets/images/resp/interno-giardino-2400.webp"
-  ]
- },
- "assets/images/duino-castello.jpg": {
-  "sha256": "e62f157c9481d3971509320c8c3810547c5bd099d77629e10ba2242ee96f7e3b",
-  "varianti": [
-   "assets/images/resp/duino-castello-800.avif",
-   "assets/images/resp/duino-castello-800.webp",
-   "assets/images/resp/duino-castello-1280.avif",
-   "assets/images/resp/duino-castello-1280.webp",
-   "assets/images/resp/duino-castello-1920.avif",
-   "assets/images/resp/duino-castello-1920.webp",
-   "assets/images/resp/duino-castello-2400.avif",
-   "assets/images/resp/duino-castello-2400.webp"
-  ]
- },
- "assets/images/duino-castello-verticale.jpg": {
-  "sha256": "6adb6dcb143ee7f1d8dcdfe1f084269ecd4cf8025401a749a974865e7eef4395",
-  "varianti": [
-   "assets/images/resp/duino-castello-verticale-750.avif",
-   "assets/images/resp/duino-castello-verticale-750.webp",
-   "assets/images/resp/duino-castello-verticale-1080.avif",
-   "assets/images/resp/duino-castello-verticale-1080.webp"
-  ]
- },
  "assets/logos/elegie-duino-alpha.png": {
   "sha256": "5cd8b9747e442ecb04e16e4cc788ef59016ab71651c206742c4f4b17b26d0521",
   "varianti": [
@@ -282,6 +245,32 @@
   "varianti": [
    "assets/logos/resp/triestevillas-192.webp",
    "assets/logos/resp/triestevillas-192.png"
+  ]
+ },
+ "assets/images/pianta-terra.jpg": {
+  "sha256": "7ff471c4cf0b253675545c4ec1a3f8c5f320465378a89059cc24d481ef9bdca5",
+  "varianti": [
+   "assets/images/resp/pianta-terra-800.avif",
+   "assets/images/resp/pianta-terra-800.webp",
+   "assets/images/resp/pianta-terra-1200.avif",
+   "assets/images/resp/pianta-terra-1200.webp",
+   "assets/images/resp/pianta-terra-1600.avif",
+   "assets/images/resp/pianta-terra-1600.webp",
+   "assets/images/resp/pianta-terra-2000.avif",
+   "assets/images/resp/pianta-terra-2000.webp"
+  ]
+ },
+ "assets/images/pianta-primo.jpg": {
+  "sha256": "64b7d83af669b8f93cc4b86a08083f37fe5d45b605fc9eb8233d6ea38e11055d",
+  "varianti": [
+   "assets/images/resp/pianta-primo-800.avif",
+   "assets/images/resp/pianta-primo-800.webp",
+   "assets/images/resp/pianta-primo-1200.avif",
+   "assets/images/resp/pianta-primo-1200.webp",
+   "assets/images/resp/pianta-primo-1600.avif",
+   "assets/images/resp/pianta-primo-1600.webp",
+   "assets/images/resp/pianta-primo-2000.avif",
+   "assets/images/resp/pianta-primo-2000.webp"
   ]
  }
 }

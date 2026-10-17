@@ -1,4 +1,4 @@
-// Elegie Duino — la pagina. Regia dello scorrimento, scheda delle case, il conto, i moduli.
+// Elegie Duino — la pagina. Regia dello scorrimento, le case piano per piano, la scheda col conto, i moduli.
 // La scena 3D si carica dopo la prima schermata (la foto vera fa da apertura) e solo se il
 // browser ha WebGL; senza, la pagina resta completa con immagini e testi.
 import { posizioneSole, istante, albaTramonto, hhmm, giornoDellAnno } from './sole.js';
@@ -10,8 +10,9 @@ const LINGUA = D.lingua;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 const clamp = (v, a = 0, b = 1) => Math.max(a, Math.min(b, v));
-const euro = (n) => '€ ' + Math.round(n).toLocaleString(LINGUA === 'en' ? 'en-GB' : LINGUA === 'sl' ? 'sl-SI' : 'it-IT');
+const euro = (n) => '€\u00a0' + Math.round(n).toLocaleString(LINGUA === 'en' ? 'en-GB' : LINGUA === 'sl' ? 'sl-SI' : 'it-IT');
 const ridotto = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 // ------------------------------------------------------------------ barra e menu
 const barra = $('.barra');
@@ -22,8 +23,8 @@ $('.barra__menu')?.addEventListener('click', () => {
 $$('.barra__voci a').forEach((a) => a.addEventListener('click', () => barra.classList.remove('aperta')));
 function aggiornaBarra() {
   const el = document.elementFromPoint(Math.min(innerWidth - 2, 40), 70);
-  const foglio = el && el.closest('.foglio, .nome, .piede, .vivere');
-  const scuro = (f) => f.classList.contains('foglio--notte') || f.classList.contains('piede') || f.classList.contains('vivere');
+  const foglio = el && el.closest('.foglio, .piede, .vivere, .contatto');
+  const scuro = (f) => f.classList.contains('foglio--notte') || f.classList.contains('piede') || f.classList.contains('vivere') || f.classList.contains('contatto');
   barra.classList.toggle('su-carta', !!foglio && !scuro(foglio));
   barra.classList.toggle('su-notte', !foglio && scrollY > innerHeight * 0.6 || (!!foglio && scuro(foglio)));
 }
@@ -53,7 +54,7 @@ async function avvia3D() {
       onProgress: (p) => { carica.textContent = T.carico + ' ' + Math.round(p * 100) + '%'; },
     });
     scena.onScelta = (n) => apriScheda(n);
-    scena.onSopra = (n) => $$('.case__elenco button').forEach((b) => b.classList.toggle('su', b.dataset.unita === n));
+    scena.onSopra = (n) => evidenzia(n);
     const misuraFoto = () => scena.altezzaFoto($('.apertura__tenda').clientHeight);
     misuraFoto(); addEventListener('resize', misuraFoto);
     tela.classList.add('pronta');
@@ -70,8 +71,8 @@ const avviaQuando = () => { removeEventListener('scroll', avviaQuando); avvia3D(
 addEventListener('scroll', avviaQuando, { passive: true });
 if ('requestIdleCallback' in window) requestIdleCallback(() => avvia3D(), { timeout: 2500 }); else setTimeout(avvia3D, 1500);
 
-// ------------------------------------------------------------------ le scene di «Vivere qui»
-// Immagini a tutta pagina che scorrono un po' più lente della pagina; le due animate (AI, dichiarate)
+// ------------------------------------------------------------------ le due scene: il giardino, la veranda
+// Immagini a tutta pagina che scorrono un po' più lente della pagina; quella animata (AI, dichiarata)
 // si scaricano e partono solo quando la scena è sullo schermo, e mai col risparmio dati o il movimento ridotto.
 const SCENE = $$('.scena');
 const ioScene = new IntersectionObserver((es) => es.forEach((e) => {
@@ -104,6 +105,7 @@ const etichettaFoto = $('.etichetta-foto');
 const passiAp = $$('.passo-apertura');
 const passi = $$('[data-stato]');
 const fasiEl = $('.fasi');
+const PASSI_COSTRUZIONE = [1, 3, 5, 7, 8]; // genera.py, FASI_PASSI: le fasi del modello montate a ogni passo
 let statoCorrente = null;
 const zoomFoto = { ritorno: 0, t0: performance.now() };
 (function avvicina() {
@@ -156,7 +158,8 @@ function regia() {
       if (statoCorrente !== 'costruzione') { scena.imposta('costruzione'); statoCorrente = 'costruzione'; }
       scena.fase(i);
       fasiEl?.classList.add('vista');
-      $$('li', fasiEl).forEach((li, k) => { li.classList.toggle('fatta', k < i - 1); li.classList.toggle('ora', k === i - 1); });
+      const passo = PASSI_COSTRUZIONE.indexOf(i);
+      $$('li', fasiEl).forEach((li, k) => { li.classList.toggle('fatta', k < passo); li.classList.toggle('ora', k === passo); });
     } else {
       fasiEl?.classList.remove('vista');
       if (statoCorrente !== nome) { scena.imposta(nome); statoCorrente = nome; if (nome === 'luce') aggiornaSole(); }
@@ -165,7 +168,7 @@ function regia() {
     fasiEl?.classList.remove('vista');
   }
   // la tela si ferma quando un foglio la copre tutta
-  const coperta = document.elementFromPoint(innerWidth / 2, innerHeight / 2)?.closest('.foglio, .nome, .piede, .vivere');
+  const coperta = document.elementFromPoint(innerWidth / 2, innerHeight / 2)?.closest('.foglio, .piede, .vivere, .contatto');
   scena.attiva(!coperta);
 }
 let rafRegia = 0;
@@ -238,17 +241,61 @@ $('.sole__play')?.addEventListener('click', (ev) => {
 });
 if (rGiorno) { const oggi = giornoDellAnno(new Date()); rGiorno.value = oggi; aggiornaSole(); }
 
-// ------------------------------------------------------------------ le case
+// ------------------------------------------------------------------ le case, piano per piano
+// La pianta generale di ogni piano (quella del sito di prima) con le case cliccabili, e accanto l'elenco coi prezzi.
+// Passando sopra una casa — nella pianta o nell'elenco — le altre si velano e compare l'etichetta; toccandola si
+// apre la sua scheda. Sul telefono il tocco apre subito la scheda.
 const UNITA = Object.fromEntries(D.unita.map((u) => [u.n, u]));
-$$('.case__piani button').forEach((b) => b.addEventListener('click', () => {
-  const p = b.dataset.piano || null;
-  $$('.case__piani button').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
-  scena && scena.piano(p);
-}));
-$$('.case__elenco button').forEach((b) => {
-  b.addEventListener('click', () => apriScheda(b.dataset.unita));
-  b.addEventListener('mouseenter', () => scena && scena.sopra(b.dataset.unita));
-  b.addEventListener('mouseleave', () => scena && scena.sopra(null));
+const schede = $$('.piani [role="tab"]');
+function mostraPiano(piano, fuoco) {
+  schede.forEach((t) => {
+    const si = t.dataset.piano === piano;
+    t.setAttribute('aria-selected', si ? 'true' : 'false'); t.tabIndex = si ? 0 : -1;
+    $('#piano-' + t.dataset.piano).hidden = !si;
+    if (si && fuoco) t.focus();
+  });
+  evidenzia(null);
+}
+schede.forEach((t, i) => {
+  t.addEventListener('click', () => mostraPiano(t.dataset.piano));
+  t.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    e.preventDefault(); mostraPiano(schede[(i + (e.key === 'ArrowRight' ? 1 : schede.length - 1)) % schede.length].dataset.piano, true);
+  });
+});
+function evidenzia(n) {
+  for (const fig of $$('.kp')) {
+    const pol = n && fig.querySelector(`.kp-u[data-unita="${n}"]`);
+    const velo = fig.querySelector('.kp__velo');
+    const info = fig.querySelector('.kp__info');
+    fig.classList.toggle('attiva', !!pol);
+    $$('.kp-u', fig).forEach((p) => p.classList.toggle('su', p === pol));
+    if (pol) {
+      velo.setAttribute('mask', `url(#mk-${n})`);
+      const u = UNITA[n];
+      info.innerHTML = `<b class="num">${esc(n)}</b><span>${esc(u.breve)}</span><em class="num">${u.venduta ? esc(T.venduta) : esc(euro(u.prezzo))}</em>`;
+      info.style.left = pol.dataset.cx + '%'; info.style.top = pol.dataset.cy + '%';
+      info.style.setProperty('--c', u.colore);
+      info.hidden = false;
+    } else { velo.removeAttribute('mask'); info.hidden = true; }
+  }
+  $$('.listino .riga').forEach((r) => r.classList.toggle('su', r.dataset.unita === n));
+}
+const tocco = matchMedia('(hover: none)').matches;
+$$('.kp-u').forEach((p) => {
+  const n = p.dataset.unita;
+  p.addEventListener('pointerenter', () => { if (!tocco) evidenzia(n); });
+  p.addEventListener('pointerleave', () => { if (!tocco) evidenzia(null); });
+  p.addEventListener('focus', () => evidenzia(n));
+  p.addEventListener('blur', () => evidenzia(null));
+  p.addEventListener('click', () => apriScheda(n));
+  p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); apriScheda(n); } });
+});
+$$('.listino .riga').forEach((r) => {
+  r.addEventListener('pointerenter', () => { if (!tocco) evidenzia(r.dataset.unita); });
+  r.addEventListener('pointerleave', () => { if (!tocco) evidenzia(null); });
+  r.addEventListener('focus', () => evidenzia(r.dataset.unita));
+  r.addEventListener('blur', () => evidenzia(null));
 });
 
 const scheda = $('.scheda'), veloScheda = $('.velo-scheda');
@@ -286,9 +333,11 @@ async function apriScheda(n) {
   const vista = $('#scheda-vista');
   if (u.vista) { vista.querySelector('p').textContent = u.vista; vista.hidden = false; } else vista.hidden = true;
   $('#scheda-azioni').hidden = !!u.venduta;
+  $('#scheda-conto').hidden = !!u.venduta;
+  if (!u.venduta) { contoScheda.unita = n; contoScheda.disegna(); }
+  $('#scheda-wa').href = 'https://wa.me/' + D.telefono.replace('+', '') + '?text=' + encodeURIComponent(D.scheda.wa_testo.replace('{n}', n));
   const cuoreScheda = $('#scheda-cuore'); cuoreScheda.dataset.unita = n; cuoreScheda.hidden = !!u.venduta; aggiornaCuori();
   $$('[data-scheda-richiedi]').forEach((b) => (b.dataset.unita = n));
-  $$('[data-scheda-conto]').forEach((b) => (b.dataset.unita = n));
   scheda.classList.add('aperta'); veloScheda.classList.add('aperta');
   scheda.setAttribute('aria-hidden', 'false');
   $('.scheda__chiudi').focus();
@@ -298,7 +347,6 @@ async function apriScheda(n) {
 function chiudiScheda() {
   scheda.classList.remove('aperta'); veloScheda.classList.remove('aperta'); scheda.setAttribute('aria-hidden', 'true');
   scena && scena.scegli(null);
-  if (statoCorrente === 'case' && scena) scena.vola('case', 1000);
   ultimoFuoco && ultimoFuoco.focus();
   history.replaceState(null, '', location.pathname + location.search);
 }
@@ -346,40 +394,29 @@ lt?.addEventListener('pointermove', (e) => {
 });
 ['pointerup', 'pointercancel'].forEach((t) => lt?.addEventListener(t, (e) => stLente && stLente.punti.delete(e.pointerId)));
 
-// ------------------------------------------------------------------ il conto
-const C = { unita: null, prima: true, posti: 0 };
-const cSel = $('#conto-unita');
-function conto() {
-  if (!cSel) return;
-  const u = UNITA[cSel.value]; if (!u) return;
-  const iva = u.prezzo * (C.prima ? 0.04 : 0.10);
-  const imposte = 600;
-  $('#c-prezzo').textContent = euro(u.prezzo);
-  $('#c-iva-et').textContent = C.prima ? T.conto.ivaPrima : T.conto.ivaSeconda;
-  $('#c-iva').textContent = euro(iva);
-  $('#c-imposte').textContent = euro(imposte);
-  $('#c-totale').textContent = euro(u.prezzo + iva + imposte);
-  const rp = $('#c-posti-riga'); rp.hidden = C.posti === 0;
-  $('#c-posti').textContent = C.posti ? euro(C.posti * D.postoAuto) + ' + ' + T.conto.iva : '';
-  $('#c-posti-et').textContent = T.conto.posti.replace('{n}', C.posti);
-  $('#c-posti-n').textContent = C.posti;
-  // come si paga: 10 / 20 / 70 sul prezzo della casa scelta (le quote sono nel testo, gli importi qui)
-  const quote = [0.10, 0.20, 0.70];
-  $$('[data-passo]').forEach((el) => { el.textContent = euro(u.prezzo * quote[+el.dataset.passo]); });
-}
-cSel?.addEventListener('change', conto);
-$$('[data-prima]').forEach((b) => b.addEventListener('click', () => {
-  C.prima = b.dataset.prima === 'si';
-  $$('[data-prima]').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); conto();
+// ------------------------------------------------------------------ il conto, nella scheda di ogni casa
+// IVA al 4% (prima casa) o al 10%, le imposte fisse (registro, ipotecaria e catastale: 200 € ciascuna) e i
+// pagamenti 10 / 20 / 70 sul prezzo della casa, IVA a parte (Martino, 17/10/2026).
+const contoScheda = {
+  unita: null, prima: true,
+  disegna() {
+    const u = UNITA[this.unita]; if (!u || u.venduta) return;
+    const p = this.prima ? 4 : 10;
+    const iva = u.prezzo * p / 100, imposte = 600;
+    $('#sc-prezzo').textContent = euro(u.prezzo);
+    $('#sc-iva-et').textContent = `${D.scheda.r_iva} ${p}%`;
+    $('#sc-iva').textContent = euro(iva);
+    $('#sc-imposte').textContent = euro(imposte);
+    $('#sc-totale').textContent = euro(u.prezzo + iva + imposte);
+    const quote = [0.10, 0.20, 0.70];
+    $$('#scheda-conto [data-passo]').forEach((el) => { el.textContent = euro(u.prezzo * quote[+el.dataset.passo]); });
+  },
+};
+$$('#scheda-conto [data-prima]').forEach((b) => b.addEventListener('click', () => {
+  contoScheda.prima = b.dataset.prima === 'si';
+  $$('#scheda-conto [data-prima]').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  contoScheda.disegna();
 }));
-$$('[data-posti]').forEach((b) => b.addEventListener('click', () => { C.posti = clamp(C.posti + (+b.dataset.posti), 0, D.postiExtra); conto(); }));
-conto();
-document.addEventListener('click', (e) => {
-  const b = e.target.closest('[data-scheda-conto]'); if (!b) return;
-  if (cSel && UNITA[b.dataset.unita] && !UNITA[b.dataset.unita].venduta) { cSel.value = b.dataset.unita; conto(); }
-  if (scheda.classList.contains('aperta')) chiudiScheda();
-  setTimeout(() => $('#conto').scrollIntoView({ behavior: ridotto ? 'auto' : 'smooth' }), 50);
-});
 document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-apri-unita]'); if (!b) return;
   if (b.closest('.modale')) chiudiModale(b.closest('.modale'));
@@ -387,16 +424,11 @@ document.addEventListener('click', (e) => {
 });
 document.addEventListener('click', (e) => {
   const b = e.target.closest('[data-scheda-richiedi]'); if (!b) return;
-  const u = UNITA[b.dataset.unita];
-  const msg = $('#if-msg'); if (msg && u) msg.value = T.richiestaUnita.replace('{n}', u.n).replace('{titolo}', u.titolo);
+  const n = b.dataset.unita;
+  $$('#info-form input[name="casa"]').forEach((c) => { if (c.value === n) c.checked = true; });
+  const visita = $('#info-form input[name="interesse"][value="visita"]'); if (visita) visita.checked = true;
   chiudiScheda(); setTimeout(() => { $('#contatti').scrollIntoView({ behavior: ridotto ? 'auto' : 'smooth' }); $('#if-nome')?.focus({ preventScroll: true }); }, 50);
 });
-
-// ------------------------------------------------------------------ galleria
-$$('.galleria__comandi button').forEach((b) => b.addEventListener('click', () => {
-  const g = $('.galleria'); const f = g.querySelector('figure');
-  g.scrollBy({ left: (f.offsetWidth + 16) * (b.dataset.dir === 'avanti' ? 1 : -1), behavior: ridotto ? 'auto' : 'smooth' });
-}));
 
 // ------------------------------------------------------------------ moduli verso il CRM
 // Porta pubblica del CRM (tsv-pg /api/modulo-pubblico, dal 09/10/2026). I nomi dei campi sono
@@ -404,6 +436,27 @@ $$('.galleria__comandi button').forEach((b) => b.addEventListener('click', () =>
 // là fa rifiutare ogni richiesta. generate_lead e il contatore partono solo a richiesta arrivata.
 const PORTA = 'https://tsv-pg.vercel.app/api/modulo-pubblico';
 const cifre = (v) => (v.match(/\d/g) || []).length;
+const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// Il modulo dei contatti ha un campo solo per il recapito: con la chiocciola è un'email, altrimenti un telefono.
+// Le scelte (che cosa interessa, quali case) diventano una riga in testa al messaggio, nella lingua di chi scrive.
+function valori(form) {
+  const el = form.elements;
+  const v = { nome: el.nome.value.trim().replace(/\s+/g, ' '), email: '', telefono: '', messaggio: '' };
+  if (el.recapito) {
+    const r = el.recapito.value.trim();
+    if (r.includes('@')) v.email = r; else v.telefono = r;
+  } else { v.email = el.email?.value.trim() || ''; v.telefono = el.telefono?.value.trim() || ''; }
+  const righe = [];
+  const scelti = (nome) => $$(`input[name="${nome}"]:checked`, form);
+  const interessi = scelti('interesse').map((c) => c.dataset.testo);
+  const case_ = scelti('casa').map((c) => c.value);
+  if (interessi.length) righe.push(D.contatto.msg_interessi.replace('{x}', interessi.join(', ')));
+  if (case_.length) righe.push(D.contatto.msg_case.replace('{x}', case_.join(', ')));
+  const testo = el.messaggio?.value.trim() || '';
+  v.messaggio = [righe.join(' '), testo].filter(Boolean).join('\n\n');
+  v.testoLibero = testo;
+  return v;
+}
 function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
   if (!form) return;
   let apertoIl = 0; // dal primo campo toccato: la porta usa il tempo di compilazione contro i robot
@@ -412,42 +465,42 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
   const etichetta = btn.querySelector('.btn__label');
   const testoBtn = etichetta.textContent;
   const MSG = T.moduli;
-  const pulisci = () => { errEl.classList.remove('visibile'); errEl.textContent = ''; ['nome', 'email', 'telefono', 'messaggio', 'privacy'].forEach((n) => campo(n) && campo(n).removeAttribute('aria-invalid')); };
+  // l'errore sul recapito si mostra sul campo che c'è: il recapito unico, o l'email
+  const campoDi = (k) => (['email', 'telefono', 'recapito'].includes(k) && campo('recapito')) ? 'recapito' : (k === 'recapito' ? 'email' : k);
+  const pulisci = () => { errEl.classList.remove('visibile'); errEl.textContent = ''; ['nome', 'email', 'telefono', 'recapito', 'messaggio', 'privacy'].forEach((n) => campo(n) && campo(n).removeAttribute('aria-invalid')); };
   const errore = (k, conPdf) => {
     errEl.textContent = MSG[k] || MSG.rete;
     if (conPdf) { const a = document.createElement('a'); a.href = BASE + 'pdf/elegie-duino-brochure.pdf'; a.target = '_blank'; a.rel = 'noopener'; a.textContent = MSG.pdfComunque; errEl.append(' ', a); }
     errEl.classList.add('visibile');
-    const n = k === 'recapito' ? 'email' : k; if (campo(n)) { campo(n).setAttribute('aria-invalid', 'true'); campo(n).focus(); }
+    const c = campo(campoDi(k)); if (c) { c.setAttribute('aria-invalid', 'true'); c.focus(); }
   };
-  const verifica = () => {
-    const nome = campo('nome').value.trim().replace(/\s+/g, ' ');
-    const email = campo('email').value.trim();
-    const tel = campo('telefono')?.value.trim() || '';
-    if (nome.length < 2) return 'nome';
-    if (emailObbligatoria ? !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) : (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email))) return 'email';
-    if (tel && (!/^[0-9+().\s\/-]{6,40}$/.test(tel) || cifre(tel) < 6 || cifre(tel) > 16)) return 'telefono';
-    if (!emailObbligatoria && !email && !tel) return 'recapito';
-    if (campo('messaggio') && campo('messaggio').value.trim().length > 2000) return 'messaggio';
+  const verifica = (v) => {
+    if (v.nome.length < 2) return 'nome';
+    if (emailObbligatoria ? !EMAIL.test(v.email) : (v.email && !EMAIL.test(v.email))) return 'email';
+    if (v.telefono && (!/^[0-9+().\s\/-]{6,40}$/.test(v.telefono) || cifre(v.telefono) < 6 || cifre(v.telefono) > 16)) return 'telefono';
+    if (!emailObbligatoria && !v.email && !v.telefono) return 'recapito';
+    if (v.testoLibero && v.testoLibero.length > 1800) return 'messaggio';
     if (!campo('privacy').checked) return 'privacy';
     return null;
   };
   form.addEventListener('focusin', () => { if (!apertoIl) apertoIl = Date.now(); });
   form.addEventListener('submit', async (e) => {
     e.preventDefault(); pulisci();
-    const sb = verifica(); if (sb) { errore(sb, false); return; }
+    const v = valori(form);
+    const sb = verifica(v); if (sb) { errore(sb, false); return; }
     const dati = new URLSearchParams();
     dati.set('modulo', tipo);
-    dati.set('nome', campo('nome').value.trim());
-    dati.set('email', campo('email').value.trim());
-    dati.set('telefono', campo('telefono')?.value.trim() || '');
-    if (campo('messaggio')) dati.set('messaggio', campo('messaggio').value.trim());
+    dati.set('nome', v.nome);
+    dati.set('email', v.email);
+    dati.set('telefono', v.telefono);
+    if (campo('messaggio') || v.messaggio) dati.set('messaggio', v.messaggio);
     dati.set('privacy', 'si');
     dati.set('lingua', LINGUA);
     dati.set('pagina', location.pathname);
     if (window.edProvenienza) { const pv = window.edProvenienza(); if (pv) dati.set('provenienza', pv); }
     dati.set('t', String(apertoIl ? Date.now() - apertoIl : ''));
     dati.set('hp_ed', campo('hp_ed').value);
-    btn.disabled = true; etichetta.textContent = MSG.invio;
+    btn.disabled = true; form.classList.add('invio'); etichetta.textContent = MSG.invio;
     try {
       const res = await fetch(PORTA, { method: 'POST', body: dati });
       let json = null; try { json = await res.json(); } catch (_) { /* 403: corpo vuoto */ }
@@ -462,11 +515,13 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
       else if (res.status === 400 && json && json.campo && json.campo !== 'modulo') errore(json.campo, false);
       else errore('rete', tipo === 'brochure');
     } catch (err) { errore('rete', tipo === 'brochure'); }
-    finally { btn.disabled = false; etichetta.textContent = testoBtn; }
+    finally { btn.disabled = false; form.classList.remove('invio'); etichetta.textContent = testoBtn; }
   });
 }
 collega($('#info-form'), { tipo: 'info', emailObbligatoria: false, errore: $('#if-error'), ok: $('#info-ok') });
 collega($('#brochure-form'), { tipo: 'brochure', emailObbligatoria: true, errore: $('#bf-error'), ok: $('#brochure-ok'), dopo: () => window.open(BASE + 'pdf/elegie-duino-brochure.pdf', '_blank') });
+// il messaggio cresce mentre si scrive
+$$('.fl textarea').forEach((t) => t.addEventListener('input', () => { t.style.height = 'auto'; t.style.height = Math.min(t.scrollHeight, 260) + 'px'; }));
 // modali: brochure, confronto delle preferite, tour 3D del terreno
 let fuocoModale = null;
 function apriModale(id, da, fuoco) {
@@ -487,30 +542,7 @@ $$('.modale').forEach((m) => m.addEventListener('click', (e) => { if (e.target =
 addEventListener('keydown', (e) => { if (e.key === 'Escape' && $('.modale.aperta')) chiudiModale(); });
 $$('[data-vai-contatti]').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); $('#contatti').scrollIntoView({ behavior: ridotto ? 'auto' : 'smooth' }); setTimeout(() => $('#if-nome')?.focus({ preventScroll: true }), 600); }));
 
-// ------------------------------------------------------------------ la bora (capitolo «Il nome»)
-// Tratti di vento da est-nord-est, come la mattina del gennaio 1912: solo disegno, nessuna immagine.
-(function bora() {
-  const c = $('.nome__vento'); if (!c) return;
-  const ctx = c.getContext('2d'); const sez = $('#nome');
-  let W = 0, H = 0, tratti = [], vivo = false, raf = 0;
-  const dpr = Math.min(devicePixelRatio, 2);
-  const nuovo = (inizio) => ({ x: inizio ? Math.random() * W : W + Math.random() * 200, y: Math.random() * H * 1.2 - H * 0.1, l: 60 + Math.random() * 220, v: 2.2 + Math.random() * 4.5, a: 0.05 + Math.random() * 0.09, w: 0.6 + Math.random() * 0.9 });
-  function misura() { W = sez.clientWidth; H = sez.clientHeight; c.width = W * dpr; c.height = H * dpr; c.style.width = W + 'px'; c.style.height = H + 'px'; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); tratti = Array.from({ length: Math.round(W * H / 9000) }, () => nuovo(true)); }
-  const pend = Math.tan(14 * Math.PI / 180);
-  function disegna() {
-    ctx.clearRect(0, 0, W, H);
-    for (const t of tratti) {
-      ctx.strokeStyle = `rgba(27,33,37,${t.a})`; ctx.lineWidth = t.w;
-      ctx.beginPath(); ctx.moveTo(t.x, t.y); ctx.lineTo(t.x + t.l, t.y - t.l * pend); ctx.stroke();
-      if (!ridotto) { t.x -= t.v; t.y += t.v * pend; if (t.x + t.l < 0 || t.y > H + 40) Object.assign(t, nuovo(false)); }
-    }
-    if (vivo && !ridotto) raf = requestAnimationFrame(disegna);
-  }
-  new IntersectionObserver(([e]) => { vivo = e.isIntersecting; cancelAnimationFrame(raf); if (vivo) { if (!W) misura(); disegna(); } }).observe(sez);
-  addEventListener('resize', () => { if (W) { misura(); if (!vivo) disegna(); } });
-})();
-
-// ------------------------------------------------------------------ le piante, una accanto all'altra
+// ------------------------------------------------------------------ le piante delle case (per il confronto)
 const P = D.piante;
 const svgCache = {};
 const svgPianta = (n) => (svgCache[n] ||= fetch(BASE + 'piante/u' + n + '.svg').then((r) => { if (!r.ok) throw new Error(r.status); return r.text(); }));
@@ -521,15 +553,6 @@ async function mettiPianta(box, n) {
     const s = box.querySelector('svg'); if (s) { s.removeAttribute('role'); s.setAttribute('aria-hidden', 'true'); }
   } catch (err) { /* resta il segnaposto */ }
 }
-const ioPiante = new IntersectionObserver((es) => es.forEach((e) => {
-  if (!e.isIntersecting) return; ioPiante.unobserve(e.target); mettiPianta(e.target, e.target.dataset.pianta);
-}), { rootMargin: '700px 0px' });
-$$('.pianta-mini').forEach((m) => ioPiante.observe(m));
-$$('.filtri button').forEach((b) => b.addEventListener('click', () => {
-  $$('.filtri button').forEach((x) => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
-  const f = b.dataset.filtro;
-  $$('.pianta-carta').forEach((c) => { c.hidden = !c.dataset.filtri.split(' ').includes(f); });
-}));
 
 // ------------------------------------------------------------------ preferite e confronto
 // Le preferite restano in questo browser (localStorage): nessun dato parte da qui.
@@ -537,7 +560,6 @@ const CHIAVE_PREF = 'ed_preferite_v1';
 const CF = D.confronto;
 let preferite = [];
 try { preferite = JSON.parse(localStorage.getItem(CHIAVE_PREF) || '[]').filter((n) => UNITA[n] && !UNITA[n].venduta); } catch (e) { preferite = []; }
-const esc = (t) => String(t ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 function salvaPref() { try { localStorage.setItem(CHIAVE_PREF, JSON.stringify(preferite)); } catch (e) { /* memoria bloccata: valgono per questa visita */ } }
 function aggiornaCuori() {
   const etichetta = (on) => (on ? P.salvata : P.salva);

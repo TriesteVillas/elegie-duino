@@ -40,16 +40,14 @@ FOTO = {
     'aerial-fotoinserimento': [800, 1280, 1920, 2400],
     'aerial-originale': [800, 1280, 1920, 2400],
     # Il sito «opera» (17/10/2026): la foto da drone vera in apertura (anche nel taglio verticale per
-    # i telefoni), due rendering del fronte nord dello Studio Soldano e un interno AI illustrativo.
+    # i telefoni) e due rendering del fronte nord dello Studio Soldano.
     'drone-duino': [800, 1280, 1920, 2400],
     'drone-duino-verticale': [750, 1080],
     'rend-fronte-nord': [640, 1024, 1600],
     'rend-ingresso-nord': [640, 1024, 1600],
-    'interno-giardino': [640, 1024, 1600, 1920, 2400],
-    # Il «salto di qualità» (17/10/2026 sera): le scene a tutta pagina di «Vivere qui». Il Castello e il mare
-    # sono ritagliati dalla foto vera da drone del 12/08 (DJI_0755), sopra il perimetro magenta del lotto.
-    'duino-castello': [800, 1280, 1920, 2400],
-    'duino-castello-verticale': [750, 1080],
+    # La pagina corta (18/10/2026): le piante per piano del sito di prima, una per piano, con le case cliccabili.
+    'pianta-terra': [800, 1200, 1600, 2000],
+    'pianta-primo': [800, 1200, 1600, 2000],
 }
 # Taglio verticale 3:4 della hero per i telefoni (tutta l'altezza, centrato).
 HERO_VERTICALE = ('exterior-sunset-garden', [750, None])  # None = larghezza nativa del taglio
