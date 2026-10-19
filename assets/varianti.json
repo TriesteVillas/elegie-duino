@@ -246,5 +246,49 @@
    "assets/logos/resp/triestevillas-192.webp",
    "assets/logos/resp/triestevillas-192.png"
   ]
+ },
+ "assets/images/drone-paese.jpg": {
+  "sha256": "842bf368957ebc38c67bb73a720e4c10d37537509f58d36921eefca19ca3a6ba",
+  "varianti": [
+   "assets/images/resp/drone-paese-640.avif",
+   "assets/images/resp/drone-paese-640.webp",
+   "assets/images/resp/drone-paese-1024.avif",
+   "assets/images/resp/drone-paese-1024.webp",
+   "assets/images/resp/drone-paese-1600.avif",
+   "assets/images/resp/drone-paese-1600.webp"
+  ]
+ },
+ "assets/images/drone-lotto-picco.jpg": {
+  "sha256": "6fbf038834c0341cfaa55501b91f061d516f910107bd8f806973e0695a03dec7",
+  "varianti": [
+   "assets/images/resp/drone-lotto-picco-640.avif",
+   "assets/images/resp/drone-lotto-picco-640.webp",
+   "assets/images/resp/drone-lotto-picco-1024.avif",
+   "assets/images/resp/drone-lotto-picco-1024.webp",
+   "assets/images/resp/drone-lotto-picco-1600.avif",
+   "assets/images/resp/drone-lotto-picco-1600.webp"
+  ]
+ },
+ "assets/images/drone-lotto-basso.jpg": {
+  "sha256": "d2fede962f5e1c68964f1dfd388fd1bd1c289d028b01a2cb4ea4cc7047571027",
+  "varianti": [
+   "assets/images/resp/drone-lotto-basso-640.avif",
+   "assets/images/resp/drone-lotto-basso-640.webp",
+   "assets/images/resp/drone-lotto-basso-1024.avif",
+   "assets/images/resp/drone-lotto-basso-1024.webp",
+   "assets/images/resp/drone-lotto-basso-1600.avif",
+   "assets/images/resp/drone-lotto-basso-1600.webp"
+  ]
+ },
+ "assets/images/drone-lotto-prato.jpg": {
+  "sha256": "5610d51fc6e6f52ca5862af616ce022cfd31320a4abed5127840506281a73e1a",
+  "varianti": [
+   "assets/images/resp/drone-lotto-prato-640.avif",
+   "assets/images/resp/drone-lotto-prato-640.webp",
+   "assets/images/resp/drone-lotto-prato-1024.avif",
+   "assets/images/resp/drone-lotto-prato-1024.webp",
+   "assets/images/resp/drone-lotto-prato-1600.avif",
+   "assets/images/resp/drone-lotto-prato-1600.webp"
+  ]
  }
 }

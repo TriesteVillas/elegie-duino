@@ -259,6 +259,9 @@ IT = {
   'sotto': 'Scansione Matterport del 15 settembre 2026, dopo la demolizione.',
   'nota': 'Si apre il visore di Matterport, un servizio esterno, che può usare i suoi cookie.',
   'apri': 'Apri il tour', 'nuova': 'Apri in una nuova finestra',
+  'drone_kicker': 'Dal drone, dopo le demolizioni',
+  'drone_nota': 'Riprese dal drone del 2026, ritoccate solo in luce e nitidezza, senza intelligenza artificiale; le targhe sono sfocate. Tocca una foto per vederla grande.',
+  'drone_foto': [['Il paese e il lotto, da 180 metri', "Duino dall'alto: il lotto dopo le demolizioni in mezzo alle case del paese"], ["Il lotto dall'alto", 'Il lotto di Duino 69/A visto a picco dal drone, con la strada e i confini'], ['Il cantiere, da vicino', 'Il terreno dopo le demolizioni: terra, macerie e il prato col cedro'], ['Il prato e il cedro', 'Il prato del lotto col grande cedro, ripreso a pochi metri da terra']],
  },
  'concierge': {
   'apri': 'Chiedi al concierge', 'titolo': 'Il concierge di Elegie', 'sotto': 'Assistente AI · TriesteVillas',
@@ -530,6 +533,9 @@ EN = {
   'sotto': 'Matterport scan of 15 September 2026, after the demolition.',
   'nota': 'This opens the Matterport viewer, an external service that may use its own cookies.',
   'apri': 'Open the tour', 'nuova': 'Open in a new window',
+  'drone_kicker': 'From the drone, after the demolition',
+  'drone_nota': 'Drone shots taken in 2026, adjusted only for light and sharpness, without artificial intelligence; number plates are blurred. Tap a photo to see it full size.',
+  'drone_foto': [['The village and the plot, from 180 metres', 'Duino from above: the plot after the demolition among the houses of the village'], ['The plot from above', 'The plot at Duino 69/A seen straight down from the drone, with the road and its boundaries'], ['The building site, close up', 'The land after the demolition: earth, rubble and the lawn with the cedar'], ['The lawn and the cedar', 'The lawn of the plot with the large cedar, a few metres above the ground']],
  },
  'concierge': {
   'apri': 'Ask the concierge', 'titolo': 'The Elegie concierge', 'sotto': 'AI assistant · TriesteVillas',
@@ -802,6 +808,9 @@ DE = {
   'titolo': 'Das Grundstück heute, in 3D', 'sotto': 'Matterport-Scan vom 15. September 2026, nach dem Abriss.',
   'nota': 'Es öffnet sich der Viewer von Matterport, ein externer Dienst, der eigene Cookies verwenden kann.',
   'apri': 'Rundgang öffnen', 'nuova': 'In neuem Fenster öffnen',
+  'drone_kicker': 'Von der Drohne, nach dem Abriss',
+  'drone_nota': 'Drohnenaufnahmen aus dem Jahr 2026, nur in Licht und Schärfe korrigiert, ohne künstliche Intelligenz; Kennzeichen sind unkenntlich gemacht. Tippen Sie auf ein Foto, um es groß zu sehen.',
+  'drone_foto': [['Der Ort und das Grundstück, aus 180 Metern', 'Duino von oben: das Grundstück nach dem Abriss zwischen den Häusern des Ortes'], ['Das Grundstück von oben', 'Das Grundstück Duino 69/A senkrecht von der Drohne aus, mit Straße und Grenzen'], ['Die Baustelle, aus der Nähe', 'Das Gelände nach dem Abriss: Erde, Schutt und die Wiese mit der Zeder'], ['Die Wiese und die Zeder', 'Die Wiese des Grundstücks mit der großen Zeder, wenige Meter über dem Boden']],
  },
  'concierge': {
   'apri': 'Den Concierge fragen', 'titolo': 'Der Concierge von Elegie', 'sotto': 'KI-Assistent · TriesteVillas',
@@ -1068,6 +1077,9 @@ SL = {
   'titolo': 'Zemljišče danes, v 3D', 'sotto': 'Posnetek Matterport, 15. september 2026, po rušenju.',
   'nota': 'Odpre se pregledovalnik Matterport, zunanja storitev, ki lahko uporablja svoje piškotke.',
   'apri': 'Odpri ogled', 'nuova': 'Odpri v novem oknu',
+  'drone_kicker': 'Z drona, po rušitvi',
+  'drone_nota': 'Posnetki z drona iz leta 2026, popravljeni samo v svetlobi in ostrini, brez umetne inteligence; registrske tablice so zabrisane. Tapnite fotografijo, da jo vidite v polni velikosti.',
+  'drone_foto': [['Vas in parcela, s 180 metrov', 'Devin od zgoraj: parcela po rušitvi med hišami vasi'], ['Parcela od zgoraj', 'Parcela Devin 69/A navpično z drona, s cesto in mejami'], ['Gradbišče od blizu', 'Zemljišče po rušitvi: zemlja, ruševine in trata s cedro'], ['Trata in cedra', 'Trata na parceli z veliko cedro, nekaj metrov nad tlemi']],
  },
  'concierge': {
   'apri': 'Vprašajte concierge', 'titolo': 'Concierge Elegie', 'sotto': 'Asistent UI · TriesteVillas',

@@ -383,6 +383,20 @@ def pagina(L):
     fatti_apertura = ''.join(f'<li>{x}</li>' for x in L['apertura']['fatti'](len(disp), euro(L, prezzo_min)))
     A = L['apertura']; LU = L['luogo']; CO = L['costruzione']; LC = L['luce']; CA = L['case']
     PI = L['piante']; CF = L['confronto']; S = L['scheda']; CH = L['chi']; K = L['contatti']; Q = L['concierge']; TO = L['tour']
+    # Il terreno dopo le demolizioni, dal drone (DRONEMIX 19/10/2026): quattro riprese vere, in discesa.
+    def _foto_drone(nome, cap, alt):
+        av = ', '.join(f'{base}images/resp/{nome}-{w}.avif {w}w' for w in FOTO[nome])
+        wb = ', '.join(f'{base}images/resp/{nome}-{w}.webp {w}w' for w in FOTO[nome])
+        return (f'<a class="tour__foto" href="{base}images/{nome}.jpg" target="_blank" rel="noopener">'
+                f'<picture><source type="image/avif" srcset="{av}" sizes="(max-width: 700px) 46vw, 220px">'
+                f'<source type="image/webp" srcset="{wb}" sizes="(max-width: 700px) 46vw, 220px">'
+                f'<img src="{base}images/resp/{nome}-640.webp" alt="{e(alt)}" width="640" height="360" loading="lazy" decoding="async"></picture>'
+                f'<span>{e(cap)}</span></a>')
+    fila_drone = ('<div class="tour__drone">'
+                  f'<p class="kicker" style="color:var(--legno)">{e(TO["drone_kicker"])}</p>'
+                  '<div class="tour__drone-fila">'
+                  + ''.join(_foto_drone(n, c, a) for n, (c, a) in zip(['drone-paese', 'drone-lotto-picco', 'drone-lotto-basso', 'drone-lotto-prato'], TO['drone_foto']))
+                  + f'</div><p class="nota">{e(TO["drone_nota"])}</p></div>')
     k_luogo, k_case, k_luce, k_costr, k_chi, k_contatti = [k(x) for x in (LU['kicker'], CA['kicker'], LC['kicker'], CO['kicker'], CH['kicker'], K['kicker'])]
     wa = 'https://wa.me/393318940822?text=' + e(Q['wa_testo']).replace(' ', '%20')
     lingue_barra = ''.join(f'<a href="{link_lingua[x]}" hreflang="{x}" lang="{x}"' + (' aria-current="true"' if lg == x else '') + f'>{x.upper()}</a>' for x in LINGUE)
@@ -590,6 +604,7 @@ def pagina(L):
     <p class="kicker" style="color:var(--legno)">Matterport · 15.09.2026</p>
     <h2 class="h3" id="tour-t">{e(TO['titolo'])}</h2>
     <p class="nota">{e(TO['sotto'])}</p>
+    {fila_drone}
     <div class="tour__tela" id="tour-tela"><div class="tour__invito"><p>{e(TO['nota'])}</p><button type="button" class="btn btn--scuro" data-carica-tour>{ICON['cubo']} {e(TO['apri'])}</button><a class="vai" href="{TOUR_TERRENO}" target="_blank" rel="noopener">{e(TO['nuova'])} ↗</a></div></div>
   </div>
 </div>

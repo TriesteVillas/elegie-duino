@@ -45,6 +45,12 @@ FOTO = {
     'drone-duino-verticale': [750, 1080],
     'rend-fronte-nord': [640, 1024, 1600],
     'rend-ingresso-nord': [640, 1024, 1600],
+    # Il terreno dopo le demolizioni, dal drone (DRONEMIX, 19/10/2026): riprese vere, solo luce e nitidezza,
+    # nella finestra del tour 3D del terreno.
+    'drone-paese': [640, 1024, 1600],
+    'drone-lotto-picco': [640, 1024, 1600],
+    'drone-lotto-basso': [640, 1024, 1600],
+    'drone-lotto-prato': [640, 1024, 1600],
 }
 # Taglio verticale 3:4 della hero per i telefoni (tutta l'altezza, centrato).
 HERO_VERTICALE = ('exterior-sunset-garden', [750, None])  # None = larghezza nativa del taglio
