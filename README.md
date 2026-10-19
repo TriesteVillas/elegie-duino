@@ -65,6 +65,21 @@ I file 3D (`assets/3d/`) e le piante (`assets/piante/`) nascono da script nella 
 (`progetti/elegie-duino/SITO-OPERA-2026-10-17.md`): non si modificano a mano. Le ore di sole:
 `scripts/opera/sole_unita.py`.
 
+## La brochure PDF
+
+`assets/pdf/elegie-duino-brochure.pdf` — 12 pagine A4, italiano e inglese — è l'**edizione di ottobre 2026
+rifatta il 17/10** perché dica le stesse cose del sito: superfici del progettista con la veranda compresa,
+tempi OSRM, nessuna vista mare, fondazioni a travi rovesce, serramenti «a taglio termico», nessuna palette di
+marca, il duplex che non si propone, ogni immagine con la sua etichetta («AI · rendering», «AI», «Foto da
+drone…», «Modello 3D dalle tavole…»; le piante no). A pagina 2 la foto da drone e il modello 3D dallo stesso
+punto di vista, fotografato da questo sito con Chrome headless.
+
+Non si genera qui: i sorgenti sono su Drive, `TRIESTEVILLAS_CLAUDE/progetti/elegie_duino_brochure/` (account
+claude@). `python3 concept_apple_2026_10.py` (testi in `testi_2026_10.py`; case e tempi in
+`assets/2026-10/unita.json` e `fatti.json`, **copie** di quelli di `scripts/opera/`: se qui cambia una casa o un
+prezzo, si ricopiano là e si rigenera) scrive `render/ELEGIE_DUINO_A_apple_2026-10.pdf`, che si copia qui.
+Confronto pagina per pagina con l'edizione precedente e decisioni: KB `progetti/elegie-duino/BROCHURE-2026-10-17.md`.
+
 ## Struttura
 
 ```
