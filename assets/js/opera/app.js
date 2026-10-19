@@ -43,8 +43,15 @@ function haWebGL() {
 const risparmio = navigator.connection && (navigator.connection.saveData || /2g/.test(navigator.connection.effectiveType || ''));
 if (!haWebGL() || risparmio) document.documentElement.classList.add('senza3d');
 
-async function avvia3D() {
-  if (document.documentElement.classList.contains('senza3d') || scena) return;
+// Una scena sola. L'avvio arriva da due parti (il tempo libero del browser e il primo scorrimento) e sul sito vero il
+// paese impiega una decina di secondi a scaricarsi: senza questo freno, chi scorre subito faceva nascere due scene
+// sovrapposte, e la regia muoveva quella nascosta (19/10/2026: «il modello 3d non si vede più»).
+let avvio3D = null;
+function avvia3D() {
+  if (document.documentElement.classList.contains('senza3d') || scena) return Promise.resolve();
+  return (avvio3D ||= avviaScena());
+}
+async function avviaScena() {
   carica.hidden = false; carica.textContent = T.carico + ' 0%';
   try {
     const { creaScena } = await import('./scena.js');
