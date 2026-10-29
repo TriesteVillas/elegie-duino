@@ -22,7 +22,8 @@ $('.barra__menu')?.addEventListener('click', () => {
 });
 $$('.barra__voci a').forEach((a) => a.addEventListener('click', () => barra.classList.remove('aperta')));
 function aggiornaBarra() {
-  const el = document.elementFromPoint(Math.min(innerWidth - 2, 40), 70);
+  // Subito sotto la barra (64 px, più il cartello delle chiusure quando c'è: js/opera/chiusura.js).
+  const el = document.elementFromPoint(Math.min(innerWidth - 2, 40), barra.getBoundingClientRect().bottom + 6);
   const foglio = el && el.closest('.foglio, .piede, .vivere, .contatto');
   const scuro = (f) => f.classList.contains('foglio--notte') || f.classList.contains('piede') || f.classList.contains('vivere') || f.classList.contains('contatto');
   barra.classList.toggle('su-carta', !!foglio && !scuro(foglio));

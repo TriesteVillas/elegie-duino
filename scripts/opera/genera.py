@@ -679,6 +679,7 @@ def pagina(L):
 <script type="application/json" id="dati">{json.dumps(dati, ensure_ascii=False, separators=(',', ':'))}</script>
 <script type="module" src="{base}js/opera/app.js"></script>
 <script type="module" src="{base}js/opera/concierge.js"></script>
+<script src="{base}js/opera/chiusura.js" defer></script>
 <script src="{base}js/consenso.js" data-ga="G-YL07ZJ3PVX"></script>
 <script src="{base}js/provenienza.js"></script>
 <script src="{base}js/contatore.js" defer></script>
