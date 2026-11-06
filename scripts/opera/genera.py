@@ -559,7 +559,13 @@ def pagina(L):
   <div class="scheda__corpo">
     <div class="scheda__titolo"><b id="scheda-numero" class="num"></b><div><h2 class="h3" id="scheda-titolo"></h2><p class="nota" id="scheda-tipo" style="margin:4px 0 0"></p></div><button type="button" class="cuore cuore--grande" id="scheda-cuore" aria-pressed="false" aria-label="{e(PI['salva'])}" title="{e(PI['salva'])}">{CUORE}</button></div>
     <div class="scheda__prezzo"><div id="scheda-prezzo"></div><span id="scheda-prezzo-nota"></span></div>
-    <div class="scheda__sezione"><h4>{e(S['pianta'])}</h4><div class="scheda__pianta" id="scheda-pianta"></div><p class="nota">{e(S['pianta_nota'])}</p></div>
+    <div class="scheda__sezione">
+      <h4>{e(S['pianta'])}</h4>
+      <div class="scelta scelta--mini" id="scheda-viste" role="group" aria-label="{e(S['viste_aria'])}"><button type="button" data-vista="disegno" aria-pressed="true">{e(S['vista_disegno'])}</button><button type="button" data-vista="atto" aria-pressed="false">{e(S['vista_atto'])}</button></div>
+      <div class="scheda__pianta" id="scheda-pianta"></div>
+      <p class="nota" data-nota-vista="disegno">{e(S['nota_disegno'])}</p>
+      <p class="nota" data-nota-vista="atto" hidden>{e(S['nota_atto'])} <a id="scheda-pianta-pdf" href="#" download>{e(S['pdf_atto'])}</a></p>
+    </div>
     <dl class="scheda__dati" id="scheda-dati"></dl>
     <div class="scheda__sezione scheda__conto" id="scheda-conto">
       <div class="conto2__testa"><h4>{e(S['conto'])}</h4><div class="scelta scelta--mini" role="group" aria-label="{e(S['conto_aria'])}"><button type="button" data-prima="si" aria-pressed="true">{e(S['prima'])}</button><button type="button" data-prima="no" aria-pressed="false">{e(S['seconda'])}</button></div></div>

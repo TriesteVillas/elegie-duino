@@ -50,6 +50,7 @@ def casa(u):
         d['totale_seconda_casa_eur'] = round(p * 1.10 + IMPOSTE_FISSE)
         d['pagamenti_eur'] = {'prenotazione_10': round(p * 0.10), 'preliminare_20': round(p * 0.20), 'rogito_70': round(p * 0.70)}
         d['pianta'] = f'https://elegieduino.it/#unita-{u["n"]}'
+        d['pianta_cosa_si_vede'] = "il disegno a mano dell'architetto Soldano e, con un tasto, la planimetria ufficiale che verrà allegata all'atto (anche in PDF)"
         if sole: d['ore_di_sole_diretto_sulla_vetrata_della_veranda'] = sole
         v = F.get('vista', {}).get(u['n'], {}).get('it')
         if v: d['vista'] = v

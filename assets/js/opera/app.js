@@ -321,9 +321,7 @@ async function apriScheda(n) {
   const box = $('#scheda-pianta');
   box.innerHTML = '';
   if (!u.venduta && u.pianta) {
-    try { box.innerHTML = await (await fetch(BASE + 'piante/u' + n + '.svg')).text(); localizzaPianta(box); } catch (e) { box.textContent = ''; }
-    box.insertAdjacentHTML('beforeend', `<button type="button" class="zoom">${T.ingrandisci}</button>`);
-    box.querySelector('.zoom').addEventListener('click', () => apriLente(box.querySelector('svg')));
+    mostraPianta(n, 'disegno');
     box.parentElement.hidden = false;
   } else box.parentElement.hidden = true;
   // il sole sulla veranda, tre giorni dell'anno
@@ -367,17 +365,37 @@ function localizzaPianta(box) {
 }
 if (/^#unita-\d$/.test(location.hash)) setTimeout(() => apriScheda(location.hash.slice(7)), 600);
 
+// la pianta nella scheda: prima il disegno a mano dell'arch. Soldano, a richiesta la planimetria che verrà allegata all'atto
+let unitaPianta = null;
+function mostraPianta(n, vista) {
+  unitaPianta = n;
+  const box = $('#scheda-pianta');
+  $$('#scheda-viste button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.vista === vista)));
+  $$('[data-nota-vista]').forEach((p) => { p.hidden = p.dataset.notaVista !== vista; });
+  $('#scheda-pianta-pdf').href = BASE + 'piante/atto/u' + n + '.pdf';
+  const img = new Image();
+  img.alt = vista === 'atto' ? T.altAtto : T.altDisegno;
+  img.decoding = 'async';
+  img.addEventListener('load', () => {
+    if (!box.contains(img)) return;
+    box.insertAdjacentHTML('beforeend', `<button type="button" class="zoom">${T.ingrandisci}</button>`);
+    box.querySelector('.zoom').addEventListener('click', () => apriLente(img));
+  });
+  img.src = BASE + 'piante/' + vista + '/u' + n + '.jpg';
+  box.replaceChildren(img);
+}
+$$('#scheda-viste button').forEach((b) => b.addEventListener('click', () => mostraPianta(unitaPianta, b.dataset.vista)));
+
 // lente: pianta a tutto schermo, trascina e ingrandisci
 const lente = $('.lente'); let stLente = null;
-function apriLente(svg) {
-  if (!svg) return;
-  const t = $('.lente__tela'); t.innerHTML = ''; const c = svg.cloneNode(true); t.appendChild(c);
+function apriLente(img) {
+  const t = $('.lente__tela'); t.innerHTML = ''; const c = img.cloneNode(); t.appendChild(c);
   lente.classList.add('aperta');
   stLente = { s: 1, x: 0, y: 0, el: c, punti: new Map() };
-  const vb = c.viewBox.baseVal; const W = t.clientWidth, H = t.clientHeight;
-  const s0 = Math.min(W / vb.width, H / vb.height) * 0.92;
-  c.style.width = vb.width * s0 + 'px'; c.style.height = vb.height * s0 + 'px';
-  stLente.x = (W - vb.width * s0) / 2; stLente.y = (H - vb.height * s0) / 2; applicaLente();
+  const L = img.naturalWidth, A = img.naturalHeight; const W = t.clientWidth, H = t.clientHeight;
+  const s0 = Math.min(W / L, H / A) * 0.92;
+  c.style.width = L * s0 + 'px'; c.style.height = A * s0 + 'px';
+  stLente.x = (W - L * s0) / 2; stLente.y = (H - A * s0) / 2; applicaLente();
   $('.lente__chiudi').focus();
 }
 function applicaLente() { stLente.el.style.transform = `translate(${stLente.x}px,${stLente.y}px) scale(${stLente.s})`; }

@@ -51,9 +51,14 @@ scripts/opera/testi.py       le parole, nelle quattro lingue
 scripts/opera/unita.json     case, superfici, prezzi, vendute (unica fonte)
 scripts/opera/fatti.json     luoghi e tempi, fasi del capitolato, scene, galleria, materiali
 scripts/opera/genera.py      scrive le quattro pagine e il sapere del concierge
+scripts/opera/piante_unita.py  le due piante della scheda, dagli originali su Drive (v. sotto)
 scripts/opera/conoscenza.py  assets/concierge/conoscenza.json (lo legge il CRM)
 python3 scripts/opera/genera.py
 ```
+
+**Le piante nella scheda di ogni casa** (dal 06/11/2026): si apre sul disegno a mano dell'arch. Soldano
+(`assets/piante/disegno/`), e un tasto mostra la planimetria ufficiale che verrà allegata all'atto (`assets/piante/atto/`,
+immagine e PDF). Le SVG di `assets/piante/uN.svg`, ridisegnate dall'esecutivo, restano solo per le miniature del confronto.
 
 Una casa venduta o un prezzo cambiato: si modifica `unita.json` e si rigenera. Il concierge lo sa da solo dopo il
 push (il CRM rilegge `conoscenza.json` ogni 15 minuti).
