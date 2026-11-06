@@ -15,7 +15,7 @@ cantiere che sorge; il paese, misurato; la sera in giardino; le case piano per p
 nella scheda di ogni casa; in alto, la veranda; il sole ora per ora; la costruzione a strati con il capitolato in
 una riga; le tre firme; i contatti. Niente galleria, niente pagine di capitolato, Rilke in un accenno.
 """
-import html, json, os, sys
+import calendar, datetime, html, json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -27,14 +27,16 @@ import conoscenza  # noqa: E402
 U = json.load(open(os.path.join(ROOT, 'scripts/opera/unita.json')))
 F = json.load(open(os.path.join(ROOT, 'scripts/opera/fatti.json')))
 PP = json.load(open(os.path.join(ROOT, 'scripts/opera/pianta_piani.json')))
+C = json.load(open(os.path.join(ROOT, 'scripts/opera/cantiere.json')))   # il cronoprogramma (06/11/2026)
 e = html.escape
 LINGUE = ['it', 'en', 'de', 'sl']
 CONCIERGE = 'https://tsv-pg.vercel.app/api/web/ed-chat'   # CRM, lib/ed-chat.ts (porta pubblica, CORS)
 TOUR_TERRENO = 'https://my.matterport.com/show/?m=AQp72tPqpWV'
 TELEFONO = '+393318940822'
 IMPOSTE = 600
-# la costruzione a strati in cinque passi: quante fasi del modello 3D (scena.js, FASI) sono montate a ogni passo
-FASI_PASSI = [1, 3, 5, 7, 8]
+# Il cantiere mese per mese (06/11/2026): un passo per ogni tappa del cronoprogramma che si vede nel modello. Quante
+# fasi del modello 3D (scena.js, FASI) sono montate a ogni passo sta in cantiere.json (passi3d); il sole è quello del
+# mese della tappa.
 
 def num_it(n): return f'{n:,.0f}'.replace(',', '.')
 def num(L, n):
@@ -251,9 +253,15 @@ def case_html(L, base, k_case):
 # ---------------------------------------------------------------- la costruzione, a strati
 def costruzione_html(L, k_costr):
     CO = L['costruzione']
+    assert len(CO['passi']) == len(C['passi3d']), 'testi.py e cantiere.json: i passi del cantiere non tornano'
+    stato_di = {t['passo3d']: t['stato'] for t in C['tappe'] if 'passo3d' in t}
+    mese_di = {t['passo3d']: t['mese'] for t in C['tappe'] if 'passo3d' in t}
+    def sole_del_mese(i):  # il 15 del mese della tappa: il modello prende la luce di quella stagione (app.js)
+        y, m = int(mese_di[i][:4]), int(mese_di[i][5:7])
+        return f' data-anno="{y}" data-giorno="{datetime.date(y, m, 15).timetuple().tm_yday}"'
     out = []
-    for i, (fase, (nome, titolo, testo)) in enumerate(zip(FASI_PASSI, CO['passi']), start=1):
-        lato = ' destra' if i % 2 == 0 else ''
+    for i, (p3, (quando, titolo, testo)) in enumerate(zip(C['passi3d'], CO['passi']), start=1):
+        lato = ' destra' if i % 2 == 0 and i < len(CO['passi']) else ''   # l'ultima, larga, a sinistra: a destra coprirebbe l'edificio
         testa = ''
         if i == 1:
             testa = f'<p class="kicker">{k_costr}</p><h2 class="h2" id="costruzione-t">{CO["titolo"]}</h2><p class="carta3d__intro">{e(CO["testo"])}</p><hr>'
@@ -262,13 +270,87 @@ def costruzione_html(L, k_costr):
             coda = (f'<div class="dentro"><p class="dentro__t">{e(CO["dentro_t"])}</p><ul>{"".join(f"<li>{e(x)}</li>" for x in CO["dentro"])}</ul>'
                     f'<p class="dentro__azioni"><button type="button" class="btn btn--chiaro btn--piccolo" data-apri-brochure>{e(CO["brochure"])}</button>'
                     f'<button type="button" class="vai vai--chiaro" data-apri-tour>{ICON["cubo"]} {e(CO["tour"])}</button></p></div>')
-        out.append(f'''<div class="palco__passo palco__passo--strato{lato}" data-stato="costruzione:{fase}">
-    <div class="carta3d{' carta3d--larga' if i in (1, len(CO['passi'])) else ''} rivela">{testa}<div class="kicker"><i>{i}</i>{e(nome)}</div><h3 class="h3">{e(titolo)}</h3><p>{e(testo)}</p>{coda}</div>
+        st = stato_di.get(i - 1, 'previsto')
+        out.append(f'''<div class="palco__passo palco__passo--strato{lato}" id="cantiere-{i - 1}" data-stato="costruzione:{p3['fase']}" data-passo="{i - 1}"{sole_del_mese(i - 1)}>
+    <div class="carta3d{' carta3d--larga' if i in (1, len(CO['passi'])) else ''} rivela">{testa}<div class="kicker"><i>{i}</i>{e(quando)}<span class="chip-stato chip-stato--{st}">{e(L['tempi']['stati'][st])}</span></div><h3 class="h3">{e(titolo)}</h3><p>{e(testo)}</p>{coda}</div>
   </div>''')
     return '\n'.join(out)
 
 def fasi_indice(L):
-    return '\n'.join(f'<li><span>{e(p[0])}</span></li>' for p in L['costruzione']['passi'])
+    # l'indice a destra del capitolo 3D: il mese di ogni passo («nov 2026»)
+    mese_di = {t['passo3d']: t['mese'] for t in C['tappe'] if 'passo3d' in t}
+    M = L['js']['mesi']
+    return '\n'.join(f'<li><span>{e(M[int(mese_di[i][5:7]) - 1])} {mese_di[i][:4]}</span></li>' for i in range(len(C['passi3d'])))
+
+# ---------------------------------------------------------------- i tempi: il cronoprogramma (06/11/2026)
+def data_lunga(L, iso):
+    y, m, d = (int(x) for x in iso.split('-'))
+    if L['lingua'] == 'sl': return f'{d}. {m}. {y}'   # in sloveno la data numerica evita il genitivo del mese
+    ML = L['tempi']['mesi_lunghi']
+    return f'{d}. {ML[m - 1]} {y}' if L['lingua'] == 'de' else f'{d} {ML[m - 1]} {y}'
+
+def cronoprogramma_html(L, k_tempi):
+    """La linea dei tempi (in proporzione, da inizio_asse a fine_asse), le tappe una per una, chi compra passo per
+    passo, le tre scadenze delle scelte, gli aggiornamenti e l'avvertenza. «Oggi» lo rimette il browser (app.js)."""
+    T = L['tempi']
+    a0, a1 = C['inizio_asse'], C['fine_asse']
+    def idx(iso): return (int(iso[:4]) - int(a0[:4])) * 12 + int(iso[5:7]) - int(a0[5:7])
+    N = idx(a1) + 1
+    def pos_mese(iso): return round((idx(iso) + 0.5) / N * 100, 3)
+    def pos_giorno(iso):
+        y, m, d = (int(x) for x in iso.split('-'))
+        return round((idx(iso) + (d - 0.5) / calendar.monthrange(y, m)[1]) / N * 100, 3)
+    vendute = sum(1 for u in U['unita'] if u['venduta'])
+    oggi = pos_giorno(C['aggiornato'])
+    punti = ''.join(
+        f'<a class="crono__punto crono__punto--{t["stato"]}" href="#tappa-{t["k"]}" style="left:{pos_mese(t["mese"])}%" data-tappa="{t["k"]}" title="{e(T["tappe"][t["k"]][0])} · {e(T["tappe"][t["k"]][1])}"><span class="sr">{e(T["tappe"][t["k"]][0])} · {e(T["tappe"][t["k"]][1])}</span></a>'
+        for t in C['tappe'])
+    rombi = ''.join(
+        f'<span class="crono__rombo" style="left:{pos_giorno(s["entro"])}%" title="{e(T["entro"].format(data=data_lunga(L, s["entro"])))} · {e(T["scelte"][s["k"]][0])}"></span>'
+        for s in C['scelte'])
+    anni = f'<span class="crono__anno" style="left:0%">{a0[:4]}</span>' + ''.join(
+        f'<span class="crono__anno" style="left:{pos_giorno(f"{y}-01-01")}%">{y}</span>' for y in range(int(a0[:4]) + 1, int(a1[:4]) + 1))
+    primo_aperto = next(i for i, t in enumerate(C['tappe']) if t['stato'] != 'fatto')
+    carte = []
+    for i, t in enumerate(C['tappe']):
+        quando, titolo, testo = T['tappe'][t['k']]
+        ora = ' crono__tappa--ora' if i == primo_aperto else ''
+        in3d = f'<a class="vai crono__in3d" href="#cantiere-{t["passo3d"]}">{ICON["cubo"]} {e(T["in3d"])}</a>' if 'passo3d' in t else ''
+        carte.append(f'<li class="crono__tappa crono__tappa--{t["stato"]}{ora}" id="tappa-{t["k"]}"><p class="crono__quando">{e(quando)}</p>'
+                     f'<span class="chip-stato chip-stato--{t["stato"]}">{e(T["stati"][t["stato"]])}</span><h3 class="crono__titolo">{e(titolo)}</h3>'
+                     f'<p>{e(testo.format(v=vendute))}</p>{in3d}</li>')
+    legenda = ''.join(f'<li><i class="crono__seg crono__seg--{k}" aria-hidden="true"></i>{e(T["stati"][k])}</li>' for k in ('fatto', 'atteso', 'previsto', 'scelta'))
+    compra = ''.join(f'<li><span class="crono__quota num{"" if q else " crono__quota--vuota"}">{e(q)}</span><div><h4>{e(ti)}</h4><p>{e(tx)}</p></div></li>' for q, ti, tx in T['compra'])
+    scelte = ''.join(
+        f'<li data-entro="{s["entro"]}"><p class="crono__entro num">{e(T["entro"].format(data=data_lunga(L, s["entro"])))}<span class="crono__mancano" data-mancano></span></p>'
+        f'<h4>{e(T["scelte"][s["k"]][0])}</h4><p>{e(T["scelte"][s["k"]][1])}</p></li>' for s in C['scelte'])
+    return f'''<section class="foglio crono" id="tempi" aria-labelledby="tempi-t">
+  <div class="foglio__dentro">
+    <div class="testata">
+      <div class="rivela"><p class="kicker">{k_tempi}</p><h2 class="h2" id="tempi-t">{T['titolo']}</h2></div>
+      <div class="rivela"><p class="lede">{e(T['testo'])}</p><p class="crono__revisione">{e(T['revisione'])}</p></div>
+    </div>
+    <div class="crono__asse rivela" data-da="{a0}" data-a="{a1}" role="group" aria-label="{e(T['asse_aria'])}">
+      <div class="crono__linea"><span class="crono__fatto" style="width:{oggi}%"></span></div>
+      {anni}{rombi}{punti}
+      <span class="crono__oggi" style="left:{oggi}%"><b>{e(L['js']['oggi'])}</b></span>
+    </div>
+    <ul class="crono__legenda">{legenda}</ul>
+    <div class="crono__nastro">
+      <button type="button" class="crono__freccia" data-crono="-1" aria-label="{e(T['prima'])}">‹</button>
+      <ol class="crono__fila" aria-label="{e(T['fila_aria'])}" tabindex="0">{''.join(carte)}</ol>
+      <button type="button" class="crono__freccia" data-crono="1" aria-label="{e(T['dopo'])}">›</button>
+    </div>
+    <div class="crono__due">
+      <div class="crono__compra rivela"><h3 class="h3">{T['compra_t']}</h3><ol>{compra}</ol><p class="nota">{e(T['compra_nota'])}</p></div>
+      <div class="crono__scelte rivela"><h3 class="h3">{T['scelte_t']}</h3><p class="crono__intro">{e(T['scelte_testo'])}</p><ol>{scelte}</ol><p class="nota">{e(T['scelte_dopo'])}</p></div>
+    </div>
+    <div class="crono__agg rivela">
+      <div class="crono__agg-testo"><h3 class="h3">{T['agg_t']}</h3><p>{e(T['agg_testo'])}</p><a class="btn btn--scuro" href="#contatti" data-aggiornamenti>{e(T['agg_cta'])}</a></div>
+      <div class="crono__avvertenza"><p>{T['avvertenza']}</p><p class="nota">{e(T['aggiornato'].format(data=data_lunga(L, C['aggiornato'])))}</p></div>
+    </div>
+  </div>
+</section>'''
 
 def ore_unita(L):
     out = []
@@ -397,7 +479,7 @@ def pagina(L):
                   '<div class="tour__drone-fila">'
                   + ''.join(_foto_drone(n, c, a) for n, (c, a) in zip(['drone-paese', 'drone-lotto-picco', 'drone-lotto-basso', 'drone-lotto-prato'], TO['drone_foto']))
                   + f'</div><p class="nota">{e(TO["drone_nota"])}</p></div>')
-    k_luogo, k_case, k_luce, k_costr, k_chi, k_contatti = [k(x) for x in (LU['kicker'], CA['kicker'], LC['kicker'], CO['kicker'], CH['kicker'], K['kicker'])]
+    k_luogo, k_case, k_luce, k_tempi, k_costr, k_chi, k_contatti = [k(x) for x in (LU['kicker'], CA['kicker'], LC['kicker'], L['tempi']['kicker'], CO['kicker'], CH['kicker'], K['kicker'])]
     wa = 'https://wa.me/393318940822?text=' + e(Q['wa_testo']).replace(' ', '%20')
     lingue_barra = ''.join(f'<a href="{link_lingua[x]}" hreflang="{x}" lang="{x}"' + (' aria-current="true"' if lg == x else '') + f'>{x.upper()}</a>' for x in LINGUE)
     lingue_piede = ''.join(f'<a href="{link_lingua[x]}" hreflang="{x}" lang="{x}">{v}</a>' for x, v in [('it', 'Italiano'), ('en', 'English'), ('de', 'Deutsch'), ('sl', 'Slovenščina')] if x != lg)
@@ -474,6 +556,7 @@ def pagina(L):
     <div class="apertura__velo"></div>
     <span class="etichetta-foto" title="{e(A['etichetta_foto_titolo'])}">{e(A['etichetta_foto'])}</span>
     <div class="apertura__testo">
+      <a class="novita" href="#tempi"><b>{e(A['novita'][0])}</b><span>{e(A['novita'][1])}</span><i aria-hidden="true">→</i></a>
       <p class="kicker">{e(A['kicker'])}</p>
       <div class="apertura__titolo">
         <h1 class="h-display">Elegie<span class="sr"> Duino — {e(A['sr_titolo'])}</span></h1>
@@ -543,6 +626,8 @@ def pagina(L):
     </div>
   </div>
 </section>
+
+{cronoprogramma_html(L, k_tempi)}
 
 <section class="palco" id="costruzione" aria-labelledby="costruzione-t">
 {costruzione_html(L, k_costr)}

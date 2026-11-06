@@ -1,0 +1,42 @@
+{
+ "_che_cosa_e": "Il cronoprogramma di Elegie Duino: le tappe fatte, quella attesa e quelle previste, e le tre scadenze delle scelte di chi compra. Unica fonte per la sezione «I tempi», per il capitolo 3D del cantiere (genera.py) e per il concierge (conoscenza.py). Quando una tappa si compie, o l'impresa rivede il programma, si cambia qui (stato, mese, aggiornato) e si rigenera.",
+ "_fonti": {
+  "previste_e_scelte": "Programma dei lavori dell'impresa, prima revisione: mail del project manager dell'impresa all'agenzia, 06/11/2026 (KB progetti/elegie-duino/CRONOPROGRAMMA-2026-11-06.md). Le date sono previsioni, non impegni contrattuali; il permesso di costruire era atteso «la prossima settimana».",
+  "consegna": "Decisione dell'agenzia del 06/11/2026: consegna «entro giugno 2028», come scrive l'impresa (prima il sito diceva «entro il 2027»).",
+  "paesaggistica": "Fac-simile della proposta irrevocabile (Drive Vendite/2026 TRIESTEVILLAS/ELEGIE DUINO/CONTRATTI:OPZIONI:FAC-SIMILI): «autorizzazione Paesaggistica rilasciata in data 17/04/2026».",
+  "vendita_demolizione": "Agenzia, 06/11/2026: vendite da giugno, demolizione della villa preesistente ad agosto; foto da drone del lotto libero del 12/08/2026, tour Matterport del 15/09/2026.",
+  "esecutivi": "Esecutivo dello Studio Architettura Soldano del 03/09/2026 (KB progetti/elegie-duino/ESECUTIVO-2026-10-18.md)."
+ },
+ "aggiornato": "2026-11-06",
+ "inizio_asse": "2026-04",
+ "fine_asse": "2028-06",
+ "tappe": [
+  {"k": "paesaggistica", "mese": "2026-04", "stato": "fatto"},
+  {"k": "vendita", "mese": "2026-06", "stato": "fatto"},
+  {"k": "demolizione", "mese": "2026-08", "stato": "fatto"},
+  {"k": "esecutivi", "mese": "2026-09", "stato": "fatto"},
+  {"k": "permesso", "mese": "2026-11", "stato": "atteso", "passo3d": 0},
+  {"k": "fondazioni", "mese": "2027-01", "stato": "previsto", "passo3d": 1},
+  {"k": "struttura", "mese": "2027-03", "stato": "previsto", "passo3d": 2},
+  {"k": "chiuso", "mese": "2027-06", "stato": "previsto", "passo3d": 3},
+  {"k": "facciate", "mese": "2027-09", "stato": "previsto", "passo3d": 4},
+  {"k": "finiture", "mese": "2027-10", "stato": "previsto", "passo3d": 5},
+  {"k": "fine", "mese": "2028-04", "stato": "previsto", "passo3d": 6},
+  {"k": "consegna", "mese": "2028-06", "stato": "previsto", "passo3d": 7}
+ ],
+ "passi3d": [
+  {"fase": 0},
+  {"fase": 1},
+  {"fase": 3},
+  {"fase": 7},
+  {"fase": 7},
+  {"fase": 7},
+  {"fase": 8},
+  {"fase": 8}
+ ],
+ "scelte": [
+  {"k": "impianti", "entro": "2027-02-28"},
+  {"k": "finiture", "entro": "2027-06-30"},
+  {"k": "sanitari", "entro": "2027-09-30"}
+ ]
+}

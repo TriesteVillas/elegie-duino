@@ -113,8 +113,9 @@ const etichettaFoto = $('.etichetta-foto');
 const passiAp = $$('.passo-apertura');
 const passi = $$('[data-stato]');
 const fasiEl = $('.fasi');
-const PASSI_COSTRUZIONE = [1, 3, 5, 7, 8]; // genera.py, FASI_PASSI: le fasi del modello montate a ogni passo
+const PASSI_COSTRUZIONE = [1, 3, 5, 7, 8]; // ripiego: dal 06/11/2026 ogni passo dice il suo numero (data-passo, cantiere.json)
 let statoCorrente = null;
+let passoCantiere = null;
 const zoomFoto = { ritorno: 0, t0: performance.now() };
 (function avvicina() {
   const img = $('.apertura__foto img'); if (!img || ridotto) return;
@@ -163,10 +164,12 @@ function regia() {
     const [nome, arg] = migliore.dataset.stato.split(':');
     if (nome === 'costruzione') {
       const i = +arg;
-      if (statoCorrente !== 'costruzione') { scena.imposta('costruzione'); statoCorrente = 'costruzione'; }
+      if (statoCorrente !== 'costruzione') { scena.imposta('costruzione'); statoCorrente = 'costruzione'; passoCantiere = null; }
+      // il sole del mese della tappa (data-anno, data-giorno, da cantiere.json), alle 14:30: l'edificio cresce con le stagioni
+      if (migliore.dataset.giorno && migliore !== passoCantiere) { passoCantiere = migliore; scena.impostaSole(+migliore.dataset.anno, +migliore.dataset.giorno, 14 * 60 + 30); }
       scena.fase(i);
       fasiEl?.classList.add('vista');
-      const passo = PASSI_COSTRUZIONE.indexOf(i);
+      const passo = migliore.dataset.passo != null ? +migliore.dataset.passo : PASSI_COSTRUZIONE.indexOf(i);
       $$('li', fasiEl).forEach((li, k) => { li.classList.toggle('fatta', k < passo); li.classList.toggle('ora', k === passo); });
     } else {
       fasiEl?.classList.remove('vista');
@@ -661,4 +664,55 @@ $('[data-carica-tour]')?.addEventListener('click', () => {
   t.querySelector('.tour__invito').hidden = true;
   t.appendChild(f);
   try { window.edContaEvento && window.edContaEvento('tour3d:terreno'); } catch (e) {}
+});
+
+// ------------------------------------------------------------------ i tempi: il cronoprogramma (06/11/2026)
+// «Oggi» sulla linea dei tempi e i giorni che mancano alle scelte li calcola il browser, sull'ora di Trieste:
+// la pagina non invecchia fra una revisione e l'altra. Le tappe (fatta, attesa, prevista) le scrive genera.py
+// da cantiere.json, con la data dell'ultimo aggiornamento accanto.
+(function cronoprogramma() {
+  const asse = $('.crono__asse'); if (!asse) return;
+  const oggiRoma = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const [ya, ma, da] = oggiRoma.split('-').map(Number);
+  const giorno = (iso) => { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d) / 864e5; };
+  const [y0, m0] = asse.dataset.da.split('-').map(Number);
+  const [y1, m1] = asse.dataset.a.split('-').map(Number);
+  const mesi = (y1 - y0) * 12 + (m1 - m0) + 1;
+  const pos = ((ya - y0) * 12 + (ma - m0) + (da - 0.5) / new Date(Date.UTC(ya, ma, 0)).getUTCDate()) / mesi * 100;
+  const oggi = $('.crono__oggi', asse);
+  if (pos >= 0 && pos <= 100) { oggi.style.left = pos.toFixed(3) + '%'; $('.crono__fatto', asse).style.width = pos.toFixed(3) + '%'; }
+  else oggi.hidden = true;
+  // i giorni che mancano a ogni scadenza delle scelte
+  const g0 = giorno(oggiRoma);
+  $$('.crono__scelte [data-entro]').forEach((li) => {
+    const n = Math.round(giorno(li.dataset.entro) - g0);
+    const out = $('[data-mancano]', li);
+    out.textContent = n > 1 ? T.traGiorni.replace('{n}', n) : n === 1 ? T.domani : n === 0 ? T.scadeOggi : T.chiusa;
+    li.classList.toggle('chiusa', n < 0);
+  });
+  // il nastro delle tappe: parte dalla prima non ancora fatta, con una fatta prima
+  const fila = $('.crono__fila');
+  const carte = $$('.crono__tappa', fila);
+  const ora = $('.crono__tappa--ora', fila);
+  const vai = (el, liscio) => { if (el) fila.scrollTo({ left: el.offsetLeft - parseFloat(getComputedStyle(fila).paddingLeft), behavior: liscio && !ridotto ? 'smooth' : 'auto' }); }; // la fila è position: relative
+  const parti = () => vai(ora?.previousElementSibling || ora, false);
+  parti(); addEventListener('load', parti, { once: true });
+  $$('.crono__freccia').forEach((b) => b.addEventListener('click', () => {
+    const passo = (carte[0]?.offsetWidth || 240) + 12;
+    fila.scrollBy({ left: +b.dataset.crono * passo * 2, behavior: ridotto ? 'auto' : 'smooth' });
+  }));
+  $$('.crono__punto', asse).forEach((a) => a.addEventListener('click', (ev) => {
+    const c = document.getElementById('tappa-' + a.dataset.tappa); if (!c) return;
+    ev.preventDefault();
+    carte.forEach((x) => x.classList.toggle('accesa', x === c));
+    vai(c, true);
+  }));
+})();
+// «Ricevi gli aggiornamenti»: il modulo dei contatti con la voce già scelta
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-aggiornamenti]'); if (!b) return;
+  e.preventDefault();
+  const c = $('#info-form input[name="interesse"][value="aggiornamenti"]'); if (c) c.checked = true;
+  $('#contatti').scrollIntoView({ behavior: ridotto ? 'auto' : 'smooth' });
+  setTimeout(() => $('#if-nome')?.focus({ preventScroll: true }), ridotto ? 0 : 600);
 });

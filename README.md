@@ -60,6 +60,13 @@ python3 scripts/opera/genera.py
 (`assets/piante/disegno/`), e un tasto mostra la planimetria ufficiale che verrà allegata all'atto (`assets/piante/atto/`,
 immagine e PDF). Le SVG di `assets/piante/uN.svg`, ridisegnate dall'esecutivo, restano solo per le miniature del confronto.
 
+**I tempi del cantiere** (dal 06/11/2026): `scripts/opera/cantiere.json` è l'unica fonte del cronoprogramma (le tappe
+fatte, quella attesa, le previste; le tre scadenze delle scelte; la data dell'ultimo aggiornamento). Ne nascono la
+sezione «I tempi» (`#tempi`), il capitolo 3D «Il cantiere, mese per mese» (`#costruzione`: un passo per tappa, col
+modello montato a quella fase e il sole di quel mese) e la voce `cronoprogramma` del concierge. Quando una tappa si
+compie o l'impresa rivede il programma: si cambia lì (stato, mese, `aggiornato`), si ritoccano in `testi.py` le frasi
+che la raccontano, si rigenera. «Oggi» sulla linea e i giorni alle scadenze li calcola il browser, sull'ora di Roma.
+
 Una casa venduta o un prezzo cambiato: si modifica `unita.json` e si rigenera. Il concierge lo sa da solo dopo il
 push (il CRM rilegge `conoscenza.json` ogni 15 minuti).
 
@@ -73,7 +80,7 @@ I file 3D (`assets/3d/`) e le piante (`assets/piante/`) nascono da script nella 
 ## La brochure PDF
 
 `assets/pdf/elegie-duino-brochure.pdf` — 12 pagine A4, italiano e inglese — è l'**edizione di ottobre 2026
-rifatta il 17/10** perché dica le stesse cose del sito: superfici del progettista con la veranda compresa,
+rifatta il 17/10** (dal 06/11/2026 «edizione novembre»: la consegna prevista entro giugno 2028, come il cronoprogramma) perché dica le stesse cose del sito: superfici del progettista con la veranda compresa,
 tempi OSRM, nessuna vista mare, fondazioni a travi rovesce, serramenti «a taglio termico», nessuna palette di
 marca, il duplex che non si propone, ogni immagine con la sua etichetta («AI · rendering», «AI», «Foto da
 drone…», «Modello 3D dalle tavole…»; le piante no). A pagina 2 la foto da drone e il modello 3D dallo stesso
