@@ -291,7 +291,8 @@ def data_lunga(L, iso):
 
 def cronoprogramma_html(L, k_tempi):
     """La linea dei tempi (in proporzione, da inizio_asse a fine_asse), le tappe una per una, chi compra passo per
-    passo, le tre scadenze delle scelte, gli aggiornamenti e l'avvertenza. «Oggi» lo rimette il browser (app.js)."""
+    passo, gli aggiornamenti e l'avvertenza. «Oggi» lo rimette il browser (app.js). Le tre scadenze delle scelte di chi
+    compra non sono più sul sito dal 09/11/2026."""
     T = L['tempi']
     a0, a1 = C['inizio_asse'], C['fine_asse']
     def idx(iso): return (int(iso[:4]) - int(a0[:4])) * 12 + int(iso[5:7]) - int(a0[5:7])
@@ -305,9 +306,6 @@ def cronoprogramma_html(L, k_tempi):
     punti = ''.join(
         f'<a class="crono__punto crono__punto--{t["stato"]}" href="#tappa-{t["k"]}" style="left:{pos_mese(t["mese"])}%" data-tappa="{t["k"]}" title="{e(T["tappe"][t["k"]][0])} · {e(T["tappe"][t["k"]][1])}"><span class="sr">{e(T["tappe"][t["k"]][0])} · {e(T["tappe"][t["k"]][1])}</span></a>'
         for t in C['tappe'])
-    rombi = ''.join(
-        f'<span class="crono__rombo" style="left:{pos_giorno(s["entro"])}%" title="{e(T["entro"].format(data=data_lunga(L, s["entro"])))} · {e(T["scelte"][s["k"]][0])}"></span>'
-        for s in C['scelte'])
     anni = f'<span class="crono__anno" style="left:0%">{a0[:4]}</span>' + ''.join(
         f'<span class="crono__anno" style="left:{pos_giorno(f"{y}-01-01")}%">{y}</span>' for y in range(int(a0[:4]) + 1, int(a1[:4]) + 1))
     primo_aperto = next(i for i, t in enumerate(C['tappe']) if t['stato'] != 'fatto')
@@ -319,11 +317,8 @@ def cronoprogramma_html(L, k_tempi):
         carte.append(f'<li class="crono__tappa crono__tappa--{t["stato"]}{ora}" id="tappa-{t["k"]}"><p class="crono__quando">{e(quando)}</p>'
                      f'<span class="chip-stato chip-stato--{t["stato"]}">{e(T["stati"][t["stato"]])}</span><h3 class="crono__titolo">{e(titolo)}</h3>'
                      f'<p>{e(testo.format(v=vendute))}</p>{in3d}</li>')
-    legenda = ''.join(f'<li><i class="crono__seg crono__seg--{k}" aria-hidden="true"></i>{e(T["stati"][k])}</li>' for k in ('fatto', 'atteso', 'previsto', 'scelta'))
+    legenda = ''.join(f'<li><i class="crono__seg crono__seg--{k}" aria-hidden="true"></i>{e(T["stati"][k])}</li>' for k in ('fatto', 'atteso', 'previsto'))
     compra = ''.join(f'<li><span class="crono__quota num{"" if q else " crono__quota--vuota"}">{e(q)}</span><div><h4>{e(ti)}</h4><p>{e(tx)}</p></div></li>' for q, ti, tx in T['compra'])
-    scelte = ''.join(
-        f'<li data-entro="{s["entro"]}"><p class="crono__entro num">{e(T["entro"].format(data=data_lunga(L, s["entro"])))}<span class="crono__mancano" data-mancano></span></p>'
-        f'<h4>{e(T["scelte"][s["k"]][0])}</h4><p>{e(T["scelte"][s["k"]][1])}</p></li>' for s in C['scelte'])
     return f'''<section class="foglio crono" id="tempi" aria-labelledby="tempi-t">
   <div class="foglio__dentro">
     <div class="testata">
@@ -332,7 +327,7 @@ def cronoprogramma_html(L, k_tempi):
     </div>
     <div class="crono__asse rivela" data-da="{a0}" data-a="{a1}" role="group" aria-label="{e(T['asse_aria'])}">
       <div class="crono__linea"><span class="crono__fatto" style="width:{oggi}%"></span></div>
-      {anni}{rombi}{punti}
+      {anni}{punti}
       <span class="crono__oggi" style="left:{oggi}%"><b>{e(L['js']['oggi'])}</b></span>
     </div>
     <ul class="crono__legenda">{legenda}</ul>
@@ -341,10 +336,7 @@ def cronoprogramma_html(L, k_tempi):
       <ol class="crono__fila" aria-label="{e(T['fila_aria'])}" tabindex="0">{''.join(carte)}</ol>
       <button type="button" class="crono__freccia" data-crono="1" aria-label="{e(T['dopo'])}">›</button>
     </div>
-    <div class="crono__due">
-      <div class="crono__compra rivela"><h3 class="h3">{T['compra_t']}</h3><ol>{compra}</ol><p class="nota">{e(T['compra_nota'])}</p></div>
-      <div class="crono__scelte rivela"><h3 class="h3">{T['scelte_t']}</h3><p class="crono__intro">{e(T['scelte_testo'])}</p><ol>{scelte}</ol><p class="nota">{e(T['scelte_dopo'])}</p></div>
-    </div>
+    <div class="crono__compra rivela"><h3 class="h3">{T['compra_t']}</h3><ol>{compra}</ol><p class="nota">{e(T['compra_nota'])}</p></div>
     <div class="crono__agg rivela">
       <div class="crono__agg-testo"><h3 class="h3">{T['agg_t']}</h3><p>{e(T['agg_testo'])}</p><a class="btn btn--scuro" href="#contatti" data-aggiornamenti>{e(T['agg_cta'])}</a></div>
       <div class="crono__avvertenza"><p>{T['avvertenza']}</p><p class="nota">{e(T['aggiornato'].format(data=data_lunga(L, C['aggiornato'])))}</p></div>

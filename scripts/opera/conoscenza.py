@@ -81,12 +81,8 @@ def cronoprogramma():
         'avvertenza': senza_tag(T['avvertenza']),
         'prima_della_revisione': T['revisione'],
         'come_si_dice': "La consegna è «prevista entro giugno 2028»: mai «garantita», mai una data esatta per una casa. Il termine che vale per chi compra è quello scritto nel suo preliminare.",
-        'scelte_di_chi_compra': {
-            'perche': T['scelte_testo'].rstrip(':') + '.',
-            'scadenze': [f"entro il {data_it(s['entro'])}: {T['scelte'][s['k']][0].lower()} — {T['scelte'][s['k']][1]}" for s in C['scelte']],
-            'dopo': T['scelte_dopo'],
-        },
-        'visite_in_cantiere': T['compra'][3][2],
+        # le tre scadenze delle scelte di chi compra non si pubblicano più dal 09/11/2026: il concierge non le conosce
+        'visite_in_cantiere': next(tx for q, ti, tx in T['compra'] if ti == 'Il cantiere, da vicino'),
         'aggiornamenti': T['agg_testo'] + " Per riceverli: il modulo dei contatti del sito, voce «Gli aggiornamenti del cantiere».",
     }
 
@@ -183,14 +179,14 @@ def main():
             'onorario del notaio',
             'condizioni d\'agenzia per chi compra',
             'data esatta del preliminare e del rogito',
-            'personalizzazioni oltre il capitolato: si chiedono per iscritto entro le scadenze delle scelte e si valutano con l\'impresa (l\'iter preciso è in via di definizione)',
+            'tempi e modi delle scelte di finiture e impianti, e delle personalizzazioni oltre il capitolato: si concordano con l\'impresa e li comunichiamo direttamente a chi compra (non diamo date)',
             'potenza dei pannelli fotovoltaici di ogni casa',
             'data esatta del rilascio del permesso di costruire (atteso a metà novembre 2026)',
             'mutui e finanziamenti',
         ],
         'sezioni_del_sito': {
             'le case, le piante e i prezzi (piano per piano)': '#case', 'una casa sola, con pianta e conto': '#unita-N (N = numero della casa)',
-            'il luogo e i tempi a piedi o in auto': '#luogo', 'la luce e il sole': '#luce', 'i tempi del cantiere, i pagamenti e le scelte': '#tempi',
+            'il luogo e i tempi a piedi o in auto': '#luogo', 'la luce e il sole': '#luce', 'i tempi del cantiere e i pagamenti': '#tempi',
             'il cantiere mese per mese, in 3D': '#costruzione', 'chi lo fa': '#chi', 'contatti e brochure': '#contatti',
         },
     }

@@ -667,14 +667,13 @@ $('[data-carica-tour]')?.addEventListener('click', () => {
 });
 
 // ------------------------------------------------------------------ i tempi: il cronoprogramma (06/11/2026)
-// «Oggi» sulla linea dei tempi e i giorni che mancano alle scelte li calcola il browser, sull'ora di Trieste:
+// «Oggi» sulla linea dei tempi lo calcola il browser, sull'ora di Trieste:
 // la pagina non invecchia fra una revisione e l'altra. Le tappe (fatta, attesa, prevista) le scrive genera.py
 // da cantiere.json, con la data dell'ultimo aggiornamento accanto.
 (function cronoprogramma() {
   const asse = $('.crono__asse'); if (!asse) return;
   const oggiRoma = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
   const [ya, ma, da] = oggiRoma.split('-').map(Number);
-  const giorno = (iso) => { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d) / 864e5; };
   const [y0, m0] = asse.dataset.da.split('-').map(Number);
   const [y1, m1] = asse.dataset.a.split('-').map(Number);
   const mesi = (y1 - y0) * 12 + (m1 - m0) + 1;
@@ -682,14 +681,6 @@ $('[data-carica-tour]')?.addEventListener('click', () => {
   const oggi = $('.crono__oggi', asse);
   if (pos >= 0 && pos <= 100) { oggi.style.left = pos.toFixed(3) + '%'; $('.crono__fatto', asse).style.width = pos.toFixed(3) + '%'; }
   else oggi.hidden = true;
-  // i giorni che mancano a ogni scadenza delle scelte
-  const g0 = giorno(oggiRoma);
-  $$('.crono__scelte [data-entro]').forEach((li) => {
-    const n = Math.round(giorno(li.dataset.entro) - g0);
-    const out = $('[data-mancano]', li);
-    out.textContent = n > 1 ? T.traGiorni.replace('{n}', n) : n === 1 ? T.domani : n === 0 ? T.scadeOggi : T.chiusa;
-    li.classList.toggle('chiusa', n < 0);
-  });
   // il nastro delle tappe: parte dalla prima non ancora fatta, con una fatta prima
   const fila = $('.crono__fila');
   const carte = $$('.crono__tappa', fila);

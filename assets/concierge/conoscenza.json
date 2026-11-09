@@ -35,15 +35,6 @@
   "avvertenza": "Sono previsioni, non impegni. Il programma dei lavori è alla prima revisione e il permesso di costruire non è ancora rilasciato: le date possono cambiare, anche in modo significativo, per i tempi del titolo edilizio, per il meteo, le forniture o le imprese. Per chi compra vale il termine di consegna scritto nel suo contratto preliminare.",
   "prima_della_revisione": "Fino a novembre 2026 indicavamo la consegna entro il 2027. La fase dei permessi è stata più lunga del previsto; ora l'impresa ha impostato il programma dei lavori e ogni passo ha la sua data prevista: la consegna delle case e i rogiti sono previsti entro giugno 2028.",
   "come_si_dice": "La consegna è «prevista entro giugno 2028»: mai «garantita», mai una data esatta per una casa. Il termine che vale per chi compra è quello scritto nel suo preliminare.",
-  "scelte_di_chi_compra": {
-   "perche": "Perché il cantiere non rallenti, i materiali di finitura si ordinano in media 45 giorni prima della posa e le porte interne circa 90. Per questo chi compra comunica per iscritto le sue scelte, comprese eventuali richieste fuori capitolato, entro tre date.",
-   "scadenze": [
-    "entro il 28 febbraio 2027: impianti e distribuzione — Prese, punti luce, dati e TV, domotica, attacchi della cucina; eventuali varianti alla distribuzione interna e agli attacchi e scarichi dei bagni.",
-    "entro il 30 giugno 2027: pavimenti, rivestimenti, porte — Rivestimenti dei bagni, gres, parquet delle camere, porte interne con finiture e colori: le porte sono la fornitura più lunga.",
-    "entro il 30 settembre 2027: sanitari e rubinetterie — Se diversi dal capitolato, adatti agli attacchi già eseguiti."
-   ],
-   "dopo": "Dopo ogni scadenza si esegue la dotazione del capitolato; una modifica chiesta più tardi si valuta caso per caso, nei costi, nella tecnica e nei tempi. Come chiedere una variante lo stiamo definendo con l'impresa: lo comunicheremo a chi ha comprato."
-  },
   "visite_in_cantiere": "Le visite in cantiere seguono regole di sicurezza: accessi e calendario li stiamo definendo con l'impresa, e li comunicheremo a chi ha comprato.",
   "aggiornamenti": "Ogni tappa la pubblichiamo qui, con la data e le immagini del cantiere, e la mandiamo per email a chi ha comprato e a chi ce lo chiede. Per riceverli: il modulo dei contatti del sito, voce «Gli aggiornamenti del cantiere»."
  },
@@ -408,7 +399,7 @@
   "onorario del notaio",
   "condizioni d'agenzia per chi compra",
   "data esatta del preliminare e del rogito",
-  "personalizzazioni oltre il capitolato: si chiedono per iscritto entro le scadenze delle scelte e si valutano con l'impresa (l'iter preciso è in via di definizione)",
+  "tempi e modi delle scelte di finiture e impianti, e delle personalizzazioni oltre il capitolato: si concordano con l'impresa e li comunichiamo direttamente a chi compra (non diamo date)",
   "potenza dei pannelli fotovoltaici di ogni casa",
   "data esatta del rilascio del permesso di costruire (atteso a metà novembre 2026)",
   "mutui e finanziamenti"
@@ -418,7 +409,7 @@
   "una casa sola, con pianta e conto": "#unita-N (N = numero della casa)",
   "il luogo e i tempi a piedi o in auto": "#luogo",
   "la luce e il sole": "#luce",
-  "i tempi del cantiere, i pagamenti e le scelte": "#tempi",
+  "i tempi del cantiere e i pagamenti": "#tempi",
   "il cantiere mese per mese, in 3D": "#costruzione",
   "chi lo fa": "#chi",
   "contatti e brochure": "#contatti"

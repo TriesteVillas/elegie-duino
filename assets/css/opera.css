@@ -812,8 +812,6 @@ textarea.fl__in { min-height: 86px; resize: none; }
 .crono__punto--atteso { background: var(--legno-vivo); border-color: var(--legno-vivo); animation: crono-batte 2.4s var(--ease) infinite; }
 @keyframes crono-batte { 0% { box-shadow: 0 0 0 0 rgba(176, 122, 79, .5); } 70%, 100% { box-shadow: 0 0 0 14px rgba(176, 122, 79, 0); } }
 @media (prefers-reduced-motion: reduce) { .crono__punto--atteso { animation: none; } }
-.crono__rombo { position: absolute; top: 80px; width: 10px; height: 10px; margin: -5px 0 0 -5px; transform: rotate(45deg); background: var(--mare); }
-.crono__rombo::before { content: ""; position: absolute; left: 4px; bottom: 7px; width: 1px; height: 18px; transform: rotate(-45deg); transform-origin: bottom; background: rgba(31, 74, 88, .45); }
 .crono__oggi { position: absolute; top: 14px; transform: translateX(-50%); display: grid; justify-items: center; pointer-events: none; }
 .crono__oggi[hidden] { display: none; }
 .crono__oggi b { padding: 5px 8px; border-radius: 4px; background: var(--legno); color: #fff; font: 700 10.5px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
@@ -825,7 +823,6 @@ textarea.fl__in { min-height: 86px; resize: none; }
 .crono__seg { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--legno); background: var(--carta); }
 .crono__seg--fatto { background: var(--inchiostro); border-color: var(--inchiostro); }
 .crono__seg--atteso { background: var(--legno-vivo); border-color: var(--legno-vivo); }
-.crono__seg--scelta { width: 9px; height: 9px; margin: 0 1.5px; border: 0; border-radius: 0; transform: rotate(45deg); background: var(--mare); }
 
 .crono__nastro { position: relative; margin: 0 calc(-1 * var(--gutter)); }
 .crono__fila { position: relative; list-style: none; margin: 0; padding: 30px var(--gutter) 22px; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(236px, 256px); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter); scrollbar-width: thin; scrollbar-color: var(--linea) transparent; overscroll-behavior-x: contain; }
@@ -851,25 +848,28 @@ textarea.fl__in { min-height: 86px; resize: none; }
 .crono__freccia[data-crono="1"] { right: max(6px, calc(var(--gutter) - 22px)); }
 @media (max-width: 700px) { .crono__freccia { display: none; } .crono__fila { grid-auto-columns: minmax(222px, 78vw); } }
 
-.crono__due { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(16px, 2.6vw, 32px); margin-top: clamp(30px, 4.6vw, 56px); }
-.crono__compra, .crono__scelte { padding: clamp(22px, 3vw, 34px); border-radius: 20px; background: var(--bianco); border: 1px solid var(--linea); }
-.crono__due .h3 { margin-bottom: 18px; }
-.crono__compra ol, .crono__scelte ol { list-style: none; margin: 0 0 14px; padding: 0; }
+/* Chi compra, passo per passo: dal 09/11/2026 è solo, a tutta larghezza (le tre scadenze delle scelte non ci sono più).
+   Al telefono i passi vanno in colonna, sul tablet due per riga, al computer tutti in fila con il filo che li unisce. */
+.crono__compra { margin-top: clamp(30px, 4.6vw, 56px); padding: clamp(22px, 3vw, 34px); border-radius: 20px; background: var(--bianco); border: 1px solid var(--linea); }
+.crono__compra .h3 { margin-bottom: 18px; }
+.crono__compra ol { list-style: none; margin: 0 0 14px; padding: 0; }
 .crono h4 { margin: 0 0 4px; font: 600 15.5px/1.3 var(--sans); }
 .crono__compra li { position: relative; display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 14px; padding-bottom: 18px; }
 .crono__compra li::before { content: ""; position: absolute; left: 32px; top: 44px; bottom: 6px; width: 1px; background: var(--linea); }
 .crono__compra li:last-child::before { display: none; }
-.crono__quota { display: grid; place-items: center; width: 64px; height: 40px; border-radius: 999px; background: var(--carta); color: var(--legno); font: 400 24px/1 var(--serif); }
+.crono__quota { position: relative; z-index: 1; display: grid; place-items: center; width: 64px; height: 40px; border-radius: 999px; background: var(--carta); color: var(--legno); font: 400 24px/1 var(--serif); }
 .crono__quota--vuota { width: 14px; height: 14px; margin: 13px 25px; background: var(--carta-3); }
-.crono__compra li p, .crono__scelte li p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--grigio); }
-.crono__intro { font-size: 15px; line-height: 1.55; color: var(--grigio); }
-.crono__scelte li { padding: 16px 0; border-top: 1px solid var(--linea); }
-.crono__scelte li:first-child { border-top: 0; padding-top: 2px; }
-.crono__scelte li p.crono__entro { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0 0 6px; font: 400 23px/1.15 var(--serif); color: var(--mare); }
-.crono__mancano { padding: 4px 8px; border-radius: 999px; background: #e1ebee; color: var(--mare); font: 600 10.5px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; }
-.crono__mancano:empty { display: none; }
-.crono__scelte li.chiusa { opacity: .62; }
-@media (max-width: 900px) { .crono__due { grid-template-columns: 1fr; } }
+.crono__compra li p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--grigio); }
+@media (min-width: 701px) and (max-width: 1100px) {
+  .crono__compra ol { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px 32px; margin-bottom: 20px; }
+  .crono__compra li { padding-bottom: 0; }
+  .crono__compra li::before { display: none; }
+}
+@media (min-width: 1101px) {
+  .crono__compra ol { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 32px; margin-bottom: 22px; }
+  .crono__compra li { grid-template-columns: minmax(0, 1fr); align-content: start; gap: 16px; padding-bottom: 0; }
+  .crono__compra li::before { top: 20px; bottom: auto; left: 32px; right: -64px; width: auto; height: 1px; }
+}
 
 .crono__agg { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 56px); align-items: start; margin-top: clamp(16px, 2.6vw, 32px); padding: clamp(24px, 3.4vw, 40px); border-radius: 20px; background: var(--carta-2); }
 .crono__agg .h3 { margin-bottom: 12px; }
