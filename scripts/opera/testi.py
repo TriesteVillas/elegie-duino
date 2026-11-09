@@ -47,7 +47,7 @@ IT = {
   'p2_kicker': 'Domani · consegna prevista entro giugno 2028', 'p2_titolo': "Al suo posto, l'edificio.",
   'p2_testo': 'Lo abbiamo ricostruito in 3D dai disegni dello Studio Architettura Soldano, fino agli esecutivi di settembre: misure, finestre, verande, orientamento. Il paese intorno è quello vero, dai rilievi della Regione. Il modello è misurato, non generato.',
   'scorri': 'Scorri', 'p1_link': 'Il terreno oggi, in 3D',
-  'novita': ('Novembre 2026', 'Il cronoprogramma del cantiere, mese per mese'),
+  'novita': ('9 novembre 2026', 'Il permesso di costruire è arrivato'),
  },
  'luogo': {
   'kicker': 'Il luogo', 'titolo': 'Il paese, <em>misurato.</em>',
@@ -60,7 +60,7 @@ IT = {
   'testo': "Scorrendo, l'edificio si monta come prevede il programma dei lavori, dal terreno di oggi alle chiavi.",
   # un passo per ogni stato del modello 3D (cantiere.json, passi3d): quando, titolo, testo
   'passi': [
-    ('Novembre 2026', 'Si comincia dal terreno.', "Libero dalle demolizioni di agosto. Il permesso di costruire è atteso a metà novembre, e l'inizio dei lavori è previsto nello stesso mese."),
+    ('Novembre 2026', 'Si comincia dal terreno.', "Libero dalle demolizioni di agosto. Il permesso di costruire è arrivato il 9 novembre, e l'inizio dei lavori è previsto entro la fine del mese."),
     ('Gennaio 2027', 'Le fondazioni.', "Travi rovesce in cemento armato, dimensionate sulla relazione geologica e sul calcolo strutturale; sotto il pavimento del piano terra, un'intercapedine aerata."),
     ('Marzo 2027', 'La struttura in legno.', "Pareti e solai in X-LAM, pannelli di abete a strati incrociati con marcatura CE: l'edificio si vede nella sua forma. Il tetto poggia su travi di legno lamellare; in alcune stanze del primo piano il legno resta a vista."),
     ('Giugno 2027', "L'edificio è chiuso.", "Copertura, serramenti e cappotto. Il cappotto è in lana di roccia, che non brucia (classe A1); le finestre sono a taglio termico, grigio antracite, con doppio vetro stratificato basso emissivo. Il tetto piano, zavorrato con ciottoli di fiume, porterà il fotovoltaico di ciascuna casa."),
@@ -80,14 +80,16 @@ IT = {
  },
  'tempi': {
   'kicker': 'I tempi', 'titolo': 'Consegna prevista <em>entro giugno 2028.</em>',
-  'testo': "Il permesso di costruire è atteso a metà novembre 2026 e l'impresa ha impostato il programma dei lavori: ecco il cantiere passo per passo, dal terreno di oggi alle chiavi.",
+  'testo': "Il permesso di costruire è arrivato il 9 novembre 2026 e l'impresa ha impostato il programma dei lavori: ecco il cantiere passo per passo, dal terreno di oggi alle chiavi.",
+  'traguardo': {'kicker': 'Tappa raggiunta · 9 novembre 2026', 'titolo': 'Il permesso di costruire <em>è arrivato.</em>', 'testo': "Il Comune di Duino Aurisina ha rilasciato il permesso di costruire per Elegie, e il 9 novembre l'impresa ce l'ha consegnato. Era il passaggio che mancava dopo le demolizioni di agosto: ora il cantiere può partire, e l'inizio dei lavori è previsto entro novembre.", 'cta': 'Le prossime tappe'},
   'revisione': "Fino a novembre 2026 indicavamo la consegna entro il 2027. La fase dei permessi è stata più lunga del previsto; ora l'impresa ha impostato il programma dei lavori e ogni passo ha la sua data prevista: la consegna delle case e i rogiti sono previsti entro giugno 2028.",
   'tappe': {
    'paesaggistica': ('Aprile 2026', 'Autorizzazione paesaggistica', 'Rilasciata il 17 aprile 2026.'),
    'vendita': ('Giugno 2026', 'Si aprono le vendite', 'Già vendute: {v} su 8.'),
    'demolizione': ('Agosto 2026', 'Demolita la villa che c’era', 'Il terreno è libero: lo mostrano la foto da drone del 12 agosto e il tour 3D del 15 settembre.'),
    'esecutivi': ('Settembre 2026', 'I disegni esecutivi', 'Quelli dello Studio Architettura Soldano del 3 settembre: il modello 3D di questo sito è ricostruito da questi.'),
-   'permesso': ('Novembre 2026', 'Permesso di costruire e inizio dei lavori', "Il permesso è atteso a metà novembre; l'inizio della costruzione è previsto nello stesso mese."),
+   'permesso': ('Novembre 2026', 'Permesso di costruire', "Rilasciato dal Comune di Duino Aurisina: l'impresa ce l'ha consegnato il 9 novembre 2026."),
+   'inizio': ('Novembre 2026', 'Inizio dei lavori', "Con il permesso in mano, l'inizio della costruzione è previsto entro novembre."),
    'fondazioni': ('Gennaio 2027', 'Fondazioni completate', 'Travi rovesce in cemento armato.'),
    'struttura': ('Marzo 2027', 'Struttura in legno completata', "L'edificio si vede nella sua forma."),
    'chiuso': ('Giugno 2027', 'Edificio chiuso', 'Copertura, serramenti, cappotto.'),
@@ -110,7 +112,7 @@ IT = {
   'agg_t': 'Ve lo raccontiamo, <em>passo per passo.</em>',
   'agg_testo': 'Ogni tappa la pubblichiamo qui, con la data e le immagini del cantiere, e la mandiamo per email a chi ha comprato e a chi ce lo chiede.',
   'agg_cta': 'Ricevi gli aggiornamenti per email',
-  'avvertenza': '<b>Sono previsioni, non impegni.</b> Il programma dei lavori è alla prima revisione e il permesso di costruire non è ancora rilasciato: le date possono cambiare, anche in modo significativo, per i tempi del titolo edilizio, per il meteo, le forniture o le imprese. Per chi compra vale il termine di consegna scritto nel suo contratto preliminare.',
+  'avvertenza': '<b>Sono previsioni, non impegni.</b> Il programma dei lavori è alla prima revisione: le date possono cambiare, anche in modo significativo, per il meteo, le forniture o le imprese. Per chi compra vale il termine di consegna scritto nel suo contratto preliminare.',
   'aggiornato': "Aggiornato il {data}, sulla prima revisione del programma dei lavori dell'impresa.",
   'mesi_lunghi': ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
  },
@@ -349,7 +351,7 @@ EN = {
   'p2_kicker': 'Tomorrow · handover expected by June 2028', 'p2_titolo': 'In its place, the building.',
   'p2_testo': "We rebuilt it in 3D from the drawings of Studio Architettura Soldano, down to the September construction drawings: dimensions, windows, verandas, orientation. The village around it is the real one, from the Region's surveys. The model is measured, not generated.",
   'scorri': 'Scroll', 'p1_link': 'The plot today, in 3D',
-  'novita': ('November 2026', 'The building schedule, month by month'),
+  'novita': ('9 November 2026', 'The building permit has arrived'),
  },
  'luogo': {
   'kicker': 'The place', 'titolo': 'The village, <em>measured.</em>',
@@ -362,7 +364,7 @@ EN = {
   'testo': "As you scroll, the building goes up as planned in the works schedule, from today's plot to the keys.",
   # one step for each state of the 3D model (cantiere.json, passi3d): when, title, text
   'passi': [
-    ('November 2026', 'It starts with the plot.', 'Clear since the demolition in August. The building permit is expected in mid-November, and construction is expected to start the same month.'),
+    ('November 2026', 'It starts with the plot.', 'Clear since the demolition in August. The building permit arrived on 9 November, and construction is expected to start by the end of the month.'),
     ('January 2027', 'The foundations.', 'Reinforced-concrete inverted-T ground beams, sized according to the geological report and the structural calculations; under the ground floor, a ventilated underfloor void.'),
     ('March 2027', 'The timber structure.', 'Walls and floor slabs in X-LAM, cross-laminated spruce panels, CE-marked: the building\'s form can now be seen. The roof rests on glulam beams; in some first-floor rooms the timber is left exposed.'),
     ('June 2027', 'Closed in.', "Roof, windows and external insulation. The insulation is rock wool, which is non-combustible (Euroclass A1); the window frames are thermally broken, in anthracite grey, with laminated low-emissivity double glazing. The flat roof, ballasted with river pebbles, will carry each home's solar panels."),
@@ -382,14 +384,16 @@ EN = {
  },
  'tempi': {
   'kicker': 'Timeline', 'titolo': 'Handover expected <em>by June 2028.</em>',
-  'testo': "The building permit is expected in mid-November 2026 and the builder has drawn up the works schedule: here is the build, step by step, from today's plot to the keys.",
+  'testo': "The building permit arrived on 9 November 2026 and the builder has drawn up the works schedule: here is the build, step by step, from today's plot to the keys.",
+  'traguardo': {'kicker': 'Milestone reached · 9 November 2026', 'titolo': 'The building permit <em>has arrived.</em>', 'testo': 'The Municipality of Duino Aurisina has issued the building permit for Elegie, and on 9 November the builder handed it to us. It was the step still missing after the demolition in August: the build can now begin, and works are expected to start in November.', 'cta': 'The next milestones'},
   'revisione': 'Until November 2026 we indicated handover by the end of 2027. The permit stage took longer than expected; now the builder has drawn up the works schedule and every step has its expected date: the handover of the homes and the signing of the deeds are expected by June 2028.',
   'tappe': {
    'paesaggistica': ('April 2026', 'Landscape authorisation', 'Granted on 17 April 2026.'),
    'vendita': ('June 2026', 'Sales open', 'Already sold: {v} of 8.'),
    'demolizione': ('August 2026', 'The old villa demolished', 'The plot is clear: see the drone photo of 12 August and the 3D tour of 15 September.'),
    'esecutivi': ('September 2026', 'Construction drawings', "Studio Architettura Soldano's drawings of 3 September: the 3D model on this site is rebuilt from them."),
-   'permesso': ('November 2026', 'Building permit and start of works', 'The permit is expected in mid-November; construction is expected to start the same month.'),
+   'permesso': ('November 2026', 'Building permit', 'Issued by the Municipality of Duino Aurisina: the builder handed it to us on 9 November 2026.'),
+   'inizio': ('November 2026', 'Start of works', 'With the permit in hand, construction is expected to start in November.'),
    'fondazioni': ('January 2027', 'Foundations complete', 'Reinforced-concrete inverted-T ground beams.'),
    'struttura': ('March 2027', 'Timber structure complete', "The building's form can now be seen."),
    'chiuso': ('June 2027', 'Building closed in', 'Roof, windows, external insulation.'),
@@ -412,7 +416,7 @@ EN = {
   'agg_t': 'We will tell you, <em>step by step.</em>',
   'agg_testo': 'Every milestone is published here, with its date and pictures of the site, and sent by email to buyers and to anyone who asks.',
   'agg_cta': 'Get the updates by email',
-  'avvertenza': '<b>These are forecasts, not commitments.</b> The works schedule is in its first version and the building permit has not yet been issued: dates may change, even significantly, because of the timing of the building permit, the weather, supplies or contractors. For buyers, what counts is the handover deadline written in their preliminary contract.',
+  'avvertenza': '<b>These are forecasts, not commitments.</b> The works schedule is in its first version: dates may change, even significantly, because of the weather, supplies or contractors. For buyers, what counts is the handover deadline written in their preliminary contract.',
   'aggiornato': "Updated on {data}, based on the first version of the builder's works schedule.",
   'mesi_lunghi': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
  },
@@ -651,7 +655,7 @@ DE = {
   'p2_kicker': 'Morgen · Übergabe voraussichtlich bis Juni 2028', 'p2_titolo': 'An seiner Stelle: das Haus.',
   'p2_testo': 'Wir haben es aus den Plänen des Studio Architettura Soldano in 3D nachgebaut, bis zu den Ausführungsplänen vom September: Maße, Fenster, Veranden, Ausrichtung. Der Ort ringsum ist der echte, aus den Vermessungsdaten der Region. Das Modell ist vermessen, nicht generiert.',
   'scorri': 'Scrollen', 'p1_link': 'Das Grundstück heute, in 3D',
-  'novita': ('November 2026', 'Der Bauzeitenplan, Monat für Monat'),
+  'novita': ('9. November 2026', 'Die Baugenehmigung ist da'),
  },
  'luogo': {
   'kicker': 'Der Ort', 'titolo': 'Der Ort, <em>vermessen.</em>',
@@ -664,7 +668,7 @@ DE = {
   'testo': 'Beim Scrollen entsteht das Haus so, wie es der Bauzeitenplan vorsieht, vom heutigen Grundstück bis zur Schlüsselübergabe.',
   # ein Schritt je Zustand des 3D-Modells (cantiere.json, passi3d): wann, Titel, Text
   'passi': [
-    ('November 2026', 'Es beginnt mit dem Grundstück.', 'Frei seit dem Abriss im August. Die Baugenehmigung wird Mitte November erwartet, der Baubeginn ist für denselben Monat vorgesehen.'),
+    ('November 2026', 'Es beginnt mit dem Grundstück.', 'Frei seit dem Abriss im August. Die Baugenehmigung ist am 9. November eingetroffen, der Baubeginn ist bis Ende des Monats vorgesehen.'),
     ('Januar 2027', 'Das Fundament.', 'Fundamentbalken aus Stahlbeton mit umgekehrtem T-Querschnitt, bemessen nach dem geologischen Gutachten und der Statik; unter dem Erdgeschossboden ein belüfteter Hohlraum.'),
     ('März 2027', 'Das Holztragwerk.', 'Wände und Decken aus X-LAM, kreuzweise verleimte Fichtenplatten mit CE-Kennzeichnung: Jetzt ist die Form des Hauses zu sehen. Das Dach liegt auf Brettschichtholzbalken; in einigen Räumen des Obergeschosses bleibt das Holz sichtbar.'),
     ('Juni 2027', 'Die Gebäudehülle ist geschlossen.', 'Dach, Fenster und Wärmedämmung. Die Dämmung aus Steinwolle ist nicht brennbar (Klasse A1); die Fenster haben thermisch getrennte Rahmen in Anthrazitgrau und eine Zweifach-Wärmeschutzverglasung aus Verbundglas. Das mit Flusskies beschwerte Flachdach wird die Solarmodule jeder Wohnung tragen.'),
@@ -684,14 +688,16 @@ DE = {
  },
  'tempi': {
   'kicker': 'Zeitplan', 'titolo': 'Übergabe voraussichtlich <em>bis Juni 2028.</em>',
-  'testo': 'Die Baugenehmigung wird für Mitte November 2026 erwartet, und der Bauträger hat den Bauzeitenplan aufgestellt: hier die Baustelle Schritt für Schritt, vom heutigen Grundstück bis zur Schlüsselübergabe.',
+  'testo': 'Die Baugenehmigung ist am 9. November 2026 eingetroffen, und der Bauträger hat den Bauzeitenplan aufgestellt: hier die Baustelle Schritt für Schritt, vom heutigen Grundstück bis zur Schlüsselübergabe.',
+  'traguardo': {'kicker': 'Meilenstein erreicht · 9. November 2026', 'titolo': 'Die Baugenehmigung <em>ist da.</em>', 'testo': 'Die Gemeinde Duino Aurisina hat die Baugenehmigung für Elegie erteilt, und am 9. November hat der Bauträger sie uns übergeben. Das war der Schritt, der nach dem Abriss im August noch fehlte: Jetzt kann die Baustelle beginnen, der Baubeginn ist im November vorgesehen.', 'cta': 'Die nächsten Etappen'},
   'revisione': 'Bis November 2026 haben wir die Übergabe bis Ende 2027 angegeben. Das Genehmigungsverfahren hat länger gedauert als erwartet; jetzt hat der Bauträger den Bauzeitenplan aufgestellt, und jeder Schritt hat sein voraussichtliches Datum: Die Übergabe der Wohnungen und die notariellen Kaufverträge sind bis Juni 2028 vorgesehen.',
   'tappe': {
    'paesaggistica': ('April 2026', 'Landschaftsschutzrechtliche Genehmigung', 'Erteilt am 17. April 2026.'),
    'vendita': ('Juni 2026', 'Verkaufsstart', 'Bereits verkauft: {v} von 8.'),
    'demolizione': ('August 2026', 'Die alte Villa abgerissen', 'Das Grundstück ist frei: zu sehen auf dem Drohnenfoto vom 12. August und im 3D-Rundgang vom 15. September.'),
    'esecutivi': ('September 2026', 'Die Ausführungspläne', 'Die Pläne des Studio Architettura Soldano vom 3. September: Das 3D-Modell dieser Seite ist auf ihrer Grundlage rekonstruiert.'),
-   'permesso': ('November 2026', 'Baugenehmigung und Baubeginn', 'Die Genehmigung wird Mitte November erwartet; der Baubeginn ist für denselben Monat vorgesehen.'),
+   'permesso': ('November 2026', 'Baugenehmigung', 'Erteilt von der Gemeinde Duino Aurisina: Der Bauträger hat sie uns am 9. November 2026 übergeben.'),
+   'inizio': ('November 2026', 'Baubeginn', 'Mit der Genehmigung in der Hand ist der Baubeginn im November vorgesehen.'),
    'fondazioni': ('Januar 2027', 'Fundament fertig', 'Fundamentbalken aus Stahlbeton.'),
    'struttura': ('März 2027', 'Holztragwerk fertig', 'Jetzt ist die Form des Hauses zu sehen.'),
    'chiuso': ('Juni 2027', 'Gebäudehülle geschlossen', 'Dach, Fenster, Wärmedämmung.'),
@@ -714,7 +720,7 @@ DE = {
   'agg_t': 'Wir berichten, <em>Schritt für Schritt.</em>',
   'agg_testo': 'Jeden Meilenstein veröffentlichen wir hier, mit Datum und Bildern der Baustelle, und schicken ihn per E-Mail an die Käufer und an alle, die darum bitten.',
   'agg_cta': 'Neuigkeiten per E-Mail erhalten',
-  'avvertenza': '<b>Das sind Prognosen, keine Zusagen.</b> Der Bauzeitenplan liegt in seiner ersten Fassung vor, und die Baugenehmigung ist noch nicht erteilt: Die Termine können sich ändern, auch erheblich, etwa durch die Dauer des Genehmigungsverfahrens, das Wetter, Lieferungen oder die beteiligten Firmen. Für Käufer gilt die Übergabefrist, die in ihrem Vorvertrag steht.',
+  'avvertenza': '<b>Das sind Prognosen, keine Zusagen.</b> Der Bauzeitenplan liegt in seiner ersten Fassung vor: Die Termine können sich ändern, auch erheblich, etwa durch das Wetter, Lieferungen oder die beteiligten Firmen. Für Käufer gilt die Übergabefrist, die in ihrem Vorvertrag steht.',
   'aggiornato': 'Stand: {data}, auf Grundlage der ersten Fassung des Bauzeitenplans des Bauträgers.',
   'mesi_lunghi': ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'],
  },
@@ -953,7 +959,7 @@ SL = {
   'p2_kicker': 'Jutri · predaja predvidoma do junija 2028', 'p2_titolo': 'Na njegovem mestu stavba.',
   'p2_testo': 'Stavbo smo v 3D obnovili iz načrtov biroja Studio Architettura Soldano, vse do izvedbenih načrtov iz septembra: mere, okna, verande, orientacija. Vas okoli nje je resnična, iz meritev Dežele. Model je izmerjen, ne generiran.',
   'scorri': 'Pomaknite', 'p1_link': 'Zemljišče danes, v 3D',
-  'novita': ('November 2026', 'Terminski načrt gradbišča, mesec za mesecem'),
+  'novita': ('9. november 2026', 'Gradbeno dovoljenje je prispelo'),
  },
  'luogo': {
   'kicker': 'Kraj', 'titolo': 'Vas, <em>izmerjena.</em>',
@@ -966,7 +972,7 @@ SL = {
   'testo': 'Ko se pomikate, se stavba sestavlja tako, kot predvideva terminski načrt del, od današnjega zemljišča do ključev.',
   # en korak za vsako stanje 3D-modela (cantiere.json, passi3d): kdaj, naslov, besedilo
   'passi': [
-    ('November 2026', 'Začne se z zemljiščem.', 'Zemljišče je prosto od avgustovske rušitve. Gradbeno dovoljenje pričakujemo sredi novembra, začetek gradnje je predviden v istem mesecu.'),
+    ('November 2026', 'Začne se z zemljiščem.', 'Zemljišče je prosto od avgustovske rušitve. Gradbeno dovoljenje je prispelo 9. novembra, začetek gradnje je predviden do konca meseca.'),
     ('Januar 2027', 'Temelji.', 'Armiranobetonske temeljne grede z obrnjenim T-prerezom, dimenzionirane po geološkem poročilu in statičnem izračunu; pod tlemi pritličja je prezračevan medprostor.'),
     ('Marec 2027', 'Lesena konstrukcija.', 'Stene in stropovi iz lesa X-LAM, križno lepljene smrekove plošče z oznako CE: stavba že kaže svojo obliko. Streha sloni na nosilcih iz lepljenega lameliranega lesa; v nekaterih sobah v nadstropju les ostane viden.'),
     ('Junij 2027', 'Ovoj stavbe je zaprt.', 'Streha, okna in toplotna izolacija. Izolacija iz kamene volne je negorljiva (razred A1); okna s prekinjenim toplotnim mostom so antracitno sive barve, z lepljeno nizkoemisijsko dvojno zasteklitvijo. Ravna streha, obtežena z rečnimi prodniki, bo nosila sončne panele vsakega stanovanja.'),
@@ -986,14 +992,16 @@ SL = {
  },
  'tempi': {
   'kicker': 'Časovnica', 'titolo': 'Predaja predvidoma <em>do junija 2028.</em>',
-  'testo': 'Gradbeno dovoljenje pričakujemo sredi novembra 2026, investitor pa je pripravil terminski načrt del: tu je gradbišče korak za korakom, od današnjega zemljišča do ključev.',
+  'testo': 'Gradbeno dovoljenje je prispelo 9. novembra 2026, investitor pa je pripravil terminski načrt del: tu je gradbišče korak za korakom, od današnjega zemljišča do ključev.',
+  'traguardo': {'kicker': 'Dosežen mejnik · 9. november 2026', 'titolo': 'Gradbeno dovoljenje <em>je prispelo.</em>', 'testo': 'Občina Devin Nabrežina je izdala gradbeno dovoljenje za Elegie, investitor pa nam ga je predal 9. novembra. To je bil korak, ki je manjkal po avgustovski rušitvi: zdaj se gradbišče lahko začne, začetek del je predviden v novembru.', 'cta': 'Naslednji mejniki'},
   'revisione': 'Do novembra 2026 smo navajali predajo do konca leta 2027. Postopek za dovoljenja je trajal dlje od pričakovanega; zdaj je investitor pripravil terminski načrt del in vsak korak ima svoj predvideni datum: predaja stanovanj in kupne pogodbe so predvidene do junija 2028.',
   'tappe': {
    'paesaggistica': ('April 2026', 'Krajinsko dovoljenje', 'Izdano 17. aprila 2026.'),
    'vendita': ('Junij 2026', 'Začetek prodaje', 'Že prodano: {v} od 8.'),
    'demolizione': ('Avgust 2026', 'Porušena stara vila', 'Zemljišče je prosto: to kažeta fotografija z drona z 12. avgusta in 3D-ogled s 15. septembra.'),
    'esecutivi': ('September 2026', 'Izvedbeni načrti', 'Načrti Studia Architettura Soldano s 3. septembra: 3D-model na tej strani je narejen po njih.'),
-   'permesso': ('November 2026', 'Gradbeno dovoljenje in začetek del', 'Dovoljenje pričakujemo sredi novembra; začetek gradnje je predviden v istem mesecu.'),
+   'permesso': ('November 2026', 'Gradbeno dovoljenje', 'Izdala ga je Občina Devin Nabrežina: investitor nam ga je predal 9. novembra 2026.'),
+   'inizio': ('November 2026', 'Začetek del', 'Z dovoljenjem v rokah je začetek gradnje predviden v novembru.'),
    'fondazioni': ('Januar 2027', 'Temelji končani', 'Armiranobetonske temeljne grede.'),
    'struttura': ('Marec 2027', 'Lesena konstrukcija končana', 'Stavba že kaže svojo obliko.'),
    'chiuso': ('Junij 2027', 'Ovoj stavbe zaprt', 'Streha, okna, toplotna izolacija.'),
@@ -1016,7 +1024,7 @@ SL = {
   'agg_t': 'Poročali bomo, <em>korak za korakom.</em>',
   'agg_testo': 'Vsak mejnik objavimo tukaj, z datumom in slikami gradbišča, in ga pošljemo po e-pošti kupcem in vsem, ki to želijo.',
   'agg_cta': 'Prejemajte novice po e-pošti',
-  'avvertenza': '<b>To so napovedi, ne zaveze.</b> Terminski načrt del je v prvi različici in gradbeno dovoljenje še ni izdano: datumi se lahko spremenijo, tudi občutno, zaradi trajanja postopka za gradbeno dovoljenje, vremena, dobav ali izvajalcev. Za kupce velja rok predaje, zapisan v njihovi predpogodbi.',
+  'avvertenza': '<b>To so napovedi, ne zaveze.</b> Terminski načrt del je v prvi različici: datumi se lahko spremenijo, tudi občutno, zaradi vremena, dobav ali izvajalcev. Za kupce velja rok predaje, zapisan v njihovi predpogodbi.',
   'aggiornato': 'Posodobljeno {data}, na podlagi prve različice terminskega načrta investitorja.',
   'mesi_lunghi': ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december'],
  },

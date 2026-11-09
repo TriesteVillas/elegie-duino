@@ -319,12 +319,17 @@ def cronoprogramma_html(L, k_tempi):
                      f'<p>{e(testo.format(v=vendute))}</p>{in3d}</li>')
     legenda = ''.join(f'<li><i class="crono__seg crono__seg--{k}" aria-hidden="true"></i>{e(T["stati"][k])}</li>' for k in ('fatto', 'atteso', 'previsto'))
     compra = ''.join(f'<li><span class="crono__quota num{"" if q else " crono__quota--vuota"}">{e(q)}</span><div><h4>{e(ti)}</h4><p>{e(tx)}</p></div></li>' for q, ti, tx in T['compra'])
+    # La tappa appena raggiunta (09/11/2026, il permesso di costruire): un riquadro in testa alla sezione, a cui porta la pillola della testata.
+    tr = T.get('traguardo')
+    traguardo = (f'<div class="crono__traguardo rivela" id="traguardo"><p class="kicker">{e(tr["kicker"])}</p><h3 class="h3">{tr["titolo"]}</h3>'
+                 f'<p>{e(tr["testo"])}</p><a class="vai" href="#tappa-inizio">{e(tr["cta"])} →</a></div>') if tr else ''
     return f'''<section class="foglio crono" id="tempi" aria-labelledby="tempi-t">
   <div class="foglio__dentro">
     <div class="testata">
       <div class="rivela"><p class="kicker">{k_tempi}</p><h2 class="h2" id="tempi-t">{T['titolo']}</h2></div>
       <div class="rivela"><p class="lede">{e(T['testo'])}</p><p class="crono__revisione">{e(T['revisione'])}</p></div>
     </div>
+    {traguardo}
     <div class="crono__asse rivela" data-da="{a0}" data-a="{a1}" role="group" aria-label="{e(T['asse_aria'])}">
       <div class="crono__linea"><span class="crono__fatto" style="width:{oggi}%"></span></div>
       {anni}{punti}
@@ -548,7 +553,7 @@ def pagina(L):
     <div class="apertura__velo"></div>
     <span class="etichetta-foto" title="{e(A['etichetta_foto_titolo'])}">{e(A['etichetta_foto'])}</span>
     <div class="apertura__testo">
-      <a class="novita" href="#tempi"><b>{e(A['novita'][0])}</b><span>{e(A['novita'][1])}</span><i aria-hidden="true">→</i></a>
+      <a class="novita" href="#{"traguardo" if L["tempi"].get("traguardo") else "tempi"}"><b>{e(A['novita'][0])}</b><span>{e(A['novita'][1])}</span><i aria-hidden="true">→</i></a>
       <p class="kicker">{e(A['kicker'])}</p>
       <div class="apertura__titolo">
         <h1 class="h-display">Elegie<span class="sr"> Duino — {e(A['sr_titolo'])}</span></h1>

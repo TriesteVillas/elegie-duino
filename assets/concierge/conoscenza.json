@@ -1,6 +1,6 @@
 {
  "_che_cosa_e": "I fatti pubblici di Elegie Duino, gli stessi del sito elegieduino.it, per il concierge AI. Generato da scripts/opera/conoscenza.py.",
- "aggiornato": "2026-11-06",
+ "aggiornato": "2026-11-09",
  "sito": "https://elegieduino.it/ (italiano), /en/, /de/, /sl/",
  "progetto": {
   "nome": "Elegie Duino",
@@ -16,14 +16,15 @@
   "duplex": "Non si propongono accorpamenti fra le case."
  },
  "cronoprogramma": {
-  "aggiornato_al": "6 novembre 2026",
+  "aggiornato_al": "9 novembre 2026",
   "che_cosa_e": "Il programma dei lavori dell'impresa, alla prima revisione, con le tappe già fatte prima. Sul sito: sezione «I tempi» e il capitolo 3D «Il cantiere, mese per mese».",
   "tappe": [
    "Aprile 2026: Autorizzazione paesaggistica — Rilasciata il 17 aprile 2026. [fatto]",
    "Giugno 2026: Si aprono le vendite — Già vendute: 2 su 8. [fatto]",
    "Agosto 2026: Demolita la villa che c’era — Il terreno è libero: lo mostrano la foto da drone del 12 agosto e il tour 3D del 15 settembre. [fatto]",
    "Settembre 2026: I disegni esecutivi — Quelli dello Studio Architettura Soldano del 3 settembre: il modello 3D di questo sito è ricostruito da questi. [fatto]",
-   "Novembre 2026: Permesso di costruire e inizio dei lavori — Il permesso è atteso a metà novembre; l'inizio della costruzione è previsto nello stesso mese. [atteso]",
+   "Novembre 2026: Permesso di costruire — Rilasciato dal Comune di Duino Aurisina: l'impresa ce l'ha consegnato il 9 novembre 2026. [fatto]",
+   "Novembre 2026: Inizio dei lavori — Con il permesso in mano, l'inizio della costruzione è previsto entro novembre. [atteso]",
    "Gennaio 2027: Fondazioni completate — Travi rovesce in cemento armato. [previsto (non è un impegno)]",
    "Marzo 2027: Struttura in legno completata — L'edificio si vede nella sua forma. [previsto (non è un impegno)]",
    "Giugno 2027: Edificio chiuso — Copertura, serramenti, cappotto. [previsto (non è un impegno)]",
@@ -32,7 +33,8 @@
    "Aprile 2028: Fine dei lavori e collaudi — La fine dei lavori è prevista per il 30 aprile 2028. [previsto (non è un impegno)]",
    "Entro giugno 2028: Consegna e rogiti — Le chiavi delle case, con il rogito dal notaio. [previsto (non è un impegno)]"
   ],
-  "avvertenza": "Sono previsioni, non impegni. Il programma dei lavori è alla prima revisione e il permesso di costruire non è ancora rilasciato: le date possono cambiare, anche in modo significativo, per i tempi del titolo edilizio, per il meteo, le forniture o le imprese. Per chi compra vale il termine di consegna scritto nel suo contratto preliminare.",
+  "avvertenza": "Sono previsioni, non impegni. Il programma dei lavori è alla prima revisione: le date possono cambiare, anche in modo significativo, per il meteo, le forniture o le imprese. Per chi compra vale il termine di consegna scritto nel suo contratto preliminare.",
+  "ultima_tappa_raggiunta": "Tappa raggiunta · 9 novembre 2026 — Il permesso di costruire è arrivato. Il Comune di Duino Aurisina ha rilasciato il permesso di costruire per Elegie, e il 9 novembre l'impresa ce l'ha consegnato. Era il passaggio che mancava dopo le demolizioni di agosto: ora il cantiere può partire, e l'inizio dei lavori è previsto entro novembre.",
   "prima_della_revisione": "Fino a novembre 2026 indicavamo la consegna entro il 2027. La fase dei permessi è stata più lunga del previsto; ora l'impresa ha impostato il programma dei lavori e ogni passo ha la sua data prevista: la consegna delle case e i rogiti sono previsti entro giugno 2028.",
   "come_si_dice": "La consegna è «prevista entro giugno 2028»: mai «garantita», mai una data esatta per una casa. Il termine che vale per chi compra è quello scritto nel suo preliminare.",
   "visite_in_cantiere": "Le visite in cantiere seguono regole di sicurezza: accessi e calendario li stiamo definendo con l'impresa, e li comunicheremo a chi ha comprato.",

@@ -5,9 +5,10 @@
   "consegna": "Decisione dell'agenzia del 06/11/2026: consegna «entro giugno 2028», come scrive l'impresa (prima il sito diceva «entro il 2027»).",
   "paesaggistica": "Fac-simile della proposta irrevocabile (Drive Vendite/2026 TRIESTEVILLAS/ELEGIE DUINO/CONTRATTI:OPZIONI:FAC-SIMILI): «autorizzazione Paesaggistica rilasciata in data 17/04/2026».",
   "vendita_demolizione": "Agenzia, 06/11/2026: vendite da giugno, demolizione della villa preesistente ad agosto; foto da drone del lotto libero del 12/08/2026, tour Matterport del 15/09/2026.",
+  "permesso": "Permesso di costruire del Comune di Duino Aurisina per l'edificio di Duino 69/A, consegnato dall'impresa all'agenzia il 09/11/2026 (copia in Drive, cartella delle vendite di Elegie).",
   "esecutivi": "Esecutivo dello Studio Architettura Soldano del 03/09/2026 (KB progetti/elegie-duino/ESECUTIVO-2026-10-18.md)."
  },
- "aggiornato": "2026-11-06",
+ "aggiornato": "2026-11-09",
  "inizio_asse": "2026-04",
  "fine_asse": "2028-06",
  "tappe": [
@@ -15,7 +16,8 @@
   {"k": "vendita", "mese": "2026-06", "stato": "fatto"},
   {"k": "demolizione", "mese": "2026-08", "stato": "fatto"},
   {"k": "esecutivi", "mese": "2026-09", "stato": "fatto"},
-  {"k": "permesso", "mese": "2026-11", "stato": "atteso", "passo3d": 0},
+  {"k": "permesso", "mese": "2026-11", "stato": "fatto"},
+  {"k": "inizio", "mese": "2026-11", "stato": "atteso", "passo3d": 0},
   {"k": "fondazioni", "mese": "2027-01", "stato": "previsto", "passo3d": 1},
   {"k": "struttura", "mese": "2027-03", "stato": "previsto", "passo3d": 2},
   {"k": "chiuso", "mese": "2027-06", "stato": "previsto", "passo3d": 3},

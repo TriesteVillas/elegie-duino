@@ -79,6 +79,7 @@ def cronoprogramma():
         'che_cosa_e': "Il programma dei lavori dell'impresa, alla prima revisione, con le tappe già fatte prima. Sul sito: sezione «I tempi» e il capitolo 3D «Il cantiere, mese per mese».",
         'tappe': [f"{T['tappe'][t['k']][0]}: {T['tappe'][t['k']][1]} — {T['tappe'][t['k']][2].format(v=vendute)} [{stato[t['stato']]}]" for t in C['tappe']],
         'avvertenza': senza_tag(T['avvertenza']),
+        'ultima_tappa_raggiunta': (senza_tag(T['traguardo']['kicker']) + ' — ' + senza_tag(T['traguardo']['titolo']) + ' ' + T['traguardo']['testo']) if T.get('traguardo') else '',
         'prima_della_revisione': T['revisione'],
         'come_si_dice': "La consegna è «prevista entro giugno 2028»: mai «garantita», mai una data esatta per una casa. Il termine che vale per chi compra è quello scritto nel suo preliminare.",
         # le tre scadenze delle scelte di chi compra non si pubblicano più dal 09/11/2026: il concierge non le conosce
