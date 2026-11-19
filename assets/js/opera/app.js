@@ -479,6 +479,8 @@ function valori(form) {
   const scelti = (nome) => $$(`input[name="${nome}"]:checked`, form);
   const interessi = scelti('interesse').map((c) => c.dataset.testo);
   const case_ = scelti('casa').map((c) => c.value);
+  // «Gli aggiornamenti del cantiere» (19/11/2026): un campo a sé, che il CRM legge per la lista di chi li riceve.
+  v.aggiornamenti = scelti('interesse').some((c) => c.value === 'aggiornamenti');
   if (interessi.length) righe.push(D.contatto.msg_interessi.replace('{x}', interessi.join(', ')));
   if (case_.length) righe.push(D.contatto.msg_case.replace('{x}', case_.join(', ')));
   const testo = el.messaggio?.value.trim() || '';
@@ -495,7 +497,7 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
   const testoBtn = etichetta.textContent;
   const MSG = T.moduli;
   // l'errore sul recapito si mostra sul campo che c'è: il recapito unico, o l'email
-  const campoDi = (k) => (['email', 'telefono', 'recapito'].includes(k) && campo('recapito')) ? 'recapito' : (k === 'recapito' ? 'email' : k);
+  const campoDi = (k) => (['email', 'telefono', 'recapito', 'aggiornamenti'].includes(k) && campo('recapito')) ? 'recapito' : (k === 'recapito' || k === 'aggiornamenti' ? 'email' : k);
   const pulisci = () => { errEl.classList.remove('visibile'); errEl.textContent = ''; ['nome', 'email', 'telefono', 'recapito', 'messaggio', 'privacy'].forEach((n) => campo(n) && campo(n).removeAttribute('aria-invalid')); };
   const errore = (k, conPdf) => {
     errEl.textContent = MSG[k] || MSG.rete;
@@ -508,6 +510,8 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
     if (emailObbligatoria ? !EMAIL.test(v.email) : (v.email && !EMAIL.test(v.email))) return 'email';
     if (v.telefono && (!/^[0-9+().\s\/-]{6,40}$/.test(v.telefono) || cifre(v.telefono) < 6 || cifre(v.telefono) > 16)) return 'telefono';
     if (!emailObbligatoria && !v.email && !v.telefono) return 'recapito';
+    // le tappe del cantiere arrivano per email: con la voce spuntata, il telefono da solo non basta
+    if (v.aggiornamenti && !EMAIL.test(v.email)) return 'aggiornamenti';
     if (v.testoLibero && v.testoLibero.length > 1800) return 'messaggio';
     if (!campo('privacy').checked) return 'privacy';
     return null;
@@ -524,6 +528,7 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
     dati.set('telefono', v.telefono);
     if (campo('messaggio') || v.messaggio) dati.set('messaggio', v.messaggio);
     dati.set('privacy', 'si');
+    if (v.aggiornamenti) dati.set('aggiornamenti', 'si');
     dati.set('lingua', LINGUA);
     dati.set('pagina', location.pathname);
     if (window.edProvenienza) { const pv = window.edProvenienza(); if (pv) dati.set('provenienza', pv); }
