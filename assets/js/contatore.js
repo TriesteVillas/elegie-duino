@@ -46,6 +46,9 @@
 
   function contaPagina() {
     try {
+      // «Non contare le mie visite» (dal 22/11/2026, Grillo L-60 (b)): solo `nc=1`, che il CRM tiene a parte
+      // (righe `escluso`, per paese), senza percorso né provenienza.
+      if (nonContarmi()) { spedisci({ nc: "1" }); return; }
       var p = { p: location.pathname.slice(0, 600) };
       var ref = "";
       try { ref = document.referrer ? senzaWww(new URL(document.referrer).hostname) : ""; } catch (e) { ref = ""; }
@@ -61,7 +64,6 @@
           else if (q.has("fbclid")) p.c = "meta";
         } catch (e) { /* senza provenienza */ }
       }
-      if (nonContarmi()) p.nc = "1";
       spedisci(p);
     } catch (e) {
       /* niente conteggio */
@@ -72,7 +74,7 @@
   function contaEvento(nome) {
     try {
       var e = String(nome || "").toLowerCase().replace(/[^a-z0-9_:.-]/g, "-").slice(0, 60);
-      if (e) spedisci({ e: e });
+      if (e) spedisci(nonContarmi() ? { e: e, nc: "1" } : { e: e });
     } catch (err) { /* niente */ }
   }
   // Per i moduli della pagina: dopo una richiesta accettata dal CRM (dove parte generate_lead).
@@ -101,19 +103,20 @@
 
   // «Non contare le mie visite» / «Contatele di nuovo» (informativa privacy):
   // la scelta si salva in questo browser, perché un cookie di questo sito non
-  // arriverebbe al CRM. Da allora la pagina manda `nc=1` e il CRM non calcola
-  // l'impronta: le pagine restano nei totali, che non sono dati personali.
+  // arriverebbe al CRM. Da allora (22/11/2026, Grillo L-60 (b)) la pagina manda
+  // solo `nc=1` e il CRM tiene il browser a parte (righe `escluso`): le sue pagine
+  // e i suoi clic non entrano nelle statistiche (prima toglieva solo l'impronta).
   var ESITO = {
-    it: { no: "Fatto: da ora le visite da questo browser non entrano nel conteggio dei visitatori unici di questo sito.",
+    it: { no: "Fatto: da ora le visite da questo browser non entrano nelle statistiche di questo sito. Ne resta soltanto un conteggio a parte, senza l'indirizzo delle pagine, la provenienza o un codice del visitatore.",
           si: "Fatto: le visite da questo browser tornano a essere contate, in forma anonima e aggregata.",
           errore: "Non è stato possibile salvare la scelta in questo browser (la memoria del sito è bloccata)." },
-    en: { no: "Done: from now on visits from this browser are not included in this site's count of unique visitors.",
+    en: { no: "Done: from now on visits from this browser are not included in this site's statistics. Only a separate count remains, without the page addresses, the source or a visitor code.",
           si: "Done: visits from this browser are counted again, anonymously and in aggregate.",
           errore: "Your choice could not be saved in this browser (site storage is blocked)." },
-    de: { no: "Erledigt: Ab jetzt zählen Besuche aus diesem Browser nicht mehr zu den eindeutigen Besuchern dieser Website.",
+    de: { no: "Erledigt: Besuche aus diesem Browser fließen ab jetzt nicht mehr in die Statistik dieser Website ein. Es bleibt nur eine getrennte Zählung, ohne Seitenadressen, Herkunft oder Besuchercode.",
           si: "Erledigt: Besuche aus diesem Browser werden wieder gezählt, anonym und zusammengefasst.",
           errore: "Ihre Wahl konnte in diesem Browser nicht gespeichert werden (der Website-Speicher ist blockiert)." },
-    sl: { no: "Opravljeno: od zdaj obiski iz tega brskalnika ne štejejo v število edinstvenih obiskovalcev te spletne strani.",
+    sl: { no: "Opravljeno: obiski iz tega brskalnika se odslej ne štejejo v statistiko te spletne strani. Ostane le ločeno štetje, brez naslovov strani, izvora ali kode obiskovalca.",
           si: "Opravljeno: obiski iz tega brskalnika se znova štejejo, anonimno in zbirno.",
           errore: "Vaše izbire ni bilo mogoče shraniti v tem brskalniku (shramba spletne strani je blokirana)." }
   };
