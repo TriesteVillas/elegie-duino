@@ -10,14 +10,14 @@
   var CHIAVE = "ed_consenso_v1";
   var lingua = (document.documentElement.lang || "it").slice(0, 2);
   var TESTI = {
-    it: { testo: "Usiamo cookie tecnici e, solo se acconsenti, cookie di statistica (Google Analytics) per capire come viene usato il sito. Nessuna pubblicità, nessuna profilazione.",
-          accetta: "Accetta", rifiuta: "Solo necessari", privacy: "Privacy e cookie", aria: "Consenso ai cookie" },
-    en: { testo: "We use technical cookies and, only with your consent, statistics cookies (Google Analytics) to understand how the site is used. No advertising, no profiling.",
-          accetta: "Accept", rifiuta: "Essential only", privacy: "Privacy and cookies", aria: "Cookie consent" },
-    de: { testo: "Wir verwenden technische Cookies und, nur mit Ihrer Einwilligung, Statistik-Cookies (Google Analytics), um zu verstehen, wie die Website genutzt wird. Keine Werbung, kein Profiling.",
-          accetta: "Akzeptieren", rifiuta: "Nur notwendige", privacy: "Datenschutz und Cookies", aria: "Cookie-Einwilligung" },
-    sl: { testo: "Uporabljamo tehnične piškotke in – samo z vašim soglasjem – statistične piškotke (Google Analytics), da razumemo, kako se spletna stran uporablja. Brez oglasov, brez profiliranja.",
-          accetta: "Sprejmem", rifiuta: "Samo nujni", privacy: "Zasebnost in piškotki", aria: "Soglasje za piškotke" }
+    it: { testo: "Questo sito non scrive cookie propri. Solo se acconsenti, usa i cookie di statistica (Google Analytics) per capire come viene usato. Nessuna pubblicità, nessuna profilazione.",
+          accetta: "Accetta", rifiuta: "Rifiuta", privacy: "Privacy e cookie", aria: "Consenso ai cookie" },
+    en: { testo: "This site sets no cookies of its own. Only if you consent does it use statistics cookies (Google Analytics) to understand how it is used. No advertising, no profiling.",
+          accetta: "Accept", rifiuta: "Decline", privacy: "Privacy and cookies", aria: "Cookie consent" },
+    de: { testo: "Diese Website setzt keine eigenen Cookies. Nur mit Ihrer Einwilligung nutzt sie Statistik-Cookies (Google Analytics), um zu verstehen, wie sie genutzt wird. Keine Werbung, kein Profiling.",
+          accetta: "Akzeptieren", rifiuta: "Ablehnen", privacy: "Datenschutz und Cookies", aria: "Cookie-Einwilligung" },
+    sl: { testo: "Ta spletna stran ne zapisuje lastnih piškotkov. Samo z vašim soglasjem uporablja statistične piškotke (Google Analytics), da razumemo, kako se uporablja. Brez oglasov, brez profiliranja.",
+          accetta: "Sprejmem", rifiuta: "Zavrni", privacy: "Zasebnost in piškotki", aria: "Soglasje za piškotke" }
   };
   var T = TESTI[lingua] || TESTI.it;
 
