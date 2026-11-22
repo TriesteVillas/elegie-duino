@@ -8,8 +8,9 @@
 
    Senza cookie e senza consenso (livelli 1 e 2): il CRM conta la pagina per
    giorno e calcola da sé l'impronta del giorno dei visitatori unici, e non la
-   calcola se il browser manda il segnale GPC o se qui si è scelto «Non contare
-   le mie visite» (`nc=1`). Il sito si riconosce dal dominio della pagina
+   calcola se il browser manda il segnale GPC. Se qui si è scelto «Non contare
+   le mie visite», dal 22/11/2026 la pagina manda solo `nc=1` e il CRM tiene il
+   browser a parte (righe `escluso`). Il sito si riconosce dal dominio della pagina
    (intestazione Referer, che il browser manda con l'origine).
    ⛔ Mai la query intera, mai l'indirizzo completo della pagina di provenienza:
    del referrer solo il dominio, delle UTM solo sorgente e mezzo, di un clic da
@@ -107,16 +108,16 @@
   // solo `nc=1` e il CRM tiene il browser a parte (righe `escluso`): le sue pagine
   // e i suoi clic non entrano nelle statistiche (prima toglieva solo l'impronta).
   var ESITO = {
-    it: { no: "Fatto: da ora le visite da questo browser non entrano nelle statistiche di questo sito. Ne resta soltanto un conteggio a parte, senza l'indirizzo delle pagine, la provenienza o un codice del visitatore.",
+    it: { no: "Fatto: da ora le visite da questo browser non entrano nelle statistiche di questo sito. Ne resta soltanto un conteggio a parte, senza l'indirizzo delle pagine, la provenienza o il codice giornaliero.",
           si: "Fatto: le visite da questo browser tornano a essere contate, in forma anonima e aggregata.",
           errore: "Non è stato possibile salvare la scelta in questo browser (la memoria del sito è bloccata)." },
-    en: { no: "Done: from now on visits from this browser are not included in this site's statistics. Only a separate count remains, without the page addresses, the source or a visitor code.",
+    en: { no: "Done: from now on visits from this browser are not included in this site's statistics. Only a separate count remains, without the page addresses, the source or the daily code.",
           si: "Done: visits from this browser are counted again, anonymously and in aggregate.",
           errore: "Your choice could not be saved in this browser (site storage is blocked)." },
-    de: { no: "Erledigt: Besuche aus diesem Browser fließen ab jetzt nicht mehr in die Statistik dieser Website ein. Es bleibt nur eine getrennte Zählung, ohne Seitenadressen, Herkunft oder Besuchercode.",
+    de: { no: "Erledigt: Besuche aus diesem Browser fließen ab jetzt nicht mehr in die Statistik dieser Website ein. Es bleibt nur eine getrennte Zählung, ohne Seitenadressen, Herkunft oder Tagescode.",
           si: "Erledigt: Besuche aus diesem Browser werden wieder gezählt, anonym und zusammengefasst.",
           errore: "Ihre Wahl konnte in diesem Browser nicht gespeichert werden (der Website-Speicher ist blockiert)." },
-    sl: { no: "Opravljeno: obiski iz tega brskalnika se odslej ne štejejo v statistiko te spletne strani. Ostane le ločeno štetje, brez naslovov strani, izvora ali kode obiskovalca.",
+    sl: { no: "Opravljeno: obiski iz tega brskalnika se odslej ne upoštevajo v statistiki te spletne strani. Ostane le ločeno štetje, brez naslovov strani, vira obiska ali dnevne kode.",
           si: "Opravljeno: obiski iz tega brskalnika se znova štejejo, anonimno in zbirno.",
           errore: "Vaše izbire ni bilo mogoče shraniti v tem brskalniku (shramba spletne strani je blokirana)." }
   };
