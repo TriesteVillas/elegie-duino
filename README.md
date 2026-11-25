@@ -67,6 +67,12 @@ modello montato a quella fase e il sole di quel mese) e la voce `cronoprogramma`
 compie o l'impresa rivede il programma: si cambia lì (stato, mese, `aggiornato`), si ritoccano in `testi.py` le frasi
 che la raccontano, si rigenera. «Oggi» sulla linea e i giorni alle scadenze li calcola il browser, sull'ora di Roma.
 
+**L'informativa (contratto INF-1, dal 25/11/2026).** Chi cambia una `privacy.html` (in qualunque lingua) alza
+`VERSIONE_INFORMATIVA` in `scripts/informativa.mjs` e aggiunge la voce in testa allo STORICO, poi, in quest'ordine:
+`node scripts/informativa.mjs --scrivi` (impronte, `/privacy-versione.json`, piede delle privacy) e
+`python3 scripts/opera/genera.py` (versione e impronta nei due moduli). `--controlla` è il cancello (Action `informativa`).
+Chi cambia `assets/js/opera/app.js` alza il `?v=` dell'indirizzo in `genera.py` (Pages tiene il JS 10 minuti).
+
 Una casa venduta o un prezzo cambiato: si modifica `unita.json` e si rigenera. Il concierge lo sa da solo dopo il
 push (il CRM rilegge `conoscenza.json` ogni 15 minuti).
 

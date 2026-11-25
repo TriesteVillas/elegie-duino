@@ -780,7 +780,7 @@ def pagina(L):
 </footer>
 
 <script type="application/json" id="dati">{json.dumps(dati, ensure_ascii=False, separators=(',', ':'))}</script>
-<script type="module" src="{base}js/opera/app.js"></script>
+<script type="module" src="{base}js/opera/app.js?v=inf1-20261125"></script>
 <script type="module" src="{base}js/opera/concierge.js"></script>
 <script src="{base}js/opera/chiusura.js" defer></script>
 <script src="{base}js/consenso.js" data-ga="G-YL07ZJ3PVX"></script>
