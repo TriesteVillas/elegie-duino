@@ -45,7 +45,7 @@ export const METODO_IMPRONTA =
 export const STORICO = [
   {
     versione: "INF-ED-2026-11-25-1",
-    dal: "2026-11-25T04:00:00+01:00",
+    dal: "2026-11-25T14:01:13+01:00", // GitHub Pages: build di ebd4b99 finita alle 13:01:13Z
     al: null,
     nota: {
       it: "Prima versione con un'etichetta: a ogni invio registriamo quale versione dell'informativa la pagina mostrava, la lingua, l'ora e il testo delle caselle di consenso; per rispondere a una richiesta la base sono le misure precontrattuali, gli aggiornamenti del cantiere solo col consenso; versione e impronta del testo in fondo alla pagina.",
