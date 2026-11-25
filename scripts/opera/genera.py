@@ -426,7 +426,7 @@ def contatti_html(L, base, k_contatti, privacy, wa):
         <div class="fl"><textarea class="fl__in" id="if-msg" name="messaggio" placeholder=" " rows="2" maxlength="1800"></textarea><label for="if-msg">{e(K['messaggio'])}</label></div>
         <p class="form__errore" id="if-error" role="alert"></p>
         <button type="submit" class="invia"><span class="btn__label">{e(K['invia'])}</span>{ICON['invia']}</button>
-        <p class="nota form__riga" data-presa-visione>{K['riga'].format(privacy=privacy)}</p>
+        <p class="nota form__presa" data-presa-visione>{K['riga'].format(privacy=privacy)}</p>
       </form>
       <div class="form__ok modulo__ok" id="info-ok" role="status" tabindex="-1"><span class="modulo__spunta" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></span><p class="h3">{e(K['ok_titolo'])}</p><p>{K['ok_testo']}</p></div>
     </div>
@@ -727,7 +727,7 @@ def pagina(L):
       <div class="fl"><input class="fl__in" type="tel" id="bf-tel" name="telefono" placeholder=" " maxlength="40" autocomplete="tel"><label for="bf-tel">{e(K['telefono'])}</label></div>
       <p class="form__errore" id="bf-error" role="alert"></p>
       <button type="submit" class="invia"><span class="btn__label">{e(L['brochure']['invia'])}</span>{ICON['invia']}</button>
-      <p class="nota form__riga" data-presa-visione>{K['riga'].format(privacy=privacy)}</p>
+      <p class="nota form__presa" data-presa-visione>{K['riga'].format(privacy=privacy)}</p>
     </form>
     <div class="form__ok" id="brochure-ok" role="status" tabindex="-1"><p class="h3">{e(L['brochure']['ok_titolo'])}</p><p>{e(L['brochure']['ok_testo'])} <a href="{base}pdf/elegie-duino-brochure.pdf" target="_blank" rel="noopener">{e(L['brochure']['apri'])}</a></p></div>
   </div>
