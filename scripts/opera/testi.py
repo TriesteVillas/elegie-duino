@@ -178,7 +178,8 @@ IT = {
   'testo': 'Il cantiere, le piante, i materiali: scrivici o chiamaci, ti rispondiamo noi.',
   'telefono': 'Telefono', 'cantiere': 'Cantiere', 'ufficio': 'Ufficio vendite', 'hp': 'Non compilare questo campo',
   'nome': 'Nome e cognome', 'messaggio': 'Due righe, se vuoi',
-  'consenso': 'Ho letto l\'<a href="{privacy}" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere da TriesteVillas una risposta sull\'iniziativa Elegie Duino e, se li ho chiesti, i suoi aggiornamenti.',
+  # La riga accanto al tasto dei due moduli (D13, Martino 20/11; contratto INF-1, 25/11/2026): al posto della casella del consenso.
+  'riga': 'Inviando, prendi visione della nostra <a href="{privacy}" target="_blank">informativa privacy</a>.',
   'invia': 'Invia la richiesta', 'ok_titolo': 'Grazie, la richiesta è arrivata.',
   'ok_testo': 'Ti ricontattiamo al più presto. Per qualcosa di urgente: <a href="tel:+393318940822">331 8940822</a>.',
   'wa': 'WhatsApp', 'wa_sotto': 'Scrivici adesso', 'tel': 'Chiama', 'mail': 'Email', 'form_t': 'Scrivici',
@@ -196,7 +197,6 @@ IT = {
  'brochure': {
   'kicker': 'Brochure · PDF', 'titolo': 'Ricevi la brochure completa.',
   'testo': 'Lascia i tuoi dati: il PDF si apre subito e una copia della richiesta arriva a TriesteVillas.',
-  'consenso': 'Ho letto l\'<a href="{privacy}" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la brochure ed eventuali aggiornamenti sull\'iniziativa Elegie Duino.',
   'invia': 'Ricevi la brochure', 'ok_titolo': 'Grazie, la brochure è pronta.',
   'ok_testo': 'Si apre in una nuova scheda; se non la vedi:', 'apri': 'apri il PDF',
  },
@@ -482,7 +482,7 @@ EN = {
   'testo': 'The site, the floor plans, the finishes: write or call us and we will get back to you.',
   'telefono': 'Phone', 'cantiere': 'Site', 'ufficio': 'Sales office', 'hp': 'Do not fill in this field',
   'nome': 'Full name', 'messaggio': 'A few lines, if you like',
-  'consenso': 'I have read the <a href="{privacy}" target="_blank">privacy notice</a> and agree to my data being processed so that TriesteVillas can reply about Elegie Duino and, if I asked for them, send me its updates.',
+  'riga': 'By sending this form, you acknowledge our <a href="{privacy}" target="_blank">privacy notice</a>.',
   'invia': 'Send', 'ok_titolo': 'Thank you, your request has arrived.',
   'ok_testo': 'We will get back to you soon. For anything urgent: <a href="tel:+393318940822">+39 331 8940822</a>.',
   'wa': 'WhatsApp', 'wa_sotto': 'Message us now', 'tel': 'Call', 'mail': 'Email', 'form_t': 'Write to us',
@@ -501,7 +501,6 @@ EN = {
  'brochure': {
   'kicker': 'Brochure · PDF', 'titolo': 'Get the full brochure.',
   'testo': 'Leave your details: the PDF opens straight away and a copy of the request reaches TriesteVillas.',
-  'consenso': 'I have read the <a href="{privacy}" target="_blank">privacy notice</a> and agree to my data being processed to receive the brochure and any updates about Elegie Duino.',
   'invia': 'Get the brochure', 'ok_titolo': 'Thank you, the brochure is ready.',
   'ok_testo': "It opens in a new tab; if you don't see it:", 'apri': 'open the PDF',
  },
@@ -788,7 +787,7 @@ DE = {
   'telefono': 'Telefon', 'cantiere': 'Baustelle', 'ufficio': 'Verkaufsbüro',
   'hp': 'Dieses Feld bitte nicht ausfüllen', 'nome': 'Vor- und Nachname',
   'messaggio': 'Ein paar Zeilen, wenn Sie möchten',
-  'consenso': 'Ich habe die <a href="{privacy}" target="_blank">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden, damit TriesteVillas mir zu Elegie Duino antworten und mir, wenn ich darum gebeten habe, Neuigkeiten schicken kann.',
+  'riga': 'Mit dem Absenden nehmen Sie unsere <a href="{privacy}" target="_blank">Datenschutzerklärung</a> zur Kenntnis.',
   'invia': 'Anfrage senden', 'ok_titolo': 'Danke, Ihre Anfrage ist angekommen.',
   'ok_testo': 'Wir melden uns so bald wie möglich. Für Dringendes: <a href="tel:+393318940822">+39 331 8940822</a>.',
   'wa': 'WhatsApp', 'wa_sotto': 'Jetzt schreiben', 'tel': 'Anrufen', 'mail': 'E-Mail',
@@ -808,7 +807,6 @@ DE = {
  'brochure': {
   'kicker': 'Broschüre · PDF', 'titolo': 'Die vollständige Broschüre.',
   'testo': 'Hinterlassen Sie Ihre Daten: Das PDF öffnet sich sofort, und eine Kopie der Anfrage geht an TriesteVillas.',
-  'consenso': 'Ich habe die <a href="{privacy}" target="_blank">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden, um die Broschüre und gegebenenfalls Neuigkeiten zu Elegie Duino zu erhalten.',
   'invia': 'Broschüre erhalten', 'ok_titolo': 'Danke, die Broschüre ist bereit.',
   'ok_testo': 'Sie öffnet sich in einem neuen Tab; falls nicht:', 'apri': 'PDF öffnen',
  },
@@ -1093,7 +1091,7 @@ SL = {
   'testo': 'Gradbišče, tlorisi, materiali: pišite ali pokličite, oglasili se bomo.',
   'telefono': 'Telefon', 'cantiere': 'Gradbišče', 'ufficio': 'Prodajna pisarna', 'hp': 'Tega polja ne izpolnjujte',
   'nome': 'Ime in priimek', 'messaggio': 'Nekaj vrstic, če želite',
-  'consenso': 'Prebral/-a sem <a href="{privacy}" target="_blank">obvestilo o zasebnosti</a> in soglašam z obdelavo svojih podatkov, da mi TriesteVillas odgovori glede projekta Elegie Duino in mi, če sem jih želel/-a, pošilja novice.',
+  'riga': 'S pošiljanjem vzamete na znanje naše <a href="{privacy}" target="_blank">obvestilo o zasebnosti</a>.',
   'invia': 'Pošlji povpraševanje', 'ok_titolo': 'Hvala, povpraševanje smo prejeli.',
   'ok_testo': 'Kmalu se vam oglasimo. Za nujne zadeve: <a href="tel:+393318940822">+39 331 8940822</a>.',
   'wa': 'WhatsApp', 'wa_sotto': 'Pišite nam zdaj', 'tel': 'Pokličite', 'mail': 'E-pošta', 'form_t': 'Pišite nam',
@@ -1105,7 +1103,6 @@ SL = {
  'brochure': {
   'kicker': 'Brošura · PDF', 'titolo': 'Prejmite celotno brošuro.',
   'testo': 'Pustite svoje podatke: PDF se odpre takoj, kopija povpraševanja pa prispe k TriesteVillas.',
-  'consenso': 'Prebral/-a sem <a href="{privacy}" target="_blank">obvestilo o zasebnosti</a> in soglašam z obdelavo svojih podatkov za prejem brošure in morebitnih novic o projektu Elegie Duino.',
   'invia': 'Prejmite brošuro', 'ok_titolo': 'Hvala, brošura je pripravljena.',
   'ok_testo': 'Odpre se v novem zavihku; če je ne vidite:', 'apri': 'odprite PDF',
  },

@@ -333,7 +333,7 @@
       </dl>
     </div>
     <div class="modulo">
-      <form class="modulo__form" id="info-form" novalidate>
+      <form class="modulo__form" id="info-form" novalidate data-inf-versione="INF-ED-2026-11-25-1" data-inf-impronta="e4803d55da50daacc09523d656dde31b811e94cb59a4c6fa3a736d600d405023">
         <div class="modulo__testa"><p class="modulo__t">Schreiben Sie uns</p><p class="modulo__sotto">Wir antworten, wo es Ihnen lieber ist: Ein Kontakt genügt.</p></div>
         <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="if-hp">Dieses Feld bitte nicht ausfüllen</label><input type="text" id="if-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
         <fieldset class="chips"><legend>Was interessiert Sie?</legend><div><label><input type="checkbox" name="interesse" value="visita" data-testo="eine Besichtigung"><span>Eine Besichtigung</span></label><label><input type="checkbox" name="interesse" value="piante" data-testo="die Grundrisse"><span>Die Grundrisse</span></label><label><input type="checkbox" name="interesse" value="prezzi" data-testo="Preise und Zahlungen"><span>Preise und Zahlungen</span></label><label><input type="checkbox" name="interesse" value="capitolato" data-testo="die Baubeschreibung"><span>Die Baubeschreibung</span></label><label><input type="checkbox" name="interesse" value="aggiornamenti" data-testo="Neuigkeiten von der Baustelle"><span>Neuigkeiten von der Baustelle</span></label></div></fieldset>
@@ -341,9 +341,9 @@
         <div class="fl"><input class="fl__in" type="text" id="if-nome" name="nome" placeholder=" " required maxlength="120" autocomplete="name"><label for="if-nome">Vor- und Nachname</label></div>
         <div class="fl"><input class="fl__in" type="text" id="if-recapito" name="recapito" placeholder=" " required maxlength="160" autocomplete="email" spellcheck="false" autocapitalize="off"><label for="if-recapito">E-Mail oder Telefon</label></div>
         <div class="fl"><textarea class="fl__in" id="if-msg" name="messaggio" placeholder=" " rows="2" maxlength="1800"></textarea><label for="if-msg">Ein paar Zeilen, wenn Sie möchten</label></div>
-        <label class="spunta"><input type="checkbox" id="if-privacy" name="privacy" value="si" required><span class="spunta__box" aria-hidden="true"></span><span class="spunta__t">Ich habe die <a href="./privacy.html" target="_blank">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden, damit TriesteVillas mir zu Elegie Duino antworten und mir, wenn ich darum gebeten habe, Neuigkeiten schicken kann.</span></label>
         <p class="form__errore" id="if-error" role="alert"></p>
         <button type="submit" class="invia"><span class="btn__label">Anfrage senden</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+        <p class="nota form__riga" data-presa-visione>Mit dem Absenden nehmen Sie unsere <a href="./privacy.html" target="_blank">Datenschutzerklärung</a> zur Kenntnis.</p>
       </form>
       <div class="form__ok modulo__ok" id="info-ok" role="status" tabindex="-1"><span class="modulo__spunta" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></span><p class="h3">Danke, Ihre Anfrage ist angekommen.</p><p>Wir melden uns so bald wie möglich. Für Dringendes: <a href="tel:+393318940822">+39 331 8940822</a>.</p></div>
     </div>
@@ -421,14 +421,14 @@
     <p class="kicker" style="color:var(--legno)">Broschüre · PDF</p>
     <h2 class="h3" id="brochure-t" style="margin-bottom:10px">Die vollständige Broschüre.</h2>
     <p class="nota" style="margin-bottom:18px">Hinterlassen Sie Ihre Daten: Das PDF öffnet sich sofort, und eine Kopie der Anfrage geht an TriesteVillas.</p>
-    <form class="modulo__form modulo__form--piatto" id="brochure-form" novalidate>
+    <form class="modulo__form modulo__form--piatto" id="brochure-form" novalidate data-inf-versione="INF-ED-2026-11-25-1" data-inf-impronta="e4803d55da50daacc09523d656dde31b811e94cb59a4c6fa3a736d600d405023">
       <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="bf-hp">Dieses Feld bitte nicht ausfüllen</label><input type="text" id="bf-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
       <div class="fl"><input class="fl__in" type="text" id="bf-nome" name="nome" placeholder=" " required maxlength="120" autocomplete="name"><label for="bf-nome">Vor- und Nachname</label></div>
       <div class="fl"><input class="fl__in" type="email" id="bf-email" name="email" placeholder=" " required maxlength="160" autocomplete="email"><label for="bf-email">Email</label></div>
       <div class="fl"><input class="fl__in" type="tel" id="bf-tel" name="telefono" placeholder=" " maxlength="40" autocomplete="tel"><label for="bf-tel">Telefon</label></div>
-      <label class="spunta"><input type="checkbox" id="bf-privacy" name="privacy" value="si" required><span class="spunta__box" aria-hidden="true"></span><span class="spunta__t">Ich habe die <a href="./privacy.html" target="_blank">Datenschutzhinweise</a> gelesen und bin mit der Verarbeitung meiner Daten einverstanden, um die Broschüre und gegebenenfalls Neuigkeiten zu Elegie Duino zu erhalten.</span></label>
       <p class="form__errore" id="bf-error" role="alert"></p>
       <button type="submit" class="invia"><span class="btn__label">Broschüre erhalten</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+      <p class="nota form__riga" data-presa-visione>Mit dem Absenden nehmen Sie unsere <a href="./privacy.html" target="_blank">Datenschutzerklärung</a> zur Kenntnis.</p>
     </form>
     <div class="form__ok" id="brochure-ok" role="status" tabindex="-1"><p class="h3">Danke, die Broschüre ist bereit.</p><p>Sie öffnet sich in einem neuen Tab; falls nicht: <a href="../assets/pdf/elegie-duino-brochure.pdf" target="_blank" rel="noopener">PDF öffnen</a></p></div>
   </div>

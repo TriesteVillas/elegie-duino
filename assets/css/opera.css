@@ -351,6 +351,9 @@ textarea.form__input { min-height: 120px; resize: vertical; }
 .form__consenso input { width: 18px; height: 18px; margin-top: 2px; }
 .form__errore { display: none; color: #8f2a1f; background: #f6e3df; padding: 10px 12px; border-radius: 3px; font-size: 14px; }
 .form__errore.visibile { display: block; }
+/* La riga col link all'informativa accanto al tasto d'invio (D13; contratto INF-1, 25/11/2026), al posto della casella. */
+.form__riga { margin: 10px 0 0; }
+.form__riga a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .form__hint { font-size: 13px; color: var(--grigio); margin: -4px 0 0; }
 .req { color: #8f2a1f; }
 .foglio--notte .form__label, .foglio--notte .form__consenso { color: var(--sale); }

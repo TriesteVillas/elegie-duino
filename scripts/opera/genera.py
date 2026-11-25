@@ -377,6 +377,21 @@ def chi_html(L, base, k_chi):
 </section>'''
 
 # ---------------------------------------------------------------- i contatti
+def informativa(lg):
+    """Versione e impronta della privacy di quella lingua, da /privacy-versione.json (scripts/informativa.mjs --scrivi):
+    i due moduli le portano come data-inf-versione e data-inf-impronta, e app.js le manda al CRM (contratto INF-1)."""
+    try:
+        j = json.load(open(os.path.join(ROOT, 'privacy-versione.json'), encoding='utf-8'))
+        return j['versione'], j['lingue'][lg]['impronta']
+    except (OSError, KeyError, ValueError):
+        return '', ''
+
+
+def attributi_informativa(lg):
+    v, imp = informativa(lg)
+    return f' data-inf-versione="{e(v)}" data-inf-impronta="{e(imp)}"'
+
+
 def contatti_html(L, base, k_contatti, privacy, wa):
     K = L['contatti']
     # nel messaggio al CRM la scelta va in minuscolo dopo i due punti, tranne dove la lingua dice altrimenti
@@ -401,7 +416,7 @@ def contatti_html(L, base, k_contatti, privacy, wa):
       </dl>
     </div>
     <div class="modulo">
-      <form class="modulo__form" id="info-form" novalidate>
+      <form class="modulo__form" id="info-form" novalidate{attributi_informativa(L['lingua'])}>
         <div class="modulo__testa"><p class="modulo__t">{e(K['form_t'])}</p><p class="modulo__sotto">{e(K['form_sotto'])}</p></div>
         <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="if-hp">{e(K['hp'])}</label><input type="text" id="if-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
         <fieldset class="chips"><legend>{e(K['interessi_t'])}</legend><div>{interessi}</div></fieldset>
@@ -409,9 +424,9 @@ def contatti_html(L, base, k_contatti, privacy, wa):
         <div class="fl"><input class="fl__in" type="text" id="if-nome" name="nome" placeholder=" " required maxlength="120" autocomplete="name"><label for="if-nome">{e(K['nome'])}</label></div>
         <div class="fl"><input class="fl__in" type="text" id="if-recapito" name="recapito" placeholder=" " required maxlength="160" autocomplete="email" spellcheck="false" autocapitalize="off"><label for="if-recapito">{e(K['recapito'])}</label></div>
         <div class="fl"><textarea class="fl__in" id="if-msg" name="messaggio" placeholder=" " rows="2" maxlength="1800"></textarea><label for="if-msg">{e(K['messaggio'])}</label></div>
-        <label class="spunta"><input type="checkbox" id="if-privacy" name="privacy" value="si" required><span class="spunta__box" aria-hidden="true"></span><span class="spunta__t">{K['consenso'].format(privacy=privacy)}</span></label>
         <p class="form__errore" id="if-error" role="alert"></p>
         <button type="submit" class="invia"><span class="btn__label">{e(K['invia'])}</span>{ICON['invia']}</button>
+        <p class="nota form__riga" data-presa-visione>{K['riga'].format(privacy=privacy)}</p>
       </form>
       <div class="form__ok modulo__ok" id="info-ok" role="status" tabindex="-1"><span class="modulo__spunta" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></span><p class="h3">{e(K['ok_titolo'])}</p><p>{K['ok_testo']}</p></div>
     </div>
@@ -705,14 +720,14 @@ def pagina(L):
     <p class="kicker" style="color:var(--legno)">{e(L['brochure']['kicker'])}</p>
     <h2 class="h3" id="brochure-t" style="margin-bottom:10px">{e(L['brochure']['titolo'])}</h2>
     <p class="nota" style="margin-bottom:18px">{e(L['brochure']['testo'])}</p>
-    <form class="modulo__form modulo__form--piatto" id="brochure-form" novalidate>
+    <form class="modulo__form modulo__form--piatto" id="brochure-form" novalidate{attributi_informativa(L['lingua'])}>
       <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="bf-hp">{e(K['hp'])}</label><input type="text" id="bf-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
       <div class="fl"><input class="fl__in" type="text" id="bf-nome" name="nome" placeholder=" " required maxlength="120" autocomplete="name"><label for="bf-nome">{e(K['nome'])}</label></div>
       <div class="fl"><input class="fl__in" type="email" id="bf-email" name="email" placeholder=" " required maxlength="160" autocomplete="email"><label for="bf-email">Email</label></div>
       <div class="fl"><input class="fl__in" type="tel" id="bf-tel" name="telefono" placeholder=" " maxlength="40" autocomplete="tel"><label for="bf-tel">{e(K['telefono'])}</label></div>
-      <label class="spunta"><input type="checkbox" id="bf-privacy" name="privacy" value="si" required><span class="spunta__box" aria-hidden="true"></span><span class="spunta__t">{L['brochure']['consenso'].format(privacy=privacy)}</span></label>
       <p class="form__errore" id="bf-error" role="alert"></p>
       <button type="submit" class="invia"><span class="btn__label">{e(L['brochure']['invia'])}</span>{ICON['invia']}</button>
+      <p class="nota form__riga" data-presa-visione>{K['riga'].format(privacy=privacy)}</p>
     </form>
     <div class="form__ok" id="brochure-ok" role="status" tabindex="-1"><p class="h3">{e(L['brochure']['ok_titolo'])}</p><p>{e(L['brochure']['ok_testo'])} <a href="{base}pdf/elegie-duino-brochure.pdf" target="_blank" rel="noopener">{e(L['brochure']['apri'])}</a></p></div>
   </div>

@@ -498,7 +498,7 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
   const MSG = T.moduli;
   // l'errore sul recapito si mostra sul campo che c'è: il recapito unico, o l'email
   const campoDi = (k) => (['email', 'telefono', 'recapito', 'aggiornamenti'].includes(k) && campo('recapito')) ? 'recapito' : (k === 'recapito' || k === 'aggiornamenti' ? 'email' : k);
-  const pulisci = () => { errEl.classList.remove('visibile'); errEl.textContent = ''; ['nome', 'email', 'telefono', 'recapito', 'messaggio', 'privacy'].forEach((n) => campo(n) && campo(n).removeAttribute('aria-invalid')); };
+  const pulisci = () => { errEl.classList.remove('visibile'); errEl.textContent = ''; ['nome', 'email', 'telefono', 'recapito', 'messaggio'].forEach((n) => campo(n) && campo(n).removeAttribute('aria-invalid')); };
   const errore = (k, conPdf) => {
     errEl.textContent = MSG[k] || MSG.rete;
     if (conPdf) { const a = document.createElement('a'); a.href = BASE + 'pdf/elegie-duino-brochure.pdf'; a.target = '_blank'; a.rel = 'noopener'; a.textContent = MSG.pdfComunque; errEl.append(' ', a); }
@@ -513,7 +513,6 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
     // le tappe del cantiere arrivano per email: con la voce spuntata, il telefono da solo non basta
     if (v.aggiornamenti && !EMAIL.test(v.email)) return 'aggiornamenti';
     if (v.testoLibero && v.testoLibero.length > 1800) return 'messaggio';
-    if (!campo('privacy').checked) return 'privacy';
     return null;
   };
   form.addEventListener('focusin', () => { if (!apertoIl) apertoIl = Date.now(); });
@@ -527,8 +526,20 @@ function collega(form, { tipo, emailObbligatoria, errore: errEl, ok, dopo }) {
     dati.set('email', v.email);
     dati.set('telefono', v.telefono);
     if (campo('messaggio') || v.messaggio) dati.set('messaggio', v.messaggio);
+    // D13 (Martino, 20/11): niente più casella, la riga col link accanto al tasto; la porta vuole ancora privacy=si.
     dati.set('privacy', 'si');
     if (v.aggiornamenti) dati.set('aggiornamenti', 'si');
+    // IL CONTRATTO INF-1 (25/11/2026; tsv-pg lib/ingresso/modulo-pubblico.ts, dichiarazioneDaiCampi): quale informativa
+    // mostrava la pagina (versione e impronta scritte nel modulo da genera.py, da scripts/informativa.mjs), la riga accanto
+    // al tasto come si legge a schermo e la casella «Gli aggiornamenti del cantiere», col suo testo, spuntata o no.
+    const pulito = (el) => (el ? el.textContent.replace(/\s+/g, ' ').trim() : '');
+    if (form.dataset.infVersione) dati.set('informativa_versione', form.dataset.infVersione);
+    if (form.dataset.infImpronta) dati.set('informativa_impronta', form.dataset.infImpronta);
+    const riga = form.querySelector('[data-presa-visione]');
+    dati.set('presa_visione', riga ? 'si' : 'no');
+    if (riga) dati.set('presa_visione_testo', pulito(riga));
+    const agg = form.querySelector('input[name="interesse"][value="aggiornamenti"]');
+    dati.set('consensi', JSON.stringify(agg ? [{ tipo: 'aggiornamenti', si: agg.checked, testo: pulito(agg.closest('label')) }] : []));
     dati.set('lingua', LINGUA);
     dati.set('pagina', location.pathname);
     if (window.edProvenienza) { const pv = window.edProvenienza(); if (pv) dati.set('provenienza', pv); }

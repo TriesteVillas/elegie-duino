@@ -1,0 +1,17 @@
+# Il cancello dell'informativa (contratto INF-1, 25/11/2026): se il testo di una privacy.html cambia senza versione nuova,
+# o se piedi, /privacy-versione.json e moduli delle pagine non portano la versione e l'impronta del testo, la Action va
+# rossa. Non pubblica nulla e non ferma GitHub Pages: dice che cosa rigenerare (scripts/informativa.mjs, genera.py).
+name: informativa
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  controlla:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/informativa.mjs --controlla

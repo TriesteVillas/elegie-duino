@@ -333,7 +333,7 @@
       </dl>
     </div>
     <div class="modulo">
-      <form class="modulo__form" id="info-form" novalidate>
+      <form class="modulo__form" id="info-form" novalidate data-inf-versione="INF-ED-2026-11-25-1" data-inf-impronta="0cea7be7afdf264d4dac83c2aba74a7f0b51b0de3d46cb04ed24b464e0f22dd6">
         <div class="modulo__testa"><p class="modulo__t">Scrivici</p><p class="modulo__sotto">Ti rispondiamo dove preferisci: basta un recapito.</p></div>
         <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="if-hp">Non compilare questo campo</label><input type="text" id="if-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
         <fieldset class="chips"><legend>Che cosa ti interessa?</legend><div><label><input type="checkbox" name="interesse" value="visita" data-testo="una visita"><span>Una visita</span></label><label><input type="checkbox" name="interesse" value="piante" data-testo="le piante"><span>Le piante</span></label><label><input type="checkbox" name="interesse" value="prezzi" data-testo="prezzi e pagamenti"><span>Prezzi e pagamenti</span></label><label><input type="checkbox" name="interesse" value="capitolato" data-testo="il capitolato"><span>Il capitolato</span></label><label><input type="checkbox" name="interesse" value="aggiornamenti" data-testo="gli aggiornamenti del cantiere"><span>Gli aggiornamenti del cantiere</span></label></div></fieldset>
@@ -341,9 +341,9 @@
         <div class="fl"><input class="fl__in" type="text" id="if-nome" name="nome" placeholder=" " required maxlength="120" autocomplete="name"><label for="if-nome">Nome e cognome</label></div>
         <div class="fl"><input class="fl__in" type="text" id="if-recapito" name="recapito" placeholder=" " required maxlength="160" autocomplete="email" spellcheck="false" autocapitalize="off"><label for="if-recapito">Email o telefono</label></div>
         <div class="fl"><textarea class="fl__in" id="if-msg" name="messaggio" placeholder=" " rows="2" maxlength="1800"></textarea><label for="if-msg">Due righe, se vuoi</label></div>
-        <label class="spunta"><input type="checkbox" id="if-privacy" name="privacy" value="si" required><span class="spunta__box" aria-hidden="true"></span><span class="spunta__t">Ho letto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere da TriesteVillas una risposta sull'iniziativa Elegie Duino e, se li ho chiesti, i suoi aggiornamenti.</span></label>
         <p class="form__errore" id="if-error" role="alert"></p>
         <button type="submit" class="invia"><span class="btn__label">Invia la richiesta</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+        <p class="nota form__riga" data-presa-visione>Inviando, prendi visione della nostra <a href="./privacy.html" target="_blank">informativa privacy</a>.</p>
       </form>
       <div class="form__ok modulo__ok" id="info-ok" role="status" tabindex="-1"><span class="modulo__spunta" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg></span><p class="h3">Grazie, la richiesta è arrivata.</p><p>Ti ricontattiamo al più presto. Per qualcosa di urgente: <a href="tel:+393318940822">331 8940822</a>.</p></div>
     </div>
@@ -421,14 +421,14 @@
     <p class="kicker" style="color:var(--legno)">Brochure · PDF</p>
     <h2 class="h3" id="brochure-t" style="margin-bottom:10px">Ricevi la brochure completa.</h2>
     <p class="nota" style="margin-bottom:18px">Lascia i tuoi dati: il PDF si apre subito e una copia della richiesta arriva a TriesteVillas.</p>
-    <form class="modulo__form modulo__form--piatto" id="brochure-form" novalidate>
+    <form class="modulo__form modulo__form--piatto" id="brochure-form" novalidate data-inf-versione="INF-ED-2026-11-25-1" data-inf-impronta="0cea7be7afdf264d4dac83c2aba74a7f0b51b0de3d46cb04ed24b464e0f22dd6">
       <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden"><label for="bf-hp">Non compilare questo campo</label><input type="text" id="bf-hp" name="hp_ed" tabindex="-1" autocomplete="off"></div>
       <div class="fl"><input class="fl__in" type="text" id="bf-nome" name="nome" placeholder=" " required maxlength="120" autocomplete="name"><label for="bf-nome">Nome e cognome</label></div>
       <div class="fl"><input class="fl__in" type="email" id="bf-email" name="email" placeholder=" " required maxlength="160" autocomplete="email"><label for="bf-email">Email</label></div>
       <div class="fl"><input class="fl__in" type="tel" id="bf-tel" name="telefono" placeholder=" " maxlength="40" autocomplete="tel"><label for="bf-tel">Telefono</label></div>
-      <label class="spunta"><input type="checkbox" id="bf-privacy" name="privacy" value="si" required><span class="spunta__box" aria-hidden="true"></span><span class="spunta__t">Ho letto l'<a href="./privacy.html" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere la brochure ed eventuali aggiornamenti sull'iniziativa Elegie Duino.</span></label>
       <p class="form__errore" id="bf-error" role="alert"></p>
       <button type="submit" class="invia"><span class="btn__label">Ricevi la brochure</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button>
+      <p class="nota form__riga" data-presa-visione>Inviando, prendi visione della nostra <a href="./privacy.html" target="_blank">informativa privacy</a>.</p>
     </form>
     <div class="form__ok" id="brochure-ok" role="status" tabindex="-1"><p class="h3">Grazie, la brochure è pronta.</p><p>Si apre in una nuova scheda; se non la vedi: <a href="./assets/pdf/elegie-duino-brochure.pdf" target="_blank" rel="noopener">apri il PDF</a></p></div>
   </div>
